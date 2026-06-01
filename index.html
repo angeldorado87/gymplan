@@ -9,7 +9,7 @@
 body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size:15px}
 .header{background:#1a1a1a;border-bottom:1px solid #2a2a2a;padding:16px;position:sticky;top:0;z-index:10}
 .header-title{font-size:18px;font-weight:600;margin-bottom:2px;color:#f5f5f5}
-.header-sub{font-size:13px;color:#666}
+.header-sub{font-size:13px;color:#909090}
 .person-switch{display:flex;gap:6px;margin-top:10px}
 .psw-btn{padding:5px 14px;border-radius:20px;border:1px solid #333;background:#242424;font-size:13px;font-weight:500;cursor:pointer;color:#aaa}
 .psw-btn.active{background:#f97316;color:#fff;border-color:#f97316}
@@ -18,12 +18,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .tab.active{background:#f97316;color:#fff;border-color:#f97316;font-weight:500}
 .content{padding:16px;max-width:800px;margin:0 auto}
 .section{display:none}.section.active{display:block}
-.week-label{font-size:12px;font-weight:600;color:#666;margin-bottom:6px;margin-top:14px}
+.week-label{font-size:12px;font-weight:600;color:#909090;margin-bottom:6px;margin-top:14px}
 .week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px}
-.wday{text-align:center}.wday-n{font-size:10px;color:#555;margin-bottom:3px;font-weight:600}
+.wday{text-align:center}.wday-n{font-size:10px;color:#888;margin-bottom:3px;font-weight:600}
 .wday-c{font-size:10px;font-weight:700;padding:5px 2px;border-radius:6px}
-.wp{background:#1e3a5f;color:#60a5fa}.wu{background:#14532d;color:#4ade80}.wl{background:#451a03;color:#fb923c}.wr{background:#1f1f1f;color:#555}.wo{background:#3b0764;color:#c084fc}
-.note{border-left:3px solid #f97316;padding:10px 14px;background:#1f1409;border-radius:0 8px 8px 0;margin:10px 0;font-size:13px;color:#d97706;line-height:1.5}
+.wp{background:#1e3a5f;color:#60a5fa}.wu{background:#14532d;color:#4ade80}.wl{background:#451a03;color:#fb923c}.wr{background:#1f1f1f;color:#888}.wo{background:#3b0764;color:#c084fc}
+.note{border-left:3px solid #f97316;padding:10px 14px;background:#1f1409;border-radius:0 8px 8px 0;margin:10px 0;font-size:13px;color:#fb923c;line-height:1.5}
 .note strong{color:#f5f5f5}
 .note-blue{border-left:3px solid #3b82f6;padding:10px 14px;background:#0f1f3d;border-radius:0 8px 8px 0;margin:10px 0;font-size:13px;color:#93c5fd;line-height:1.5}
 .note-blue strong{color:#f5f5f5}
@@ -31,69 +31,69 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .note-green strong{color:#f5f5f5}
 .section-title{font-size:15px;font-weight:600;margin:18px 0 10px;color:#f5f5f5}
 .tip-list{list-style:none}
-.tip-list li{padding:9px 0;border-bottom:1px solid #222;font-size:13px;color:#aaa;display:flex;gap:10px;line-height:1.5}
+.tip-list li{padding:9px 0;border-bottom:1px solid #222;font-size:13px;color:#c0c0c0;display:flex;gap:10px;line-height:1.5}
 .tip-list li:last-child{border-bottom:none}
 .tip-list li strong{color:#e5e5e5}
 .day-card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;margin-bottom:12px;overflow:hidden}
-.day-header{display:flex;align-items:center;gap:8px;padding:14px 16px;cursor:pointer;flex-wrap:wrap}
+.day-header{display:flex;align-items:center;gap:8px;padding:14px 16px;cursor:default;flex-wrap:wrap}
 .day-badge{padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;white-space:nowrap}
 .push-b{background:#1e3a5f;color:#60a5fa}.pull-b{background:#14532d;color:#4ade80}.legs-b{background:#451a03;color:#fb923c}.opt-b{background:#3b0764;color:#c084fc}
 .day-title-t{font-size:14px;font-weight:600;color:#f5f5f5;flex:1}
-.day-count{font-size:11px;color:#555;background:#242424;padding:2px 8px;border-radius:20px}
-.day-sub-t{font-size:12px;color:#555}
-.chev{font-size:14px;color:#555;transition:transform .2s}
-.chev.open{transform:rotate(180deg)}
-.collapsible{display:none;border-top:1px solid #222}
-.collapsible.open{display:block}
+.day-count{font-size:11px;color:#888;background:#242424;padding:2px 8px;border-radius:20px}
+.day-sub-t{font-size:12px;color:#888}
+.chev{display:none}
+.chev.open{display:none}
+.collapsible{display:block;border-top:1px solid #222}
+.collapsible.open{display:block} /* always open */
 .ex-block{padding:16px;border-bottom:1px solid #222}
 .ex-block:last-child{border-bottom:none}
 .ex-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
-.ex-num{font-size:10px;font-weight:700;color:#444;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
+.ex-num{font-size:10px;font-weight:700;color:#777;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
 .ex-name{font-size:14px;font-weight:600;color:#f97316;margin-bottom:8px}
-.ex-desc{font-size:13px;color:#999;line-height:1.6;margin-bottom:10px}
+.ex-desc{font-size:13px;color:#b0b0b0;line-height:1.6;margin-bottom:10px}
 /* SERIES TABLE */
 .series-table{width:100%;border-collapse:collapse;margin-bottom:10px;border-radius:8px;overflow:hidden;border:1px solid #2a2a2a}
-.series-table th{background:#242424;font-size:11px;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:0.05em;padding:7px 10px;text-align:left;border-bottom:1px solid #2a2a2a}
-.series-table td{padding:8px 10px;font-size:13px;border-bottom:1px solid #1f1f1f;color:#ccc}
+.series-table th{background:#242424;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.05em;padding:7px 10px;text-align:left;border-bottom:1px solid #2a2a2a}
+.series-table td{padding:8px 10px;font-size:13px;border-bottom:1px solid #1f1f1f;color:#ddd}
 .series-table tr:last-child td{border-bottom:none}
-.rest-box{display:flex;align-items:center;gap:6px;font-size:12px;color:#555;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:0 0 8px 8px;padding:6px 10px;margin-top:-2px;margin-bottom:10px}
-.rest-box span{font-weight:600;color:#777}
-.inter-rest{display:flex;align-items:center;gap:6px;font-size:12px;color:#a855f7;background:#1a0b2e;border:1px solid #3b0764;border-radius:8px;padding:8px 12px;margin:0 16px 4px;font-weight:500}
+.rest-box{display:flex;align-items:center;gap:6px;font-size:12px;color:#888;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:0 0 8px 8px;padding:6px 10px;margin-top:-2px;margin-bottom:10px}
+.rest-box span{font-weight:600;color:#aaa}
+.inter-rest{display:flex;align-items:center;gap:6px;font-size:12px;color:#c084fc;background:#1a0b2e;border:1px solid #4c1d95;border-radius:8px;padding:8px 12px;margin:0 16px 4px;font-weight:500}
 .stretch-section{background:#0a1f12;border:1px solid #14532d;border-radius:10px;margin:14px 16px;padding:14px}
 .stretch-title{font-size:12px;font-weight:700;color:#4ade80;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.stretch-item{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid #14532d;font-size:13px;color:#aaa;line-height:1.5}
+.stretch-item{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid #14532d;font-size:13px;color:#c0c0c0;line-height:1.5}
 .stretch-item:last-child{border-bottom:none}
 .stretch-item .s-time{font-size:11px;font-weight:600;color:#4ade80;background:#14532d;padding:2px 7px;border-radius:20px;white-space:nowrap;height:fit-content;margin-top:2px;flex-shrink:0}
-.series-table .s1{color:#666}
+.series-table .s1{color:#909090}
 .series-table .s2{color:#60a5fa;font-weight:500}
 .series-table .s3{color:#f97316;font-weight:600}
-.series-table .s1-m{color:#666}
+.series-table .s1-m{color:#909090}
 .series-table .s2-m{color:#4ade80;font-weight:500}
 .series-table .s3-m{color:#fb923c;font-weight:600}
 .series-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-right:4px}
-.b-s1{background:#242424;color:#666}
+.b-s1{background:#242424;color:#909090}
 .b-s2{background:#1e3a5f;color:#60a5fa}
 .b-s3{background:#431407;color:#f97316}
 /* POSTURA BOX */
-.postura-box{background:#1f1f1f;border:1px solid #2a2a2a;border-radius:8px;padding:12px;margin-bottom:10px;font-size:12px;color:#888;line-height:1.6}
-.postura-box .postura-title{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.postura-box{background:#1f1f1f;border:1px solid #2a2a2a;border-radius:8px;padding:12px;margin-bottom:10px;font-size:12px;color:#a0a0a0;line-height:1.6}
+.postura-box .postura-title{font-size:11px;font-weight:700;color:#ccc;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;display:flex;align-items:center;gap:5px}
 .postura-section{margin-bottom:6px}
 .postura-section:last-child{margin-bottom:0}
-.postura-section strong{color:#e5e5e5;font-weight:600}
+.postura-section strong{color:#f0f0f0;font-weight:600}
 .muscles{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
 .pill{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500}
-.p-muscle{background:#242424;color:#888;border:1px solid #333}
+.p-muscle{background:#242424;color:#a0a0a0;border:1px solid #333}
 .p-new{background:#451a03;color:#fb923c;border:1px solid #7c2d12}
 .hidden{display:none!important}
 .opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px 16px}
 .opt-item{background:#1f1f1f;border-radius:8px;padding:10px 12px}
 .opt-item strong{display:block;font-size:13px;font-weight:600;margin-bottom:2px;color:#f5f5f5}
-.opt-item span{font-size:12px;color:#666}
+.opt-item span{font-size:12px;color:#909090}
 .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
 .phase{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:12px;text-align:center}
-.phase-label{font-size:10px;color:#555;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+.phase-label{font-size:10px;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
 .phase-val{font-size:22px;font-weight:700}
-.phase-sub{font-size:11px;color:#666;margin-top:2px}
+.phase-sub{font-size:11px;color:#909090;margin-top:2px}
 </style>
 </head>
 <body>
@@ -122,14 +122,14 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <!-- ENTRENO 1 -->
 <div id="e1" class="section active">
   <div class="person-toggle" style="display:flex;gap:8px;margin-bottom:1rem;align-items:center;flex-wrap:wrap">
-    <span style="font-size:13px;color:#666">Pesos para:</span>
+    <span style="font-size:13px;color:#909090">Pesos para:</span>
     <button class="psw-btn active pt-angel" onclick="setPerson('angel',this.closest('.section'))">Ángel</button>
     <button class="psw-btn pt-manu" onclick="setPerson('manu',this.closest('.section'))">Manu</button>
   </div>
 
   <!-- DÍA 1: PECHO + HOMBRO + TRÍCEPS -->
   <div class="day-card">
-    <div class="day-header" onclick="toggleDay('push')">
+    <div class="day-header">
       <span class="day-badge push-b">Día 1 — Lunes</span>
       <span class="day-title-t">Pecho · Hombro · Tríceps</span>
       <span class="day-count">8 ejercicios</span>
@@ -352,14 +352,14 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <!-- ENTRENO 2 -->
 <div id="e2" class="section">
   <div class="person-toggle" style="display:flex;gap:8px;margin-bottom:1rem;align-items:center;flex-wrap:wrap">
-    <span style="font-size:13px;color:#666">Pesos para:</span>
+    <span style="font-size:13px;color:#909090">Pesos para:</span>
     <button class="psw-btn active pt-angel" onclick="setPerson('angel',this.closest('.section'))">Ángel</button>
     <button class="psw-btn pt-manu" onclick="setPerson('manu',this.closest('.section'))">Manu</button>
   </div>
 
   <!-- DÍA 2: ESPALDA + BÍCEPS -->
   <div class="day-card">
-    <div class="day-header" onclick="toggleDay('pull')">
+    <div class="day-header">
       <span class="day-badge pull-b">Día 2 — Martes</span>
       <span class="day-title-t">Espalda · Bíceps</span>
       <span class="day-count">7 ejercicios</span>
@@ -550,14 +550,14 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <!-- ENTRENO 3 -->
 <div id="e3" class="section">
   <div class="person-toggle" style="display:flex;gap:8px;margin-bottom:1rem;align-items:center;flex-wrap:wrap">
-    <span style="font-size:13px;color:#666">Pesos para:</span>
+    <span style="font-size:13px;color:#909090">Pesos para:</span>
     <button class="psw-btn active pt-angel" onclick="setPerson('angel',this.closest('.section'))">Ángel</button>
     <button class="psw-btn pt-manu" onclick="setPerson('manu',this.closest('.section'))">Manu</button>
   </div>
 
   <!-- DÍA 3: PIERNAS + ABDOMINALES -->
   <div class="day-card">
-    <div class="day-header" onclick="toggleDay('legs')">
+    <div class="day-header">
       <span class="day-badge legs-b">Día 3 — Jueves</span>
       <span class="day-title-t">Piernas · Abdominales</span>
       <span class="day-count">7 ejercicios</span>
@@ -749,14 +749,14 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <!-- ENTRENO OPCIONAL -->
 <div id="eopt" class="section">
   <div class="person-toggle" style="display:flex;gap:8px;margin-bottom:1rem;align-items:center;flex-wrap:wrap">
-    <span style="font-size:13px;color:#666">Pesos para:</span>
+    <span style="font-size:13px;color:#909090">Pesos para:</span>
     <button class="psw-btn active pt-angel" onclick="setPerson('angel',this.closest('.section'))">Ángel</button>
     <button class="psw-btn pt-manu" onclick="setPerson('manu',this.closest('.section'))">Manu</button>
   </div>
 
   <!-- OPCIONAL -->
   <div class="day-card">
-    <div class="day-header" onclick="toggleDay('opt')">
+    <div class="day-header">
       <span class="day-badge opt-b">Opcional — Sábado</span>
       <span class="day-title-t">Full body ligero</span>
       <span class="day-count">8 ejercicios</span>
