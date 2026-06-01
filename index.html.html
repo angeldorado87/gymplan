@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de entrenamiento — Basic Fit Jerez</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:15px}
+.header{background:#fff;border-bottom:1px solid #e5e5e5;padding:16px;position:sticky;top:0;z-index:10}
+.header-title{font-size:18px;font-weight:600;margin-bottom:2px}
+.header-sub{font-size:13px;color:#888}
+.person-switch{display:flex;gap:6px;margin-top:10px}
+.psw-btn{padding:5px 14px;border-radius:20px;border:1px solid #ddd;background:#f5f5f5;font-size:13px;font-weight:500;cursor:pointer}
+.psw-btn.active{background:#f97316;color:#fff;border-color:#f97316}
+.tabs{display:flex;gap:6px;padding:12px 16px;background:#fff;border-bottom:1px solid #e5e5e5;overflow-x:auto;position:sticky;top:73px;z-index:9}
+.tab{padding:7px 14px;border-radius:20px;border:1px solid #ddd;background:#f5f5f5;font-size:13px;cursor:pointer;white-space:nowrap}
+.tab.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a;font-weight:500}
+.content{padding:16px;max-width:800px;margin:0 auto}
+.section{display:none}.section.active{display:block}
+.week-label{font-size:12px;font-weight:600;color:#888;margin-bottom:6px;margin-top:14px}
+.week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px}
+.wday{text-align:center}.wday-n{font-size:10px;color:#aaa;margin-bottom:3px;font-weight:600}
+.wday-c{font-size:10px;font-weight:700;padding:5px 2px;border-radius:6px}
+.wp{background:#dbeafe;color:#1d4ed8}.wu{background:#dcfce7;color:#166534}.wl{background:#fef3c7;color:#92400e}.wr{background:#f3f4f6;color:#9ca3af}.wo{background:#f3e8ff;color:#6b21a8}
+.note{border-left:3px solid #f97316;padding:10px 14px;background:#fff7ed;border-radius:0 8px 8px 0;margin:10px 0;font-size:13px;color:#6b4c2a;line-height:1.5}
+.note strong{color:#1a1a1a}
+.note-blue{border-left:3px solid #3b82f6;padding:10px 14px;background:#eff6ff;border-radius:0 8px 8px 0;margin:10px 0;font-size:13px;color:#1e3a5f;line-height:1.5}
+.note-blue strong{color:#1a1a1a}
+.note-green{border-left:3px solid #22c55e;padding:10px 14px;background:#f0fdf4;border-radius:0 8px 8px 0;margin:10px 0;font-size:13px;color:#14532d;line-height:1.5}
+.note-green strong{color:#1a1a1a}
+.section-title{font-size:15px;font-weight:600;margin:18px 0 10px}
+.tip-list{list-style:none}
+.tip-list li{padding:9px 0;border-bottom:1px solid #f0f0f0;font-size:13px;color:#555;display:flex;gap:10px;line-height:1.5}
+.tip-list li:last-child{border-bottom:none}
+.tip-list li strong{color:#1a1a1a}
+.day-card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;margin-bottom:12px;overflow:hidden}
+.day-header{display:flex;align-items:center;gap:8px;padding:14px 16px;cursor:pointer;flex-wrap:wrap}
+.day-badge{padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;white-space:nowrap}
+.push-b{background:#dbeafe;color:#1e40af}.pull-b{background:#dcfce7;color:#166534}.legs-b{background:#fef3c7;color:#92400e}.opt-b{background:#f3e8ff;color:#6b21a8}
+.day-title-t{font-size:14px;font-weight:600;color:#1a1a1a;flex:1}
+.day-count{font-size:11px;color:#aaa;background:#f3f4f6;padding:2px 8px;border-radius:20px}
+.day-sub-t{font-size:12px;color:#aaa}
+.chev{font-size:14px;color:#aaa;transition:transform .2s}
+.chev.open{transform:rotate(180deg)}
+.collapsible{display:none;border-top:1px solid #f0f0f0}
+.collapsible.open{display:block}
+.ex-block{padding:16px;border-bottom:1px solid #f5f5f5}
+.ex-block:last-child{border-bottom:none}
+.ex-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
+.ex-num{font-size:10px;font-weight:700;color:#bbb;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
+.ex-name{font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:8px}
+.ex-desc{font-size:13px;color:#666;line-height:1.6;margin-bottom:10px}
+/* SERIES TABLE */
+.series-table{width:100%;border-collapse:collapse;margin-bottom:10px;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb}
+.series-table th{background:#f9fafb;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;padding:7px 10px;text-align:left;border-bottom:1px solid #e5e7eb}
+.series-table td{padding:8px 10px;font-size:13px;border-bottom:1px solid #f3f4f6}
+.series-table tr:last-child td{border-bottom:none}
+.series-table .s1{color:#6b7280}
+.series-table .s2{color:#1d4ed8;font-weight:500}
+.series-table .s3{color:#dc2626;font-weight:600}
+.series-table .s1-m{color:#6b7280}
+.series-table .s2-m{color:#166534;font-weight:500}
+.series-table .s3-m{color:#92400e;font-weight:600}
+.series-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-right:4px}
+.b-s1{background:#f3f4f6;color:#6b7280}
+.b-s2{background:#dbeafe;color:#1e40af}
+.b-s3{background:#fee2e2;color:#991b1b}
+/* POSTURA BOX */
+.postura-box{background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin-bottom:10px;font-size:12px;color:#4b5563;line-height:1.6}
+.postura-box .postura-title{font-size:11px;font-weight:700;color:#374151;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.postura-section{margin-bottom:6px}
+.postura-section:last-child{margin-bottom:0}
+.postura-section strong{color:#1a1a1a;font-weight:600}
+.muscles{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.pill{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500}
+.p-muscle{background:#f9fafb;color:#6b7280;border:1px solid #e5e7eb}
+.p-new{background:#fef3c7;color:#92400e;border:1px solid #fde68a}
+.hidden{display:none!important}
+.opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px 16px}
+.opt-item{background:#f9fafb;border-radius:8px;padding:10px 12px}
+.opt-item strong{display:block;font-size:13px;font-weight:600;margin-bottom:2px}
+.opt-item span{font-size:12px;color:#888}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+.phase{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:12px;text-align:center}
+.phase-label{font-size:10px;color:#aaa;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+.phase-val{font-size:22px;font-weight:700}
+.phase-sub{font-size:11px;color:#888;margin-top:2px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-title">Plan de entrenamiento — Basic Fit Jerez</div>
+  <div class="header-sub">Pecho/Hombro/Tríceps · Espalda/Bíceps · Piernas/Abs · 3-4 días</div>
+  <div class="person-switch">
+    <button class="psw-btn active" id="btn-angel" onclick="setPerson('angel')">Ángel</button>
+    <button class="psw-btn" id="btn-manu" onclick="setPerson('manu')">Manu</button>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="showSection('semana',this)">Semana</button>
+  <button class="tab" onclick="showSection('dias',this)">Días de entreno</button>
+  <button class="tab" onclick="showSection('progresion',this)">Progresión</button>
+  <button class="tab" onclick="showSection('nutricion',this)">Nutrición</button>
+</div>
+
+<div class="content">
+
+<!-- SEMANA -->
+<div id="semana" class="section active">
+
+  <div class="note-blue"><strong>Cómo leer los pesos:</strong> cada ejercicio tiene 3 series con peso progresivo. Serie 1 (azul) = calentamiento · Serie 2 (azul oscuro) = trabajo · Serie 3 (rojo) = máximo del día. Si en la serie 3 no llegas a 10 reps, mínimo 8 está bien.</div>
+
+  <div class="week-label">Ángel — todas las semanas</div>
+  <div class="week-grid">
+    <div class="wday"><div class="wday-n">LUN</div><div class="wday-c wp">Pecho</div></div>
+    <div class="wday"><div class="wday-n">MAR</div><div class="wday-c wu">Espalda</div></div>
+    <div class="wday"><div class="wday-n">MIÉ</div><div class="wday-c wr">—</div></div>
+    <div class="wday"><div class="wday-n">JUE</div><div class="wday-c wl">Piernas</div></div>
+    <div class="wday"><div class="wday-n">VIE</div><div class="wday-c wr">—</div></div>
+    <div class="wday"><div class="wday-n">SÁB</div><div class="wday-c wo">Opt.</div></div>
+    <div class="wday"><div class="wday-n">DOM</div><div class="wday-c wr">—</div></div>
+  </div>
+
+  <div class="week-label">Manu — semana A (igual que Ángel)</div>
+  <div class="week-grid">
+    <div class="wday"><div class="wday-n">LUN</div><div class="wday-c wp">Pecho</div></div>
+    <div class="wday"><div class="wday-n">MAR</div><div class="wday-c wu">Espalda</div></div>
+    <div class="wday"><div class="wday-n">MIÉ</div><div class="wday-c wr">—</div></div>
+    <div class="wday"><div class="wday-n">JUE</div><div class="wday-c wl">Piernas</div></div>
+    <div class="wday"><div class="wday-n">VIE</div><div class="wday-c wr">—</div></div>
+    <div class="wday"><div class="wday-n">SÁB</div><div class="wday-c wo">Opt.</div></div>
+    <div class="wday"><div class="wday-n">DOM</div><div class="wday-c wr">—</div></div>
+  </div>
+
+  <div class="week-label">Manu — semana B (solo 2 días)</div>
+  <div class="week-grid">
+    <div class="wday"><div class="wday-n">LUN</div><div class="wday-c wr">—</div></div>
+    <div class="wday"><div class="wday-n">MAR</div><div class="wday-c wp">Pecho</div></div>
+    <div class="wday"><div class="wday-n">MIÉ</div><div class="wday-c wr">—</div></div>
+    <div class="wday"><div class="wday-n">JUE</div><div class="wday-c wu">Espalda</div></div>
+    <div class="wday"><div class="wday-n">VIE</div><div class="wday-c wr">—</div></div>
+    <div class="wday"><div class="wday-n">SÁB</div><div class="wday-c wr">—</div></div>
+    <div class="wday"><div class="wday-n">DOM</div><div class="wday-c wr">—</div></div>
+  </div>
+  <div class="note"><strong>Semana B de Manu:</strong> Martes Pecho/Hombro/Tríceps + Jueves Espalda/Bíceps. Las piernas se trabajan en semana A. Mejor 2 días bien que 3 a medias.</div>
+
+  <div class="section-title">Estructura de cada sesión</div>
+  <ul class="tip-list">
+    <li><span>⏱</span><span><strong>5 min calentamiento:</strong> bici estática o elíptica suave. Sin impacto en rodillas.</span></li>
+    <li><span>🔁</span><span><strong>3 series con peso progresivo:</strong> S1 calentamiento · S2 trabajo · S3 máximo del día (8-10 reps).</span></li>
+    <li><span>⏸</span><span><strong>Descanso:</strong> 90-120 seg en compuestos · 60-90 seg en aislamiento.</span></li>
+    <li><span>🧘</span><span><strong>5-10 min estiramientos</strong> al final — cuádriceps, isquiotibiales y pectoral.</span></li>
+  </ul>
+</div>
+
+<!-- DÍAS -->
+<div id="dias" class="section">
+
+  <!-- DÍA 1: PECHO + HOMBRO + TRÍCEPS -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggleDay('push')">
+      <span class="day-badge push-b">Día 1 — Lunes</span>
+      <span class="day-title-t">Pecho · Hombro · Tríceps</span>
+      <span class="day-count">8 ejercicios</span>
+      <span class="day-sub-t">~85 min</span>
+      <span class="chev open" id="chev-push">▾</span>
+    </div>
+    <div class="collapsible open" id="body-push">
+
+      <!-- 1. PRESS PECHO CONVERGENTE -->
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 01</div>
+        <div class="ex-name">Press de pecho convergente (máquina)</div>
+        <div class="ex-desc">Los brazos convergen al frente dando una contracción extra en el centro del pecho. La fase de bajada lenta es donde más se construye músculo — no dejes caer el peso.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> espalda completamente apoyada en el respaldo, pies planos en el suelo. Ajusta el asiento para que las asas queden a la altura del pecho.</div>
+          <div class="postura-section"><strong>Agarre:</strong> palmas hacia abajo o neutras según el modelo de la máquina. Agarre firme sin apretar en exceso.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> empuja hasta casi extender los codos — no los bloquees. Vuelve lento en 3 segundos.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> encorvar la espalda despegándola del respaldo, bloquear codos al extender, subir los hombros hacia las orejas.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">38 kg</td><td class="manu-col hidden s1-m">25 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">30 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">36 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
+      </div>
+
+      <!-- 2. PRESS MANCUERNAS BANCO -->
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 02</div>
+        <div class="ex-name">Press con mancuernas en banco plano</div>
+        <div class="ex-desc">Al trabajar con mancuernas cada brazo trabaja de forma independiente, corrigiendo desequilibrios y aumentando la estabilidad del hombro. Mayor rango de movimiento que la barra.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> tumbado en el banco con los pies apoyados en el suelo. Espalda neutra — no arquear de forma exagerada. Cabeza apoyada en el banco.</div>
+          <div class="postura-section"><strong>Agarre:</strong> palmas hacia adelante. Los codos a 45° del torso — no perpendiculares al cuerpo, eso sobrecarga el hombro.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> baja hasta que los codos queden ligeramente por debajo del banco. Sube empujando y juntando ligeramente las mancuernas al final.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> codos en ángulo de 90° con el torso, rebotar las mancuernas abajo, arquear la espalda para ayudar a subir.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">14 kg c/u</td><td class="manu-col hidden s1-m">10 kg c/u</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">18 kg c/u</td><td class="manu-col hidden s2-m">12 kg c/u</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">18 kg c/u</td><td class="manu-col hidden s3-m">14 kg c/u</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
+      </div>
+
+      <!-- 3. APERTURAS PEC-DECK -->
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 03</div>
+        <div class="ex-name">Aperturas en máquina pec-deck</div>
+        <div class="ex-desc">Aísla el pectoral sin cargar la articulación del hombro. La máquina mantiene tensión constante en todo el recorrido, algo que las aperturas con mancuernas no logran igual.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> espalda pegada al respaldo, pies apoyados en el suelo. Ajusta el asiento para que los codos queden a la altura del pecho.</div>
+          <div class="postura-section"><strong>Agarre:</strong> codos apoyados en los apoyos acolchados o manos en las asas según el modelo. Los codos forman un ángulo fijo de ~90°.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> cierra los brazos como si abrazaras a alguien. Aguanta 1 segundo al cerrar. Abre lento en 3 segundos.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> abrir demasiado al volver (dolor en hombro), rebotar al cerrar, despegar la espalda del respaldo.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">55 kg</td><td class="manu-col hidden s1-m">35 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">73 kg</td><td class="manu-col hidden s2-m">45 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">83 kg</td><td class="manu-col hidden s3-m">55 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Pectoral menor</span></div>
+      </div>
+
+      <!-- 4. PRESS HOMBRO CONVERGENTE -->
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 04</div>
+        <div class="ex-name">Press de hombro convergente (máquina)</div>
+        <div class="ex-desc">La guía convergente reduce la presión sobre el manguito rotador comparado con el press libre. Ejercicio principal de hombro del día.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que las asas queden justo a la altura de los hombros cuando los brazos están doblados. Espalda apoyada.</div>
+          <div class="postura-section"><strong>Agarre:</strong> palmas hacia adelante o neutras. Agarre firme pero sin tensión en el cuello.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> empuja hacia arriba sin bloquear los codos. Baja hasta que los brazos formen 90°. Sube y baja en 2-3 segundos cada fase.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> encorvarse hacia adelante, subir los hombros hacia las orejas, usar el impulso del cuerpo para empujar.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">16 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">23 kg</td><td class="manu-col hidden s2-m">14 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">27 kg</td><td class="manu-col hidden s3-m">18 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Deltoides ant.</span><span class="pill p-muscle">Deltoides lat.</span><span class="pill p-muscle">Tríceps</span></div>
+      </div>
+
+      <!-- 5. PRESS FRANCÉS POLEA CUERDA -->
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 05</div>
+        <div class="ex-name">Press francés en polea con cuerda (tríceps)</div>
+        <div class="ex-desc">Variante del press francés usando la polea alta con cuerda. Trabaja la cabeza larga del tríceps con tensión constante durante todo el recorrido, lo que no ocurre con mancuernas. Excelente para el volumen del brazo.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> de pie de espaldas a la polea alta, da un paso adelante para crear tensión. Inclínate ligeramente hacia adelante. Pies separados a la anchura de los hombros.</div>
+          <div class="postura-section"><strong>Agarre:</strong> agarra los extremos de la cuerda con ambas manos, palmas enfrentadas. Los brazos sobre la cabeza con los codos apuntando al techo.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> extiende los antebrazos hacia adelante y arriba manteniendo los codos fijos y cerca de la cabeza. Vuelve lento controlando el peso.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> mover los codos durante el movimiento, arquear la zona lumbar, usar impulso del torso para ayudar.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">8 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">22 kg</td><td class="manu-col hidden s3-m">14 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Tríceps cab. larga</span><span class="pill p-muscle">Tríceps cab. medial</span><span class="pill p-new">★ Nuevo</span></div>
+      </div>
+
+      <!-- 6. TRÍCEPS POLEA BARRA -->
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 06</div>
+        <div class="ex-name">Tríceps en polea con barra rígida (prono)</div>
+        <div class="ex-desc">Ejercicio de aislamiento clásico de tríceps. Los codos fijos son el punto clave — si se mueven, el ejercicio pierde efectividad y el hombro empieza a trabajar.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> de pie frente a la polea alta. Pies ligeramente separados, ligera inclinación hacia adelante. Codos pegados al cuerpo a lo largo de toda la serie.</div>
+          <div class="postura-section"><strong>Agarre:</strong> palmas hacia abajo (pronadas). Agarre a la anchura de los hombros en la barra.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> extiende los brazos hacia abajo hasta estirarlos completamente, aprieta 1 segundo, sube lento en 3 segundos.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> mover los codos, inclinarse hacia adelante para usar el peso corporal, no llegar a la extensión completa.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">22 kg</td><td class="manu-col hidden s1-m">14 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">27 kg</td><td class="manu-col hidden s2-m">18 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">31 kg</td><td class="manu-col hidden s3-m">20 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Tríceps cab. lateral</span><span class="pill p-muscle">Tríceps cab. larga</span></div>
+      </div>
+
+      <!-- 7. TRÍCEPS POLEA INVERSO -->
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 07</div>
+        <div class="ex-name">Tríceps en polea agarre inverso (supino)</div>
+        <div class="ex-desc">El cambio de agarre activa la cabeza medial del tríceps (parte interna del brazo), que el agarre prono no alcanza tan bien. Peso ligeramente menor que el prono es normal.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> igual que el ejercicio anterior. De pie frente a la polea, codos pegados al cuerpo.</div>
+          <div class="postura-section"><strong>Agarre:</strong> palmas hacia arriba (supinas). Usa la barra corta o la cuerda según disponibilidad.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> idéntico al anterior — extiende hacia abajo, aprieta 1 segundo, sube lento. No intentes igualar el peso del agarre prono.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> los mismos errores que en el prono. Con el agarre supino hay más tendencia a separar los codos.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">18 kg</td><td class="manu-col hidden s3-m">14 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Tríceps cab. medial</span></div>
+      </div>
+
+      <!-- 8. ELEVACIONES LATERALES -->
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 08</div>
+        <div class="ex-name">Elevaciones laterales con mancuernas</div>
+        <div class="ex-desc">Al final del día, con el hombro ya trabajado, se hace con poco peso y mucho control. No es un ejercicio de fuerza — es de aislamiento y forma. Con 5-6 kg y buena técnica es más efectivo que con 10 kg y mala ejecución.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> de pie o sentado. Espalda recta, ligerísima inclinación hacia adelante del torso (10°). Codos ligeramente doblados durante todo el movimiento.</div>
+          <div class="postura-section"><strong>Agarre:</strong> palmas hacia el suelo. El meñique ligeramente más alto que el pulgar al llegar arriba — como si vaciases un vaso.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> sube lateralmente hasta la altura del hombro — no más. Baja lento en 3-4 segundos. No uses el impulso del cuerpo.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> subir por encima del hombro (impingement), balancear el torso, encorvar el cuello. Si duele el hombro, para.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">4 kg c/u</td><td class="manu-col hidden s1-m">3 kg c/u</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">6 kg c/u</td><td class="manu-col hidden s2-m">4 kg c/u</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>12</td><td class="angel-col s3">6 kg c/u</td><td class="manu-col hidden s3-m">5 kg c/u</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Deltoides lateral</span><span class="pill p-muscle">Trapecio sup.</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DÍA 2: ESPALDA + BÍCEPS -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggleDay('pull')">
+      <span class="day-badge pull-b">Día 2 — Martes</span>
+      <span class="day-title-t">Espalda · Bíceps</span>
+      <span class="day-count">7 ejercicios</span>
+      <span class="day-sub-t">~80 min</span>
+      <span class="chev" id="chev-pull">▾</span>
+    </div>
+    <div class="collapsible" id="body-pull">
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 01</div>
+        <div class="ex-name">Jalón al pecho agarre ancho (máquina)</div>
+        <div class="ex-desc">Ejercicio principal de espalda. Los codos guían el movimiento — no los brazos. La espalda trabaja cuando llevas los codos hacia abajo y atrás.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> muslos bien sujetos bajo el apoyo. Ligera inclinación hacia atrás del torso (15°). Pecho hacia arriba.</div>
+          <div class="postura-section"><strong>Agarre:</strong> ancho, un poco más que los hombros. Palmas hacia adelante. Agarre firme pero sin crispación.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> tira llevando los codos hacia abajo y atrás como si quisieras tocar las caderas con ellos. Lleva la barra hasta el pecho alto. Sube lento.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> inclinarse demasiado hacia atrás, tirar con los brazos en lugar de los codos, encorvar la espalda.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">50 kg</td><td class="manu-col hidden s2-m">32 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">57 kg</td><td class="manu-col hidden s3-m">38 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Romboides</span></div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 02</div>
+        <div class="ex-name">Remo en polea baja (seated cable row)</div>
+        <div class="ex-desc">El ejercicio más importante para compensar la postura encorvada de trabajar sentados. El "pellizco" de omóplatos al final es el movimiento clave.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> sentado con los pies en los apoyos, rodillas ligeramente dobladas. Espalda recta vertical — no te inclines hacia adelante con el torso.</div>
+          <div class="postura-section"><strong>Agarre:</strong> mango en V (agarre neutro) o barra. Codos pegados al cuerpo al tirar.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> tira hacia el abdomen y aprieta los omóplatos juntos al final 1 segundo. Vuelve lento controlando.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> inclinar el torso hacia adelante y atrás como un balancín, encorvar la espalda baja, tirar solo con los brazos sin contraer la espalda.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">50 kg</td><td class="manu-col hidden s2-m">32 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">60 kg</td><td class="manu-col hidden s3-m">40 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Trapecio medio</span><span class="pill p-muscle">Romboides</span><span class="pill p-muscle">Dorsal</span></div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 03</div>
+        <div class="ex-name">Jalón agarre estrecho / neutro</div>
+        <div class="ex-desc">Complementa el jalón ancho trabajando más la parte baja del dorsal. Da el efecto visual de espalda en "V". El bíceps trabaja en mejor posición mecánica.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> igual que el jalón ancho. Misma inclinación y posición de muslos.</div>
+          <div class="postura-section"><strong>Agarre:</strong> mango en V o triangular, palmas enfrentadas (agarre neutro). Manos juntas.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> tira hacia el pecho alto — no al cuello ni al esternón. Los codos van hacia abajo pegados al torso.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> tirar hacia el cuello en lugar del pecho, usar demasiado el bíceps sin involucrar la espalda.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Dorsal inferior</span><span class="pill p-muscle">Bíceps</span></div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 04</div>
+        <div class="ex-name">Dominadas asistidas (máquina)</div>
+        <div class="ex-desc">El objetivo a largo plazo es reducir la asistencia progresivamente. Más kg seleccionados = más fácil. El mejor ejercicio por traslado funcional a la vida real.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> rodillas sobre el apoyo acolchado. Brazos extendidos al inicio. Cuerpo ligeramente hacia atrás.</div>
+          <div class="postura-section"><strong>Agarre:</strong> un poco más ancho que los hombros. Palmas hacia adelante para trabajar más el dorsal.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> lleva el pecho hacia la barra — no la barbilla. Los codos van hacia abajo y atrás. Baja lento controlando.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> tirar solo con los brazos, llegar solo con la barbilla a la barra, bajar demasiado rápido.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>8</td><td class="angel-col s1">45 kg ayuda</td><td class="manu-col hidden s1-m">35 kg ayuda</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>8-10</td><td class="angel-col s2">38 kg ayuda</td><td class="manu-col hidden s2-m">28 kg ayuda</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">35 kg ayuda</td><td class="manu-col hidden s3-m">22 kg ayuda</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Core</span></div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 05</div>
+        <div class="ex-name">Curl bíceps en máquina</div>
+        <div class="ex-desc">Aislamiento de bíceps con soporte del codo. La bajada lenta (3 seg) hace tanto trabajo como la subida.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que el codo quede sobre el borde del apoyo — no por detrás. Espalda apoyada.</div>
+          <div class="postura-section"><strong>Agarre:</strong> palmas hacia arriba. Agarre firme sin crispación en el antebrazo.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> sube hasta que los antebrazos queden verticales, aprieta 1 segundo. Baja lento en 3 segundos. Rango completo.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> llevar los codos hacia adelante al subir, no completar el rango completo, usar impulso del torso.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">50 kg</td><td class="manu-col hidden s3-m">34 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 06</div>
+        <div class="ex-name">Curl en polea baja de pie</div>
+        <div class="ex-desc">La polea mantiene tensión constante en todo el recorrido a diferencia de las mancuernas, que pierden tensión en la parte alta del movimiento.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> de pie frente a la polea baja. Espalda recta, ligerísima inclinación. Codos pegados al cuerpo durante todo el movimiento.</div>
+          <div class="postura-section"><strong>Agarre:</strong> barra recta o cuerda. Palmas hacia arriba con barra, neutras con cuerda.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> sube hasta que los antebrazos queden horizontales, aprieta 1 segundo. Baja lento. No subas más de horizontal — pierde tensión.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> mover los codos hacia adelante, balancear el cuerpo, no controlar la bajada.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">20 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">25 kg</td><td class="manu-col hidden s3-m">16 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 07</div>
+        <div class="ex-name">Curl martillo con mancuernas</div>
+        <div class="ex-desc">El agarre neutro activa el braquiorradial además del bíceps. Contribuye al grosor visual del brazo entero y mejora la fuerza de agarre.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> de pie o sentado. Espalda recta. Codos pegados al cuerpo.</div>
+          <div class="postura-section"><strong>Agarre:</strong> palmas enfrentadas entre sí (como sujetando un martillo). No gires las muñecas durante el movimiento.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> sube alternando brazos hasta que el antebrazo quede horizontal. Baja lento. No subas más allá de horizontal.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> balancear el torso para ayudar, girar las muñecas durante el movimiento, subir demasiado rápido.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">8 kg c/u</td><td class="manu-col hidden s1-m">5 kg c/u</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">12 kg c/u</td><td class="manu-col hidden s2-m">7 kg c/u</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">14 kg c/u</td><td class="manu-col hidden s3-m">9 kg c/u</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquiorradial</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DÍA 3: PIERNAS + ABDOMINALES -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggleDay('legs')">
+      <span class="day-badge legs-b">Día 3 — Jueves</span>
+      <span class="day-title-t">Piernas · Abdominales</span>
+      <span class="day-count">7 ejercicios</span>
+      <span class="day-sub-t">~85 min</span>
+      <span class="chev" id="chev-legs">▾</span>
+    </div>
+    <div class="collapsible" id="body-legs">
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 01</div>
+        <div class="ex-name">Prensa de piernas (leg press)</div>
+        <div class="ex-desc">Ejercicio principal de pierna sin impacto en rodillas. Empujar desde los talones activa más glúteo e isquiotibiales y protege la rodilla.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> espalda y glúteos completamente apoyados. Pies a la anchura de los hombros en la mitad-alta de la plataforma.</div>
+          <div class="postura-section"><strong>Agarre:</strong> manos en las asas laterales para estabilizar. No usar las manos para empujar las rodillas.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> baja hasta 90° de flexión de rodilla — no más. Empuja desde los talones. Nunca bloquees las rodillas al extender.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> bajar más de 90° (sobrecarga rodilla), poner los pies demasiado bajos en la plataforma, bloquear rodillas al extender.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">60 kg</td><td class="manu-col hidden s1-m">40 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">80 kg</td><td class="manu-col hidden s2-m">50 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">100 kg</td><td class="manu-col hidden s3-m">70 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Cuádriceps</span><span class="pill p-muscle">Glúteo mayor</span><span class="pill p-muscle">Isquiotibiales</span></div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 02</div>
+        <div class="ex-name">Extensión de piernas (máquina)</div>
+        <div class="ex-desc">Aislamiento de cuádriceps. Si molesta la rótula, trabaja solo los últimos 60° del recorrido — menor presión articular en esa zona.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que el hueco de la rodilla quede justo en el borde. El rodillo apoya en el tobillo, no en el empeine.</div>
+          <div class="postura-section"><strong>Agarre:</strong> manos en las asas laterales. No apretar con fuerza — solo para estabilizar.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> sube hasta extensión completa, aprieta el cuádriceps 1 segundo, baja lento en 3 segundos.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> usar impulso para subir, no llegar a la extensión completa, bajar demasiado rápido. Si hay dolor en rótula, reduce el rango.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Cuádriceps</span></div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 03</div>
+        <div class="ex-name">Flexión de pierna acostado (máquina)</div>
+        <div class="ex-desc">Si las caderas se levantan del acolchado estás usando la zona lumbar en lugar de los isquiotibiales — reduce el peso y mantén las caderas pegadas.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> tumbado boca abajo. El rodillo apoya justo por encima del talón, no en el tendón de Aquiles. Caderas pegadas al acolchado en todo momento.</div>
+          <div class="postura-section"><strong>Agarre:</strong> manos en las asas. No usar los brazos para empujar o tirar.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> dobla las rodillas llevando los talones hacia los glúteos. Aprieta 1 segundo arriba. Baja lento.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> levantar las caderas del acolchado, forzar el rango si hay dolor en el tendón, bajar demasiado rápido.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Isquiotibiales</span><span class="pill p-muscle">Glúteo (sec.)</span></div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 04</div>
+        <div class="ex-name">Abducción de cadera (máquina)</div>
+        <div class="ex-desc">Fortalece el glúteo medio y abductores — los estabilizadores de la rodilla. Con estos músculos débiles la rodilla sufre más en todos los demás ejercicios.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> sentado con la espalda apoyada. Rodillas sobre los apoyos acolchados.</div>
+          <div class="postura-section"><strong>Agarre:</strong> manos en las asas o en los muslos. Espalda recta durante todo el movimiento.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> abre las piernas contra la resistencia. Aguanta 1 segundo en máxima apertura. Cierra lento en 3 segundos.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> cerrar demasiado rápido, arquear la espalda para ayudar, abrir más allá de la posición cómoda.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">30 kg</td><td class="manu-col hidden s1-m">18 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Glúteo medio</span><span class="pill p-muscle">Tensor fascia lata</span></div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 05</div>
+        <div class="ex-name">Aducción de cadera (máquina)</div>
+        <div class="ex-desc">Equilibra el trabajo de abducción y estabiliza la rodilla desde el lado opuesto. La cara interna del muslo es uno de los músculos más ignorados y más importantes para la estabilidad de la rodilla.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> sentado con las piernas abiertas sobre los apoyos. Espalda apoyada en el respaldo.</div>
+          <div class="postura-section"><strong>Agarre:</strong> manos en las asas. Espalda recta, no te inclines hacia adelante.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> junta las piernas contra la resistencia. Aguanta 1 segundo al cerrar. Abre lento controlando el peso.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> cerrar con impulso, encorvar la espalda, no controlar la apertura.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">30 kg</td><td class="manu-col hidden s1-m">18 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Aductores</span><span class="pill p-muscle">Grácil</span></div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 06</div>
+        <div class="ex-name">Contracción abdominal (máquina)</div>
+        <div class="ex-desc">El movimiento correcto es flexión de columna, no de cadera. El ombligo se acerca al pecho, no la cabeza a las rodillas.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> sentado con los pies apoyados. Ajusta el apoyo del pecho a la altura correcta según la máquina.</div>
+          <div class="postura-section"><strong>Agarre:</strong> brazos cruzados sobre el pecho o agarrando las asas según el modelo de la máquina.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> inclínate desde las costillas. Aguanta 1 segundo en máxima contracción. Vuelve lento. Exhala al contraer, inhala al volver.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> tirar del cuello, flexionar desde las caderas en lugar de la columna, rebotar en la posición inicial.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>20</td><td class="angel-col s1">54 kg</td><td class="manu-col hidden s1-m">36 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15-20</td><td class="angel-col s2">75 kg</td><td class="manu-col hidden s2-m">45 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15-20</td><td class="angel-col s3">82 kg</td><td class="manu-col hidden s3-m">55 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Recto abdominal</span><span class="pill p-muscle">Oblicuos (sec.)</span></div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 07</div>
+        <div class="ex-name">Plancha frontal (suelo)</div>
+        <div class="ex-desc">El ejercicio de core más eficiente sin impacto en columna lumbar. Refuerza directamente la postura deteriorada por trabajar sentado. Empieza en 30 seg, añade 5-10 seg cada semana.</div>
+        <div class="postura-box">
+          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-section"><strong>Posición:</strong> antebrazos y punteras de los pies. Los codos directamente bajo los hombros. Cabeza en posición neutra mirando al suelo.</div>
+          <div class="postura-section"><strong>Agarre:</strong> puños cerrados o palmas planas en el suelo. Antebrazos paralelos.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> mantén la posición con respiración continua. Activa el abdomen y los glúteos conscientemente. Línea recta de talones a nuca.</div>
+          <div class="postura-section"><strong>⚠️ Evitar:</strong> dejar caer las caderas, subir el trasero, aguantar la respiración, encorvar el cuello hacia arriba o abajo.</div>
+        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Duración</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>30 seg</td><td class="angel-col s1">Peso corporal</td><td class="manu-col hidden s1-m">Peso corporal</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>35 seg</td><td class="angel-col s2">Peso corporal</td><td class="manu-col hidden s2-m">Peso corporal</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span></td><td>40 seg</td><td class="angel-col s3">Peso corporal</td><td class="manu-col hidden s3-m">Peso corporal</td></tr>
+          </tbody>
+        </table>
+        <div class="muscles"><span class="pill p-muscle">Core profundo</span><span class="pill p-muscle">Transverso abd.</span><span class="pill p-muscle">Glúteo</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OPCIONAL -->
+  <div class="day-card">
+    <div class="day-header" onclick="toggleDay('opt')">
+      <span class="day-badge opt-b">Opcional — Sábado</span>
+      <span class="day-title-t">Full body ligero</span>
+      <span class="day-sub-t">~50 min</span>
+      <span class="chev" id="chev-opt">▾</span>
+    </div>
+    <div class="collapsible" id="body-opt">
+      <div class="note" style="margin:14px 16px 0"><strong>Todos al -20% del peso de la S2 habitual.</strong> Si hay fatiga acumulada, mejor no venir. Este día es recuperación activa, no progresión.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px 16px">
+        <div style="background:#f9fafb;border-radius:8px;padding:10px 12px"><strong style="display:block;font-size:13px;font-weight:600;margin-bottom:2px">Press pecho convergente</strong><span style="font-size:12px;color:#888">2 × 12 · -20% S2</span></div>
+        <div style="background:#f9fafb;border-radius:8px;padding:10px 12px"><strong style="display:block;font-size:13px;font-weight:600;margin-bottom:2px">Jalón al pecho</strong><span style="font-size:12px;color:#888">2 × 12 · -20% S2</span></div>
+        <div style="background:#f9fafb;border-radius:8px;padding:10px 12px"><strong style="display:block;font-size:13px;font-weight:600;margin-bottom:2px">Remo en polea</strong><span style="font-size:12px;color:#888">2 × 12 · -20% S2</span></div>
+        <div style="background:#f9fafb;border-radius:8px;padding:10px 12px"><strong style="display:block;font-size:13px;font-weight:600;margin-bottom:2px">Extensión piernas</strong><span style="font-size:12px;color:#888">2 × 15 · -20% S2</span></div>
+        <div style="background:#f9fafb;border-radius:8px;padding:10px 12px"><strong style="display:block;font-size:13px;font-weight:600;margin-bottom:2px">Contracción abdominal</strong><span style="font-size:12px;color:#888">2 × 20 · -20% S2</span></div>
+        <div style="background:#f9fafb;border-radius:8px;padding:10px 12px"><strong style="display:block;font-size:13px;font-weight:600;margin-bottom:2px">Plancha</strong><span style="font-size:12px;color:#888">2 × 30 seg</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROGRESIÓN -->
+<div id="progresion" class="section">
+  <div class="phases">
+    <div class="phase"><div class="phase-label">Fase actual</div><div class="phase-val" style="color:#1d4ed8">Mes 1</div><div class="phase-sub">Base y técnica</div></div>
+    <div class="phase"><div class="phase-label">Siguiente</div><div class="phase-val" style="color:#166534">2-3</div><div class="phase-sub">Hipertrofia</div></div>
+    <div class="phase"><div class="phase-label">Objetivo</div><div class="phase-val" style="color:#6b21a8">4-6</div><div class="phase-sub">Fuerza + comp.</div></div>
+  </div>
+  <ul class="tip-list">
+    <li><span>📈</span><span><strong>Regla de progresión:</strong> cuando completes las 3 series con el máximo de reps en 2 sesiones consecutivas → sube la S3 al siguiente escalón y ajusta S1 y S2 en proporción.</span></li>
+    <li><span>🔄</span><span><strong>Variación cada 6 semanas:</strong> cambia el agarre en jalón (ancho → neutro → estrecho) sin cambiar el bloque completo.</span></li>
+    <li><span>📅</span><span><strong>Semana de descarga cada 6-8 semanas:</strong> todos los ejercicios al peso de S1. Es cuando el músculo consolida las ganancias.</span></li>
+    <li><span>📝</span><span><strong>Diario de entreno:</strong> apunta los 3 pesos y las reps de cada serie. Sin datos no hay progresión consciente.</span></li>
+    <li><span>🌙</span><span><strong>Sueño mínimo 7 horas:</strong> la hormona de crecimiento se segrega en el sueño profundo. Sin descanso el músculo no crece.</span></li>
+    <li><span>🦵</span><span><strong>Rodillas y gemelos:</strong> calentamiento siempre en bici estática. Prensa con rango parcial si hay molestia.</span></li>
+    <li><span>🚴</span><span><strong>La bici:</strong> mejor en días de descanso o tras pecho/espalda. Nunca el jueves de pierna.</span></li>
+  </ul>
+</div>
+
+<!-- NUTRICIÓN -->
+<div id="nutricion" class="section">
+  <div class="note" style="margin-bottom:16px"><strong>Tu base ya es buena.</strong> El trabajo está en dos o tres ajustes concretos.</div>
+  <ul class="tip-list">
+    <li><span>🥩</span><span><strong>Proteína — el ajuste principal:</strong> con 103-105 kg necesitas ~150-180 g/día. Añade siempre una fuente proteica en cada comida: huevo, pollo, atún, requesón, legumbre.</span></li>
+    <li><span>🍽️</span><span><strong>Raciones grandes — tu punto débil:</strong> sirve menos de entrada y espera 10-12 min antes de repetir. La saciedad llega con retraso.</span></li>
+    <li><span>⏰</span><span><strong>Post-entreno (30-60 min):</strong> yogur griego, dos huevos o fiambre de pavo. Sin batido. Acelera la recuperación muscular.</span></li>
+    <li><span>🍕</span><span><strong>Helados y pizza del viernes:</strong> no son el problema. Mantenerlos evita el efecto rebote de las prohibiciones totales.</span></li>
+    <li><span>💧</span><span><strong>Hidratación en verano en Jerez:</strong> con bici más gym y el calor andaluz, mínimo 2,5-3 litros de agua al día.</span></li>
+    <li><span>🌙</span><span><strong>Sueño y cortisol:</strong> para perder grasa abdominal el sueño impacta tanto como el entrenamiento.</span></li>
+  </ul>
+</div>
+
+</div>
+
+<script>
+function showSection(id,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active')}
+function toggleDay(id){document.getElementById('body-'+id).classList.toggle('open');document.getElementById('chev-'+id).classList.toggle('open')}
+function setPerson(p){document.getElementById('btn-angel').classList.toggle('active',p==='angel');document.getElementById('btn-manu').classList.toggle('active',p==='manu');document.querySelectorAll('.angel-col').forEach(el=>el.classList.toggle('hidden',p!=='angel'));document.querySelectorAll('.manu-col').forEach(el=>el.classList.toggle('hidden',p!=='manu'));localStorage.setItem('gymplan-person',p)}
+const sp=localStorage.getItem('gymplan-person')||'angel';setPerson(sp);
+</script>
+</body>
+</html>
