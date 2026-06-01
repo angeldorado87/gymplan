@@ -56,6 +56,14 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
 .series-table th{background:#f9fafb;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.05em;padding:7px 10px;text-align:left;border-bottom:1px solid #e5e7eb}
 .series-table td{padding:8px 10px;font-size:13px;border-bottom:1px solid #f3f4f6}
 .series-table tr:last-child td{border-bottom:none}
+.rest-box{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;background:#f9fafb;border:1px solid #e5e7eb;border-radius:0 0 8px 8px;padding:6px 10px;margin-top:-2px;margin-bottom:10px}
+.rest-box span{font-weight:600;color:#374151}
+.inter-rest{display:flex;align-items:center;gap:6px;font-size:12px;color:#7c3aed;background:#f5f3ff;border:1px solid #ddd6fe;border-radius:8px;padding:8px 12px;margin:0 16px 4px;font-weight:500}
+.stretch-section{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;margin:14px 16px;padding:14px}
+.stretch-title{font-size:12px;font-weight:700;color:#166534;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.stretch-item{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid #dcfce7;font-size:13px;color:#374151;line-height:1.5}
+.stretch-item:last-child{border-bottom:none}
+.stretch-item .s-time{font-size:11px;font-weight:600;color:#166534;background:#dcfce7;padding:2px 7px;border-radius:20px;white-space:nowrap;height:fit-content;margin-top:2px;flex-shrink:0}
 .series-table .s1{color:#6b7280}
 .series-table .s2{color:#1d4ed8;font-weight:500}
 .series-table .s3{color:#dc2626;font-weight:600}
@@ -189,12 +197,14 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">30 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">36 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
         <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
       </div>
 
       <!-- 2. PRESS MANCUERNAS BANCO -->
-      <div class="ex-block">
+      
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
         <div class="ex-num">Ejercicio 02</div>
         <div class="ex-name">Press con mancuernas en banco plano</div>
         <div class="ex-desc">Al trabajar con mancuernas cada brazo trabaja de forma independiente, corrigiendo desequilibrios y aumentando la estabilidad del hombro. Mayor rango de movimiento que la barra.</div>
@@ -212,12 +222,14 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">18 kg c/u</td><td class="manu-col hidden s2-m">12 kg c/u</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">18 kg c/u</td><td class="manu-col hidden s3-m">14 kg c/u</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
         <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
       </div>
 
       <!-- 3. APERTURAS PEC-DECK -->
-      <div class="ex-block">
+      
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
         <div class="ex-num">Ejercicio 03</div>
         <div class="ex-name">Aperturas en máquina pec-deck</div>
         <div class="ex-desc">Aísla el pectoral sin cargar la articulación del hombro. La máquina mantiene tensión constante en todo el recorrido, algo que las aperturas con mancuernas no logran igual.</div>
@@ -235,12 +247,14 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">73 kg</td><td class="manu-col hidden s2-m">45 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">83 kg</td><td class="manu-col hidden s3-m">55 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Pectoral menor</span></div>
       </div>
 
       <!-- 4. PRESS HOMBRO CONVERGENTE -->
-      <div class="ex-block">
+      
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
         <div class="ex-num">Ejercicio 04</div>
         <div class="ex-name">Press de hombro convergente (máquina)</div>
         <div class="ex-desc">La guía convergente reduce la presión sobre el manguito rotador comparado con el press libre. Ejercicio principal de hombro del día.</div>
@@ -258,12 +272,14 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">23 kg</td><td class="manu-col hidden s2-m">14 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">27 kg</td><td class="manu-col hidden s3-m">18 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
         <div class="muscles"><span class="pill p-muscle">Deltoides ant.</span><span class="pill p-muscle">Deltoides lat.</span><span class="pill p-muscle">Tríceps</span></div>
       </div>
 
       <!-- 5. PRESS FRANCÉS POLEA CUERDA -->
-      <div class="ex-block">
+      
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
         <div class="ex-num">Ejercicio 05</div>
         <div class="ex-name">Press francés en polea con cuerda (tríceps)</div>
         <div class="ex-desc">Variante del press francés usando la polea alta con cuerda. Trabaja la cabeza larga del tríceps con tensión constante durante todo el recorrido, lo que no ocurre con mancuernas. Excelente para el volumen del brazo.</div>
@@ -281,12 +297,14 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">22 kg</td><td class="manu-col hidden s3-m">14 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Tríceps cab. larga</span><span class="pill p-muscle">Tríceps cab. medial</span><span class="pill p-new">★ Nuevo</span></div>
       </div>
 
       <!-- 6. TRÍCEPS POLEA BARRA -->
-      <div class="ex-block">
+      
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
         <div class="ex-num">Ejercicio 06</div>
         <div class="ex-name">Tríceps en polea con barra rígida (prono)</div>
         <div class="ex-desc">Ejercicio de aislamiento clásico de tríceps. Los codos fijos son el punto clave — si se mueven, el ejercicio pierde efectividad y el hombro empieza a trabajar.</div>
@@ -304,12 +322,14 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">27 kg</td><td class="manu-col hidden s2-m">18 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">31 kg</td><td class="manu-col hidden s3-m">20 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Tríceps cab. lateral</span><span class="pill p-muscle">Tríceps cab. larga</span></div>
       </div>
 
       <!-- 7. TRÍCEPS POLEA INVERSO -->
-      <div class="ex-block">
+      
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
         <div class="ex-num">Ejercicio 07</div>
         <div class="ex-name">Tríceps en polea agarre inverso (supino)</div>
         <div class="ex-desc">El cambio de agarre activa la cabeza medial del tríceps (parte interna del brazo), que el agarre prono no alcanza tan bien. Peso ligeramente menor que el prono es normal.</div>
@@ -327,12 +347,14 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">18 kg</td><td class="manu-col hidden s3-m">14 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Tríceps cab. medial</span></div>
       </div>
 
       <!-- 8. ELEVACIONES LATERALES -->
-      <div class="ex-block">
+      
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
         <div class="ex-num">Ejercicio 08</div>
         <div class="ex-name">Elevaciones laterales con mancuernas</div>
         <div class="ex-desc">Al final del día, con el hombro ya trabajado, se hace con poco peso y mucho control. No es un ejercicio de fuerza — es de aislamiento y forma. Con 5-6 kg y buena técnica es más efectivo que con 10 kg y mala ejecución.</div>
@@ -350,10 +372,18 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">6 kg c/u</td><td class="manu-col hidden s2-m">4 kg c/u</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>12</td><td class="angel-col s3">6 kg c/u</td><td class="manu-col hidden s3-m">5 kg c/u</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Deltoides lateral</span><span class="pill p-muscle">Trapecio sup.</span></div>
       </div>
 
+
+<div class="stretch-section">
+  <div class="stretch-title">🧘 Estiramientos finales — Pecho · Hombro · Tríceps</div>
+  <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Pectoral en pared:</strong> apoya una mano en la pared con el brazo extendido a la altura del hombro. Gira el cuerpo hacia el lado contrario hasta notar el estiramiento en el pecho. Mantén la espalda recta.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Hombro cruzado:</strong> lleva un brazo extendido cruzado por delante del pecho. Con el otro brazo presiona suavemente por el codo hacia tu cuerpo. Nota el estiramiento en el deltoides posterior.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Tríceps sobre la cabeza:</strong> levanta un brazo, dobla el codo llevando la mano hacia la espalda. Con la otra mano presiona suavemente el codo hacia atrás. Mantén el cuello relajado.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Apertura de pecho con manos entrelazadas:</strong> entrelaza las manos detrás de la espalda, saca pecho y lleva los hombros hacia atrás y abajo. Ideal para contrarrestar la postura de trabajo sentado.</span></div>
+</div>
     </div>
   </div>
 
@@ -386,11 +416,13 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">50 kg</td><td class="manu-col hidden s2-m">32 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">57 kg</td><td class="manu-col hidden s3-m">38 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
         <div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Romboides</span></div>
       </div>
 
-      <div class="ex-block">
+      
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
         <div class="ex-num">Ejercicio 02</div>
         <div class="ex-name">Remo en polea baja (seated cable row)</div>
         <div class="ex-desc">El ejercicio más importante para compensar la postura encorvada de trabajar sentados. El "pellizco" de omóplatos al final es el movimiento clave.</div>
@@ -408,11 +440,13 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">50 kg</td><td class="manu-col hidden s2-m">32 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">60 kg</td><td class="manu-col hidden s3-m">40 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
         <div class="muscles"><span class="pill p-muscle">Trapecio medio</span><span class="pill p-muscle">Romboides</span><span class="pill p-muscle">Dorsal</span></div>
       </div>
 
-      <div class="ex-block">
+      
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
         <div class="ex-num">Ejercicio 03</div>
         <div class="ex-name">Jalón agarre estrecho / neutro</div>
         <div class="ex-desc">Complementa el jalón ancho trabajando más la parte baja del dorsal. Da el efecto visual de espalda en "V". El bíceps trabaja en mejor posición mecánica.</div>
@@ -430,11 +464,13 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
         <div class="muscles"><span class="pill p-muscle">Dorsal inferior</span><span class="pill p-muscle">Bíceps</span></div>
       </div>
 
-      <div class="ex-block">
+      
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
         <div class="ex-num">Ejercicio 04</div>
         <div class="ex-name">Dominadas asistidas (máquina)</div>
         <div class="ex-desc">El objetivo a largo plazo es reducir la asistencia progresivamente. Más kg seleccionados = más fácil. El mejor ejercicio por traslado funcional a la vida real.</div>
@@ -452,11 +488,13 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>8-10</td><td class="angel-col s2">38 kg ayuda</td><td class="manu-col hidden s2-m">28 kg ayuda</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">35 kg ayuda</td><td class="manu-col hidden s3-m">22 kg ayuda</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
         <div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Core</span></div>
       </div>
 
-      <div class="ex-block">
+      
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
         <div class="ex-num">Ejercicio 05</div>
         <div class="ex-name">Curl bíceps en máquina</div>
         <div class="ex-desc">Aislamiento de bíceps con soporte del codo. La bajada lenta (3 seg) hace tanto trabajo como la subida.</div>
@@ -474,11 +512,13 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">50 kg</td><td class="manu-col hidden s3-m">34 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
       </div>
 
-      <div class="ex-block">
+      
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
         <div class="ex-num">Ejercicio 06</div>
         <div class="ex-name">Curl en polea baja de pie</div>
         <div class="ex-desc">La polea mantiene tensión constante en todo el recorrido a diferencia de las mancuernas, que pierden tensión en la parte alta del movimiento.</div>
@@ -496,11 +536,13 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">20 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">25 kg</td><td class="manu-col hidden s3-m">16 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
       </div>
 
-      <div class="ex-block">
+      
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
         <div class="ex-num">Ejercicio 07</div>
         <div class="ex-name">Curl martillo con mancuernas</div>
         <div class="ex-desc">El agarre neutro activa el braquiorradial además del bíceps. Contribuye al grosor visual del brazo entero y mejora la fuerza de agarre.</div>
@@ -518,10 +560,18 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">12 kg c/u</td><td class="manu-col hidden s2-m">7 kg c/u</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">14 kg c/u</td><td class="manu-col hidden s3-m">9 kg c/u</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquiorradial</span></div>
       </div>
 
+
+<div class="stretch-section">
+  <div class="stretch-title">🧘 Estiramientos finales — Espalda · Bíceps</div>
+  <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Dorsal con brazo extendido:</strong> agarra un poste o máquina con una mano, da un paso atrás y deja que el peso del cuerpo tire suavemente hacia abajo. Nota el estiramiento en el lateral de la espalda.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Gato-vaca (suelo):</strong> a cuatro patas, arquea la espalda hacia arriba (gato) y luego hacia abajo sacando pecho (vaca). Alterna lento 5-6 veces. Moviliza toda la columna.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Estiramiento de bíceps en pared:</strong> apoya la palma en la pared con el pulgar hacia abajo y el brazo extendido. Gira suavemente el cuerpo hacia adelante hasta notar el estiramiento en el bíceps y el antebrazo.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Niño (Child's pose):</strong> de rodillas, estira los brazos hacia adelante apoyando las palmas en el suelo y baja el pecho. Estira la espalda baja y los dorsales a la vez.</span></div>
+</div>
     </div>
   </div>
 
@@ -554,9 +604,11 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">80 kg</td><td class="manu-col hidden s2-m">50 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">100 kg</td><td class="manu-col hidden s3-m">70 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
         <div class="muscles"><span class="pill p-muscle">Cuádriceps</span><span class="pill p-muscle">Glúteo mayor</span><span class="pill p-muscle">Isquiotibiales</span></div>
       </div>
+
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
         <div class="ex-num">Ejercicio 02</div>
@@ -576,9 +628,11 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Cuádriceps</span></div>
       </div>
+
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
         <div class="ex-num">Ejercicio 03</div>
@@ -598,9 +652,11 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Isquiotibiales</span><span class="pill p-muscle">Glúteo (sec.)</span></div>
       </div>
+
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
         <div class="ex-num">Ejercicio 04</div>
@@ -620,9 +676,11 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Glúteo medio</span><span class="pill p-muscle">Tensor fascia lata</span></div>
       </div>
+
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
         <div class="ex-num">Ejercicio 05</div>
@@ -642,9 +700,11 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Aductores</span><span class="pill p-muscle">Grácil</span></div>
       </div>
+
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
         <div class="ex-num">Ejercicio 06</div>
@@ -664,9 +724,11 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15-20</td><td class="angel-col s2">75 kg</td><td class="manu-col hidden s2-m">45 kg</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15-20</td><td class="angel-col s3">82 kg</td><td class="manu-col hidden s3-m">55 kg</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Recto abdominal</span><span class="pill p-muscle">Oblicuos (sec.)</span></div>
       </div>
+
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
         <div class="ex-num">Ejercicio 07</div>
@@ -686,10 +748,19 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
             <tr><td><span class="series-badge b-s2">S2</span></td><td>35 seg</td><td class="angel-col s2">Peso corporal</td><td class="manu-col hidden s2-m">Peso corporal</td></tr>
             <tr><td><span class="series-badge b-s3">S3</span></td><td>40 seg</td><td class="angel-col s3">Peso corporal</td><td class="manu-col hidden s3-m">Peso corporal</td></tr>
           </tbody>
-        </table>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
         <div class="muscles"><span class="pill p-muscle">Core profundo</span><span class="pill p-muscle">Transverso abd.</span><span class="pill p-muscle">Glúteo</span></div>
       </div>
 
+
+<div class="stretch-section">
+  <div class="stretch-title">🧘 Estiramientos finales — Piernas · Abdominales</div>
+  <div class="stretch-item"><span class="s-time">40 seg c/lado</span><span><strong>Cuádriceps de pie:</strong> de pie, dobla una rodilla llevando el talón hacia el glúteo. Agarra el tobillo con la mano del mismo lado. Mantén las rodillas juntas y la espalda recta. Apoyo en pared si hay problema de equilibrio.</span></div>
+  <div class="stretch-item"><span class="s-time">40 seg c/lado</span><span><strong>Isquiotibiales sentado:</strong> sentado en el suelo, extiende una pierna y dobla la otra. Inclínate hacia adelante desde las caderas (no desde la espalda) hacia la pierna extendida. Nota el tirón en la parte posterior del muslo.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Glúteo figura 4:</strong> tumbado boca arriba, cruza un tobillo sobre la rodilla contraria. Agarra el muslo de la pierna de abajo y tira suavemente hacia el pecho. Nota el estiramiento profundo en el glúteo. Clave para las rodillas.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Flexor de cadera (psoas):</strong> de rodillas en el suelo en posición de zancada, empuja suavemente la cadera hacia adelante. Nota el estiramiento en la parte delantera de la cadera y el muslo. Muy importante para vosotros que pasáis muchas horas sentados.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Cobra (abdominales):</strong> tumbado boca abajo, apoya las palmas en el suelo a la altura del pecho y estira los brazos levantando el torso. Estira el abdomen y la zona lumbar tras el trabajo de core.</span></div>
+</div>
     </div>
   </div>
 
@@ -698,19 +769,149 @@ body{font-family:system-ui,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size
     <div class="day-header" onclick="toggleDay('opt')">
       <span class="day-badge opt-b">Opcional — Sábado</span>
       <span class="day-title-t">Full body ligero</span>
-      <span class="day-sub-t">~50 min</span>
+      <span class="day-count">8 ejercicios</span>
+      <span class="day-sub-t">~75 min</span>
       <span class="chev" id="chev-opt">▾</span>
     </div>
     <div class="collapsible" id="body-opt">
-      <div class="note" style="margin:14px 16px 0"><strong>Todos al -20% del peso de la S2 habitual.</strong> Si hay fatiga acumulada, mejor no venir. Este día es recuperación activa, no progresión.</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px 16px">
-        <div style="background:#f9fafb;border-radius:8px;padding:10px 12px"><strong style="display:block;font-size:13px;font-weight:600;margin-bottom:2px">Press pecho convergente</strong><span style="font-size:12px;color:#888">2 × 12 · -20% S2</span></div>
-        <div style="background:#f9fafb;border-radius:8px;padding:10px 12px"><strong style="display:block;font-size:13px;font-weight:600;margin-bottom:2px">Jalón al pecho</strong><span style="font-size:12px;color:#888">2 × 12 · -20% S2</span></div>
-        <div style="background:#f9fafb;border-radius:8px;padding:10px 12px"><strong style="display:block;font-size:13px;font-weight:600;margin-bottom:2px">Remo en polea</strong><span style="font-size:12px;color:#888">2 × 12 · -20% S2</span></div>
-        <div style="background:#f9fafb;border-radius:8px;padding:10px 12px"><strong style="display:block;font-size:13px;font-weight:600;margin-bottom:2px">Extensión piernas</strong><span style="font-size:12px;color:#888">2 × 15 · -20% S2</span></div>
-        <div style="background:#f9fafb;border-radius:8px;padding:10px 12px"><strong style="display:block;font-size:13px;font-weight:600;margin-bottom:2px">Contracción abdominal</strong><span style="font-size:12px;color:#888">2 × 20 · -20% S2</span></div>
-        <div style="background:#f9fafb;border-radius:8px;padding:10px 12px"><strong style="display:block;font-size:13px;font-weight:600;margin-bottom:2px">Plancha</strong><span style="font-size:12px;color:#888">2 × 30 seg</span></div>
+      <div class="note" style="margin:14px 16px 12px"><strong>Todos al -20% del peso de la S2 habitual.</strong> Solo 2 series por ejercicio. Si hay fatiga acumulada, mejor no venir. Este día es recuperación activa, no progresión.</div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 01</div>
+        <div class="ex-name">Press de pecho convergente (máquina)</div>
+        <div class="ex-desc">Mismo movimiento que el día 1 pero más ligero. Aprovecha para afinar la técnica sin presión de peso.</div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">24 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">36 kg</td><td class="manu-col hidden s2-m">24 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="rest-box">⏱ <span>Descanso entre series:</span> 90 segundos (ejercicio compuesto)</div>
       </div>
+
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 02</div>
+        <div class="ex-name">Aperturas en máquina pec-deck</div>
+        <div class="ex-desc">Buen ejercicio para el día ligero — sin carga articular. Enfócate en la contracción al cerrar.</div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">58 kg</td><td class="manu-col hidden s1-m">36 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">58 kg</td><td class="manu-col hidden s2-m">36 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+      </div>
+
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 03</div>
+        <div class="ex-name">Jalón al pecho agarre ancho (máquina)</div>
+        <div class="ex-desc">Mantén el foco en llevar los codos hacia abajo y atrás. Día perfecto para trabajar la conexión mente-músculo en la espalda.</div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">40 kg</td><td class="manu-col hidden s1-m">26 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">26 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="rest-box">⏱ <span>Descanso entre series:</span> 90 segundos (ejercicio compuesto)</div>
+      </div>
+
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 04</div>
+        <div class="ex-name">Remo en polea baja</div>
+        <div class="ex-desc">Prioriza el "pellizco" de omóplatos al final. Con menos peso es más fácil sentir el trabajo real de la espalda media.</div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">40 kg</td><td class="manu-col hidden s1-m">26 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">26 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="rest-box">⏱ <span>Descanso entre series:</span> 90 segundos (ejercicio compuesto)</div>
+      </div>
+
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 05</div>
+        <div class="ex-name">Press de hombro convergente (máquina)</div>
+        <div class="ex-desc">Día ligero — ideal para trabajar el hombro sin sobrecargar el manguito rotador. Movimiento controlado en ambas fases.</div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">18 kg</td><td class="manu-col hidden s1-m">11 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">11 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="rest-box">⏱ <span>Descanso entre series:</span> 90 segundos (ejercicio compuesto)</div>
+      </div>
+
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 06</div>
+        <div class="ex-name">Extensión de piernas (máquina)</div>
+        <div class="ex-desc">Aislamiento de cuádriceps sin impacto. Buen ejercicio de mantenimiento para el día ligero.</div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>15</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>15</td><td class="angel-col s2">36 kg</td><td class="manu-col hidden s2-m">22 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+      </div>
+
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 07</div>
+        <div class="ex-name">Contracción abdominal (máquina)</div>
+        <div class="ex-desc">El core se recupera rápido — puedes hacer este ejercicio con normalidad incluso en día ligero. Enfócate en la contracción desde las costillas.</div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>20</td><td class="angel-col s1">60 kg</td><td class="manu-col hidden s1-m">36 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>20</td><td class="angel-col s2">60 kg</td><td class="manu-col hidden s2-m">36 kg</td></tr>
+          </tbody>
+        </table>
+        <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+      </div>
+
+<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+
+      <div class="ex-block">
+        <div class="ex-num">Ejercicio 08</div>
+        <div class="ex-name">Plancha frontal (suelo)</div>
+        <div class="ex-desc">Cierra siempre el día con la plancha. Sin peso, sin excusas. Añade 5 segundos respecto a la semana anterior.</div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Duración</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>35 seg</td><td class="angel-col s1">Peso corporal</td><td class="manu-col hidden s1-m">Peso corporal</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>40 seg</td><td class="angel-col s2">Peso corporal</td><td class="manu-col hidden s2-m">Peso corporal</td></tr>
+          </tbody>
+        </table>
+        <div class="rest-box">⏱ <span>Descanso entre series:</span> 60 segundos</div>
+      </div>
+
+      <div class="stretch-section">
+        <div class="stretch-title">🧘 Estiramientos finales — Full body</div>
+        <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Pectoral en pared:</strong> apoya una mano en la pared con el brazo extendido a la altura del hombro. Gira el cuerpo hacia el lado contrario hasta notar el estiramiento en el pecho.</span></div>
+        <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Dorsal con brazo extendido:</strong> agarra un poste o máquina con una mano, da un paso atrás y deja que el peso del cuerpo tire suavemente. Nota el estiramiento en el lateral de la espalda.</span></div>
+        <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Tríceps sobre la cabeza:</strong> levanta un brazo, dobla el codo llevando la mano hacia la espalda. Con la otra mano presiona suavemente el codo hacia atrás.</span></div>
+        <div class="stretch-item"><span class="s-time">40 seg c/lado</span><span><strong>Cuádriceps de pie:</strong> dobla una rodilla llevando el talón hacia el glúteo. Agarra el tobillo con la mano del mismo lado. Apoyo en pared si hay problema de equilibrio.</span></div>
+        <div class="stretch-item"><span class="s-time">40 seg c/lado</span><span><strong>Isquiotibiales sentado:</strong> extiende una pierna, inclínate hacia adelante desde las caderas hacia la pierna extendida. Nota el tirón en la parte posterior del muslo.</span></div>
+        <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Niño (Child's pose):</strong> de rodillas, estira los brazos hacia adelante apoyando las palmas en el suelo y baja el pecho. Estira espalda baja y dorsales a la vez.</span></div>
+      </div>
+
     </div>
   </div>
 
