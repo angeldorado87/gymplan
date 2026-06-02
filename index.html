@@ -116,7 +116,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 /* REST BOXES */
 .rest-box{display:flex;align-items:center;justify-content:center;gap:5px;font-size:12px;color:#666;padding:8px 0;margin-bottom:16px;text-align:center}
 .rest-box span{color:#888}
-.inter-rest{display:flex;align-items:center;justify-content:center;font-size:12px;color:#c084fc;background:#1a0b2e;border:1px solid #4c1d95;border-radius:8px;padding:7px 12px;margin:0 0 8px;font-weight:500;text-align:center}
+.inter-rest{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:#c084fc;background:#1a0b2e;border:1px solid #4c1d95;border-radius:10px;padding:10px 14px;margin:0 0 8px;font-weight:500;cursor:pointer;user-select:none;transition:all .2s}
 
 /* POSTURA */
 .postura-box{padding-top:16px;margin-bottom:16px;font-size:12px;color:#b0b0b0;line-height:1.6;border-top:1px solid #2a2a2a}
@@ -218,6 +218,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .ex-desc-title{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;display:flex;align-items:center;gap:5px;margin-top:12px;}
 .ex-section-title{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;display:flex;align-items:center;gap:5px;margin-bottom:10px;border-top:1px solid #2a2a2a;padding-top:16px}
 .postura-box .postura-title{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;display:flex;align-items:center;gap:5px;margin-bottom:10px}
+
+.inter-rest.counting{background:#1f0a3d;border-color:#7c3aed;color:#a78bfa}
+.inter-rest.done-rest{background:#0a1f12;border-color:#22c55e;color:#4ade80}
+.inter-rest .rest-timer{font-size:18px;font-weight:700;letter-spacing:0.05em;min-width:52px;text-align:center}
+.inter-rest .rest-label{font-size:12px;opacity:0.8}
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
@@ -314,7 +319,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 2. PRESS MANCUERNAS BANCO -->
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-01" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -362,7 +371,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 3. APERTURAS PEC-DECK -->
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-02" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -410,7 +423,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 4. PRESS HOMBRO CONVERGENTE -->
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-03" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -458,7 +475,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 5. PRESS FRANCÉS POLEA CUERDA -->
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-04" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -506,7 +527,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 6. TRÍCEPS POLEA BARRA -->
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-05" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -554,7 +579,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 7. TRÍCEPS POLEA INVERSO -->
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-06" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -602,7 +631,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 8. ELEVACIONES LATERALES -->
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-07" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -729,7 +762,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-08" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -777,7 +814,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-09" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -825,7 +866,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-10" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -873,7 +918,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-11" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -921,7 +970,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-12" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -969,7 +1022,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-13" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -1094,7 +1151,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
   </div>
 
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-14" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1141,7 +1202,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
   </div>
 
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-15" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1188,7 +1253,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
   </div>
 
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-16" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1235,7 +1304,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
   </div>
 
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-17" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1282,7 +1355,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
   </div>
 
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-18" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1329,7 +1406,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
   </div>
 
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-19" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1438,7 +1519,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-20" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1467,7 +1552,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-21" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1496,7 +1585,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-22" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1525,7 +1618,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-23" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1554,7 +1651,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-24" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1583,7 +1684,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-25" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1612,7 +1717,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest" id="irest-26" onclick="startRest(this)">
+<i class="ph ph-hourglass"></i>
+<span class="rest-label">1-2 min descanso</span>
+<span class="rest-timer" style="display:none">1:30</span>
+</div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1796,11 +1905,17 @@ function rate(exId, value, btn) {
       else if (data[exId].last === 'dislike') { statusEl.classList.add('skip'); statusEl.textContent = '❌'; }
       else { statusEl.classList.add('pending'); statusEl.textContent = '•'; }
     }
-    // Auto-close after rating
+    // Auto-close after rating and start rest timer
     if (data[exId].last) {
       setTimeout(() => {
         exBody.classList.remove('open');
         exBody.closest('.ex-block')?.querySelector('.ex-chevron')?.classList.remove('open');
+        // Find and trigger next inter-rest
+        const exBlock = exBody.closest('.ex-block');
+        const nextRest = exBlock?.nextElementSibling;
+        if (nextRest && nextRest.classList.contains('inter-rest') && !nextRest._timer) {
+          setTimeout(() => startRest(nextRest), 400);
+        }
       }, 600);
     }
   }
@@ -1967,6 +2082,59 @@ function renderProgress(person) {
   }
   
   container.innerHTML = html;
+}
+
+function startRest(el) {
+  // If already counting, cancel
+  if (el._timer) {
+    clearInterval(el._timer);
+    el._timer = null;
+    el.classList.remove('counting', 'done-rest');
+    el.querySelector('.rest-label').style.display = '';
+    el.querySelector('.rest-timer').style.display = 'none';
+    el.querySelector('.ph-hourglass, .ph-check').className = 'ph ph-hourglass';
+    return;
+  }
+
+  const label = el.querySelector('.rest-label');
+  const timer = el.querySelector('.rest-timer');
+  const icon = el.querySelector('i');
+
+  let seconds = 90; // 1:30
+  el.classList.add('counting');
+  el.classList.remove('done-rest');
+  label.style.display = 'none';
+  timer.style.display = '';
+  icon.className = 'ph ph-hourglass-medium';
+
+  function fmt(s) {
+    const m = Math.floor(s / 60);
+    const sec = s % 60;
+    return m + ':' + String(sec).padStart(2, '0');
+  }
+
+  timer.textContent = fmt(seconds);
+
+  el._timer = setInterval(() => {
+    seconds--;
+    timer.textContent = fmt(seconds);
+    if (seconds <= 0) {
+      clearInterval(el._timer);
+      el._timer = null;
+      el.classList.remove('counting');
+      el.classList.add('done-rest');
+      timer.style.display = 'none';
+      label.style.display = '';
+      label.textContent = '¡Listo!';
+      icon.className = 'ph ph-check-circle';
+      // Reset after 3 seconds
+      setTimeout(() => {
+        el.classList.remove('done-rest');
+        label.textContent = '1-2 min descanso';
+        icon.className = 'ph ph-hourglass';
+      }, 3000);
+    }
+  }, 1000);
 }
 
 function toggleEx(toggleEl) {
