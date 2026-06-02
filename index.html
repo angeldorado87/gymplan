@@ -644,7 +644,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div>
 <button class="complete-btn" onclick="completeEntreno('e1','e2')">
-  <span class="complete-icon">🏁</span> Entreno 1 completado
+  <span class="complete-icon">🏁</span> Entrenamiento completado
 </button>
 
 
@@ -1004,7 +1004,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div>
 <button class="complete-btn" onclick="completeEntreno('e2','e3')">
-  <span class="complete-icon">🏁</span> Entreno 2 completado
+  <span class="complete-icon">🏁</span> Entrenamiento completado
 </button>
 
 
@@ -1358,7 +1358,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div>
 <button class="complete-btn" onclick="completeEntreno('e3','eopt')">
-  <span class="complete-icon">🏁</span> Entreno 3 completado
+  <span class="complete-icon">🏁</span> Entrenamiento completado
 </button>
 
 
@@ -1624,7 +1624,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div>
 <button class="complete-btn" onclick="completeEntreno('eopt','e1')">
-  <span class="complete-icon">🏁</span> Opcional completado
+  <span class="complete-icon">🏁</span> Entrenamiento completado
 </button>
 
 
@@ -1997,6 +1997,16 @@ function getStartSection() {
 // ── INIT ──────────────────────────────────────────────────────────────────
 const sp = localStorage.getItem('gymplan-person') || 'angel';
 document.querySelectorAll('.section').forEach(s => setPerson(sp, s));
+// One-time seed: if no history and not Monday, default to e2
+// (Ángel y Manu ya hicieron Entreno 1 el lunes)
+if (!localStorage.getItem('gymplan-next-section') && new Date().getDay() !== 1) {
+  localStorage.setItem('gymplan-next-section', JSON.stringify({
+    nextSection: 'e2',
+    completedAt: Date.now(),
+    completedSection: 'e1',
+    seeded: true
+  }));
+}
 showSection(getStartSection());
 
 // Service Worker
