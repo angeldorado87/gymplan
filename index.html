@@ -7,112 +7,148 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size:15px}
-.header{background:#1a1a1a;border-bottom:1px solid #2a2a2a;padding:12px 16px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.header-title{font-size:17px;font-weight:600;color:#f5f5f5;text-align:center;flex:1}
-.header-sub{font-size:13px;color:#909090}
-.person-switch{display:none}
-.psw-btn{display:none}
 
+/* HEADER */
+.header{background:#1a1a1a;border-bottom:1px solid #2a2a2a;padding:12px 16px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.header-logo{width:34px;height:34px;border-radius:8px;flex-shrink:0;overflow:hidden}
+.header-logo img{width:100%;height:100%;object-fit:cover;display:block}
+.header-title{font-size:17px;font-weight:600;color:#f5f5f5;text-align:center;flex:1}
+.hamburger{width:34px;height:34px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer;flex-shrink:0;border-radius:8px;background:transparent;border:none;padding:6px}
+.hamburger span{display:block;width:20px;height:2px;background:#e5e5e5;border-radius:2px;transition:all .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;width:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* SLIDE MENU */
+.slide-menu{position:fixed;top:0;right:-100%;width:75%;max-width:280px;height:100vh;background:#1c1c1c;border-left:1px solid #2a2a2a;z-index:300;transition:right .3s ease;padding-top:0;box-shadow:-8px 0 32px rgba(0,0,0,0.7)}
+.slide-menu.open{right:0}
+.slide-menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:299}
+.slide-menu-overlay.open{display:block}
+.menu-header{padding:20px 20px 16px;border-bottom:1px solid #2a2a2a;font-size:13px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:0.1em}
+.menu-item{display:flex;align-items:center;gap:14px;padding:17px 20px;font-size:15px;font-weight:500;color:#e5e5e5;cursor:pointer;border-bottom:1px solid #242424;transition:background .15s}
+.menu-item:active{background:#242424}
+.menu-icon{font-size:20px;width:28px;text-align:center;flex-shrink:0}
+
+/* TABS */
 .tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:10px 12px;background:#1a1a1a;border-bottom:1px solid #2a2a2a;position:sticky;top:61px;z-index:9}
-.tab{padding:8px 4px;border-radius:10px;border:1px solid #333;background:#242424;font-size:13px;cursor:pointer;color:#aaa;text-align:center;font-weight:500;transition:all .15s}
-.tab.active{background:#f97316;color:#fff;border-color:#f97316;font-weight:600}
-.content{padding:16px;max-width:800px;margin:0 auto;width:100%}
-.section{display:none}.section.active{display:block}
-.week-label{font-size:12px;font-weight:600;color:#909090;margin-bottom:6px;margin-top:14px}
+.tab{padding:9px 4px;border-radius:10px;border:1px solid #333;background:#242424;font-size:13px;cursor:pointer;color:#888;text-align:center;font-weight:500;transition:all .2s}
+.tab.active{background:#1e3a5f;color:#60a5fa;border-color:#2563eb;font-weight:700}
+
+/* PERSON SELECTOR */
+.person-toggle{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:1rem;border:1.5px solid #f97316;border-radius:12px;overflow:hidden}
+.pt-btn{padding:10px;text-align:center;font-size:14px;font-weight:600;cursor:pointer;color:#f97316;background:transparent;border:none;transition:all .2s}
+.pt-btn.active{background:#f97316;color:#fff}
+.pt-btn:first-child{border-right:1px solid rgba(249,115,22,0.4)}
+
+/* PAGES (resumen, recomendaciones, progreso) */
+.page{display:none}
+.page.active{display:block;padding:16px}
+.back-btn{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#242424;border:1px solid #333;border-radius:10px;color:#e5e5e5;font-size:14px;font-weight:500;cursor:pointer;margin-bottom:16px;width:fit-content;transition:background .15s}
+.back-btn:active{background:#333}
+
+/* CONTENT */
+.content{padding:0;max-width:800px;margin:0 auto;width:100%}
+.section{display:none}
+.section.active{display:block;padding:16px}
+
+/* WEEK */
+.week-label{font-size:12px;font-weight:600;color:#999;margin-bottom:6px;margin-top:14px}
 .week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px}
-.wday{text-align:center}.wday-n{font-size:10px;color:#888;margin-bottom:3px;font-weight:600}
+.wday{text-align:center}.wday-n{font-size:10px;color:#555;margin-bottom:3px;font-weight:600}
 .wday-c{font-size:10px;font-weight:700;padding:5px 2px;border-radius:6px}
-.wp{background:#1e3a5f;color:#60a5fa}.wu{background:#14532d;color:#4ade80}.wl{background:#451a03;color:#fb923c}.wr{background:#1f1f1f;color:#888}.wo{background:#3b0764;color:#c084fc}
+.wp{background:#1e3a5f;color:#60a5fa}.wu{background:#14532d;color:#4ade80}.wl{background:#451a03;color:#fb923c}.wr{background:#1f1f1f;color:#555}.wo{background:#3b0764;color:#c084fc}
+
+/* NOTE BOXES */
 .note{border-left:3px solid #f97316;padding:10px 14px;background:#1f1409;border-radius:0 8px 8px 0;margin:10px 0;font-size:13px;color:#fb923c;line-height:1.5}
 .note strong{color:#f5f5f5}
 .note-blue{border-left:3px solid #3b82f6;padding:10px 14px;background:#0f1f3d;border-radius:0 8px 8px 0;margin:10px 0;font-size:13px;color:#93c5fd;line-height:1.5}
 .note-blue strong{color:#f5f5f5}
 .note-green{border-left:3px solid #22c55e;padding:10px 14px;background:#0a1f12;border-radius:0 8px 8px 0;margin:10px 0;font-size:13px;color:#86efac;line-height:1.5}
 .note-green strong{color:#f5f5f5}
+
 .section-title{font-size:15px;font-weight:600;margin:18px 0 10px;color:#f5f5f5}
 .tip-list{list-style:none}
-.tip-list li{padding:9px 0;border-bottom:1px solid #222;font-size:13px;color:#c0c0c0;display:flex;gap:10px;line-height:1.5}
+.tip-list li{padding:9px 0;border-bottom:1px solid #2a2a2a;font-size:13px;color:#c0c0c0;display:flex;gap:10px;line-height:1.5}
 .tip-list li:last-child{border-bottom:none}
 .tip-list li strong{color:#e5e5e5}
+
+/* DAY CARD */
 .day-card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;margin-bottom:12px;overflow:hidden}
-.day-header{display:flex;align-items:center;gap:8px;padding:14px 16px;cursor:default;flex-wrap:wrap}
+.day-header{display:flex;align-items:center;gap:8px;padding:14px 16px;flex-wrap:wrap}
 .day-badge{padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;white-space:nowrap}
 .push-b{background:#1e3a5f;color:#60a5fa}.pull-b{background:#14532d;color:#4ade80}.legs-b{background:#451a03;color:#fb923c}.opt-b{background:#3b0764;color:#c084fc}
 .day-title-t{font-size:14px;font-weight:600;color:#f5f5f5;flex:1}
-.day-count{font-size:11px;color:#888;background:#242424;padding:2px 8px;border-radius:20px}
+.day-count{font-size:11px;color:#999;background:#242424;padding:2px 8px;border-radius:20px}
 .day-sub-t{font-size:12px;color:#888}
 .chev{display:none}
-.chev.open{display:none}
 .collapsible{display:block;border-top:1px solid #222}
-.collapsible.open{display:block} /* always open */
+
+/* EXERCISE */
 .ex-block{padding:16px;border-bottom:1px solid #222}
 .ex-block:last-child{border-bottom:none}
-.ex-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
-.ex-num{font-size:10px;font-weight:700;color:#777;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
+.ex-num{font-size:10px;font-weight:700;color:#666;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
 .ex-name{font-size:14px;font-weight:600;color:#f97316;margin-bottom:8px}
 .ex-desc{font-size:13px;color:#b0b0b0;line-height:1.6;margin-bottom:10px}
+
 /* SERIES TABLE */
 .series-table{width:100%;border-collapse:collapse;margin-bottom:10px;border-radius:8px;overflow:hidden;border:1px solid #2a2a2a}
 .series-table th{background:#242424;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.05em;padding:7px 10px;text-align:left;border-bottom:1px solid #2a2a2a}
 .series-table td{padding:8px 10px;font-size:13px;border-bottom:1px solid #1f1f1f;color:#ddd}
 .series-table tr:last-child td{border-bottom:none}
-.rest-box{display:flex;align-items:center;gap:6px;font-size:12px;color:#888;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:0 0 8px 8px;padding:6px 10px;margin-top:-2px;margin-bottom:10px}
-.rest-box span{font-weight:600;color:#aaa}
-.inter-rest{display:flex;align-items:center;gap:6px;font-size:12px;color:#c084fc;background:#1a0b2e;border:1px solid #4c1d95;border-radius:8px;padding:8px 12px;margin:0 16px 4px;font-weight:500}
-.stretch-section{background:#0a1f12;border:1px solid #14532d;border-radius:10px;margin:14px 16px;padding:14px}
-.stretch-title{font-size:12px;font-weight:700;color:#4ade80;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.stretch-item{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid #14532d;font-size:13px;color:#c0c0c0;line-height:1.5}
-.stretch-item:last-child{border-bottom:none}
-.stretch-item .s-time{font-size:11px;font-weight:600;color:#4ade80;background:#14532d;padding:2px 7px;border-radius:20px;white-space:nowrap;height:fit-content;margin-top:2px;flex-shrink:0}
-.series-table .s1{color:#909090}
+.series-table .s1{color:#666}
 .series-table .s2{color:#60a5fa;font-weight:500}
 .series-table .s3{color:#f97316;font-weight:600}
-.series-table .s1-m{color:#909090}
+.series-table .s1-m{color:#666}
 .series-table .s2-m{color:#4ade80;font-weight:500}
 .series-table .s3-m{color:#fb923c;font-weight:600}
 .series-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-right:4px}
-.b-s1{background:#242424;color:#909090}
+.b-s1{background:#242424;color:#666}
 .b-s2{background:#1e3a5f;color:#60a5fa}
 .b-s3{background:#431407;color:#f97316}
-/* POSTURA BOX */
-.postura-box{background:#1f1f1f;border:1px solid #2a2a2a;border-radius:8px;padding:12px;margin-bottom:10px;font-size:12px;color:#a0a0a0;line-height:1.6}
+
+/* REST BOXES */
+.rest-box{display:flex;align-items:center;gap:6px;font-size:12px;color:#888;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:0 0 8px 8px;padding:6px 10px;margin-top:-2px;margin-bottom:10px}
+.rest-box span{font-weight:600;color:#aaa}
+.inter-rest{display:flex;align-items:center;gap:6px;font-size:12px;color:#c084fc;background:#1a0b2e;border:1px solid #4c1d95;border-radius:8px;padding:8px 12px;margin:0 0 4px;font-weight:500}
+
+/* POSTURA */
+.postura-box{background:#1f1f1f;border:1px solid #2a2a2a;border-radius:8px;padding:12px;margin-bottom:10px;font-size:12px;color:#b0b0b0;line-height:1.6}
 .postura-box .postura-title{font-size:11px;font-weight:700;color:#ccc;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;display:flex;align-items:center;gap:5px}
 .postura-section{margin-bottom:6px}
 .postura-section:last-child{margin-bottom:0}
 .postura-section strong{color:#f0f0f0;font-weight:600}
+
+/* MUSCLES / PILLS */
 .muscles{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
 .pill{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500}
-.p-muscle{background:#242424;color:#a0a0a0;border:1px solid #333}
+.p-muscle{background:#2a2a2a;color:#aaa;border:1px solid #333}
 .p-new{background:#451a03;color:#fb923c;border:1px solid #7c2d12}
-.ex-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#f97316;text-decoration:none;padding:6px 12px;border-radius:8px;border:1px solid #7c2d12;background:#1f0f00;margin-top:10px;font-weight:600;transition:background .2s}
-.ex-link:hover{background:#2a1500}
-.ex-link svg{flex-shrink:0}
 .hidden{display:none!important}
-.opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px 16px}
-.opt-item{background:#1f1f1f;border-radius:8px;padding:10px 12px}
-.opt-item strong{display:block;font-size:13px;font-weight:600;margin-bottom:2px;color:#f5f5f5}
-.opt-item span{font-size:12px;color:#909090}
-.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
-.phase{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:12px;text-align:center}
-.phase-label{font-size:10px;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
-.phase-val{font-size:22px;font-weight:700}
-.phase-sub{font-size:11px;color:#909090;margin-top:2px}
+
+/* FITWILL LINK */
+.ex-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#f97316;text-decoration:none;padding:6px 12px;border-radius:8px;border:1px solid #7c2d12;background:#1f0f00;margin-top:10px;font-weight:600;transition:background .2s}
+.ex-link:active{background:#2a1500}
+.ex-link svg{flex-shrink:0}
 
 /* RATING */
 .rating{display:flex;gap:10px;margin-top:12px;padding-top:10px;border-top:1px solid #222}
-.rate-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px;border-radius:10px;border:1.5px solid #333;background:#1f1f1f;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;color:#888}
+.rate-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px;border-radius:10px;border:1.5px solid #333;background:#1f1f1f;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;color:#888}
 .rate-btn.like.selected{background:#14532d;border-color:#22c55e;color:#4ade80}
 .rate-btn.dislike.selected{background:#450a0a;border-color:#ef4444;color:#f87171}
-.rate-btn:not(.selected):hover{border-color:#555;color:#ccc}
 .rate-icon{font-size:16px}
 
-/* PROGRESS PAGE */
-.progress-section{margin-bottom:24px}
-.progress-entreno-title{font-size:14px;font-weight:700;color:#f97316;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #2a2a2a}
+/* STRETCH */
+.stretch-section{background:#0a1f12;border:1px solid #14532d;border-radius:10px;margin:14px 0;padding:14px}
+.stretch-title{font-size:12px;font-weight:700;color:#4ade80;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.stretch-item{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid #14532d;font-size:13px;color:#c0c0c0;line-height:1.5}
+.stretch-item:last-child{border-bottom:none}
+.stretch-item .s-time{font-size:11px;font-weight:600;color:#4ade80;background:#14532d;padding:2px 7px;border-radius:20px;white-space:nowrap;height:fit-content;margin-top:2px;flex-shrink:0}
+
+/* PROGRESS */
 .progress-person-tabs{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:14px;border:1.5px solid #f97316;border-radius:10px;overflow:hidden}
 .ppt-btn{padding:8px;text-align:center;font-size:13px;font-weight:600;cursor:pointer;color:#f97316;background:transparent;border:none}
 .ppt-btn.active{background:#f97316;color:#fff}
-.ppt-btn:first-child{border-right:1px solid #f97316}
+.ppt-btn:first-child{border-right:1px solid rgba(249,115,22,0.4)}
 .chart-wrap{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:14px;margin-bottom:12px}
 .chart-title{font-size:12px;color:#888;margin-bottom:10px;font-weight:500}
 .chart-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
@@ -121,6 +157,8 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .chart-bar-fill{height:100%;border-radius:8px;transition:width .4s ease;background:#f97316}
 .chart-bar-fill.good{background:#22c55e}
 .chart-bar-pct{font-size:11px;color:#888;width:32px;text-align:right;flex-shrink:0}
+.progress-section{margin-bottom:24px}
+.progress-entreno-title{font-size:14px;font-weight:700;color:#f97316;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #2a2a2a}
 .progress-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
 .progress-table th{background:#242424;color:#888;padding:6px 8px;text-align:left;font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:0.05em}
 .progress-table td{padding:7px 8px;border-bottom:1px solid #1f1f1f;color:#ccc;vertical-align:middle}
@@ -131,37 +169,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .ptag.none{background:#242424;color:#555}
 .no-data{text-align:center;padding:32px 16px;color:#555;font-size:13px}
 
-/* HIDDEN PAGE */
-.page{display:none}.page.active{display:block;padding:16px}
-
-
-/* HEADER LOGO + HAMBURGER */
-.header-logo{width:34px;height:34px;border-radius:8px;flex-shrink:0;overflow:hidden}
-.header-logo img{width:100%;height:100%;object-fit:cover}
-.hamburger{width:34px;height:34px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer;flex-shrink:0;border-radius:8px;background:transparent;border:none;padding:6px}
-.hamburger span{display:block;width:20px;height:2px;background:#e5e5e5;border-radius:2px;transition:all .25s}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0;width:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-/* SLIDE MENU */
-.slide-menu{position:fixed;top:0;right:-280px;width:280px;height:100vh;background:#1a1a1a;border-left:1px solid #2a2a2a;z-index:200;transition:right .28s ease;padding-top:70px;box-shadow:-4px 0 24px rgba(0,0,0,0.5)}
-.slide-menu.open{right:0}
-.slide-menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:199}
-.slide-menu-overlay.open{display:block}
-.menu-item{display:flex;align-items:center;gap:14px;padding:18px 20px;font-size:15px;font-weight:500;color:#e5e5e5;cursor:pointer;border-bottom:1px solid #242424;transition:background .15s}
-.menu-item:hover{background:#242424}
-.menu-item .menu-icon{font-size:20px;width:28px;text-align:center}
-
-/* PERSON SELECTOR */
-.person-toggle{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:1rem;border:1.5px solid #f97316;border-radius:12px;overflow:hidden}
-.pt-btn{padding:10px;text-align:center;font-size:14px;font-weight:600;cursor:pointer;color:#f97316;background:transparent;border:none;transition:all .2s}
-.pt-btn.active{background:#f97316;color:#fff}
-.pt-btn:first-child{border-right:1px solid #f97316}
-
-/* PAGES */
-.page{display:none;padding:16px}
-.page.active{display:block}
+/* PHASES */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+.phase{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:12px;text-align:center}
+.phase-label{font-size:10px;color:#555;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+.phase-val{font-size:22px;font-weight:700}
+.phase-sub{font-size:11px;color:#999;margin-top:2px}
 </style>
 </head>
 <body>
@@ -175,6 +188,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
 <div class="slide-menu-overlay" id="overlay" onclick="closeMenu()"></div>
 <div class="slide-menu" id="slideMenu">
+  <div class="menu-header">Menú</div>
   <div class="menu-item" onclick="showPage('resumen');closeMenu()"><span class="menu-icon">📅</span>Resumen semanal</div>
   <div class="menu-item" onclick="showPage('recomendaciones');closeMenu()"><span class="menu-icon">📈</span>Recomendaciones</div>
   <div class="menu-item" onclick="showPage('progreso');closeMenu()"><span class="menu-icon">🏆</span>Progreso</div>
@@ -1165,137 +1179,7 @@ YPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plan de Entrenamiento</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size:15px}
-.header{background:#1a1a1a;border-bottom:1px solid #2a2a2a;padding:14px 16px;position:sticky;top:0;z-index:10}
-.header-title{font-size:18px;font-weight:600;color:#f5f5f5;text-align:center}
-.header-sub{font-size:13px;color:#909090}
-.person-switch{display:flex;gap:6px;margin-top:10px}
-.psw-btn{padding:5px 14px;border-radius:20px;border:1px solid #333;background:#242424;font-size:13px;font-weight:500;cursor:pointer;color:#aaa}
-.psw-btn.active{background:#f97316;color:#fff;border-color:#f97316}
-.tabs{display:flex;gap:6px;padding:12px 16px;background:#1a1a1a;border-bottom:1px solid #2a2a2a;overflow-x:auto;position:sticky;top:52px;z-index:9;justify-content:center;flex-wrap:wrap}
-.tab{padding:7px 14px;border-radius:20px;border:1px solid #333;background:#242424;font-size:13px;cursor:pointer;white-space:nowrap;color:#aaa}
-.tab.active{background:#f97316;color:#fff;border-color:#f97316;font-weight:500}
-.content{padding:16px;max-width:800px;margin:0 auto;width:100%}
-.section{display:none}.section.active{display:block}
-.week-label{font-size:12px;font-weight:600;color:#909090;margin-bottom:6px;margin-top:14px}
-.week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px}
-.wday{text-align:center}.wday-n{font-size:10px;color:#888;margin-bottom:3px;font-weight:600}
-.wday-c{font-size:10px;font-weight:700;padding:5px 2px;border-radius:6px}
-.wp{background:#1e3a5f;color:#60a5fa}.wu{background:#14532d;color:#4ade80}.wl{background:#451a03;color:#fb923c}.wr{background:#1f1f1f;color:#888}.wo{background:#3b0764;color:#c084fc}
-.note{border-left:3px solid #f97316;padding:10px 14px;background:#1f1409;border-radius:0 8px 8px 0;margin:10px 0;font-size:13px;color:#fb923c;line-height:1.5}
-.note strong{color:#f5f5f5}
-.note-blue{border-left:3px solid #3b82f6;padding:10px 14px;background:#0f1f3d;border-radius:0 8px 8px 0;margin:10px 0;font-size:13px;color:#93c5fd;line-height:1.5}
-.note-blue strong{color:#f5f5f5}
-.note-green{border-left:3px solid #22c55e;padding:10px 14px;background:#0a1f12;border-radius:0 8px 8px 0;margin:10px 0;font-size:13px;color:#86efac;line-height:1.5}
-.note-green strong{color:#f5f5f5}
-.section-title{font-size:15px;font-weight:600;margin:18px 0 10px;color:#f5f5f5}
-.tip-list{list-style:none}
-.tip-list li{padding:9px 0;border-bottom:1px solid #222;font-size:13px;color:#c0c0c0;display:flex;gap:10px;line-height:1.5}
-.tip-list li:last-child{border-bottom:none}
-.tip-list li strong{color:#e5e5e5}
-.day-card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;margin-bottom:12px;overflow:hidden}
-.day-header{display:flex;align-items:center;gap:8px;padding:14px 16px;cursor:default;flex-wrap:wrap}
-.day-badge{padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;white-space:nowrap}
-.push-b{background:#1e3a5f;color:#60a5fa}.pull-b{background:#14532d;color:#4ade80}.legs-b{background:#451a03;color:#fb923c}.opt-b{background:#3b0764;color:#c084fc}
-.day-title-t{font-size:14px;font-weight:600;color:#f5f5f5;flex:1}
-.day-count{font-size:11px;color:#888;background:#242424;padding:2px 8px;border-radius:20px}
-.day-sub-t{font-size:12px;color:#888}
-.chev{display:none}
-.chev.open{display:none}
-.collapsible{display:block;border-top:1px solid #222}
-.collapsible.open{display:block} /* always open */
-.ex-block{padding:16px;border-bottom:1px solid #222}
-.ex-block:last-child{border-bottom:none}
-.ex-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
-.ex-num{font-size:10px;font-weight:700;color:#777;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
-.ex-name{font-size:14px;font-weight:600;color:#f97316;margin-bottom:8px}
-.ex-desc{font-size:13px;color:#b0b0b0;line-height:1.6;margin-bottom:10px}
-/* SERIES TABLE */
-.series-table{width:100%;border-collapse:collapse;margin-bottom:10px;border-radius:8px;overflow:hidden;border:1px solid #2a2a2a}
-.series-table th{background:#242424;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.05em;padding:7px 10px;text-align:left;border-bottom:1px solid #2a2a2a}
-.series-table td{padding:8px 10px;font-size:13px;border-bottom:1px solid #1f1f1f;color:#ddd}
-.series-table tr:last-child td{border-bottom:none}
-.rest-box{display:flex;align-items:center;gap:6px;font-size:12px;color:#888;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:0 0 8px 8px;padding:6px 10px;margin-top:-2px;margin-bottom:10px}
-.rest-box span{font-weight:600;color:#aaa}
-.inter-rest{display:flex;align-items:center;gap:6px;font-size:12px;color:#c084fc;background:#1a0b2e;border:1px solid #4c1d95;border-radius:8px;padding:8px 12px;margin:0 16px 4px;font-weight:500}
-.stretch-section{background:#0a1f12;border:1px solid #14532d;border-radius:10px;margin:14px 16px;padding:14px}
-.stretch-title{font-size:12px;font-weight:700;color:#4ade80;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.stretch-item{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid #14532d;font-size:13px;color:#c0c0c0;line-height:1.5}
-.stretch-item:last-child{border-bottom:none}
-.stretch-item .s-time{font-size:11px;font-weight:600;color:#4ade80;background:#14532d;padding:2px 7px;border-radius:20px;white-space:nowrap;height:fit-content;margin-top:2px;flex-shrink:0}
-.series-table .s1{color:#909090}
-.series-table .s2{color:#60a5fa;font-weight:500}
-.series-table .s3{color:#f97316;font-weight:600}
-.series-table .s1-m{color:#909090}
-.series-table .s2-m{color:#4ade80;font-weight:500}
-.series-table .s3-m{color:#fb923c;font-weight:600}
-.series-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-right:4px}
-.b-s1{background:#242424;color:#909090}
-.b-s2{background:#1e3a5f;color:#60a5fa}
-.b-s3{background:#431407;color:#f97316}
-/* POSTURA BOX */
-.postura-box{background:#1f1f1f;border:1px solid #2a2a2a;border-radius:8px;padding:12px;margin-bottom:10px;font-size:12px;color:#a0a0a0;line-height:1.6}
-.postura-box .postura-title{font-size:11px;font-weight:700;color:#ccc;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;display:flex;align-items:center;gap:5px}
-.postura-section{margin-bottom:6px}
-.postura-section:last-child{margin-bottom:0}
-.postura-section strong{color:#f0f0f0;font-weight:600}
-.muscles{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
-.pill{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500}
-.p-muscle{background:#242424;color:#a0a0a0;border:1px solid #333}
-.p-new{background:#451a03;color:#fb923c;border:1px solid #7c2d12}
-.ex-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#f97316;text-decoration:none;padding:6px 12px;border-radius:8px;border:1px solid #7c2d12;background:#1f0f00;margin-top:10px;font-weight:600;transition:background .2s}
-.ex-link:hover{background:#2a1500}
-.ex-link svg{flex-shrink:0}
-.hidden{display:none!important}
-.opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px 16px}
-.opt-item{background:#1f1f1f;border-radius:8px;padding:10px 12px}
-.opt-item strong{display:block;font-size:13px;font-weight:600;margin-bottom:2px;color:#f5f5f5}
-.opt-item span{font-size:12px;color:#909090}
-.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
-.phase{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:12px;text-align:center}
-.phase-label{font-size:10px;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
-.phase-val{font-size:22px;font-weight:700}
-.phase-sub{font-size:11px;color:#909090;margin-top:2px}
 
-/* RATING */
-.rating{display:flex;gap:10px;margin-top:12px;padding-top:10px;border-top:1px solid #222}
-.rate-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px;border-radius:10px;border:1.5px solid #333;background:#1f1f1f;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;color:#888}
-.rate-btn.like.selected{background:#14532d;border-color:#22c55e;color:#4ade80}
-.rate-btn.dislike.selected{background:#450a0a;border-color:#ef4444;color:#f87171}
-.rate-btn:not(.selected):hover{border-color:#555;color:#ccc}
-.rate-icon{font-size:16px}
-
-/* PROGRESS PAGE */
-.progress-section{margin-bottom:24px}
-.progress-entreno-title{font-size:14px;font-weight:700;color:#f97316;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #2a2a2a}
-.progress-person-tabs{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:14px;border:1.5px solid #f97316;border-radius:10px;overflow:hidden}
-.ppt-btn{padding:8px;text-align:center;font-size:13px;font-weight:600;cursor:pointer;color:#f97316;background:transparent;border:none}
-.ppt-btn.active{background:#f97316;color:#fff}
-.ppt-btn:first-child{border-right:1px solid #f97316}
-.chart-wrap{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;padding:14px;margin-bottom:12px}
-.chart-title{font-size:12px;color:#888;margin-bottom:10px;font-weight:500}
-.chart-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
-.chart-label{font-size:11px;color:#aaa;width:80px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.chart-bar-bg{flex:1;height:16px;background:#242424;border-radius:8px;overflow:hidden}
-.chart-bar-fill{height:100%;border-radius:8px;transition:width .4s ease;background:#f97316}
-.chart-bar-fill.good{background:#22c55e}
-.chart-bar-pct{font-size:11px;color:#888;width:32px;text-align:right;flex-shrink:0}
-.progress-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
-.progress-table th{background:#242424;color:#888;padding:6px 8px;text-align:left;font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:0.05em}
-.progress-table td{padding:7px 8px;border-bottom:1px solid #1f1f1f;color:#ccc;vertical-align:middle}
-.progress-table tr:last-child td{border-bottom:none}
-.ptag{display:inline-block;font-size:10px;padding:2px 6px;border-radius:20px;font-weight:600}
-.ptag.ok{background:#14532d;color:#4ade80}
-.ptag.ko{background:#450a0a;color:#f87171}
-.ptag.none{background:#242424;color:#555}
-.no-data{text-align:center;padding:32px 16px;color:#555;font-size:13px}
-
-/* HIDDEN PAGE */
-.page{display:none}.page.active{display:block;padding:16px}
-
-</style>
 </head>
 <body>
 
@@ -1308,6 +1192,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
 <div class="slide-menu-overlay" id="overlay" onclick="closeMenu()"></div>
 <div class="slide-menu" id="slideMenu">
+  <div class="menu-header">Menú</div>
   <div class="menu-item" onclick="showPage('resumen');closeMenu()"><span class="menu-icon">📅</span>Resumen semanal</div>
   <div class="menu-item" onclick="showPage('recomendaciones');closeMenu()"><span class="menu-icon">📈</span>Recomendaciones</div>
   <div class="menu-item" onclick="showPage('progreso');closeMenu()"><span class="menu-icon">🏆</span>Progreso</div>
@@ -2377,7 +2262,7 @@ document.querySelectorAll('.section').forEach(s=>setPerson(sp,s));
 </body>
 </html>
 <!-- PAGE: RESUMEN -->
-<div class="page" id="page-resumen">
+<div class="page" id="page-resumen"><button class="back-btn" onclick="backToTraining()">← Volver a entrenos</button>
 
 
 
@@ -2428,7 +2313,7 @@ document.querySelectorAll('.section').forEach(s=>setPerson(sp,s));
 </div>
 
 <!-- PAGE: RECOMENDACIONES -->
-<div class="page" id="page-recomendaciones">
+<div class="page" id="page-recomendaciones"><button class="back-btn" onclick="backToTraining()">← Volver a entrenos</button>
   <div class="section-title">Recomendaciones</div>
 
 
@@ -2444,10 +2329,22 @@ document.querySelectorAll('.section').forEach(s=>setPerson(sp,s));
     <li><span>📝</span><span><strong>Diario de entreno:</strong> apunta los 3 pesos y las reps de cada serie. Sin datos no hay progresión consciente.</span></li>
     <li><span>🌙</span><span><strong>Sueño mínimo 7 horas:</strong> la hormona de crecimiento se segrega en el sueño profundo. Sin descanso el músculo no crece.</span></li>
     <li><span>🦵</span><span><strong>Rodillas y gemelos:</strong> calentamiento siempre en bici estática. Prensa con rango parcial si hay molestia.</span></li>
-    <li><span>🚴</span><span><strong>La bici:</strong> mejor en días de descanso o tras pecho/espalda. Nunca el jueves de pierna.</span></li>
   </ul>
 </div>
 
+<!-- PAGE: PROGRESO -->
+<div class="page" id="page-progreso">
+  <button class="back-btn" onclick="backToTraining()">← Volver a entrenos</button>
+  <div class="progress-person-tabs">
+    <button class="ppt-btn active" id="prog-angel" onclick="switchProgressPerson('angel')">Ángel</button>
+    <button class="ppt-btn" id="prog-manu" onclick="switchProgressPerson('manu')">Manu</button>
+  </div>
+  <div id="progress-content">
+    <div class="no-data">📊 Completa ejercicios para ver tu progreso aquí.</div>
+  </div>
+</div>
+
+</div>
 
 <script>
 // ── DATA ──────────────────────────────────────────────────────────────────
@@ -2650,9 +2547,22 @@ function renderProgress(person) {
   container.innerHTML = html;
 }
 
+function backToTraining() {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('main-tabs').style.display = 'grid';
+  showSection(currentSection || 'e1');
+}
+
 // ── INIT ──────────────────────────────────────────────────────────────────
 const sp = localStorage.getItem('gymplan-person') || 'angel';
 document.querySelectorAll('.section').forEach(s => setPerson(sp, s));
+showSection('e1');
+
+// Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
+</script>son(sp, s));
 showSection('e1');
 
 // Service Worker
