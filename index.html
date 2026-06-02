@@ -34,7 +34,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .menu-header{padding:20px 20px 16px;border-bottom:1px solid #2a2a2a;font-size:13px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:0.1em}
 .menu-item{display:flex;align-items:center;gap:14px;padding:17px 20px;font-size:15px;font-weight:500;color:#e5e5e5;cursor:pointer;border-bottom:1px solid #242424;transition:background .15s}
 .menu-item:active{background:#242424}
-.menu-icon{font-size:20px;width:28px;text-align:center;flex-shrink:0}
+.menu-icon{font-size:20px;width:28px;text-align:center;flex-shrink:0;color:#e5e5e5}
 
 /* TABS */
 .tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:10px 12px;background:#1a1a1a;border-bottom:1px solid #2a2a2a}
@@ -116,7 +116,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 /* REST BOXES */
 .rest-box{display:flex;align-items:center;gap:6px;font-size:12px;color:#888;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:0 0 8px 8px;padding:6px 10px;margin-top:-2px;margin-bottom:10px}
 .rest-box span{font-weight:600;color:#aaa}
-.inter-rest{display:flex;align-items:center;gap:6px;font-size:12px;color:#c084fc;background:#1a0b2e;border:1px solid #4c1d95;border-radius:8px;padding:8px 12px;margin:0 0 4px;font-weight:500}
+.inter-rest{display:flex;align-items:center;justify-content:center;font-size:12px;color:#c084fc;background:#1a0b2e;border:1px solid #4c1d95;border-radius:8px;padding:8px 12px;margin:0 0 4px;font-weight:500;text-align:center}
 
 /* POSTURA */
 .postura-box{background:#1f1f1f;border:1px solid #2a2a2a;border-radius:8px;padding:12px;margin-bottom:10px;font-size:12px;color:#b0b0b0;line-height:1.6}
@@ -191,11 +191,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .ex-toggle-num{font-size:10px;font-weight:700;color:#555;letter-spacing:0.08em;flex-shrink:0}
 .ex-toggle-name{font-size:14px;font-weight:600;color:#f97316;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ex-toggle-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.ex-status{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
-.ex-status.done{background:#14532d}
-.ex-status.skip{background:#450a0a}
-.ex-status.pending{background:#242424;border:1px solid #333}
-.ex-chevron{font-size:12px;color:#555;transition:transform .2s;flex-shrink:0}
+.ex-status{display:none}
+.ex-status.done{display:none}
+.ex-status.skip{display:none}
+.ex-status.pending{display:none}
+.ex-chevron{font-size:16px;color:#666;transition:transform .2s;flex-shrink:0}
 .ex-chevron.open{transform:rotate(180deg)}
 .ex-body{display:none;padding:0 16px 16px}
 .ex-body.open{display:block}
@@ -216,6 +216,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .pt-btn{display:flex;align-items:center;justify-content:center;gap:8px}
 
 </style>
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
 <body>
 
@@ -231,9 +232,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="slide-menu-overlay" id="overlay" onclick="closeMenu()"></div>
 <div class="slide-menu" id="slideMenu">
   <div class="menu-header">Menú</div>
-  <div class="menu-item" onclick="showPage('resumen');closeMenu()"><span class="menu-icon">📅</span>Resumen semanal</div>
-  <div class="menu-item" onclick="showPage('recomendaciones');closeMenu()"><span class="menu-icon">📈</span>Recomendaciones</div>
-  <div class="menu-item" onclick="showPage('progreso');closeMenu()"><span class="menu-icon">🏆</span>Progreso</div>
+  <div class="menu-item" onclick="showPage('resumen');closeMenu()"><i class="ph ph-calendar-blank menu-icon"></i>Resumen semanal</div>
+  <div class="menu-item" onclick="showPage('recomendaciones');closeMenu()"><i class="ph ph-trend-up menu-icon"></i>Recomendaciones</div>
+  <div class="menu-item" onclick="showPage('progreso');closeMenu()"><i class="ph ph-chart-bar menu-icon"></i>Progreso</div>
 </div>
 
 <div class="tabs" id="main-tabs">
@@ -271,7 +272,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -280,11 +281,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Press de pecho convergente (máquina)</div>
         <div class="ex-desc">Los brazos convergen al frente dando una contracción extra en el centro del pecho. La fase de bajada lenta es donde más se construye músculo — no dejes caer el peso.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> espalda completamente apoyada en el respaldo, pies planos en el suelo. Ajusta el asiento para que las asas queden a la altura del pecho.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia abajo o neutras según el modelo de la máquina. Agarre firme sin apretar en exceso.</div>
           <div class="postura-section"><strong>Movimiento:</strong> empuja hasta casi extender los codos — no los bloquees. Vuelve lento en 3 segundos.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> encorvar la espalda despegándola del respaldo, bloquear codos al extender, subir los hombros hacia las orejas.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> encorvar la espalda despegándola del respaldo, bloquear codos al extender, subir los hombros hacia las orejas.
   </div>
 </div>
         <table class="series-table">
@@ -298,10 +299,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
         <div class="rating" data-exid="e1-ex01">
           <button class="rate-btn like" onclick="rate('e1-ex01','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e1-ex01','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
       </div>
@@ -309,7 +310,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 2. PRESS MANCUERNAS BANCO -->
       
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -318,7 +319,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -327,11 +328,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Press con mancuernas en banco plano</div>
         <div class="ex-desc">Al trabajar con mancuernas cada brazo trabaja de forma independiente, corrigiendo desequilibrios y aumentando la estabilidad del hombro. Mayor rango de movimiento que la barra.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> tumbado en el banco con los pies apoyados en el suelo. Espalda neutra — no arquear de forma exagerada. Cabeza apoyada en el banco.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia adelante. Los codos a 45° del torso — no perpendiculares al cuerpo, eso sobrecarga el hombro.</div>
           <div class="postura-section"><strong>Movimiento:</strong> baja hasta que los codos queden ligeramente por debajo del banco. Sube empujando y juntando ligeramente las mancuernas al final.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> codos en ángulo de 90° con el torso, rebotar las mancuernas abajo, arquear la espalda para ayudar a subir.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> codos en ángulo de 90° con el torso, rebotar las mancuernas abajo, arquear la espalda para ayudar a subir.
   </div>
 </div>
         <table class="series-table">
@@ -345,10 +346,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
         <div class="rating" data-exid="e1-ex02">
           <button class="rate-btn like" onclick="rate('e1-ex02','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e1-ex02','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
       </div>
@@ -356,7 +357,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 3. APERTURAS PEC-DECK -->
       
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -365,7 +366,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -374,11 +375,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Aperturas en máquina pec-deck</div>
         <div class="ex-desc">Aísla el pectoral sin cargar la articulación del hombro. La máquina mantiene tensión constante en todo el recorrido, algo que las aperturas con mancuernas no logran igual.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> espalda pegada al respaldo, pies apoyados en el suelo. Ajusta el asiento para que los codos queden a la altura del pecho.</div>
           <div class="postura-section"><strong>Agarre:</strong> codos apoyados en los apoyos acolchados o manos en las asas según el modelo. Los codos forman un ángulo fijo de ~90°.</div>
           <div class="postura-section"><strong>Movimiento:</strong> cierra los brazos como si abrazaras a alguien. Aguanta 1 segundo al cerrar. Abre lento en 3 segundos.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> abrir demasiado al volver (dolor en hombro), rebotar al cerrar, despegar la espalda del respaldo.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> abrir demasiado al volver (dolor en hombro), rebotar al cerrar, despegar la espalda del respaldo.
   </div>
 </div>
         <table class="series-table">
@@ -392,10 +393,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Pectoral menor</span></div>
         <div class="rating" data-exid="e1-ex03">
           <button class="rate-btn like" onclick="rate('e1-ex03','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e1-ex03','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
       </div>
@@ -403,7 +404,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 4. PRESS HOMBRO CONVERGENTE -->
       
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -412,7 +413,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -421,11 +422,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Press de hombro convergente (máquina)</div>
         <div class="ex-desc">La guía convergente reduce la presión sobre el manguito rotador comparado con el press libre. Ejercicio principal de hombro del día.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que las asas queden justo a la altura de los hombros cuando los brazos están doblados. Espalda apoyada.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia adelante o neutras. Agarre firme pero sin tensión en el cuello.</div>
           <div class="postura-section"><strong>Movimiento:</strong> empuja hacia arriba sin bloquear los codos. Baja hasta que los brazos formen 90°. Sube y baja en 2-3 segundos cada fase.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> encorvarse hacia adelante, subir los hombros hacia las orejas, usar el impulso del cuerpo para empujar.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> encorvarse hacia adelante, subir los hombros hacia las orejas, usar el impulso del cuerpo para empujar.
   </div>
 </div>
         <table class="series-table">
@@ -439,10 +440,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Deltoides ant.</span><span class="pill p-muscle">Deltoides lat.</span><span class="pill p-muscle">Tríceps</span></div>
         <div class="rating" data-exid="e1-ex04">
           <button class="rate-btn like" onclick="rate('e1-ex04','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e1-ex04','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
       </div>
@@ -450,7 +451,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 5. PRESS FRANCÉS POLEA CUERDA -->
       
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -459,7 +460,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -468,11 +469,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Press francés en polea con cuerda (tríceps)</div>
         <div class="ex-desc">Variante del press francés usando la polea alta con cuerda. Trabaja la cabeza larga del tríceps con tensión constante durante todo el recorrido, lo que no ocurre con mancuernas. Excelente para el volumen del brazo.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> de pie de espaldas a la polea alta, da un paso adelante para crear tensión. Inclínate ligeramente hacia adelante. Pies separados a la anchura de los hombros.</div>
           <div class="postura-section"><strong>Agarre:</strong> agarra los extremos de la cuerda con ambas manos, palmas enfrentadas. Los brazos sobre la cabeza con los codos apuntando al techo.</div>
           <div class="postura-section"><strong>Movimiento:</strong> extiende los antebrazos hacia adelante y arriba manteniendo los codos fijos y cerca de la cabeza. Vuelve lento controlando el peso.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> mover los codos durante el movimiento, arquear la zona lumbar, usar impulso del torso para ayudar.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos durante el movimiento, arquear la zona lumbar, usar impulso del torso para ayudar.
   </div>
 </div>
         <table class="series-table">
@@ -486,10 +487,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Tríceps cab. larga</span><span class="pill p-muscle">Tríceps cab. medial</span><span class="pill p-new">★ Nuevo</span></div>
         <div class="rating" data-exid="e1-ex05">
           <button class="rate-btn like" onclick="rate('e1-ex05','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e1-ex05','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
       </div>
@@ -497,7 +498,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 6. TRÍCEPS POLEA BARRA -->
       
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -506,7 +507,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -515,11 +516,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Tríceps en polea con barra rígida (prono)</div>
         <div class="ex-desc">Ejercicio de aislamiento clásico de tríceps. Los codos fijos son el punto clave — si se mueven, el ejercicio pierde efectividad y el hombro empieza a trabajar.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> de pie frente a la polea alta. Pies ligeramente separados, ligera inclinación hacia adelante. Codos pegados al cuerpo a lo largo de toda la serie.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia abajo (pronadas). Agarre a la anchura de los hombros en la barra.</div>
           <div class="postura-section"><strong>Movimiento:</strong> extiende los brazos hacia abajo hasta estirarlos completamente, aprieta 1 segundo, sube lento en 3 segundos.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> mover los codos, inclinarse hacia adelante para usar el peso corporal, no llegar a la extensión completa.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos, inclinarse hacia adelante para usar el peso corporal, no llegar a la extensión completa.
   </div>
 </div>
         <table class="series-table">
@@ -533,10 +534,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Tríceps cab. lateral</span><span class="pill p-muscle">Tríceps cab. larga</span></div>
         <div class="rating" data-exid="e1-ex06">
           <button class="rate-btn like" onclick="rate('e1-ex06','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e1-ex06','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
       </div>
@@ -544,7 +545,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 7. TRÍCEPS POLEA INVERSO -->
       
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -553,7 +554,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -562,11 +563,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Tríceps en polea agarre inverso (supino)</div>
         <div class="ex-desc">El cambio de agarre activa la cabeza medial del tríceps (parte interna del brazo), que el agarre prono no alcanza tan bien. Peso ligeramente menor que el prono es normal.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> igual que el ejercicio anterior. De pie frente a la polea, codos pegados al cuerpo.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia arriba (supinas). Usa la barra corta o la cuerda según disponibilidad.</div>
           <div class="postura-section"><strong>Movimiento:</strong> idéntico al anterior — extiende hacia abajo, aprieta 1 segundo, sube lento. No intentes igualar el peso del agarre prono.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> los mismos errores que en el prono. Con el agarre supino hay más tendencia a separar los codos.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> los mismos errores que en el prono. Con el agarre supino hay más tendencia a separar los codos.
   </div>
 </div>
         <table class="series-table">
@@ -580,10 +581,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Tríceps cab. medial</span></div>
         <div class="rating" data-exid="e1-ex07">
           <button class="rate-btn like" onclick="rate('e1-ex07','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e1-ex07','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
       </div>
@@ -591,7 +592,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 8. ELEVACIONES LATERALES -->
       
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -600,7 +601,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -609,11 +610,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Elevaciones laterales con mancuernas</div>
         <div class="ex-desc">Al final del día, con el hombro ya trabajado, se hace con poco peso y mucho control. No es un ejercicio de fuerza — es de aislamiento y forma. Con 5-6 kg y buena técnica es más efectivo que con 10 kg y mala ejecución.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> de pie o sentado. Espalda recta, ligerísima inclinación hacia adelante del torso (10°). Codos ligeramente doblados durante todo el movimiento.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia el suelo. El meñique ligeramente más alto que el pulgar al llegar arriba — como si vaciases un vaso.</div>
           <div class="postura-section"><strong>Movimiento:</strong> sube lateralmente hasta la altura del hombro — no más. Baja lento en 3-4 segundos. No uses el impulso del cuerpo.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> subir por encima del hombro (impingement), balancear el torso, encorvar el cuello. Si duele el hombro, para.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> subir por encima del hombro (impingement), balancear el torso, encorvar el cuello. Si duele el hombro, para.
   </div>
 </div>
         <table class="series-table">
@@ -627,10 +628,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Deltoides lateral</span><span class="pill p-muscle">Trapecio sup.</span></div>
         <div class="rating" data-exid="e1-ex08">
           <button class="rate-btn like" onclick="rate('e1-ex08','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e1-ex08','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
     </div>
@@ -638,7 +639,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
 
 <div class="stretch-section">
-  <div class="stretch-title">🧘 Estiramientos finales — Pecho · Hombro · Tríceps</div>
+  <div class="stretch-title"><i class="ph ph-person-simple"></i> Estiramientos finales — Pecho · Hombro · Tríceps</div>
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Pectoral en pared:</strong> apoya una mano en la pared con el brazo extendido a la altura del hombro. Gira el cuerpo hacia el lado contrario hasta notar el estiramiento en el pecho. Mantén la espalda recta.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Hombro cruzado:</strong> lleva un brazo extendido cruzado por delante del pecho. Con el otro brazo presiona suavemente por el codo hacia tu cuerpo. Nota el estiramiento en el deltoides posterior.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Tríceps sobre la cabeza:</strong> levanta un brazo, dobla el codo llevando la mano hacia la espalda. Con la otra mano presiona suavemente el codo hacia atrás. Mantén el cuello relajado.</span></div>
@@ -678,7 +679,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -687,11 +688,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Jalón al pecho agarre ancho (máquina)</div>
         <div class="ex-desc">Ejercicio principal de espalda. Los codos guían el movimiento — no los brazos. La espalda trabaja cuando llevas los codos hacia abajo y atrás.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> muslos bien sujetos bajo el apoyo. Ligera inclinación hacia atrás del torso (15°). Pecho hacia arriba.</div>
           <div class="postura-section"><strong>Agarre:</strong> ancho, un poco más que los hombros. Palmas hacia adelante. Agarre firme pero sin crispación.</div>
           <div class="postura-section"><strong>Movimiento:</strong> tira llevando los codos hacia abajo y atrás como si quisieras tocar las caderas con ellos. Lleva la barra hasta el pecho alto. Sube lento.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> inclinarse demasiado hacia atrás, tirar con los brazos en lugar de los codos, encorvar la espalda.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> inclinarse demasiado hacia atrás, tirar con los brazos en lugar de los codos, encorvar la espalda.
   </div>
 </div>
         <table class="series-table">
@@ -705,10 +706,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Romboides</span></div>
         <div class="rating" data-exid="e2-ex01">
           <button class="rate-btn like" onclick="rate('e2-ex01','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e2-ex01','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
         <a class="ex-link" href="https://fitwill.app/es/exercise/2291/cable-wide-grip-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -716,7 +717,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -725,7 +726,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -734,11 +735,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Remo en polea baja (seated cable row)</div>
         <div class="ex-desc">El ejercicio más importante para compensar la postura encorvada de trabajar sentados. El "pellizco" de omóplatos al final es el movimiento clave.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> sentado con los pies en los apoyos, rodillas ligeramente dobladas. Espalda recta vertical — no te inclines hacia adelante con el torso.</div>
           <div class="postura-section"><strong>Agarre:</strong> mango en V (agarre neutro) o barra. Codos pegados al cuerpo al tirar.</div>
           <div class="postura-section"><strong>Movimiento:</strong> tira hacia el abdomen y aprieta los omóplatos juntos al final 1 segundo. Vuelve lento controlando.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> inclinar el torso hacia adelante y atrás como un balancín, encorvar la espalda baja, tirar solo con los brazos sin contraer la espalda.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> inclinar el torso hacia adelante y atrás como un balancín, encorvar la espalda baja, tirar solo con los brazos sin contraer la espalda.
   </div>
 </div>
         <table class="series-table">
@@ -752,10 +753,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Trapecio medio</span><span class="pill p-muscle">Romboides</span><span class="pill p-muscle">Dorsal</span></div>
         <div class="rating" data-exid="e2-ex02">
           <button class="rate-btn like" onclick="rate('e2-ex02','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e2-ex02','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
         <a class="ex-link" href="https://fitwill.app/es/exercise/1320/cable-rope-crossover-seated-row/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -763,7 +764,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -772,7 +773,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -781,11 +782,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Jalón agarre estrecho / neutro</div>
         <div class="ex-desc">Complementa el jalón ancho trabajando más la parte baja del dorsal. Da el efecto visual de espalda en "V". El bíceps trabaja en mejor posición mecánica.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> igual que el jalón ancho. Misma inclinación y posición de muslos.</div>
           <div class="postura-section"><strong>Agarre:</strong> mango en V o triangular, palmas enfrentadas (agarre neutro). Manos juntas.</div>
           <div class="postura-section"><strong>Movimiento:</strong> tira hacia el pecho alto — no al cuello ni al esternón. Los codos van hacia abajo pegados al torso.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> tirar hacia el cuello en lugar del pecho, usar demasiado el bíceps sin involucrar la espalda.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar hacia el cuello en lugar del pecho, usar demasiado el bíceps sin involucrar la espalda.
   </div>
 </div>
         <table class="series-table">
@@ -799,10 +800,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Dorsal inferior</span><span class="pill p-muscle">Bíceps</span></div>
         <div class="rating" data-exid="e2-ex03">
           <button class="rate-btn like" onclick="rate('e2-ex03','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e2-ex03','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
         <a class="ex-link" href="https://fitwill.app/es/exercise/3754/cable-close-grip-front-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -810,7 +811,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -819,7 +820,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -828,11 +829,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Dominadas asistidas (máquina)</div>
         <div class="ex-desc">El objetivo a largo plazo es reducir la asistencia progresivamente. Más kg seleccionados = más fácil. El mejor ejercicio por traslado funcional a la vida real.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> rodillas sobre el apoyo acolchado. Brazos extendidos al inicio. Cuerpo ligeramente hacia atrás.</div>
           <div class="postura-section"><strong>Agarre:</strong> un poco más ancho que los hombros. Palmas hacia adelante para trabajar más el dorsal.</div>
           <div class="postura-section"><strong>Movimiento:</strong> lleva el pecho hacia la barra — no la barbilla. Los codos van hacia abajo y atrás. Baja lento controlando.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> tirar solo con los brazos, llegar solo con la barbilla a la barra, bajar demasiado rápido.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar solo con los brazos, llegar solo con la barbilla a la barra, bajar demasiado rápido.
   </div>
 </div>
         <table class="series-table">
@@ -846,10 +847,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Core</span></div>
         <div class="rating" data-exid="e2-ex04">
           <button class="rate-btn like" onclick="rate('e2-ex04','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e2-ex04','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
         <a class="ex-link" href="https://fitwill.app/es/exercise/0015/assisted-parallel-close-grip-pull-up/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -857,7 +858,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -866,7 +867,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -875,11 +876,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Curl bíceps en máquina</div>
         <div class="ex-desc">Aislamiento de bíceps con soporte del codo. La bajada lenta (3 seg) hace tanto trabajo como la subida.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que el codo quede sobre el borde del apoyo — no por detrás. Espalda apoyada.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia arriba. Agarre firme sin crispación en el antebrazo.</div>
           <div class="postura-section"><strong>Movimiento:</strong> sube hasta que los antebrazos queden verticales, aprieta 1 segundo. Baja lento en 3 segundos. Rango completo.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> llevar los codos hacia adelante al subir, no completar el rango completo, usar impulso del torso.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> llevar los codos hacia adelante al subir, no completar el rango completo, usar impulso del torso.
   </div>
 </div>
         <table class="series-table">
@@ -893,10 +894,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
         <div class="rating" data-exid="e2-ex05">
           <button class="rate-btn like" onclick="rate('e2-ex05','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e2-ex05','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
         <a class="ex-link" href="https://fitwill.app/es/exercise/1872/lever-preacher-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -904,7 +905,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -913,7 +914,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -922,11 +923,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Curl en polea baja de pie</div>
         <div class="ex-desc">La polea mantiene tensión constante en todo el recorrido a diferencia de las mancuernas, que pierden tensión en la parte alta del movimiento.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> de pie frente a la polea baja. Espalda recta, ligerísima inclinación. Codos pegados al cuerpo durante todo el movimiento.</div>
           <div class="postura-section"><strong>Agarre:</strong> barra recta o cuerda. Palmas hacia arriba con barra, neutras con cuerda.</div>
           <div class="postura-section"><strong>Movimiento:</strong> sube hasta que los antebrazos queden horizontales, aprieta 1 segundo. Baja lento. No subas más de horizontal — pierde tensión.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> mover los codos hacia adelante, balancear el cuerpo, no controlar la bajada.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos hacia adelante, balancear el cuerpo, no controlar la bajada.
   </div>
 </div>
         <table class="series-table">
@@ -941,17 +942,17 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <a class="ex-link" href="https://fitwill.app/es/exercise/1630/cable-close-grip-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
         <div class="rating" data-exid="e2-ex06">
           <button class="rate-btn like" onclick="rate('e2-ex06','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e2-ex06','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
     </div>
   </div>
 
       
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -960,7 +961,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -969,11 +970,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Curl martillo con mancuernas</div>
         <div class="ex-desc">El agarre neutro activa el braquiorradial además del bíceps. Contribuye al grosor visual del brazo entero y mejora la fuerza de agarre.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> de pie o sentado. Espalda recta. Codos pegados al cuerpo.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas enfrentadas entre sí (como sujetando un martillo). No gires las muñecas durante el movimiento.</div>
           <div class="postura-section"><strong>Movimiento:</strong> sube alternando brazos hasta que el antebrazo quede horizontal. Baja lento. No subas más allá de horizontal.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> balancear el torso para ayudar, girar las muñecas durante el movimiento, subir demasiado rápido.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> balancear el torso para ayudar, girar las muñecas durante el movimiento, subir demasiado rápido.
   </div>
 </div>
         <table class="series-table">
@@ -987,10 +988,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquiorradial</span></div>
         <div class="rating" data-exid="e2-ex07">
           <button class="rate-btn like" onclick="rate('e2-ex07','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e2-ex07','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
         <a class="ex-link" href="https://fitwill.app/es/exercise/2239/dumbbell-hammer-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -999,7 +1000,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
 
 <div class="stretch-section">
-  <div class="stretch-title">🧘 Estiramientos finales — Espalda · Bíceps</div>
+  <div class="stretch-title"><i class="ph ph-person-simple"></i> Estiramientos finales — Espalda · Bíceps</div>
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Dorsal con brazo extendido:</strong> agarra un poste o máquina con una mano, da un paso atrás y deja que el peso del cuerpo tire suavemente hacia abajo. Nota el estiramiento en el lateral de la espalda.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Gato-vaca (suelo):</strong> a cuatro patas, arquea la espalda hacia arriba (gato) y luego hacia abajo sacando pecho (vaca). Alterna lento 5-6 veces. Moviliza toda la columna.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Estiramiento de bíceps en pared:</strong> apoya la palma en la pared con el pulgar hacia abajo y el brazo extendido. Gira suavemente el cuerpo hacia adelante hasta notar el estiramiento en el bíceps y el antebrazo.</span></div>
@@ -1038,7 +1039,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1047,11 +1048,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Prensa de piernas (leg press)</div>
         <div class="ex-desc">Ejercicio principal de pierna sin impacto en rodillas. Empujar desde los talones activa más glúteo e isquiotibiales y protege la rodilla.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> espalda y glúteos completamente apoyados. Pies a la anchura de los hombros en la mitad-alta de la plataforma.</div>
           <div class="postura-section"><strong>Agarre:</strong> manos en las asas laterales para estabilizar. No usar las manos para empujar las rodillas.</div>
           <div class="postura-section"><strong>Movimiento:</strong> baja hasta 90° de flexión de rodilla — no más. Empuja desde los talones. Nunca bloquees las rodillas al extender.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> bajar más de 90° (sobrecarga rodilla), poner los pies demasiado bajos en la plataforma, bloquear rodillas al extender.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> bajar más de 90° (sobrecarga rodilla), poner los pies demasiado bajos en la plataforma, bloquear rodillas al extender.
   </div>
 </div>
         <table class="series-table">
@@ -1065,16 +1066,16 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Cuádriceps</span><span class="pill p-muscle">Glúteo mayor</span><span class="pill p-muscle">Isquiotibiales</span></div>
         <div class="rating" data-exid="e3-ex01">
           <button class="rate-btn like" onclick="rate('e3-ex01','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e3-ex01','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
     </div>
   </div>
 
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1084,7 +1085,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1093,11 +1094,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Extensión de piernas (máquina)</div>
         <div class="ex-desc">Aislamiento de cuádriceps. Si molesta la rótula, trabaja solo los últimos 60° del recorrido — menor presión articular en esa zona.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que el hueco de la rodilla quede justo en el borde. El rodillo apoya en el tobillo, no en el empeine.</div>
           <div class="postura-section"><strong>Agarre:</strong> manos en las asas laterales. No apretar con fuerza — solo para estabilizar.</div>
           <div class="postura-section"><strong>Movimiento:</strong> sube hasta extensión completa, aprieta el cuádriceps 1 segundo, baja lento en 3 segundos.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> usar impulso para subir, no llegar a la extensión completa, bajar demasiado rápido. Si hay dolor en rótula, reduce el rango.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> usar impulso para subir, no llegar a la extensión completa, bajar demasiado rápido. Si hay dolor en rótula, reduce el rango.
   </div>
 </div>
         <table class="series-table">
@@ -1111,16 +1112,16 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Cuádriceps</span></div>
         <div class="rating" data-exid="e3-ex02">
           <button class="rate-btn like" onclick="rate('e3-ex02','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e3-ex02','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
     </div>
   </div>
 
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1130,7 +1131,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1139,11 +1140,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Flexión de pierna acostado (máquina)</div>
         <div class="ex-desc">Si las caderas se levantan del acolchado estás usando la zona lumbar en lugar de los isquiotibiales — reduce el peso y mantén las caderas pegadas.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> tumbado boca abajo. El rodillo apoya justo por encima del talón, no en el tendón de Aquiles. Caderas pegadas al acolchado en todo momento.</div>
           <div class="postura-section"><strong>Agarre:</strong> manos en las asas. No usar los brazos para empujar o tirar.</div>
           <div class="postura-section"><strong>Movimiento:</strong> dobla las rodillas llevando los talones hacia los glúteos. Aprieta 1 segundo arriba. Baja lento.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> levantar las caderas del acolchado, forzar el rango si hay dolor en el tendón, bajar demasiado rápido.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> levantar las caderas del acolchado, forzar el rango si hay dolor en el tendón, bajar demasiado rápido.
   </div>
 </div>
         <table class="series-table">
@@ -1157,16 +1158,16 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Isquiotibiales</span><span class="pill p-muscle">Glúteo (sec.)</span></div>
         <div class="rating" data-exid="e3-ex03">
           <button class="rate-btn like" onclick="rate('e3-ex03','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e3-ex03','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
     </div>
   </div>
 
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1176,7 +1177,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1185,11 +1186,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Abducción de cadera (máquina)</div>
         <div class="ex-desc">Fortalece el glúteo medio y abductores — los estabilizadores de la rodilla. Con estos músculos débiles la rodilla sufre más en todos los demás ejercicios.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> sentado con la espalda apoyada. Rodillas sobre los apoyos acolchados.</div>
           <div class="postura-section"><strong>Agarre:</strong> manos en las asas o en los muslos. Espalda recta durante todo el movimiento.</div>
           <div class="postura-section"><strong>Movimiento:</strong> abre las piernas contra la resistencia. Aguanta 1 segundo en máxima apertura. Cierra lento en 3 segundos.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> cerrar demasiado rápido, arquear la espalda para ayudar, abrir más allá de la posición cómoda.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> cerrar demasiado rápido, arquear la espalda para ayudar, abrir más allá de la posición cómoda.
   </div>
 </div>
         <table class="series-table">
@@ -1203,16 +1204,16 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Glúteo medio</span><span class="pill p-muscle">Tensor fascia lata</span></div>
         <div class="rating" data-exid="e3-ex04">
           <button class="rate-btn like" onclick="rate('e3-ex04','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e3-ex04','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
     </div>
   </div>
 
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1222,7 +1223,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1231,11 +1232,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Aducción de cadera (máquina)</div>
         <div class="ex-desc">Equilibra el trabajo de abducción y estabiliza la rodilla desde el lado opuesto. La cara interna del muslo es uno de los músculos más ignorados y más importantes para la estabilidad de la rodilla.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> sentado con las piernas abiertas sobre los apoyos. Espalda apoyada en el respaldo.</div>
           <div class="postura-section"><strong>Agarre:</strong> manos en las asas. Espalda recta, no te inclines hacia adelante.</div>
           <div class="postura-section"><strong>Movimiento:</strong> junta las piernas contra la resistencia. Aguanta 1 segundo al cerrar. Abre lento controlando el peso.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> cerrar con impulso, encorvar la espalda, no controlar la apertura.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> cerrar con impulso, encorvar la espalda, no controlar la apertura.
   </div>
 </div>
         <table class="series-table">
@@ -1249,16 +1250,16 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Aductores</span><span class="pill p-muscle">Grácil</span></div>
         <div class="rating" data-exid="e3-ex05">
           <button class="rate-btn like" onclick="rate('e3-ex05','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e3-ex05','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
     </div>
   </div>
 
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1268,7 +1269,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1277,11 +1278,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Contracción abdominal (máquina)</div>
         <div class="ex-desc">El movimiento correcto es flexión de columna, no de cadera. El ombligo se acerca al pecho, no la cabeza a las rodillas.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> sentado con los pies apoyados. Ajusta el apoyo del pecho a la altura correcta según la máquina.</div>
           <div class="postura-section"><strong>Agarre:</strong> brazos cruzados sobre el pecho o agarrando las asas según el modelo de la máquina.</div>
           <div class="postura-section"><strong>Movimiento:</strong> inclínate desde las costillas. Aguanta 1 segundo en máxima contracción. Vuelve lento. Exhala al contraer, inhala al volver.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> tirar del cuello, flexionar desde las caderas en lugar de la columna, rebotar en la posición inicial.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar del cuello, flexionar desde las caderas en lugar de la columna, rebotar en la posición inicial.
   </div>
 </div>
         <table class="series-table">
@@ -1295,16 +1296,16 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Recto abdominal</span><span class="pill p-muscle">Oblicuos (sec.)</span></div>
         <div class="rating" data-exid="e3-ex06">
           <button class="rate-btn like" onclick="rate('e3-ex06','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e3-ex06','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
     </div>
   </div>
 
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1314,7 +1315,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1323,11 +1324,11 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Plancha frontal (suelo)</div>
         <div class="ex-desc">El ejercicio de core más eficiente sin impacto en columna lumbar. Refuerza directamente la postura deteriorada por trabajar sentado. Empieza en 30 seg, añade 5-10 seg cada semana.</div>
         <div class="postura-box">
-          <div class="postura-title">📐 Postura y ejecución</div>
+          <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> antebrazos y punteras de los pies. Los codos directamente bajo los hombros. Cabeza en posición neutra mirando al suelo.</div>
           <div class="postura-section"><strong>Agarre:</strong> puños cerrados o palmas planas en el suelo. Antebrazos paralelos.</div>
           <div class="postura-section"><strong>Movimiento:</strong> mantén la posición con respiración continua. Activa el abdomen y los glúteos conscientemente. Línea recta de talones a nuca.</div>
-          <div class="postura-section"><strong>⚠️ Evitar:</strong> dejar caer las caderas, subir el trasero, aguantar la respiración, encorvar el cuello hacia arriba o abajo.
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> dejar caer las caderas, subir el trasero, aguantar la respiración, encorvar el cuello hacia arriba o abajo.
   </div>
 </div>
         <table class="series-table">
@@ -1341,10 +1342,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="muscles"><span class="pill p-muscle">Core profundo</span><span class="pill p-muscle">Transverso abd.</span><span class="pill p-muscle">Glúteo</span></div>
         <div class="rating" data-exid="e3-ex07">
           <button class="rate-btn like" onclick="rate('e3-ex07','like',this)" title="Completado">
-            <span class="rate-icon">✅</span> Completado
+            <i class="ph ph-check-circle"></i> Completado
           </button>
           <button class="rate-btn dislike" onclick="rate('e3-ex07','dislike',this)" title="No completado">
-            <span class="rate-icon">❌</span> No completado
+            <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
     </div>
@@ -1352,7 +1353,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
 
 <div class="stretch-section">
-  <div class="stretch-title">🧘 Estiramientos finales — Piernas · Abdominales</div>
+  <div class="stretch-title"><i class="ph ph-person-simple"></i> Estiramientos finales — Piernas · Abdominales</div>
   <div class="stretch-item"><span class="s-time">40 seg c/lado</span><span><strong>Cuádriceps de pie:</strong> de pie, dobla una rodilla llevando el talón hacia el glúteo. Agarra el tobillo con la mano del mismo lado. Mantén las rodillas juntas y la espalda recta. Apoyo en pared si hay problema de equilibrio.</span></div>
   <div class="stretch-item"><span class="s-time">40 seg c/lado</span><span><strong>Isquiotibiales sentado:</strong> sentado en el suelo, extiende una pierna y dobla la otra. Inclínate hacia adelante desde las caderas (no desde la espalda) hacia la pierna extendida. Nota el tirón en la parte posterior del muslo.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Glúteo figura 4:</strong> tumbado boca arriba, cruza un tobillo sobre la rodilla contraria. Agarra el muslo de la pierna de abajo y tira suavemente hacia el pecho. Nota el estiramiento profundo en el glúteo. Clave para las rodillas.</span></div>
@@ -1393,7 +1394,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1412,7 +1413,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1422,7 +1423,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1441,7 +1442,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1451,7 +1452,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1470,7 +1471,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1480,7 +1481,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1499,7 +1500,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1509,7 +1510,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1528,7 +1529,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1538,7 +1539,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1557,7 +1558,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1567,7 +1568,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1586,7 +1587,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 </div></div>
 
-<div class="inter-rest">🔄 <span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
@@ -1596,7 +1597,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
-      <span class="ex-chevron">▾</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
     </div>
   </div>
   <div class="ex-body">
@@ -1616,7 +1617,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div></div>
 
       <div class="stretch-section">
-        <div class="stretch-title">🧘 Estiramientos finales — Full body</div>
+        <div class="stretch-title"><i class="ph ph-person-simple"></i> Estiramientos finales — Full body</div>
         <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Pectoral en pared:</strong> apoya una mano en la pared con el brazo extendido a la altura del hombro. Gira el cuerpo hacia el lado contrario hasta notar el estiramiento en el pecho.</span></div>
         <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Dorsal con brazo extendido:</strong> agarra un poste o máquina con una mano, da un paso atrás y deja que el peso del cuerpo tire suavemente. Nota el estiramiento en el lateral de la espalda.</span></div>
         <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Tríceps sobre la cabeza:</strong> levanta un brazo, dobla el codo llevando la mano hacia la espalda. Con la otra mano presiona suavemente el codo hacia atrás.</span></div>
@@ -1634,7 +1635,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
 
 <!-- PAGE: RESUMEN -->
-<div class="page" id="page-resumen"><button class="back-btn" onclick="backToTraining()">← Volver a entrenos</button>
+<div class="page" id="page-resumen"><button class="back-btn" onclick="backToTraining()"><i class="ph ph-arrow-left"></i> Volver a entrenos</button>
 
 
 
@@ -1676,16 +1677,16 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
   <div class="section-title">Estructura de cada sesión</div>
   <ul class="tip-list">
-    <li><span>⏱</span><span><strong>5 min calentamiento:</strong> bici estática o elíptica suave. Sin impacto en rodillas.</span></li>
-    <li><span>🔁</span><span><strong>3 series con peso progresivo:</strong> S1 calentamiento · S2 trabajo · S3 máximo del día (8-10 reps).</span></li>
-    <li><span>⏸</span><span><strong>Descanso:</strong> 90-120 seg en compuestos · 60-90 seg en aislamiento.</span></li>
-    <li><span>🧘</span><span><strong>5-10 min estiramientos</strong> al final — cuádriceps, isquiotibiales y pectoral.</span></li>
+    <li><i class="ph ph-timer"></i><span><strong>5 min calentamiento:</strong> bici estática o elíptica suave. Sin impacto en rodillas.</span></li>
+    <li><i class="ph ph-arrows-clockwise"></i><span><strong>3 series con peso progresivo:</strong> S1 calentamiento · S2 trabajo · S3 máximo del día (8-10 reps).</span></li>
+    <li><i class="ph ph-pause-circle"></i><span><strong>Descanso:</strong> 90-120 seg en compuestos · 60-90 seg en aislamiento.</span></li>
+    <li><i class="ph ph-person-simple"></i><span><strong>5-10 min estiramientos</strong> al final — cuádriceps, isquiotibiales y pectoral.</span></li>
   </ul>
   
 </div>
 
 <!-- PAGE: RECOMENDACIONES -->
-<div class="page" id="page-recomendaciones"><button class="back-btn" onclick="backToTraining()">← Volver a entrenos</button>
+<div class="page" id="page-recomendaciones"><button class="back-btn" onclick="backToTraining()"><i class="ph ph-arrow-left"></i> Volver a entrenos</button>
   <div class="section-title">Recomendaciones</div>
 
 
@@ -1695,24 +1696,24 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     <div class="phase"><div class="phase-label">Objetivo</div><div class="phase-val" style="color:#6b21a8">4-6</div><div class="phase-sub">Fuerza + comp.</div></div>
   </div>
   <ul class="tip-list">
-    <li><span>📈</span><span><strong>Regla de progresión:</strong> cuando completes las 3 series con el máximo de reps en 2 sesiones consecutivas → sube la S3 al siguiente escalón y ajusta S1 y S2 en proporción.</span></li>
-    <li><span>🔄</span><span><strong>Variación cada 6 semanas:</strong> cambia el agarre en jalón (ancho → neutro → estrecho) sin cambiar el bloque completo.</span></li>
-    <li><span>📅</span><span><strong>Semana de descarga cada 6-8 semanas:</strong> todos los ejercicios al peso de S1. Es cuando el músculo consolida las ganancias.</span></li>
-    <li><span>📝</span><span><strong>Diario de entreno:</strong> apunta los 3 pesos y las reps de cada serie. Sin datos no hay progresión consciente.</span></li>
-    <li><span>🌙</span><span><strong>Sueño mínimo 7 horas:</strong> la hormona de crecimiento se segrega en el sueño profundo. Sin descanso el músculo no crece.</span></li>
-    <li><span>🦵</span><span><strong>Rodillas y gemelos:</strong> calentamiento siempre en bici estática. Prensa con rango parcial si hay molestia.</span></li>
+    <li><i class="ph ph-trend-up"></i><span><strong>Regla de progresión:</strong> cuando completes las 3 series con el máximo de reps en 2 sesiones consecutivas → sube la S3 al siguiente escalón y ajusta S1 y S2 en proporción.</span></li>
+    <li><i class="ph ph-arrows-clockwise"></i><span><strong>Variación cada 6 semanas:</strong> cambia el agarre en jalón (ancho → neutro → estrecho) sin cambiar el bloque completo.</span></li>
+    <li><i class="ph ph-calendar-blank"></i><span><strong>Semana de descarga cada 6-8 semanas:</strong> todos los ejercicios al peso de S1. Es cuando el músculo consolida las ganancias.</span></li>
+    <li><i class="ph ph-note-pencil"></i><span><strong>Diario de entreno:</strong> apunta los 3 pesos y las reps de cada serie. Sin datos no hay progresión consciente.</span></li>
+    <li><i class="ph ph-moon"></i><span><strong>Sueño mínimo 7 horas:</strong> la hormona de crecimiento se segrega en el sueño profundo. Sin descanso el músculo no crece.</span></li>
+    <li><i class="ph ph-person-simple-run"></i><span><strong>Rodillas y gemelos:</strong> calentamiento siempre en bici estática. Prensa con rango parcial si hay molestia.</span></li>
   </ul>
 </div>
 
 <!-- PAGE: PROGRESO -->
 <div class="page" id="page-progreso">
-  <button class="back-btn" onclick="backToTraining()">← Volver a entrenos</button>
+  <button class="back-btn" onclick="backToTraining()"><i class="ph ph-arrow-left"></i> Volver a entrenos</button>
   <div class="progress-person-tabs">
     <button class="ppt-btn active" id="prog-angel" onclick="switchProgressPerson('angel')">Ángel</button>
     <button class="ppt-btn" id="prog-manu" onclick="switchProgressPerson('manu')">Manu</button>
   </div>
   <div id="progress-content">
-    <div class="no-data">📊 Completa ejercicios para ver tu progreso aquí.</div>
+    <div class="no-data"><i class="ph ph-chart-bar" style="font-size:32px;display:block;margin-bottom:8px"></i>Completa ejercicios para ver tu progreso aquí.</div>
   </div>
 </div>
 
@@ -1880,7 +1881,7 @@ function renderProgress(person) {
   // Check if any data
   const hasData = Object.keys(data).length > 0;
   if (!hasData) {
-    container.innerHTML = '<div class="no-data">📊 Aún no hay datos de ' + (person === 'angel' ? 'Ángel' : 'Manu') + '.<br>Completa o descarta ejercicios para ver el progreso.</div>';
+    container.innerHTML = '<div class="no-data"><i class="ph ph-chart-bar" style="font-size:32px;display:block;margin-bottom:8px"></i>Aún no hay datos de ' + (person === 'angel' ? 'Ángel' : 'Manu') + '.<br>Completa o descarta ejercicios para ver el progreso.</div>';
     return;
   }
   
@@ -1982,7 +1983,7 @@ function toggleComplete(sid, nextId, doneLabel) {
     updateNextSection(completed);
     // Show toast
     const toast = document.getElementById('complete-toast');
-    toast.textContent = '✓ ' + doneLabel;
+    toast.innerHTML = '<i class="ph ph-check"></i> ' + doneLabel;
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 2000);
     // Move to next section
