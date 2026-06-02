@@ -205,10 +205,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
 
 /* COMPLETE BUTTON */
-.complete-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px;margin-top:16px;background:#14532d;border:1.5px solid #22c55e;border-radius:14px;color:#4ade80;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:0.02em}
-.complete-btn:active{background:#166534;transform:scale(0.98)}
-.complete-btn .complete-icon{font-size:20px}
-.complete-toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#14532d;border:1px solid #22c55e;color:#4ade80;padding:12px 24px;border-radius:30px;font-size:14px;font-weight:600;z-index:500;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
+.complete-btn{display:flex;align-items:center;justify-content:center;width:100%;padding:16px;margin-top:16px;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:0.02em;border:1.5px solid #f97316;background:transparent;color:#f97316}
+.complete-btn:active{opacity:0.8;transform:scale(0.98)}
+.complete-btn.done{background:#14532d;border-color:#22c55e;color:#4ade80}
+.complete-toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#1a1a1a;border:1px solid #f97316;color:#f97316;padding:12px 24px;border-radius:30px;font-size:14px;font-weight:600;z-index:500;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
 .complete-toast.show{opacity:1}
 
 </style>
@@ -643,9 +643,8 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
 
-<button class="complete-btn done" disabled style="background:#0a2e18;border-color:#166534;color:#4ade80;opacity:0.7;cursor:default">
-  <span class="complete-icon">✅</span> Entreno 1 completado
-</button>
+
+<button class="complete-btn" id="btn-e1" onclick="toggleComplete('e1','e2','Entreno 01 finalizado')">Finalizar entreno</button>
 </div>
 
 
@@ -1005,9 +1004,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
 
-<button class="complete-btn" onclick="completeEntreno('e2','e3')">
-  <span class="complete-icon">🏁</span> Entreno 2 completado
-</button>
+<button class="complete-btn" id="btn-e2" onclick="toggleComplete('e2','e3','Entreno 02 finalizado')">Finalizar entreno</button>
 </div>
 
 
@@ -1361,9 +1358,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
 
-<button class="complete-btn" onclick="completeEntreno('e3','eopt')">
-  <span class="complete-icon">🏁</span> Entreno 3 completado
-</button>
+<button class="complete-btn" id="btn-e3" onclick="toggleComplete('e3','eopt','Entreno 03 finalizado')">Finalizar entreno</button>
 </div>
 
 
@@ -1629,9 +1624,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
 
-<button class="complete-btn" onclick="completeEntreno('eopt','e1')">
-  <span class="complete-icon">🏁</span> Entreno opcional completado
-</button>
+<button class="complete-btn" id="btn-eopt" onclick="toggleComplete('eopt','e1','Entreno Opcional finalizado')">Finalizar entreno</button>
 </div>
 
 
@@ -1960,61 +1953,106 @@ function backToTraining() {
 }
 
 // ── COMPLETE ENTRENO ─────────────────────────────────────────────────────
-function completeEntreno(currentId, nextId) {
-  // Save: next section + timestamp
-  const data = {
-    nextSection: nextId,
-    completedAt: Date.now(),
-    completedSection: currentId
+function toggleComplete(sid, nextId, doneLabel) {
+  const btn = document.getElementById('btn-' + sid);
+  const isDone = btn.classList.contains('done');
+
+  if (isDone) {
+    // Undo: mark as not done
+    btn.classList.remove('done');
+    btn.textContent = 'Finalizar entreno';
+    // Remove from completed set
+    const completed = getCompleted();
+    delete completed[sid];
+    saveCompleted(completed);
+    // Recompute next section
+    updateNextSection(completed);
+  } else {
+    // Mark as done
+    btn.classList.add('done');
+    btn.textContent = doneLabel;
+    // Save to completed set
+    const completed = getCompleted();
+    completed[sid] = { ts: Date.now(), date: new Date().toISOString().split('T')[0] };
+    saveCompleted(completed);
+    updateNextSection(completed);
+    // Show toast
+    const toast = document.getElementById('complete-toast');
+    toast.textContent = '✓ ' + doneLabel;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+    // Move to next section
+    setTimeout(() => showSection(nextId), 600);
+  }
+}
+
+function getCompleted() {
+  try {
+    const raw = localStorage.getItem('gymplan-completed');
+    if (!raw) return {};
+    return JSON.parse(raw);
+  } catch { return {}; }
+}
+
+function saveCompleted(data) {
+  localStorage.setItem('gymplan-completed', JSON.stringify(data));
+}
+
+function updateNextSection(completed) {
+  // Determine which section to show next: first uncompleted in order
+  const order = ['e1','e2','e3','eopt'];
+  const next = order.find(s => !completed[s]) || 'e1';
+  localStorage.setItem('gymplan-next-section', JSON.stringify({
+    nextSection: next,
+    completedAt: Date.now()
+  }));
+}
+
+function loadCompletedButtons() {
+  const completed = getCompleted();
+  const labels = {
+    'e1': 'Entreno 01 finalizado',
+    'e2': 'Entreno 02 finalizado',
+    'e3': 'Entreno 03 finalizado',
+    'eopt': 'Entreno Opcional finalizado'
   };
-  localStorage.setItem('gymplan-next-section', JSON.stringify(data));
-
-  // Show toast
-  const toast = document.getElementById('complete-toast');
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 2500);
-
-  // Switch to next section after short delay
-  setTimeout(() => showSection(nextId), 800);
+  for (const [sid, data] of Object.entries(completed)) {
+    const btn = document.getElementById('btn-' + sid);
+    if (btn) {
+      btn.classList.add('done');
+      btn.textContent = labels[sid] || 'Finalizado';
+    }
+  }
 }
 
 function getStartSection() {
-  // If today is Monday, always reset to e1
   const today = new Date();
-  if (today.getDay() === 1) { // 1 = Monday
-    localStorage.removeItem('gymplan-next-section');
-    return 'e1';
-  }
-
-  // Otherwise check saved next section
-  try {
-    const raw = localStorage.getItem('gymplan-next-section');
-    if (!raw) return 'e1';
-    const data = JSON.parse(raw);
-    // Valid for 7 days max
-    if (Date.now() - data.completedAt > 7 * 24 * 60 * 60 * 1000) {
+  // Monday: reset everything
+  if (today.getDay() === 1) {
+    const lastReset = localStorage.getItem('gymplan-last-reset');
+    const todayStr = today.toISOString().split('T')[0];
+    if (lastReset !== todayStr) {
+      localStorage.removeItem('gymplan-completed');
       localStorage.removeItem('gymplan-next-section');
-      return 'e1';
+      localStorage.setItem('gymplan-last-reset', todayStr);
     }
-    return data.nextSection || 'e1';
-  } catch {
     return 'e1';
   }
+  // Other days: first uncompleted section
+  const completed = getCompleted();
+  const order = ['e1','e2','e3','eopt'];
+  return order.find(s => !completed[s]) || 'e1';
 }
 
 // ── INIT ──────────────────────────────────────────────────────────────────
 const sp = localStorage.getItem('gymplan-person') || 'angel';
 document.querySelectorAll('.section').forEach(s => setPerson(sp, s));
-// One-time seed: if no history and not Monday, default to e2
-// (Ángel y Manu ya hicieron Entreno 1 el lunes)
-if (!localStorage.getItem('gymplan-next-section') && new Date().getDay() !== 1) {
-  localStorage.setItem('gymplan-next-section', JSON.stringify({
-    nextSection: 'e2',
-    completedAt: Date.now(),
-    completedSection: 'e1',
-    seeded: true
-  }));
+// Seed e1 as completed (ya lo hicisteis el lunes pasado)
+if (!localStorage.getItem('gymplan-completed') && new Date().getDay() !== 1) {
+  const completed = { e1: { ts: Date.now(), date: new Date().toISOString().split('T')[0] } };
+  saveCompleted(completed);
 }
+loadCompletedButtons();
 showSection(getStartSection());
 
 // Service Worker
