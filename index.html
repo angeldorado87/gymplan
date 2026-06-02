@@ -2245,6 +2245,15 @@ function getStartSection() {
 // ── INIT ──────────────────────────────────────────────────────────────────
 const sp = localStorage.getItem('gymplan-person') || 'angel';
 document.querySelectorAll('.section').forEach(s => setPerson(sp, s));
+// One-time reset: clear test data
+if (!localStorage.getItem('gymplan-reset-v2')) {
+  localStorage.removeItem('gymplan-ratings-angel');
+  localStorage.removeItem('gymplan-ratings-manu');
+  localStorage.removeItem('gymplan-completed');
+  localStorage.removeItem('gymplan-next-section');
+  localStorage.setItem('gymplan-reset-v2', '1');
+}
+
 // Seed e1 as completed (ya lo hicisteis el lunes pasado)
 if (!localStorage.getItem('gymplan-completed') && new Date().getDay() !== 1) {
   const completed = { e1: { ts: Date.now(), date: new Date().toISOString().split('T')[0] } };
