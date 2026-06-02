@@ -203,10 +203,19 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .ex-body .ex-num{display:none}
 .ex-body .ex-name{display:none}
 
+
+/* COMPLETE BUTTON */
+.complete-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px;margin-top:16px;background:#14532d;border:1.5px solid #22c55e;border-radius:14px;color:#4ade80;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:0.02em}
+.complete-btn:active{background:#166534;transform:scale(0.98)}
+.complete-btn .complete-icon{font-size:20px}
+.complete-toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#14532d;border:1px solid #22c55e;color:#4ade80;padding:12px 24px;border-radius:30px;font-size:14px;font-weight:600;z-index:500;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
+.complete-toast.show{opacity:1}
+
 </style>
 </head>
 <body>
 
+<div class="complete-toast" id="complete-toast">✅ ¡Entreno guardado!</div>
 <div class="header">
   <div class="header-logo"><img src="icon-192.png" alt="GymPlan"></div>
   <div class="header-title">Plan de Entrenamiento</div>
@@ -634,6 +643,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
 </div>
+<button class="complete-btn" onclick="completeEntreno('e1','e2')">
+  <span class="complete-icon">🏁</span> Entreno 1 completado
+</button>
+
 
 <div id="e2" class="section">
 <div class="person-toggle">
@@ -990,6 +1003,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
 </div>
+<button class="complete-btn" onclick="completeEntreno('e2','e3')">
+  <span class="complete-icon">🏁</span> Entreno 2 completado
+</button>
+
 
 <div id="e3" class="section">
 <div class="person-toggle">
@@ -1340,6 +1357,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
 </div>
+<button class="complete-btn" onclick="completeEntreno('e3','eopt')">
+  <span class="complete-icon">🏁</span> Entreno 3 completado
+</button>
+
 
 <div id="eopt" class="section">
 <div class="person-toggle">
@@ -1602,6 +1623,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
 </div>
+<button class="complete-btn" onclick="completeEntreno('eopt','e1')">
+  <span class="complete-icon">🏁</span> Opcional completado
+</button>
+
 
 <!-- PAGE: RESUMEN -->
 <div class="page" id="page-resumen"><button class="back-btn" onclick="backToTraining()">← Volver a entrenos</button>
@@ -1926,10 +1951,53 @@ function backToTraining() {
   showSection(currentSection || 'e1');
 }
 
+// ── COMPLETE ENTRENO ─────────────────────────────────────────────────────
+function completeEntreno(currentId, nextId) {
+  // Save: next section + timestamp
+  const data = {
+    nextSection: nextId,
+    completedAt: Date.now(),
+    completedSection: currentId
+  };
+  localStorage.setItem('gymplan-next-section', JSON.stringify(data));
+
+  // Show toast
+  const toast = document.getElementById('complete-toast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+
+  // Switch to next section after short delay
+  setTimeout(() => showSection(nextId), 800);
+}
+
+function getStartSection() {
+  // If today is Monday, always reset to e1
+  const today = new Date();
+  if (today.getDay() === 1) { // 1 = Monday
+    localStorage.removeItem('gymplan-next-section');
+    return 'e1';
+  }
+
+  // Otherwise check saved next section
+  try {
+    const raw = localStorage.getItem('gymplan-next-section');
+    if (!raw) return 'e1';
+    const data = JSON.parse(raw);
+    // Valid for 7 days max
+    if (Date.now() - data.completedAt > 7 * 24 * 60 * 60 * 1000) {
+      localStorage.removeItem('gymplan-next-section');
+      return 'e1';
+    }
+    return data.nextSection || 'e1';
+  } catch {
+    return 'e1';
+  }
+}
+
 // ── INIT ──────────────────────────────────────────────────────────────────
 const sp = localStorage.getItem('gymplan-person') || 'angel';
 document.querySelectorAll('.section').forEach(s => setPerson(sp, s));
-showSection('e1');
+showSection(getStartSection());
 
 // Service Worker
 if ('serviceWorker' in navigator) {
