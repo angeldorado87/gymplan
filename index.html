@@ -95,7 +95,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .ex-block:last-child{margin-bottom:8px}
 .ex-num{font-size:10px;font-weight:700;color:#666;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
 .ex-name{font-size:14px;font-weight:600;color:#f97316;margin-bottom:8px}
-.ex-desc{font-size:13px;color:#b0b0b0;line-height:1.6;margin-bottom:10px}
+.ex-desc{font-size:13px;color:#b0b0b0;line-height:1.6;margin-bottom:8px}
 
 /* SERIES TABLE */
 .series-table{width:100%;border-collapse:collapse;margin-bottom:10px;border-radius:8px;overflow:hidden;border:1px solid #2a2a2a}
@@ -114,31 +114,31 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .b-s3{background:#431407;color:#f97316}
 
 /* REST BOXES */
-.rest-box{display:flex;align-items:center;gap:6px;font-size:12px;color:#888;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:0 0 8px 8px;padding:6px 10px;margin-top:-2px;margin-bottom:10px}
-.rest-box span{font-weight:600;color:#aaa}
+.rest-box{display:flex;align-items:center;justify-content:center;gap:5px;font-size:12px;color:#666;padding:8px 0;border-top:1px solid #2a2a2a;border-bottom:1px solid #2a2a2a;margin-bottom:10px;text-align:center}
+.rest-box span{color:#888}
 .inter-rest{display:flex;align-items:center;justify-content:center;font-size:12px;color:#c084fc;background:#1a0b2e;border:1px solid #4c1d95;border-radius:8px;padding:7px 12px;margin:0 0 8px;font-weight:500;text-align:center}
 
 /* POSTURA */
-.postura-box{background:#1f1f1f;border:1px solid #2a2a2a;border-radius:8px;padding:12px;margin-bottom:10px;font-size:12px;color:#b0b0b0;line-height:1.6}
+.postura-box{padding-top:8px;margin-bottom:8px;font-size:12px;color:#b0b0b0;line-height:1.6;border-top:1px solid #2a2a2a}
 .postura-box .postura-title{font-size:11px;font-weight:700;color:#ccc;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;display:flex;align-items:center;gap:5px}
 .postura-section{margin-bottom:6px}
 .postura-section:last-child{margin-bottom:0}
 .postura-section strong{color:#f0f0f0;font-weight:600}
 
 /* MUSCLES / PILLS */
-.muscles{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.muscles{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
 .pill{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500}
 .p-muscle{background:#2a2a2a;color:#aaa;border:1px solid #333}
 .p-new{background:#451a03;color:#fb923c;border:1px solid #7c2d12}
 .hidden{display:none!important}
 
 /* FITWILL LINK */
-.ex-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#f97316;text-decoration:none;padding:6px 12px;border-radius:8px;border:1px solid #7c2d12;background:#1f0f00;margin-top:10px;font-weight:600;transition:background .2s}
-.ex-link:active{background:#2a1500}
+.ex-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#f97316;text-decoration:none;margin-top:4px;font-weight:500}
+.ex-link:active{opacity:0.7}
 .ex-link svg{flex-shrink:0}
 
 /* RATING */
-.rating{display:flex;gap:10px;margin-top:12px;padding-top:10px;border-top:1px solid #222}
+.rating{display:flex;gap:8px;padding-top:8px;border-top:1px solid #2a2a2a}
 .rate-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px;border-radius:10px;border:1.5px solid #333;background:#1f1f1f;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;color:#888}
 .rate-btn.like.selected{background:#14532d;border-color:#22c55e;color:#4ade80}
 .rate-btn.dislike.selected{background:#450a0a;border-color:#ef4444;color:#f87171}
@@ -188,7 +188,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .ex-block:last-child{margin-bottom:8px}
 .ex-toggle{display:flex;align-items:center;justify-content:space-between;padding:8px;cursor:pointer;user-select:none;gap:8px}
 .ex-toggle-left{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
-.ex-toggle-num{font-size:10px;font-weight:700;color:#555;letter-spacing:0.08em;flex-shrink:0}
+.ex-toggle-num{display:none}
 .ex-toggle-name{font-size:14px;font-weight:600;color:#f97316;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ex-toggle-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .ex-status{display:none}
@@ -197,7 +197,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .ex-status.pending{display:none}
 .ex-chevron{font-size:16px;color:#666;transition:transform .2s;flex-shrink:0}
 .ex-chevron.open{transform:rotate(180deg)}
-.ex-body{display:none;padding:0 8px 8px}
+.ex-body{display:none;padding:10px 8px 8px}
 .ex-body.open{display:block}
 /* override old ex rules inside ex-body */
 .ex-body .ex-num{display:none}
@@ -216,6 +216,8 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .pt-btn{display:flex;align-items:center;justify-content:center;gap:8px}
 
 .ex-desc-title{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;display:flex;align-items:center;gap:5px;margin-top:12px;}
+.ex-section-title{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;display:flex;align-items:center;gap:5px;margin-bottom:6px;padding-top:8px}
+.postura-box .postura-title{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;display:flex;align-items:center;gap:5px;margin-bottom:6px}
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
@@ -277,11 +279,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 01</div>
-        <div class="ex-name">Press de pecho convergente (máquina)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Los brazos convergen al frente dando una contracción extra en el centro del pecho. La fase de bajada lenta es donde más se construye músculo — no dejes caer el peso.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 01</div>
+<div class="ex-name">Press de pecho convergente (máquina)</div>
+<div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">38 kg</td><td class="manu-col hidden s1-m">25 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">30 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">36 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Los brazos convergen al frente dando una contracción extra en el centro del pecho. La fase de bajada lenta es donde más se construye músculo — no dejes caer el peso.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> espalda completamente apoyada en el respaldo, pies planos en el suelo. Ajusta el asiento para que las asas queden a la altura del pecho.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia abajo o neutras según el modelo de la máquina. Agarre firme sin apretar en exceso.</div>
@@ -289,16 +301,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> encorvar la espalda despegándola del respaldo, bloquear codos al extender, subir los hombros hacia las orejas.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">38 kg</td><td class="manu-col hidden s1-m">25 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">30 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">36 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
-        <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
-        <div class="rating" data-exid="e1-ex01">
+<div class="rating" data-exid="e1-ex01">
           <button class="rate-btn like" onclick="rate('e1-ex01','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -306,7 +309,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-      </div>
+</div>
     </div>
 
       <!-- 2. PRESS MANCUERNAS BANCO -->
@@ -324,11 +327,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 02</div>
-        <div class="ex-name">Press con mancuernas en banco plano</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Al trabajar con mancuernas cada brazo trabaja de forma independiente, corrigiendo desequilibrios y aumentando la estabilidad del hombro. Mayor rango de movimiento que la barra.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 02</div>
+<div class="ex-name">Press con mancuernas en banco plano</div>
+<div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">14 kg c/u</td><td class="manu-col hidden s1-m">10 kg c/u</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">18 kg c/u</td><td class="manu-col hidden s2-m">12 kg c/u</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">18 kg c/u</td><td class="manu-col hidden s3-m">14 kg c/u</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Al trabajar con mancuernas cada brazo trabaja de forma independiente, corrigiendo desequilibrios y aumentando la estabilidad del hombro. Mayor rango de movimiento que la barra.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> tumbado en el banco con los pies apoyados en el suelo. Espalda neutra — no arquear de forma exagerada. Cabeza apoyada en el banco.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia adelante. Los codos a 45° del torso — no perpendiculares al cuerpo, eso sobrecarga el hombro.</div>
@@ -336,16 +349,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> codos en ángulo de 90° con el torso, rebotar las mancuernas abajo, arquear la espalda para ayudar a subir.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">14 kg c/u</td><td class="manu-col hidden s1-m">10 kg c/u</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">18 kg c/u</td><td class="manu-col hidden s2-m">12 kg c/u</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">18 kg c/u</td><td class="manu-col hidden s3-m">14 kg c/u</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
-        <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
-        <div class="rating" data-exid="e1-ex02">
+<div class="rating" data-exid="e1-ex02">
           <button class="rate-btn like" onclick="rate('e1-ex02','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -353,7 +357,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-      </div>
+</div>
     </div>
 
       <!-- 3. APERTURAS PEC-DECK -->
@@ -371,11 +375,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 03</div>
-        <div class="ex-name">Aperturas en máquina pec-deck</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Aísla el pectoral sin cargar la articulación del hombro. La máquina mantiene tensión constante en todo el recorrido, algo que las aperturas con mancuernas no logran igual.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 03</div>
+<div class="ex-name">Aperturas en máquina pec-deck</div>
+<div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Pectoral menor</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">55 kg</td><td class="manu-col hidden s1-m">35 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">73 kg</td><td class="manu-col hidden s2-m">45 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">83 kg</td><td class="manu-col hidden s3-m">55 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Aísla el pectoral sin cargar la articulación del hombro. La máquina mantiene tensión constante en todo el recorrido, algo que las aperturas con mancuernas no logran igual.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> espalda pegada al respaldo, pies apoyados en el suelo. Ajusta el asiento para que los codos queden a la altura del pecho.</div>
           <div class="postura-section"><strong>Agarre:</strong> codos apoyados en los apoyos acolchados o manos en las asas según el modelo. Los codos forman un ángulo fijo de ~90°.</div>
@@ -383,16 +397,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> abrir demasiado al volver (dolor en hombro), rebotar al cerrar, despegar la espalda del respaldo.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">55 kg</td><td class="manu-col hidden s1-m">35 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">73 kg</td><td class="manu-col hidden s2-m">45 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">83 kg</td><td class="manu-col hidden s3-m">55 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Pectoral menor</span></div>
-        <div class="rating" data-exid="e1-ex03">
+<div class="rating" data-exid="e1-ex03">
           <button class="rate-btn like" onclick="rate('e1-ex03','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -400,7 +405,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-      </div>
+</div>
     </div>
 
       <!-- 4. PRESS HOMBRO CONVERGENTE -->
@@ -418,11 +423,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 04</div>
-        <div class="ex-name">Press de hombro convergente (máquina)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">La guía convergente reduce la presión sobre el manguito rotador comparado con el press libre. Ejercicio principal de hombro del día.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 04</div>
+<div class="ex-name">Press de hombro convergente (máquina)</div>
+<div class="muscles"><span class="pill p-muscle">Deltoides ant.</span><span class="pill p-muscle">Deltoides lat.</span><span class="pill p-muscle">Tríceps</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">16 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">23 kg</td><td class="manu-col hidden s2-m">14 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">27 kg</td><td class="manu-col hidden s3-m">18 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">La guía convergente reduce la presión sobre el manguito rotador comparado con el press libre. Ejercicio principal de hombro del día.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que las asas queden justo a la altura de los hombros cuando los brazos están doblados. Espalda apoyada.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia adelante o neutras. Agarre firme pero sin tensión en el cuello.</div>
@@ -430,16 +445,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> encorvarse hacia adelante, subir los hombros hacia las orejas, usar el impulso del cuerpo para empujar.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">16 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">23 kg</td><td class="manu-col hidden s2-m">14 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">27 kg</td><td class="manu-col hidden s3-m">18 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
-        <div class="muscles"><span class="pill p-muscle">Deltoides ant.</span><span class="pill p-muscle">Deltoides lat.</span><span class="pill p-muscle">Tríceps</span></div>
-        <div class="rating" data-exid="e1-ex04">
+<div class="rating" data-exid="e1-ex04">
           <button class="rate-btn like" onclick="rate('e1-ex04','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -447,7 +453,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-      </div>
+</div>
     </div>
 
       <!-- 5. PRESS FRANCÉS POLEA CUERDA -->
@@ -465,11 +471,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 05</div>
-        <div class="ex-name">Press francés en polea con cuerda (tríceps)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Variante del press francés usando la polea alta con cuerda. Trabaja la cabeza larga del tríceps con tensión constante durante todo el recorrido, lo que no ocurre con mancuernas. Excelente para el volumen del brazo.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 05</div>
+<div class="ex-name">Press francés en polea con cuerda (tríceps)</div>
+<div class="muscles"><span class="pill p-muscle">Tríceps cab. larga</span><span class="pill p-muscle">Tríceps cab. medial</span><span class="pill p-new">★ Nuevo</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">8 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">22 kg</td><td class="manu-col hidden s3-m">14 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Variante del press francés usando la polea alta con cuerda. Trabaja la cabeza larga del tríceps con tensión constante durante todo el recorrido, lo que no ocurre con mancuernas. Excelente para el volumen del brazo.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> de pie de espaldas a la polea alta, da un paso adelante para crear tensión. Inclínate ligeramente hacia adelante. Pies separados a la anchura de los hombros.</div>
           <div class="postura-section"><strong>Agarre:</strong> agarra los extremos de la cuerda con ambas manos, palmas enfrentadas. Los brazos sobre la cabeza con los codos apuntando al techo.</div>
@@ -477,16 +493,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos durante el movimiento, arquear la zona lumbar, usar impulso del torso para ayudar.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">8 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">22 kg</td><td class="manu-col hidden s3-m">14 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Tríceps cab. larga</span><span class="pill p-muscle">Tríceps cab. medial</span><span class="pill p-new">★ Nuevo</span></div>
-        <div class="rating" data-exid="e1-ex05">
+<div class="rating" data-exid="e1-ex05">
           <button class="rate-btn like" onclick="rate('e1-ex05','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -494,7 +501,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-      </div>
+</div>
     </div>
 
       <!-- 6. TRÍCEPS POLEA BARRA -->
@@ -512,11 +519,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 06</div>
-        <div class="ex-name">Tríceps en polea con barra rígida (prono)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Ejercicio de aislamiento clásico de tríceps. Los codos fijos son el punto clave — si se mueven, el ejercicio pierde efectividad y el hombro empieza a trabajar.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 06</div>
+<div class="ex-name">Tríceps en polea con barra rígida (prono)</div>
+<div class="muscles"><span class="pill p-muscle">Tríceps cab. lateral</span><span class="pill p-muscle">Tríceps cab. larga</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">22 kg</td><td class="manu-col hidden s1-m">14 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">27 kg</td><td class="manu-col hidden s2-m">18 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">31 kg</td><td class="manu-col hidden s3-m">20 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Ejercicio de aislamiento clásico de tríceps. Los codos fijos son el punto clave — si se mueven, el ejercicio pierde efectividad y el hombro empieza a trabajar.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> de pie frente a la polea alta. Pies ligeramente separados, ligera inclinación hacia adelante. Codos pegados al cuerpo a lo largo de toda la serie.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia abajo (pronadas). Agarre a la anchura de los hombros en la barra.</div>
@@ -524,16 +541,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos, inclinarse hacia adelante para usar el peso corporal, no llegar a la extensión completa.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">22 kg</td><td class="manu-col hidden s1-m">14 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">27 kg</td><td class="manu-col hidden s2-m">18 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">31 kg</td><td class="manu-col hidden s3-m">20 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Tríceps cab. lateral</span><span class="pill p-muscle">Tríceps cab. larga</span></div>
-        <div class="rating" data-exid="e1-ex06">
+<div class="rating" data-exid="e1-ex06">
           <button class="rate-btn like" onclick="rate('e1-ex06','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -541,7 +549,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-      </div>
+</div>
     </div>
 
       <!-- 7. TRÍCEPS POLEA INVERSO -->
@@ -559,11 +567,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 07</div>
-        <div class="ex-name">Tríceps en polea agarre inverso (supino)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">El cambio de agarre activa la cabeza medial del tríceps (parte interna del brazo), que el agarre prono no alcanza tan bien. Peso ligeramente menor que el prono es normal.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 07</div>
+<div class="ex-name">Tríceps en polea agarre inverso (supino)</div>
+<div class="muscles"><span class="pill p-muscle">Tríceps cab. medial</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">18 kg</td><td class="manu-col hidden s3-m">14 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">El cambio de agarre activa la cabeza medial del tríceps (parte interna del brazo), que el agarre prono no alcanza tan bien. Peso ligeramente menor que el prono es normal.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> igual que el ejercicio anterior. De pie frente a la polea, codos pegados al cuerpo.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia arriba (supinas). Usa la barra corta o la cuerda según disponibilidad.</div>
@@ -571,16 +589,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> los mismos errores que en el prono. Con el agarre supino hay más tendencia a separar los codos.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">18 kg</td><td class="manu-col hidden s3-m">14 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Tríceps cab. medial</span></div>
-        <div class="rating" data-exid="e1-ex07">
+<div class="rating" data-exid="e1-ex07">
           <button class="rate-btn like" onclick="rate('e1-ex07','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -588,7 +597,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-      </div>
+</div>
     </div>
 
       <!-- 8. ELEVACIONES LATERALES -->
@@ -606,11 +615,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 08</div>
-        <div class="ex-name">Elevaciones laterales con mancuernas</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Al final del día, con el hombro ya trabajado, se hace con poco peso y mucho control. No es un ejercicio de fuerza — es de aislamiento y forma. Con 5-6 kg y buena técnica es más efectivo que con 10 kg y mala ejecución.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 08</div>
+<div class="ex-name">Elevaciones laterales con mancuernas</div>
+<div class="muscles"><span class="pill p-muscle">Deltoides lateral</span><span class="pill p-muscle">Trapecio sup.</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">4 kg c/u</td><td class="manu-col hidden s1-m">3 kg c/u</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">6 kg c/u</td><td class="manu-col hidden s2-m">4 kg c/u</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>12</td><td class="angel-col s3">6 kg c/u</td><td class="manu-col hidden s3-m">5 kg c/u</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Al final del día, con el hombro ya trabajado, se hace con poco peso y mucho control. No es un ejercicio de fuerza — es de aislamiento y forma. Con 5-6 kg y buena técnica es más efectivo que con 10 kg y mala ejecución.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> de pie o sentado. Espalda recta, ligerísima inclinación hacia adelante del torso (10°). Codos ligeramente doblados durante todo el movimiento.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia el suelo. El meñique ligeramente más alto que el pulgar al llegar arriba — como si vaciases un vaso.</div>
@@ -618,16 +637,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> subir por encima del hombro (impingement), balancear el torso, encorvar el cuello. Si duele el hombro, para.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">4 kg c/u</td><td class="manu-col hidden s1-m">3 kg c/u</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">6 kg c/u</td><td class="manu-col hidden s2-m">4 kg c/u</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>12</td><td class="angel-col s3">6 kg c/u</td><td class="manu-col hidden s3-m">5 kg c/u</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Deltoides lateral</span><span class="pill p-muscle">Trapecio sup.</span></div>
-        <div class="rating" data-exid="e1-ex08">
+<div class="rating" data-exid="e1-ex08">
           <button class="rate-btn like" onclick="rate('e1-ex08','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -635,7 +645,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-    </div>
+</div>
   </div>
 
 
@@ -684,11 +694,22 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 01</div>
-        <div class="ex-name">Jalón al pecho agarre ancho (máquina)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Ejercicio principal de espalda. Los codos guían el movimiento — no los brazos. La espalda trabaja cuando llevas los codos hacia abajo y atrás.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 01</div>
+<div class="ex-name">Jalón al pecho agarre ancho (máquina)</div>
+<div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Romboides</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">50 kg</td><td class="manu-col hidden s2-m">32 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">57 kg</td><td class="manu-col hidden s3-m">38 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Ejercicio principal de espalda. Los codos guían el movimiento — no los brazos. La espalda trabaja cuando llevas los codos hacia abajo y atrás.</div>
+<a class="ex-link" href="https://fitwill.app/es/exercise/2291/cable-wide-grip-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> muslos bien sujetos bajo el apoyo. Ligera inclinación hacia atrás del torso (15°). Pecho hacia arriba.</div>
           <div class="postura-section"><strong>Agarre:</strong> ancho, un poco más que los hombros. Palmas hacia adelante. Agarre firme pero sin crispación.</div>
@@ -696,16 +717,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> inclinarse demasiado hacia atrás, tirar con los brazos en lugar de los codos, encorvar la espalda.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">50 kg</td><td class="manu-col hidden s2-m">32 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">57 kg</td><td class="manu-col hidden s3-m">38 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
-        <div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Romboides</span></div>
-        <div class="rating" data-exid="e2-ex01">
+<div class="rating" data-exid="e2-ex01">
           <button class="rate-btn like" onclick="rate('e2-ex01','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -713,8 +725,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-        <a class="ex-link" href="https://fitwill.app/es/exercise/2291/cable-wide-grip-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-    </div>
+</div>
   </div>
 
       
@@ -731,11 +742,22 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 02</div>
-        <div class="ex-name">Remo en polea baja (seated cable row)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">El ejercicio más importante para compensar la postura encorvada de trabajar sentados. El "pellizco" de omóplatos al final es el movimiento clave.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 02</div>
+<div class="ex-name">Remo en polea baja (seated cable row)</div>
+<div class="muscles"><span class="pill p-muscle">Trapecio medio</span><span class="pill p-muscle">Romboides</span><span class="pill p-muscle">Dorsal</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">50 kg</td><td class="manu-col hidden s2-m">32 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">60 kg</td><td class="manu-col hidden s3-m">40 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">El ejercicio más importante para compensar la postura encorvada de trabajar sentados. El "pellizco" de omóplatos al final es el movimiento clave.</div>
+<a class="ex-link" href="https://fitwill.app/es/exercise/1320/cable-rope-crossover-seated-row/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> sentado con los pies en los apoyos, rodillas ligeramente dobladas. Espalda recta vertical — no te inclines hacia adelante con el torso.</div>
           <div class="postura-section"><strong>Agarre:</strong> mango en V (agarre neutro) o barra. Codos pegados al cuerpo al tirar.</div>
@@ -743,16 +765,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> inclinar el torso hacia adelante y atrás como un balancín, encorvar la espalda baja, tirar solo con los brazos sin contraer la espalda.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">50 kg</td><td class="manu-col hidden s2-m">32 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">60 kg</td><td class="manu-col hidden s3-m">40 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
-        <div class="muscles"><span class="pill p-muscle">Trapecio medio</span><span class="pill p-muscle">Romboides</span><span class="pill p-muscle">Dorsal</span></div>
-        <div class="rating" data-exid="e2-ex02">
+<div class="rating" data-exid="e2-ex02">
           <button class="rate-btn like" onclick="rate('e2-ex02','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -760,8 +773,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-        <a class="ex-link" href="https://fitwill.app/es/exercise/1320/cable-rope-crossover-seated-row/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-    </div>
+</div>
   </div>
 
       
@@ -778,11 +790,22 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 03</div>
-        <div class="ex-name">Jalón agarre estrecho / neutro</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Complementa el jalón ancho trabajando más la parte baja del dorsal. Da el efecto visual de espalda en "V". El bíceps trabaja en mejor posición mecánica.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 03</div>
+<div class="ex-name">Jalón agarre estrecho / neutro</div>
+<div class="muscles"><span class="pill p-muscle">Dorsal inferior</span><span class="pill p-muscle">Bíceps</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Complementa el jalón ancho trabajando más la parte baja del dorsal. Da el efecto visual de espalda en "V". El bíceps trabaja en mejor posición mecánica.</div>
+<a class="ex-link" href="https://fitwill.app/es/exercise/3754/cable-close-grip-front-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> igual que el jalón ancho. Misma inclinación y posición de muslos.</div>
           <div class="postura-section"><strong>Agarre:</strong> mango en V o triangular, palmas enfrentadas (agarre neutro). Manos juntas.</div>
@@ -790,16 +813,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar hacia el cuello en lugar del pecho, usar demasiado el bíceps sin involucrar la espalda.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
-        <div class="muscles"><span class="pill p-muscle">Dorsal inferior</span><span class="pill p-muscle">Bíceps</span></div>
-        <div class="rating" data-exid="e2-ex03">
+<div class="rating" data-exid="e2-ex03">
           <button class="rate-btn like" onclick="rate('e2-ex03','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -807,8 +821,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-        <a class="ex-link" href="https://fitwill.app/es/exercise/3754/cable-close-grip-front-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-    </div>
+</div>
   </div>
 
       
@@ -825,11 +838,22 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 04</div>
-        <div class="ex-name">Dominadas asistidas (máquina)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">El objetivo a largo plazo es reducir la asistencia progresivamente. Más kg seleccionados = más fácil. El mejor ejercicio por traslado funcional a la vida real.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 04</div>
+<div class="ex-name">Dominadas asistidas (máquina)</div>
+<div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Core</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>8</td><td class="angel-col s1">45 kg ayuda</td><td class="manu-col hidden s1-m">35 kg ayuda</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>8-10</td><td class="angel-col s2">38 kg ayuda</td><td class="manu-col hidden s2-m">28 kg ayuda</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">35 kg ayuda</td><td class="manu-col hidden s3-m">22 kg ayuda</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">El objetivo a largo plazo es reducir la asistencia progresivamente. Más kg seleccionados = más fácil. El mejor ejercicio por traslado funcional a la vida real.</div>
+<a class="ex-link" href="https://fitwill.app/es/exercise/0015/assisted-parallel-close-grip-pull-up/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> rodillas sobre el apoyo acolchado. Brazos extendidos al inicio. Cuerpo ligeramente hacia atrás.</div>
           <div class="postura-section"><strong>Agarre:</strong> un poco más ancho que los hombros. Palmas hacia adelante para trabajar más el dorsal.</div>
@@ -837,16 +861,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar solo con los brazos, llegar solo con la barbilla a la barra, bajar demasiado rápido.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>8</td><td class="angel-col s1">45 kg ayuda</td><td class="manu-col hidden s1-m">35 kg ayuda</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>8-10</td><td class="angel-col s2">38 kg ayuda</td><td class="manu-col hidden s2-m">28 kg ayuda</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">35 kg ayuda</td><td class="manu-col hidden s3-m">22 kg ayuda</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
-        <div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Core</span></div>
-        <div class="rating" data-exid="e2-ex04">
+<div class="rating" data-exid="e2-ex04">
           <button class="rate-btn like" onclick="rate('e2-ex04','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -854,8 +869,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-        <a class="ex-link" href="https://fitwill.app/es/exercise/0015/assisted-parallel-close-grip-pull-up/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-    </div>
+</div>
   </div>
 
       
@@ -872,11 +886,22 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 05</div>
-        <div class="ex-name">Curl bíceps en máquina</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Aislamiento de bíceps con soporte del codo. La bajada lenta (3 seg) hace tanto trabajo como la subida.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 05</div>
+<div class="ex-name">Curl bíceps en máquina</div>
+<div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">50 kg</td><td class="manu-col hidden s3-m">34 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Aislamiento de bíceps con soporte del codo. La bajada lenta (3 seg) hace tanto trabajo como la subida.</div>
+<a class="ex-link" href="https://fitwill.app/es/exercise/1872/lever-preacher-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que el codo quede sobre el borde del apoyo — no por detrás. Espalda apoyada.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia arriba. Agarre firme sin crispación en el antebrazo.</div>
@@ -884,16 +909,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> llevar los codos hacia adelante al subir, no completar el rango completo, usar impulso del torso.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">50 kg</td><td class="manu-col hidden s3-m">34 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
-        <div class="rating" data-exid="e2-ex05">
+<div class="rating" data-exid="e2-ex05">
           <button class="rate-btn like" onclick="rate('e2-ex05','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -901,8 +917,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-        <a class="ex-link" href="https://fitwill.app/es/exercise/1872/lever-preacher-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-    </div>
+</div>
   </div>
 
       
@@ -919,11 +934,22 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 06</div>
-        <div class="ex-name">Curl en polea baja de pie</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">La polea mantiene tensión constante en todo el recorrido a diferencia de las mancuernas, que pierden tensión en la parte alta del movimiento.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 06</div>
+<div class="ex-name">Curl en polea baja de pie</div>
+<div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">20 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">25 kg</td><td class="manu-col hidden s3-m">16 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">La polea mantiene tensión constante en todo el recorrido a diferencia de las mancuernas, que pierden tensión en la parte alta del movimiento.</div>
+<a class="ex-link" href="https://fitwill.app/es/exercise/1630/cable-close-grip-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> de pie frente a la polea baja. Espalda recta, ligerísima inclinación. Codos pegados al cuerpo durante todo el movimiento.</div>
           <div class="postura-section"><strong>Agarre:</strong> barra recta o cuerda. Palmas hacia arriba con barra, neutras con cuerda.</div>
@@ -931,17 +957,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos hacia adelante, balancear el cuerpo, no controlar la bajada.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">20 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">25 kg</td><td class="manu-col hidden s3-m">16 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
-        <a class="ex-link" href="https://fitwill.app/es/exercise/1630/cable-close-grip-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-        <div class="rating" data-exid="e2-ex06">
+<div class="rating" data-exid="e2-ex06">
           <button class="rate-btn like" onclick="rate('e2-ex06','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -949,7 +965,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-    </div>
+</div>
   </div>
 
       
@@ -966,11 +982,22 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 07</div>
-        <div class="ex-name">Curl martillo con mancuernas</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">El agarre neutro activa el braquiorradial además del bíceps. Contribuye al grosor visual del brazo entero y mejora la fuerza de agarre.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 07</div>
+<div class="ex-name">Curl martillo con mancuernas</div>
+<div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquiorradial</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">8 kg c/u</td><td class="manu-col hidden s1-m">5 kg c/u</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">12 kg c/u</td><td class="manu-col hidden s2-m">7 kg c/u</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">14 kg c/u</td><td class="manu-col hidden s3-m">9 kg c/u</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">El agarre neutro activa el braquiorradial además del bíceps. Contribuye al grosor visual del brazo entero y mejora la fuerza de agarre.</div>
+<a class="ex-link" href="https://fitwill.app/es/exercise/2239/dumbbell-hammer-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> de pie o sentado. Espalda recta. Codos pegados al cuerpo.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas enfrentadas entre sí (como sujetando un martillo). No gires las muñecas durante el movimiento.</div>
@@ -978,16 +1005,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> balancear el torso para ayudar, girar las muñecas durante el movimiento, subir demasiado rápido.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">8 kg c/u</td><td class="manu-col hidden s1-m">5 kg c/u</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">12 kg c/u</td><td class="manu-col hidden s2-m">7 kg c/u</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">14 kg c/u</td><td class="manu-col hidden s3-m">9 kg c/u</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquiorradial</span></div>
-        <div class="rating" data-exid="e2-ex07">
+<div class="rating" data-exid="e2-ex07">
           <button class="rate-btn like" onclick="rate('e2-ex07','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -995,8 +1013,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-        <a class="ex-link" href="https://fitwill.app/es/exercise/2239/dumbbell-hammer-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-    </div>
+</div>
   </div>
 
 
@@ -1044,11 +1061,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 01</div>
-        <div class="ex-name">Prensa de piernas (leg press)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Ejercicio principal de pierna sin impacto en rodillas. Empujar desde los talones activa más glúteo e isquiotibiales y protege la rodilla.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 01</div>
+<div class="ex-name">Prensa de piernas (leg press)</div>
+<div class="muscles"><span class="pill p-muscle">Cuádriceps</span><span class="pill p-muscle">Glúteo mayor</span><span class="pill p-muscle">Isquiotibiales</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">60 kg</td><td class="manu-col hidden s1-m">40 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">80 kg</td><td class="manu-col hidden s2-m">50 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">100 kg</td><td class="manu-col hidden s3-m">70 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Ejercicio principal de pierna sin impacto en rodillas. Empujar desde los talones activa más glúteo e isquiotibiales y protege la rodilla.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> espalda y glúteos completamente apoyados. Pies a la anchura de los hombros en la mitad-alta de la plataforma.</div>
           <div class="postura-section"><strong>Agarre:</strong> manos en las asas laterales para estabilizar. No usar las manos para empujar las rodillas.</div>
@@ -1056,16 +1083,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> bajar más de 90° (sobrecarga rodilla), poner los pies demasiado bajos en la plataforma, bloquear rodillas al extender.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">60 kg</td><td class="manu-col hidden s1-m">40 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">80 kg</td><td class="manu-col hidden s2-m">50 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">100 kg</td><td class="manu-col hidden s3-m">70 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
-        <div class="muscles"><span class="pill p-muscle">Cuádriceps</span><span class="pill p-muscle">Glúteo mayor</span><span class="pill p-muscle">Isquiotibiales</span></div>
-        <div class="rating" data-exid="e3-ex01">
+<div class="rating" data-exid="e3-ex01">
           <button class="rate-btn like" onclick="rate('e3-ex01','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -1073,7 +1091,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-    </div>
+</div>
   </div>
 
 <div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
@@ -1090,11 +1108,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 02</div>
-        <div class="ex-name">Extensión de piernas (máquina)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Aislamiento de cuádriceps. Si molesta la rótula, trabaja solo los últimos 60° del recorrido — menor presión articular en esa zona.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 02</div>
+<div class="ex-name">Extensión de piernas (máquina)</div>
+<div class="muscles"><span class="pill p-muscle">Cuádriceps</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Aislamiento de cuádriceps. Si molesta la rótula, trabaja solo los últimos 60° del recorrido — menor presión articular en esa zona.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que el hueco de la rodilla quede justo en el borde. El rodillo apoya en el tobillo, no en el empeine.</div>
           <div class="postura-section"><strong>Agarre:</strong> manos en las asas laterales. No apretar con fuerza — solo para estabilizar.</div>
@@ -1102,16 +1130,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> usar impulso para subir, no llegar a la extensión completa, bajar demasiado rápido. Si hay dolor en rótula, reduce el rango.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Cuádriceps</span></div>
-        <div class="rating" data-exid="e3-ex02">
+<div class="rating" data-exid="e3-ex02">
           <button class="rate-btn like" onclick="rate('e3-ex02','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -1119,7 +1138,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-    </div>
+</div>
   </div>
 
 <div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
@@ -1136,11 +1155,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 03</div>
-        <div class="ex-name">Flexión de pierna acostado (máquina)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Si las caderas se levantan del acolchado estás usando la zona lumbar en lugar de los isquiotibiales — reduce el peso y mantén las caderas pegadas.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 03</div>
+<div class="ex-name">Flexión de pierna acostado (máquina)</div>
+<div class="muscles"><span class="pill p-muscle">Isquiotibiales</span><span class="pill p-muscle">Glúteo (sec.)</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Si las caderas se levantan del acolchado estás usando la zona lumbar en lugar de los isquiotibiales — reduce el peso y mantén las caderas pegadas.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> tumbado boca abajo. El rodillo apoya justo por encima del talón, no en el tendón de Aquiles. Caderas pegadas al acolchado en todo momento.</div>
           <div class="postura-section"><strong>Agarre:</strong> manos en las asas. No usar los brazos para empujar o tirar.</div>
@@ -1148,16 +1177,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> levantar las caderas del acolchado, forzar el rango si hay dolor en el tendón, bajar demasiado rápido.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Isquiotibiales</span><span class="pill p-muscle">Glúteo (sec.)</span></div>
-        <div class="rating" data-exid="e3-ex03">
+<div class="rating" data-exid="e3-ex03">
           <button class="rate-btn like" onclick="rate('e3-ex03','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -1165,7 +1185,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-    </div>
+</div>
   </div>
 
 <div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
@@ -1182,11 +1202,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 04</div>
-        <div class="ex-name">Abducción de cadera (máquina)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Fortalece el glúteo medio y abductores — los estabilizadores de la rodilla. Con estos músculos débiles la rodilla sufre más en todos los demás ejercicios.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 04</div>
+<div class="ex-name">Abducción de cadera (máquina)</div>
+<div class="muscles"><span class="pill p-muscle">Glúteo medio</span><span class="pill p-muscle">Tensor fascia lata</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">30 kg</td><td class="manu-col hidden s1-m">18 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Fortalece el glúteo medio y abductores — los estabilizadores de la rodilla. Con estos músculos débiles la rodilla sufre más en todos los demás ejercicios.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> sentado con la espalda apoyada. Rodillas sobre los apoyos acolchados.</div>
           <div class="postura-section"><strong>Agarre:</strong> manos en las asas o en los muslos. Espalda recta durante todo el movimiento.</div>
@@ -1194,16 +1224,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> cerrar demasiado rápido, arquear la espalda para ayudar, abrir más allá de la posición cómoda.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">30 kg</td><td class="manu-col hidden s1-m">18 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Glúteo medio</span><span class="pill p-muscle">Tensor fascia lata</span></div>
-        <div class="rating" data-exid="e3-ex04">
+<div class="rating" data-exid="e3-ex04">
           <button class="rate-btn like" onclick="rate('e3-ex04','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -1211,7 +1232,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-    </div>
+</div>
   </div>
 
 <div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
@@ -1228,11 +1249,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 05</div>
-        <div class="ex-name">Aducción de cadera (máquina)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Equilibra el trabajo de abducción y estabiliza la rodilla desde el lado opuesto. La cara interna del muslo es uno de los músculos más ignorados y más importantes para la estabilidad de la rodilla.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 05</div>
+<div class="ex-name">Aducción de cadera (máquina)</div>
+<div class="muscles"><span class="pill p-muscle">Aductores</span><span class="pill p-muscle">Grácil</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">30 kg</td><td class="manu-col hidden s1-m">18 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">Equilibra el trabajo de abducción y estabiliza la rodilla desde el lado opuesto. La cara interna del muslo es uno de los músculos más ignorados y más importantes para la estabilidad de la rodilla.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> sentado con las piernas abiertas sobre los apoyos. Espalda apoyada en el respaldo.</div>
           <div class="postura-section"><strong>Agarre:</strong> manos en las asas. Espalda recta, no te inclines hacia adelante.</div>
@@ -1240,16 +1271,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> cerrar con impulso, encorvar la espalda, no controlar la apertura.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">30 kg</td><td class="manu-col hidden s1-m">18 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Aductores</span><span class="pill p-muscle">Grácil</span></div>
-        <div class="rating" data-exid="e3-ex05">
+<div class="rating" data-exid="e3-ex05">
           <button class="rate-btn like" onclick="rate('e3-ex05','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -1257,7 +1279,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-    </div>
+</div>
   </div>
 
 <div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
@@ -1274,11 +1296,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 06</div>
-        <div class="ex-name">Contracción abdominal (máquina)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">El movimiento correcto es flexión de columna, no de cadera. El ombligo se acerca al pecho, no la cabeza a las rodillas.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 06</div>
+<div class="ex-name">Contracción abdominal (máquina)</div>
+<div class="muscles"><span class="pill p-muscle">Recto abdominal</span><span class="pill p-muscle">Oblicuos (sec.)</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>20</td><td class="angel-col s1">54 kg</td><td class="manu-col hidden s1-m">36 kg</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15-20</td><td class="angel-col s2">75 kg</td><td class="manu-col hidden s2-m">45 kg</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15-20</td><td class="angel-col s3">82 kg</td><td class="manu-col hidden s3-m">55 kg</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">El movimiento correcto es flexión de columna, no de cadera. El ombligo se acerca al pecho, no la cabeza a las rodillas.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> sentado con los pies apoyados. Ajusta el apoyo del pecho a la altura correcta según la máquina.</div>
           <div class="postura-section"><strong>Agarre:</strong> brazos cruzados sobre el pecho o agarrando las asas según el modelo de la máquina.</div>
@@ -1286,16 +1318,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar del cuello, flexionar desde las caderas en lugar de la columna, rebotar en la posición inicial.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>20</td><td class="angel-col s1">54 kg</td><td class="manu-col hidden s1-m">36 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15-20</td><td class="angel-col s2">75 kg</td><td class="manu-col hidden s2-m">45 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15-20</td><td class="angel-col s3">82 kg</td><td class="manu-col hidden s3-m">55 kg</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Recto abdominal</span><span class="pill p-muscle">Oblicuos (sec.)</span></div>
-        <div class="rating" data-exid="e3-ex06">
+<div class="rating" data-exid="e3-ex06">
           <button class="rate-btn like" onclick="rate('e3-ex06','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -1303,7 +1326,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-    </div>
+</div>
   </div>
 
 <div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
@@ -1320,11 +1343,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-    
-        <div class="ex-num">Ejercicio 07</div>
-        <div class="ex-name">Plancha frontal (suelo)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">El ejercicio de core más eficiente sin impacto en columna lumbar. Refuerza directamente la postura deteriorada por trabajar sentado. Empieza en 30 seg, añade 5-10 seg cada semana.</div>
-        <div class="postura-box">
+<div class="ex-num">Ejercicio 07</div>
+<div class="ex-name">Plancha frontal (suelo)</div>
+<div class="muscles"><span class="pill p-muscle">Core profundo</span><span class="pill p-muscle">Transverso abd.</span><span class="pill p-muscle">Glúteo</span></div>
+<table class="series-table">
+          <thead><tr><th>Serie</th><th>Duración</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>30 seg</td><td class="angel-col s1">Peso corporal</td><td class="manu-col hidden s1-m">Peso corporal</td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>35 seg</td><td class="angel-col s2">Peso corporal</td><td class="manu-col hidden s2-m">Peso corporal</td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span></td><td>40 seg</td><td class="angel-col s3">Peso corporal</td><td class="manu-col hidden s3-m">Peso corporal</td></tr>
+          </tbody>
+        </table>
+<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
+<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+<div class="ex-desc">El ejercicio de core más eficiente sin impacto en columna lumbar. Refuerza directamente la postura deteriorada por trabajar sentado. Empieza en 30 seg, añade 5-10 seg cada semana.</div>
+<div class="postura-box">
           <div class="postura-title"><i class="ph ph-ruler"></i> Postura y ejecución</div>
           <div class="postura-section"><strong>Posición:</strong> antebrazos y punteras de los pies. Los codos directamente bajo los hombros. Cabeza en posición neutra mirando al suelo.</div>
           <div class="postura-section"><strong>Agarre:</strong> puños cerrados o palmas planas en el suelo. Antebrazos paralelos.</div>
@@ -1332,16 +1365,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> dejar caer las caderas, subir el trasero, aguantar la respiración, encorvar el cuello hacia arriba o abajo.
   </div>
 </div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Duración</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><td>30 seg</td><td class="angel-col s1">Peso corporal</td><td class="manu-col hidden s1-m">Peso corporal</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>35 seg</td><td class="angel-col s2">Peso corporal</td><td class="manu-col hidden s2-m">Peso corporal</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span></td><td>40 seg</td><td class="angel-col s3">Peso corporal</td><td class="manu-col hidden s3-m">Peso corporal</td></tr>
-          </tbody>
-        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
-        <div class="muscles"><span class="pill p-muscle">Core profundo</span><span class="pill p-muscle">Transverso abd.</span><span class="pill p-muscle">Glúteo</span></div>
-        <div class="rating" data-exid="e3-ex07">
+<div class="rating" data-exid="e3-ex07">
           <button class="rate-btn like" onclick="rate('e3-ex07','like',this)" title="Completado">
             <i class="ph ph-check-circle"></i> Completado
           </button>
@@ -1349,7 +1373,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <i class="ph ph-x-circle"></i> No completado
           </button>
         </div>
-    </div>
+</div>
   </div>
 
 
