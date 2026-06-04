@@ -1653,8 +1653,10 @@ function startRest(el) {
 }
 
 function triggerRestAfterS3(serieId, btn) {
-  // Only trigger on last series (s3 or s2 for optional)
-  if (!serieId.endsWith('-s3') && !serieId.endsWith('-s2')) return;
+  // Trigger only on the LAST series: s3 for regular, s2 only for eopt
+  const isS3 = serieId.endsWith('-s3');
+  const isS2eopt = serieId.endsWith('-s2') && serieId.startsWith('eopt-');
+  if (!isS3 && !isS2eopt) return;
   // Find the next inter-rest block after this ex-block
   const exBlock = btn.closest('.ex-block');
   if (!exBlock) return;
