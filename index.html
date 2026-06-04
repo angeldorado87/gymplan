@@ -102,6 +102,8 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .series-table th{background:#242424;font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.05em;padding:7px 10px;text-align:left;border-bottom:1px solid #2a2a2a}
 .series-table td{padding:8px 10px;font-size:13px;border-bottom:1px solid #1f1f1f;color:#ddd}
 .series-table tr:last-child td{border-bottom:none}
+.series-table{margin-bottom:0}
+.table-divider{height:1px;background:#2a2a2a;margin:12px 0}
 .series-table .s1{color:#666}
 .series-table .s2{color:#60a5fa;font-weight:500}
 .series-table .s3{color:#f97316;font-weight:600}
@@ -114,19 +116,19 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .b-s3{background:#431407;color:#f97316}
 
 /* REST BOXES */
-.rest-box{display:flex;align-items:center;gap:6px;font-size:12px;color:#888;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:0 0 8px 8px;padding:6px 10px;margin-top:-2px;margin-bottom:10px}
+.rest-box{display:none}
 .rest-box span{font-weight:600;color:#aaa}
 .inter-rest{display:flex;align-items:center;justify-content:center;font-size:12px;color:#c084fc;background:#1a0b2e;border:1px solid #4c1d95;border-radius:8px;padding:7px 12px;margin:0 0 8px;font-weight:500;text-align:center}
 
 /* POSTURA */
 .postura-box{background:#1f1f1f;border:1px solid #2a2a2a;border-radius:8px;padding:12px;margin-bottom:10px;font-size:12px;color:#b0b0b0;line-height:1.6}
 .postura-box .postura-title{font-size:11px;font-weight:700;color:#ccc;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;display:flex;align-items:center;gap:5px}
-.postura-section{margin-bottom:6px}
+.postura-section{font-size:13px;color:#b0b0b0;line-height:1.6;margin-bottom:8px}
 .postura-section:last-child{margin-bottom:0}
 .postura-section strong{color:#f0f0f0;font-weight:600}
 
 /* MUSCLES / PILLS */
-.muscles{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.muscles{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px}
 .pill{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500}
 .p-muscle{background:#2a2a2a;color:#aaa;border:1px solid #333}
 .p-new{background:#451a03;color:#fb923c;border:1px solid #7c2d12}
@@ -222,6 +224,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .series-rate-btn.ko{background:#450a0a;border-color:#ef4444;color:#f87171;pointer-events:none}
 .series-rate-btn.hidden-btn{display:none}
 .ptag.partial{background:#451a03;color:#fb923c}
+.ex-toggle-num{display:none}
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
@@ -294,6 +297,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex01-s3-ok" onclick="rateSerieOk('e1-ex01-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex01-s3-ko" onclick="rateSerieKo('e1-ex01-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> espalda completamente apoyada en el respaldo, pies planos en el suelo. Ajusta el asiento para que las asas queden a la altura del pecho.</div>
@@ -331,6 +335,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">18 kg c/u</td><td class="manu-col hidden s3-m">14 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex02-s3-ok" onclick="rateSerieOk('e1-ex02-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex02-s3-ko" onclick="rateSerieKo('e1-ex02-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> tumbado en el banco con los pies apoyados en el suelo. Espalda neutra — no arquear de forma exagerada. Cabeza apoyada en el banco.</div>
@@ -368,6 +373,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">83 kg</td><td class="manu-col hidden s3-m">55 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex03-s3-ok" onclick="rateSerieOk('e1-ex03-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex03-s3-ko" onclick="rateSerieKo('e1-ex03-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> espalda pegada al respaldo, pies apoyados en el suelo. Ajusta el asiento para que los codos queden a la altura del pecho.</div>
@@ -405,6 +411,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">27 kg</td><td class="manu-col hidden s3-m">18 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex04-s3-ok" onclick="rateSerieOk('e1-ex04-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex04-s3-ko" onclick="rateSerieKo('e1-ex04-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que las asas queden justo a la altura de los hombros cuando los brazos están doblados. Espalda apoyada.</div>
@@ -442,6 +449,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">22 kg</td><td class="manu-col hidden s3-m">14 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex05-s3-ok" onclick="rateSerieOk('e1-ex05-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex05-s3-ko" onclick="rateSerieKo('e1-ex05-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> de pie de espaldas a la polea alta, da un paso adelante para crear tensión. Inclínate ligeramente hacia adelante. Pies separados a la anchura de los hombros.</div>
@@ -479,6 +487,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">31 kg</td><td class="manu-col hidden s3-m">20 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex06-s3-ok" onclick="rateSerieOk('e1-ex06-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex06-s3-ko" onclick="rateSerieKo('e1-ex06-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> de pie frente a la polea alta. Pies ligeramente separados, ligera inclinación hacia adelante. Codos pegados al cuerpo a lo largo de toda la serie.</div>
@@ -516,6 +525,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">18 kg</td><td class="manu-col hidden s3-m">14 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex07-s3-ok" onclick="rateSerieOk('e1-ex07-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex07-s3-ko" onclick="rateSerieKo('e1-ex07-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> igual que el ejercicio anterior. De pie frente a la polea, codos pegados al cuerpo.</div>
@@ -553,6 +563,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>12</td><td class="angel-col s3">6 kg c/u</td><td class="manu-col hidden s3-m">5 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex08-s3-ok" onclick="rateSerieOk('e1-ex08-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex08-s3-ko" onclick="rateSerieKo('e1-ex08-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> de pie o sentado. Espalda recta, ligerísima inclinación hacia adelante del torso (10°). Codos ligeramente doblados durante todo el movimiento.</div>
@@ -621,6 +632,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">45 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex01-s3-ok" onclick="rateSerieOk('e2-ex01-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex01-s3-ko" onclick="rateSerieKo('e2-ex01-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> muslos bien sujetos bajo el apoyo. Ligera inclinación hacia atrás del torso (15°). Pecho hacia arriba.</div>
@@ -657,6 +669,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">45 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex02-s3-ok" onclick="rateSerieOk('e2-ex02-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex02-s3-ko" onclick="rateSerieKo('e2-ex02-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> sentado con los pies en los apoyos, rodillas ligeramente dobladas. Espalda recta vertical — no te inclines hacia adelante con el torso.</div>
@@ -693,6 +706,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">45 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex03-s3-ok" onclick="rateSerieOk('e2-ex03-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex03-s3-ko" onclick="rateSerieKo('e2-ex03-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> igual que el jalón ancho. Misma inclinación y posición de muslos.</div>
@@ -729,6 +743,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">36 kg ayuda</td><td class="manu-col hidden s3-m">18 kg ayuda</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex04-s3-ok" onclick="rateSerieOk('e2-ex04-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex04-s3-ko" onclick="rateSerieKo('e2-ex04-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> rodillas sobre el apoyo acolchado. Brazos extendidos al inicio. Cuerpo ligeramente hacia atrás.</div>
@@ -765,6 +780,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">50 kg</td><td class="manu-col hidden s3-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex05-s3-ok" onclick="rateSerieOk('e2-ex05-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex05-s3-ko" onclick="rateSerieKo('e2-ex05-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que el codo quede sobre el borde del apoyo — no por detrás. Espalda apoyada.</div>
@@ -801,6 +817,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">18 kg</td><td class="manu-col hidden s3-m">15.8 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex06-s3-ok" onclick="rateSerieOk('e2-ex06-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex06-s3-ko" onclick="rateSerieKo('e2-ex06-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> de pie frente a la polea baja. Espalda recta, ligerísima inclinación. Codos pegados al cuerpo durante todo el movimiento.</div>
@@ -837,6 +854,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">12 kg c/u</td><td class="manu-col hidden s3-m">10 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex07-s3-ok" onclick="rateSerieOk('e2-ex07-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex07-s3-ko" onclick="rateSerieKo('e2-ex07-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> de pie o sentado. Espalda recta. Codos pegados al cuerpo.</div>
@@ -904,6 +922,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">100 kg</td><td class="manu-col hidden s3-m">70 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex01-s3-ok" onclick="rateSerieOk('e3-ex01-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex01-s3-ko" onclick="rateSerieKo('e3-ex01-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> espalda y glúteos completamente apoyados. Pies a la anchura de los hombros en la mitad-alta de la plataforma.</div>
@@ -940,6 +959,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex02-s3-ok" onclick="rateSerieOk('e3-ex02-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex02-s3-ko" onclick="rateSerieKo('e3-ex02-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que el hueco de la rodilla quede justo en el borde. El rodillo apoya en el tobillo, no en el empeine.</div>
@@ -976,6 +996,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex03-s3-ok" onclick="rateSerieOk('e3-ex03-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex03-s3-ko" onclick="rateSerieKo('e3-ex03-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> tumbado boca abajo. El rodillo apoya justo por encima del talón, no en el tendón de Aquiles. Caderas pegadas al acolchado en todo momento.</div>
@@ -1012,6 +1033,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex04-s3-ok" onclick="rateSerieOk('e3-ex04-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex04-s3-ko" onclick="rateSerieKo('e3-ex04-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> sentado con la espalda apoyada. Rodillas sobre los apoyos acolchados.</div>
@@ -1048,6 +1070,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex05-s3-ok" onclick="rateSerieOk('e3-ex05-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex05-s3-ko" onclick="rateSerieKo('e3-ex05-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> sentado con las piernas abiertas sobre los apoyos. Espalda apoyada en el respaldo.</div>
@@ -1084,6 +1107,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15-20</td><td class="angel-col s3">82 kg</td><td class="manu-col hidden s3-m">55 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex06-s3-ok" onclick="rateSerieOk('e3-ex06-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex06-s3-ko" onclick="rateSerieKo('e3-ex06-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> sentado con los pies apoyados. Ajusta el apoyo del pecho a la altura correcta según la máquina.</div>
@@ -1120,6 +1144,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s3">S3</span></td><td>40 seg</td><td class="angel-col s3">Peso corporal</td><td class="manu-col hidden s3-m">Peso corporal</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex07-s3-ok" onclick="rateSerieOk('e3-ex07-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex07-s3-ko" onclick="rateSerieKo('e3-ex07-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
 <div class="postura-section"><strong>Posición:</strong> antebrazos y punteras de los pies. Los codos directamente bajo los hombros. Cabeza en posición neutra mirando al suelo.</div>
@@ -1189,6 +1214,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">36 kg</td><td class="manu-col hidden s2-m">24 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex01-s2-ok" onclick="rateSerieOk('eopt-ex01-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex01-s2-ko" onclick="rateSerieKo('eopt-ex01-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
         <div class="rest-box">⏱ <span>Descanso entre series:</span> 90 segundos (ejercicio compuesto)
   </div>
 </div></div>
@@ -1218,6 +1244,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">58 kg</td><td class="manu-col hidden s2-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex02-s2-ok" onclick="rateSerieOk('eopt-ex02-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex02-s2-ko" onclick="rateSerieKo('eopt-ex02-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
         <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)
   </div>
 </div></div>
@@ -1247,6 +1274,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">26 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex03-s2-ok" onclick="rateSerieOk('eopt-ex03-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex03-s2-ko" onclick="rateSerieKo('eopt-ex03-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
         <div class="rest-box">⏱ <span>Descanso entre series:</span> 90 segundos (ejercicio compuesto)
   </div>
 </div></div>
@@ -1276,6 +1304,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">26 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex04-s2-ok" onclick="rateSerieOk('eopt-ex04-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex04-s2-ko" onclick="rateSerieKo('eopt-ex04-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
         <div class="rest-box">⏱ <span>Descanso entre series:</span> 90 segundos (ejercicio compuesto)
   </div>
 </div></div>
@@ -1305,6 +1334,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">11 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex05-s2-ok" onclick="rateSerieOk('eopt-ex05-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex05-s2-ko" onclick="rateSerieKo('eopt-ex05-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
         <div class="rest-box">⏱ <span>Descanso entre series:</span> 90 segundos (ejercicio compuesto)
   </div>
 </div></div>
@@ -1334,6 +1364,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s2">S2</span></td><td>15</td><td class="angel-col s2">36 kg</td><td class="manu-col hidden s2-m">22 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex06-s2-ok" onclick="rateSerieOk('eopt-ex06-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex06-s2-ko" onclick="rateSerieKo('eopt-ex06-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
         <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)
   </div>
 </div></div>
@@ -1363,6 +1394,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s2">S2</span></td><td>20</td><td class="angel-col s2">60 kg</td><td class="manu-col hidden s2-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex07-s2-ok" onclick="rateSerieOk('eopt-ex07-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex07-s2-ko" onclick="rateSerieKo('eopt-ex07-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
         <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)
   </div>
 </div></div>
@@ -1392,6 +1424,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
             <tr><td><span class="series-badge b-s2">S2</span></td><td>40 seg</td><td class="angel-col s2">Peso corporal</td><td class="manu-col hidden s2-m">Peso corporal</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex08-s2-ok" onclick="rateSerieOk('eopt-ex08-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex08-s2-ko" onclick="rateSerieKo('eopt-ex08-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
+<div class="table-divider"></div>
         <div class="rest-box">⏱ <span>Descanso entre series:</span> 60 segundos
   </div>
 </div></div>
@@ -1552,6 +1585,22 @@ function loadSeriesRatings(section) {
     }
   });
 }
+
+function triggerRestAfterS3(serieId, btn) {
+  // Only trigger on last series (s3 or s2 for optional)
+  if (!serieId.endsWith('-s3') && !serieId.endsWith('-s2')) return;
+  // Find the next inter-rest block after this ex-block
+  const exBlock = btn.closest('.ex-block');
+  if (!exBlock) return;
+  let next = exBlock.nextElementSibling;
+  while (next && !next.classList.contains('inter-rest')) {
+    next = next.nextElementSibling;
+  }
+  if (next && next.classList.contains('inter-rest') && !next._timer) {
+    setTimeout(() => startRest(next), 400);
+  }
+}
+
 function rateSerieOk(serieId, btn) {
   const person = getCurrentPerson(btn.closest('.section'));
   const data = getRatings(person);
@@ -1560,6 +1609,7 @@ function rateSerieOk(serieId, btn) {
   saveRatings(person, data);
   btn.classList.add('ok');
   if (btn.nextElementSibling) btn.nextElementSibling.classList.add('hidden-btn');
+  triggerRestAfterS3(serieId, btn);
 }
 function rateSerieKo(serieId, btn) {
   const person = getCurrentPerson(btn.closest('.section'));
@@ -1569,6 +1619,7 @@ function rateSerieKo(serieId, btn) {
   saveRatings(person, data);
   btn.classList.add('ko');
   if (btn.previousElementSibling) btn.previousElementSibling.classList.add('hidden-btn');
+  triggerRestAfterS3(serieId, btn);
 }
 function showSection(id) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -1593,7 +1644,7 @@ function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const page = document.getElementById('page-' + id);
   if (page) page.classList.add('active');
-  if (id === 'progreso') renderProgress('angel');
+  if (id === 'progreso') { const p = localStorage.getItem('gymplan-person') || 'angel'; progressPerson = p; document.getElementById('prog-angel').classList.toggle('active', p==='angel'); document.getElementById('prog-manu').classList.toggle('active', p==='manu'); renderProgress(p); }
 }
 
 function toggleMenu() {
