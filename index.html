@@ -95,7 +95,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .ex-block:last-child{margin-bottom:8px}
 .ex-num{font-size:10px;font-weight:700;color:#666;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
 .ex-name{font-size:14px;font-weight:600;color:#f97316;margin-bottom:8px}
-.ex-desc{font-size:13px;color:#b0b0b0;line-height:1.6;margin-bottom:8px}
+.ex-desc{font-size:13px;color:#b0b0b0;line-height:1.6;margin-bottom:10px}
 
 /* SERIES TABLE */
 .series-table{width:100%;border-collapse:collapse;margin-bottom:10px;border-radius:8px;overflow:hidden;border:1px solid #2a2a2a}
@@ -114,31 +114,31 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .b-s3{background:#431407;color:#f97316}
 
 /* REST BOXES */
-.rest-box{display:flex;align-items:center;justify-content:center;gap:5px;font-size:12px;color:#666;padding:8px 0;margin-bottom:16px;text-align:center}
-.rest-box span{color:#888}
+.rest-box{display:flex;align-items:center;gap:6px;font-size:12px;color:#888;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:0 0 8px 8px;padding:6px 10px;margin-top:-2px;margin-bottom:10px}
+.rest-box span{font-weight:600;color:#aaa}
 .inter-rest{display:flex;align-items:center;justify-content:center;font-size:12px;color:#c084fc;background:#1a0b2e;border:1px solid #4c1d95;border-radius:8px;padding:7px 12px;margin:0 0 8px;font-weight:500;text-align:center}
 
 /* POSTURA */
-.postura-box{padding-top:16px;margin-bottom:16px;font-size:12px;color:#b0b0b0;line-height:1.6;border-top:1px solid #2a2a2a}
-.postura-box .postura-title{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;display:flex;align-items:center;gap:5px;margin-bottom:10px}
+.postura-box{background:#1f1f1f;border:1px solid #2a2a2a;border-radius:8px;padding:12px;margin-bottom:10px;font-size:12px;color:#b0b0b0;line-height:1.6}
+.postura-box .postura-title{font-size:11px;font-weight:700;color:#ccc;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;display:flex;align-items:center;gap:5px}
 .postura-section{margin-bottom:6px}
 .postura-section:last-child{margin-bottom:0}
 .postura-section strong{color:#f0f0f0;font-weight:600}
 
 /* MUSCLES / PILLS */
-.muscles{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px}
+.muscles{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
 .pill{font-size:11px;padding:3px 9px;border-radius:20px;font-weight:500}
 .p-muscle{background:#2a2a2a;color:#aaa;border:1px solid #333}
 .p-new{background:#451a03;color:#fb923c;border:1px solid #7c2d12}
 .hidden{display:none!important}
 
 /* FITWILL LINK */
-.ex-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#f97316;text-decoration:none;margin-bottom:16px;font-weight:500}
-.ex-link:active{opacity:0.7}
+.ex-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#f97316;text-decoration:none;margin-top:12px;margin-bottom:16px;font-weight:500}
+.ex-link:active{background:#2a1500}
 .ex-link svg{flex-shrink:0}
 
 /* RATING */
-.rating{display:flex;gap:8px;padding-top:16px;border-top:1px solid #2a2a2a}
+.rating{display:flex;gap:10px;margin-top:12px;padding-top:10px;border-top:1px solid #222}
 .rate-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px;border-radius:10px;border:1.5px solid #333;background:#1f1f1f;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;color:#888}
 .rate-btn.like.selected{background:#14532d;border-color:#22c55e;color:#4ade80}
 .rate-btn.dislike.selected{background:#450a0a;border-color:#ef4444;color:#f87171}
@@ -188,7 +188,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .ex-block:last-child{margin-bottom:8px}
 .ex-toggle{display:flex;align-items:center;justify-content:space-between;padding:8px;cursor:pointer;user-select:none;gap:8px}
 .ex-toggle-left{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
-.ex-toggle-num{display:none}
+.ex-toggle-num{font-size:10px;font-weight:700;color:#555;letter-spacing:0.08em;flex-shrink:0}
 .ex-toggle-name{font-size:14px;font-weight:600;color:#f97316;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ex-toggle-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .ex-status{display:none}
@@ -197,7 +197,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .ex-status.pending{display:none}
 .ex-chevron{font-size:16px;color:#666;transition:transform .2s;flex-shrink:0}
 .ex-chevron.open{transform:rotate(180deg)}
-.ex-body{display:none;padding:10px 8px 8px}
+.ex-body{display:none;padding:0 8px 8px}
 .ex-body.open{display:block}
 /* override old ex rules inside ex-body */
 .ex-body .ex-num{display:none}
@@ -214,10 +214,6 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
 .pt-btn img{width:24px;height:24px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .pt-btn{display:flex;align-items:center;justify-content:center;gap:8px}
-
-.ex-desc-title{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;display:flex;align-items:center;gap:5px;margin-top:12px;}
-.ex-section-title{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;display:flex;align-items:center;gap:5px;margin-bottom:10px;border-top:1px solid #2a2a2a;padding-top:16px}
-.postura-box .postura-title{font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.06em;display:flex;align-items:center;gap:5px;margin-bottom:10px}
 
 .rate-col{width:56px;text-align:center}
 .series-rate{display:flex;gap:6px;justify-content:center;align-items:center}
@@ -287,66 +283,70 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 01</div>
-<div class="ex-name">Press de pecho convergente (máquina)</div>
-<div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">38 kg</td><td class="manu-col hidden s1-m">25 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex01-s1-ok" onclick="rateSerieOk('e1-ex01-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex01-s1-ko" onclick="rateSerieKo('e1-ex01-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">30 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex01-s2-ok" onclick="rateSerieOk('e1-ex01-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex01-s2-ko" onclick="rateSerieKo('e1-ex01-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex01-s3-ok" onclick="rateSerieOk('e1-ex01-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex01-s3-ko" onclick="rateSerieKo('e1-ex01-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-<div class="postura-box">
+    
+        <div class="ex-num">Ejercicio 01</div>
+        <div class="ex-name">Press de pecho convergente (máquina)</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> espalda completamente apoyada en el respaldo, pies planos en el suelo. Ajusta el asiento para que las asas queden a la altura del pecho.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia abajo o neutras según el modelo de la máquina. Agarre firme sin apretar en exceso.</div>
           <div class="postura-section"><strong>Movimiento:</strong> empuja hasta casi extender los codos — no los bloquees. Vuelve lento en 3 segundos.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> encorvar la espalda despegándola del respaldo, bloquear codos al extender, subir los hombros hacia las orejas.
   </div>
 </div>
-<div class="rating" data-exid="e1-ex01">
-          <button class="rate-btn like" onclick="rate('e1-ex01','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex01','dislike',this)" title="No completado">
-      <table class="series-table">
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">38 kg</td><td class="manu-col hidden s1-m">25 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex01-s1-ok" onclick="rateSerieOk('e1-ex01-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex01-s1-ko" onclick="rateSerieKo('e1-ex01-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">30 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex01-s2-ok" onclick="rateSerieOk('e1-ex01-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex01-s2-ko" onclick="rateSerieKo('e1-ex01-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex01-s3-ok" onclick="rateSerieOk('e1-ex01-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex01-s3-ko" onclick="rateSerieKo('e1-ex01-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
+        <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
+        
+      
+<a class="ex-link" href="https://fitwill.app/es/exercise/2277/lever-chest-press-version-4/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+</div>
+    </div>
+
+      <!-- 2. PRESS MANCUERNAS BANCO -->
+      
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
+  <div class="ex-toggle" onclick="toggleEx(this)">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 02</span>
+      <span class="ex-toggle-name">Press con mancuernas en banco plano</span>
+    </div>
+    <div class="ex-toggle-right">
+      <span class="ex-status pending">•</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
+    </div>
+  </div>
+  <div class="ex-body">
+    
+        <div class="ex-num">Ejercicio 02</div>
+        <div class="ex-name">Press con mancuernas en banco plano</div>
+        
+        <div class="postura-box">
+          <div class="postura-section"><strong>Posición:</strong> tumbado en el banco con los pies apoyados en el suelo. Espalda neutra — no arquear de forma exagerada. Cabeza apoyada en el banco.</div>
+          <div class="postura-section"><strong>Agarre:</strong> palmas hacia adelante. Los codos a 45° del torso — no perpendiculares al cuerpo, eso sobrecarga el hombro.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> baja hasta que los codos queden ligeramente por debajo del banco. Sube empujando y juntando ligeramente las mancuernas al final.</div>
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> codos en ángulo de 90° con el torso, rebotar las mancuernas abajo, arquear la espalda para ayudar a subir.
+  </div>
+</div>
+        <table class="series-table">
           <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">14 kg c/u</td><td class="manu-col hidden s1-m">10 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex02-s1-ok" onclick="rateSerieOk('e1-ex02-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex02-s1-ko" onclick="rateSerieKo('e1-ex02-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">18 kg c/u</td><td class="manu-col hidden s2-m">12 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex02-s2-ok" onclick="rateSerieOk('e1-ex02-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex02-s2-ko" onclick="rateSerieKo('e1-ex02-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">18 kg c/u</td><td class="manu-col hidden s3-m">14 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex02-s3-ok" onclick="rateSerieOk('e1-ex02-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex02-s3-ko" onclick="rateSerieKo('e1-ex02-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
-        </table><div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">14 kg c/u</td><td class="manu-col hidden s1-m">10 kg c/u</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">18 kg c/u</td><td class="manu-col hidden s2-m">12 kg c/u</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">18 kg c/u</td><td class="manu-col hidden s3-m">14 kg c/u</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-<div class="postura-box">
-          <div class="postura-section"><strong>Posición:</strong> tumbado en el banco con los pies apoyados en el suelo. Espalda neutra — no arquear de forma <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">55 kg</td><td class="manu-col hidden s1-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex03-s1-ok" onclick="rateSerieOk('e1-ex03-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex03-s1-ko" onclick="rateSerieKo('e1-ex03-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">73 kg</td><td class="manu-col hidden s2-m">45 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex03-s2-ok" onclick="rateSerieOk('e1-ex03-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex03-s2-ko" onclick="rateSerieKo('e1-ex03-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">83 kg</td><td class="manu-col hidden s3-m">55 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex03-s3-ok" onclick="rateSerieOk('e1-ex03-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex03-s3-ko" onclick="rateSerieKo('e1-ex03-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>k="rate('e1-ex02','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex02','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
+        <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
+        
+      
+<a class="ex-link" href="https://fitwill.app/es/exercise/1624/dumbbell-reverse-bench-press/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div>
     </div>
 
@@ -365,67 +365,74 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 03</div>
-<div class="ex-name">Aperturas en máquina pec-deck</div>
-<div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Pectoral menor</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">16 kg</td><td class="manu-col hidden s1-m">9 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex04-s1-ok" onclick="rateSerieOk('e1-ex04-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex04-s1-ko" onclick="rateSerieKo('e1-ex04-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">23 kg</td><td class="manu-col hidden s2-m">14 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex04-s2-ok" onclick="rateSerieOk('e1-ex04-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex04-s2-ko" onclick="rateSerieKo('e1-ex04-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">27 kg</td><td class="manu-col hidden s3-m">18 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex04-s3-ok" onclick="rateSerieOk('e1-ex04-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex04-s3-ko" onclick="rateSerieKo('e1-ex04-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>>
+    
+        <div class="ex-num">Ejercicio 03</div>
+        <div class="ex-name">Aperturas en máquina pec-deck</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> espalda pegada al respaldo, pies apoyados en el suelo. Ajusta el asiento para que los codos queden a la altura del pecho.</div>
           <div class="postura-section"><strong>Agarre:</strong> codos apoyados en los apoyos acolchados o manos en las asas según el modelo. Los codos forman un ángulo fijo de ~90°.</div>
           <div class="postura-section"><strong>Movimiento:</strong> cierra los brazos como si abrazaras a alguien. Aguanta 1 segundo al cerrar. Abre lento en 3 segundos.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> abrir demasiado al volver (dolor en hombro), rebotar al cerrar, despegar la espalda del respaldo.
   </div>
 </div>
-<div class="rating" data-exid="e1-ex03">
-          <button class="rate-btn like" onclick="rate('e1-ex03','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex03','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">55 kg</td><td class="manu-col hidden s1-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex03-s1-ok" onclick="rateSerieOk('e1-ex03-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex03-s1-ko" onclick="rateSerieKo('e1-ex03-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">73 kg</td><td class="manu-col hidden s2-m">45 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex03-s2-ok" onclick="rateSerieOk('e1-ex03-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex03-s2-ko" onclick="rateSerieKo('e1-ex03-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">83 kg</td><td class="manu-col hidden s3-m">55 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex03-s3-ok" onclick="rateSerieOk('e1-ex03-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex03-s3-ko" onclick="rateSerieKo('e1-ex03-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Pectoral menor</span></div>
+        
+      
+<a class="ex-link" href="https://fitwill.app/es/exercise/2427/lever-pec-deck-fly/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div>
     </div>
 
       <!-- 4. PRESS HOMBRO CONVERGENTE -->
       
-<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos<<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">8 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex05-s1-ok" onclick="rateSerieOk('e1-ex05-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex05-s1-ko" onclick="rateSerieKo('e1-ex05-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex05-s2-ok" onclick="rateSerieOk('e1-ex05-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex05-s2-ko" onclick="rateSerieKo('e1-ex05-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">22 kg</td><td class="manu-col hidden s3-m">14 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex05-s3-ok" onclick="rateSerieOk('e1-ex05-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex05-s3-ko" onclick="rateSerieKo('e1-ex05-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table> <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">16 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">23 kg</td><td class="manu-col hidden s2-m">14 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">27 kg</td><td class="manu-col hidden s3-m">18 kg</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-<div class="postura-box">
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
+  <div class="ex-toggle" onclick="toggleEx(this)">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 04</span>
+      <span class="ex-toggle-name">Press de hombro convergente (máquina)</span>
+    </div>
+    <div class="ex-toggle-right">
+      <span class="ex-status pending">•</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
+    </div>
+  </div>
+  <div class="ex-body">
+    
+        <div class="ex-num">Ejercicio 04</div>
+        <div class="ex-name">Press de hombro convergente (máquina)</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que las asas queden justo a la altura de los hombros cuando los brazos están doblados. Espalda apoyada.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia adelante o neutras. Agarre firme pero sin tensión en el cuello.</div>
-          <div class="postura-section"><strong>Movimiento:</strong> empuja hacia arriba sin bloquear los codos. Baja hasta qu<table class="series-table">
+          <div class="postura-section"><strong>Movimiento:</strong> empuja hacia arriba sin bloquear los codos. Baja hasta que los brazos formen 90°. Sube y baja en 2-3 segundos cada fase.</div>
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> encorvarse hacia adelante, subir los hombros hacia las orejas, usar el impulso del cuerpo para empujar.
+  </div>
+</div>
+        <table class="series-table">
           <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">22 kg</td><td class="manu-col hidden s1-m">14 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex06-s1-ok" onclick="rateSerieOk('e1-ex06-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex06-s1-ko" onclick="rateSerieKo('e1-ex06-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">27 kg</td><td class="manu-col hidden s2-m">18 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex06-s2-ok" onclick="rateSerieOk('e1-ex06-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex06-s2-ko" onclick="rateSerieKo('e1-ex06-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">31 kg</td><td class="manu-col hidden s3-m">20 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex06-s3-ok" onclick="rateSerieOk('e1-ex06-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex06-s3-ko" onclick="rateSerieKo('e1-ex06-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">16 kg</td><td class="manu-col hidden s1-m">9 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex04-s1-ok" onclick="rateSerieOk('e1-ex04-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex04-s1-ko" onclick="rateSerieKo('e1-ex04-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">23 kg</td><td class="manu-col hidden s2-m">14 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex04-s2-ok" onclick="rateSerieOk('e1-ex04-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex04-s2-ko" onclick="rateSerieKo('e1-ex04-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">27 kg</td><td class="manu-col hidden s3-m">18 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex04-s3-ok" onclick="rateSerieOk('e1-ex04-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex04-s3-ko" onclick="rateSerieKo('e1-ex04-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
-        </table> 5. PRESS FRANCÉS POLEA CUERDA -->
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
+        <div class="muscles"><span class="pill p-muscle">Deltoides ant.</span><span class="pill p-muscle">Deltoides lat.</span><span class="pill p-muscle">Tríceps</span></div>
+        
+      
+<a class="ex-link" href="https://fitwill.app/es/exercise/2962/lever-seated-hammer-grip-shoulder-press/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+</div>
+    </div>
+
+      <!-- 5. PRESS FRANCÉS POLEA CUERDA -->
       
 <div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
@@ -440,72 +447,70 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 05</div>
-<div class="ex-name">Press francés en polea con cuerda (tríceps)</div>
-<div class="muscles"><span class="pill p-muscle">Tríceps cab. larga</span><span class="pill p-muscle">Tríceps cab. medial</span><span class="pill p-new">★ Nuevo</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">8 kg</td></tr>
-            <tr><td><span class="series<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">9 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex07-s1-ok" onclick="rateSerieOk('e1-ex07-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex07-s1-ko" onclick="rateSerieKo('e1-ex07-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex07-s2-ok" onclick="rateSerieOk('e1-ex07-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex07-s2-ko" onclick="rateSerieKo('e1-ex07-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">18 kg</td><td class="manu-col hidden s3-m">14 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex07-s3-ok" onclick="rateSerieOk('e1-ex07-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex07-s3-ko" onclick="rateSerieKo('e1-ex07-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>os a la anchura de los hombros.</div>
+    
+        <div class="ex-num">Ejercicio 05</div>
+        <div class="ex-name">Press francés en polea con cuerda (tríceps)</div>
+        
+        <div class="postura-box">
+          <div class="postura-section"><strong>Posición:</strong> de pie de espaldas a la polea alta, da un paso adelante para crear tensión. Inclínate ligeramente hacia adelante. Pies separados a la anchura de los hombros.</div>
           <div class="postura-section"><strong>Agarre:</strong> agarra los extremos de la cuerda con ambas manos, palmas enfrentadas. Los brazos sobre la cabeza con los codos apuntando al techo.</div>
           <div class="postura-section"><strong>Movimiento:</strong> extiende los antebrazos hacia adelante y arriba manteniendo los codos fijos y cerca de la cabeza. Vuelve lento controlando el peso.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos durante el movimiento, arquear la zona lumbar, usar impulso del torso para ayudar.
   </div>
 </div>
-<div class="rating" data-exid="e1-ex05">
-          <button class="rate-btn like" onclick="rate('e1-ex05','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex05','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">8 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex05-s1-ok" onclick="rateSerieOk('e1-ex05-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex05-s1-ko" onclick="rateSerieKo('e1-ex05-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex05-s2-ok" onclick="rateSerieOk('e1-ex05-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex05-s2-ko" onclick="rateSerieKo('e1-ex05-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">22 kg</td><td class="manu-col hidden s3-m">14 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex05-s3-ok" onclick="rateSerieOk('e1-ex05-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex05-s3-ko" onclick="rateSerieKo('e1-ex05-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Tríceps cab. larga</span><span class="pill p-muscle">Tríceps cab. medial</span><span class="pill p-new">★ Nuevo</span></div>
+        
+      
+<a class="ex-link" href="https://fitwill.app/exercise/2248/cable-rope-overhead-triceps-extension/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div>
     </div>
 
       <!-- 6. TRÍCEPS POLEA BARRA -->
       
 <div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
-<d<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">4 kg c/u</td><td class="manu-col hidden s1-m">3 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex08-s1-ok" onclick="rateSerieOk('e1-ex08-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex08-s1-ko" onclick="rateSerieKo('e1-ex08-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">6 kg c/u</td><td class="manu-col hidden s2-m">4 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex08-s2-ok" onclick="rateSerieOk('e1-ex08-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex08-s2-ko" onclick="rateSerieKo('e1-ex08-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>12</td><td class="angel-col s3">6 kg c/u</td><td class="manu-col hidden s3-m">5 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex08-s3-ok" onclick="rateSerieOk('e1-ex08-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex08-s3-ko" onclick="rateSerieKo('e1-ex08-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">22 kg</td><td class="manu-col hidden s1-m">14 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">27 kg</td><td class="manu-col hidden s2-m">18 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">31 kg</td><td class="manu-col hidden s3-m">20 kg</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-<div class="postura-box">
+<div class="ex-block">
+  <div class="ex-toggle" onclick="toggleEx(this)">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 06</span>
+      <span class="ex-toggle-name">Tríceps en polea con barra rígida (prono)</span>
+    </div>
+    <div class="ex-toggle-right">
+      <span class="ex-status pending">•</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
+    </div>
+  </div>
+  <div class="ex-body">
+    
+        <div class="ex-num">Ejercicio 06</div>
+        <div class="ex-name">Tríceps en polea con barra rígida (prono)</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> de pie frente a la polea alta. Pies ligeramente separados, ligera inclinación hacia adelante. Codos pegados al cuerpo a lo largo de toda la serie.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia abajo (pronadas). Agarre a la anchura de los hombros en la barra.</div>
           <div class="postura-section"><strong>Movimiento:</strong> extiende los brazos hacia abajo hasta estirarlos completamente, aprieta 1 segundo, sube lento en 3 segundos.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos, inclinarse hacia adelante para usar el peso corporal, no llegar a la extensión completa.
   </div>
 </div>
-<div class="rating" data-exid="e1-ex06">
-          <button class="rate-btn like" onclick="rate('e1-ex06','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex06','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">22 kg</td><td class="manu-col hidden s1-m">14 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex06-s1-ok" onclick="rateSerieOk('e1-ex06-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex06-s1-ko" onclick="rateSerieKo('e1-ex06-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">27 kg</td><td class="manu-col hidden s2-m">18 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex06-s2-ok" onclick="rateSerieOk('e1-ex06-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex06-s2-ko" onclick="rateSerieKo('e1-ex06-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">31 kg</td><td class="manu-col hidden s3-m">20 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex06-s3-ok" onclick="rateSerieOk('e1-ex06-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex06-s3-ko" onclick="rateSerieKo('e1-ex06-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Tríceps cab. lateral</span><span class="pill p-muscle">Tríceps cab. larga</span></div>
+        
+      
+<a class="ex-link" href="https://fitwill.app/exercise/0201/cable-pushdown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div>
     </div>
 
@@ -524,35 +529,29 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 07</div>
-<div class="ex-name">Tríceps en polea agarre inverso (supino)</div>
-<div class="muscles"><span class="pill p-muscle">Tríceps cab. medial</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">18 kg</td><td class="manu-col hidden s3-m">14 kg</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-<div class="postura-box">
+    
+        <div class="ex-num">Ejercicio 07</div>
+        <div class="ex-name">Tríceps en polea agarre inverso (supino)</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> igual que el ejercicio anterior. De pie frente a la polea, codos pegados al cuerpo.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia arriba (supinas). Usa la barra corta o la cuerda según disponibilidad.</div>
           <div class="postura-section"><strong>Movimiento:</strong> idéntico al anterior — extiende hacia abajo, aprieta 1 segundo, sube lento. No intentes igualar el peso del agarre prono.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> los mismos errores que en el prono. Con el agarre supino hay más tendencia a separar los codos.
   </div>
 </div>
-<div class="rating" data-exid="e1-ex07">
-          <button class="rate-btn like" onclick="rate('e1-ex07','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex07','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">9 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex07-s1-ok" onclick="rateSerieOk('e1-ex07-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex07-s1-ko" onclick="rateSerieKo('e1-ex07-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex07-s2-ok" onclick="rateSerieOk('e1-ex07-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex07-s2-ko" onclick="rateSerieKo('e1-ex07-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">18 kg</td><td class="manu-col hidden s3-m">14 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex07-s3-ok" onclick="rateSerieOk('e1-ex07-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex07-s3-ko" onclick="rateSerieKo('e1-ex07-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Tríceps cab. medial</span></div>
+        
+      
+<a class="ex-link" href="https://fitwill.app/es/exercise/0207/cable-reverse-grip-pushdown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div>
     </div>
 
@@ -571,35 +570,29 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 08</div>
-<div class="ex-name">Elevaciones laterales con mancuernas</div>
-<div class="muscles"><span class="pill p-muscle">Deltoides lateral</span><span class="pill p-muscle">Trapecio sup.</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">4 kg c/u</td><td class="manu-col hidden s1-m">3 kg c/u</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">6 kg c/u</td><td class="manu-col hidden s2-m">4 kg c/u</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>12</td><td class="angel-col s3">6 kg c/u</td><td class="manu-col hidden s3-m">5 kg c/u</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-<div class="postura-box">
+    
+        <div class="ex-num">Ejercicio 08</div>
+        <div class="ex-name">Elevaciones laterales con mancuernas</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> de pie o sentado. Espalda recta, ligerísima inclinación hacia adelante del torso (10°). Codos ligeramente doblados durante todo el movimiento.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas hacia el suelo. El meñique ligeramente más alto que el pulgar al llegar arriba — como si vaciases un vaso.</div>
           <div class="postura-section"><strong>Movimiento:</strong> sube lateralmente hasta la altura del hombro — no más. Baja lento en 3-4 segundos. No uses el impulso del cuerpo.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> subir por encima del hombro (impingement), balancear el torso, encorvar el cuello. Si duele el hombro, para.
   </div>
 </div>
-<div class="rating" data-exid="e1-ex08">
-          <button class="rate-btn like" onclick="rate('e1-ex08','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex08','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">4 kg c/u</td><td class="manu-col hidden s1-m">3 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex08-s1-ok" onclick="rateSerieOk('e1-ex08-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex08-s1-ko" onclick="rateSerieKo('e1-ex08-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">6 kg c/u</td><td class="manu-col hidden s2-m">4 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex08-s2-ok" onclick="rateSerieOk('e1-ex08-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex08-s2-ko" onclick="rateSerieKo('e1-ex08-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>12</td><td class="angel-col s3">6 kg c/u</td><td class="manu-col hidden s3-m">5 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e1-ex08-s3-ok" onclick="rateSerieOk('e1-ex08-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e1-ex08-s3-ko" onclick="rateSerieKo('e1-ex08-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Deltoides lateral</span><span class="pill p-muscle">Trapecio sup.</span></div>
+        
+    
+<a class="ex-link" href="https://fitwill.app/es/exercise/0334/dumbbell-lateral-raise/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div>
   </div>
 
@@ -649,71 +642,71 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 01</div>
-<div class="ex-name">Jalón al pecho agarre ancho (máquina)</div>
-<div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Romboides</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex01-s1-ok" onclick="rateSerieOk('e2-ex01-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex01-s1-ko" onclick="rateSerieKo('e2-ex01-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">50 kg</td><td class="manu-col hidden s2-m">32 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex01-s2-ok" onclick="rateSerieOk('e2-ex01-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex01-s2-ko" onclick="rateSerieKo('e2-ex01-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">57 kg</td><td class="manu-col hidden s3-m">38 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex01-s3-ok" onclick="rateSerieOk('e2-ex01-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex01-s3-ko" onclick="rateSerieKo('e2-ex01-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-
-<div class="postura-box">
+    
+        <div class="ex-num">Ejercicio 01</div>
+        <div class="ex-name">Jalón al pecho agarre ancho (máquina)</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> muslos bien sujetos bajo el apoyo. Ligera inclinación hacia atrás del torso (15°). Pecho hacia arriba.</div>
           <div class="postura-section"><strong>Agarre:</strong> ancho, un poco más que los hombros. Palmas hacia adelante. Agarre firme pero sin crispación.</div>
           <div class="postura-section"><strong>Movimiento:</strong> tira llevando los codos hacia abajo y atrás como si quisieras tocar las caderas con ellos. Lleva la barra hasta el pecho alto. Sube lento.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> inclinarse demasiado hacia atrás, tirar con los brazos en lugar de los codos, encorvar la espalda.
   </div>
 </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">45 kg</td><td class="manu-col hidden s1-m">39 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex01-s1-ok" onclick="rateSerieOk('e2-ex01-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex01-s1-ko" onclick="rateSerieKo('e2-ex01-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">39 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex01-s2-ok" onclick="rateSerieOk('e2-ex01-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex01-s2-ko" onclick="rateSerieKo('e2-ex01-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">45 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex01-s3-ok" onclick="rateSerieOk('e2-ex01-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex01-s3-ko" onclick="rateSerieKo('e2-ex01-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
+        <div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Romboides</span></div>
+        
+        <a class="ex-link" href="https://fitwill.app/es/exercise/2291/cable-wide-grip-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+    
 <a class="ex-link" href="https://fitwill.app/es/exercise/2291/cable-wide-grip-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e2-ex01">
-          <button class="rate-btn like" onclick="rate('e2-ex01','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e2-ex01','dis<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex02-s1-ok" onclick="rateSerieOk('e2-ex02-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex02-s1-ko" onclick="rateSerieKo('e2-ex02-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">50 kg</td><td class="manu-col hidden s2-m">32 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex02-s2-ok" onclick="rateSerieOk('e2-ex02-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex02-s2-ko" onclick="rateSerieKo('e2-ex02-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">60 kg</td><td class="manu-col hidden s3-m">40 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex02-s3-ok" onclick="rateSerieOk('e2-ex02-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex02-s3-ko" onclick="rateSerieKo('e2-ex02-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>a (seated cable row)</div>
-<div class="muscles"><span class="pill p-muscle">Trapecio medio</span><span class="pill p-muscle">Romboides</span><span class="pill p-muscle">Dorsal</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">50 kg</td><td class="manu-col hidden s2-m">32 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">60 kg</td><td class="manu-col hidden s3-m">40 kg</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+</div>
+  </div>
 
-
-<div class="postura-box">
+      
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+<div class="ex-block">
+  <div class="ex-toggle" onclick="toggleEx(this)">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 02</span>
+      <span class="ex-toggle-name">Remo en polea baja (seated cable row)</span>
+    </div>
+    <div class="ex-toggle-right">
+      <span class="ex-status pending">•</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
+    </div>
+  </div>
+  <div class="ex-body">
+    
+        <div class="ex-num">Ejercicio 02</div>
+        <div class="ex-name">Remo en polea baja (seated cable row)</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> sentado con los pies en los apoyos, rodillas ligeramente dobladas. Espalda recta vertical — no te inclines hacia adelante con el torso.</div>
           <div class="postura-section"><strong>Agarre:</strong> mango en V (agarre neutro) o barra. Codos pegados al cuerpo al tirar.</div>
-          <div class="postura-section"><strong>Movimiento:</strong> tira hacia el abdomen y aprieta los omóplatos junto<table class="series-table">
+          <div class="postura-section"><strong>Movimiento:</strong> tira hacia el abdomen y aprieta los omóplatos juntos al final 1 segundo. Vuelve lento controlando.</div>
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> inclinar el torso hacia adelante y atrás como un balancín, encorvar la espalda baja, tirar solo con los brazos sin contraer la espalda.
+  </div>
+</div>
+        <table class="series-table">
           <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex03-s1-ok" onclick="rateSerieOk('e2-ex03-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex03-s1-ko" onclick="rateSerieKo('e2-ex03-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex03-s2-ok" onclick="rateSerieOk('e2-ex03-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex03-s2-ko" onclick="rateSerieKo('e2-ex03-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex03-s3-ok" onclick="rateSerieOk('e2-ex03-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex03-s3-ko" onclick="rateSerieKo('e2-ex03-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">39 kg</td><td class="manu-col hidden s1-m">32 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex02-s1-ok" onclick="rateSerieOk('e2-ex02-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex02-s1-ko" onclick="rateSerieKo('e2-ex02-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">39 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex02-s2-ok" onclick="rateSerieOk('e2-ex02-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex02-s2-ko" onclick="rateSerieKo('e2-ex02-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">45 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex02-s3-ok" onclick="rateSerieOk('e2-ex02-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex02-s3-ko" onclick="rateSerieKo('e2-ex02-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
-        </table>        <button class="rate-btn like" onclick="rate('e2-ex02','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e2-ex02','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
+        <div class="muscles"><span class="pill p-muscle">Trapecio medio</span><span class="pill p-muscle">Romboides</span><span class="pill p-muscle">Dorsal</span></div>
+        
+        <a class="ex-link" href="https://fitwill.app/es/exercise/1320/cable-rope-crossover-seated-row/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+    
+<a class="ex-link" href="https://fitwill.app/es/exercise/1320/cable-rope-crossover-seated-row/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div>
   </div>
 
@@ -731,34 +724,30 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 03</div>
-<div class="ex-name">Jalón agarre estrecho / neutro</div>
-<div class="muscles"><span class="pill p-muscle">Dorsal inferior</span><span class="pill p-muscle">Bíceps</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>8</td><td class="angel-col s1">45 kg ayuda</td><td class="manu-col hidden s1-m">35 kg ayuda</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex04-s1-ok" onclick="rateSerieOk('e2-ex04-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex04-s1-ko" onclick="rateSerieKo('e2-ex04-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>8-10</td><td class="angel-col s2">38 kg ayuda</td><td class="manu-col hidden s2-m">28 kg ayuda</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex04-s2-ok" onclick="rateSerieOk('e2-ex04-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex04-s2-ko" onclick="rateSerieKo('e2-ex04-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">35 kg ayuda</td><td class="manu-col hidden s3-m">22 kg ayuda</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex04-s3-ok" onclick="rateSerieOk('e2-ex04-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex04-s3-ko" onclick="rateSerieKo('e2-ex04-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>agarre neutro). Manos juntas.</div>
+    
+        <div class="ex-num">Ejercicio 03</div>
+        <div class="ex-name">Jalón agarre estrecho / neutro</div>
+        
+        <div class="postura-box">
+          <div class="postura-section"><strong>Posición:</strong> igual que el jalón ancho. Misma inclinación y posición de muslos.</div>
+          <div class="postura-section"><strong>Agarre:</strong> mango en V o triangular, palmas enfrentadas (agarre neutro). Manos juntas.</div>
           <div class="postura-section"><strong>Movimiento:</strong> tira hacia el pecho alto — no al cuello ni al esternón. Los codos van hacia abajo pegados al torso.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar hacia el cuello en lugar del pecho, usar demasiado el bíceps sin involucrar la espalda.
   </div>
 </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">45 kg</td><td class="manu-col hidden s1-m">39 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex03-s1-ok" onclick="rateSerieOk('e2-ex03-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex03-s1-ko" onclick="rateSerieKo('e2-ex03-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">39 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex03-s2-ok" onclick="rateSerieOk('e2-ex03-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex03-s2-ko" onclick="rateSerieKo('e2-ex03-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">45 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex03-s3-ok" onclick="rateSerieOk('e2-ex03-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex03-s3-ko" onclick="rateSerieKo('e2-ex03-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
+        <div class="muscles"><span class="pill p-muscle">Dorsal inferior</span><span class="pill p-muscle">Bíceps</span></div>
+        
+        <a class="ex-link" href="https://fitwill.app/es/exercise/3754/cable-close-grip-front-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+    
 <a class="ex-link" href="https://fitwill.app/es/exercise/3754/cable-close-grip-front-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e2-ex03">
-          <button class="rate-btn like" onclick="rate('e2-ex03','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e2-ex03','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
 </div>
   </div>
 
@@ -768,37 +757,43 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
       <span class="ex-toggle-num">Ejercicio 04</span>
-      <span class="ex-toggle-name">Domina<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex05-s1-ok" onclick="rateSerieOk('e2-ex05-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex05-s1-ko" onclick="rateSerieKo('e2-ex05-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex05-s2-ok" onclick="rateSerieOk('e2-ex05-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex05-s2-ko" onclick="rateSerieKo('e2-ex05-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">50 kg</td><td class="manu-col hidden s3-m">34 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex05-s3-ok" onclick="rateSerieOk('e2-ex05-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex05-s3-ko" onclick="rateSerieKo('e2-ex05-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table><td>8</td><td class="angel-col s1">45 kg ayuda</td><td class="manu-col hidden s1-m">35 kg ayuda</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>8-10</td><td class="angel-col s2">38 kg ayuda</td><td class="manu-col hidden s2-m">28 kg ayuda</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">35 kg ayuda</td><td class="manu-col hidden s3-m">22 kg ayuda</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-
-<div class="postura-box">
+      <span class="ex-toggle-name">Dominadas asistidas (máquina)</span>
+    </div>
+    <div class="ex-toggle-right">
+      <span class="ex-status pending">•</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
+    </div>
+  </div>
+  <div class="ex-body">
+    
+        <div class="ex-num">Ejercicio 04</div>
+        <div class="ex-name">Dominadas asistidas (máquina)</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> rodillas sobre el apoyo acolchado. Brazos extendidos al inicio. Cuerpo ligeramente hacia atrás.</div>
           <div class="postura-section"><strong>Agarre:</strong> un poco más ancho que los hombros. Palmas hacia adelante para trabajar más el dorsal.</div>
           <div class="postura-section"><strong>Movimiento:</strong> lleva el pecho hacia la barra — no la barbilla. Los codos van hacia abajo y atrás. Baja lento controlando.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar solo con los brazos, llegar solo con la barbilla a la barra, bajar demasiado rápido.
   </div>
 </div>
-<a class="ex-link" href="https://fitwill.app/es/exercise/0015/assisted-parallel-close-grip-pull-<table class="series-table">
+        <table class="series-table">
           <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">9 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex06-s1-ok" onclick="rateSerieOk('e2-ex06-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex06-s1-ko" onclick="rateSerieKo('e2-ex06-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">20 kg</td><td class="manu-col hidden s2-m">12 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex06-s2-ok" onclick="rateSerieOk('e2-ex06-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex06-s2-ko" onclick="rateSerieKo('e2-ex06-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">25 kg</td><td class="manu-col hidden s3-m">16 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex06-s3-ok" onclick="rateSerieOk('e2-ex06-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex06-s3-ko" onclick="rateSerieKo('e2-ex06-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>8</td><td class="angel-col s1">45 kg ayuda</td><td class="manu-col hidden s1-m">27 kg ayuda</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex04-s1-ok" onclick="rateSerieOk('e2-ex04-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex04-s1-ko" onclick="rateSerieKo('e2-ex04-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>8-10</td><td class="angel-col s2">41 kg ayuda</td><td class="manu-col hidden s2-m">23 kg ayuda</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex04-s2-ok" onclick="rateSerieOk('e2-ex04-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex04-s2-ko" onclick="rateSerieKo('e2-ex04-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">36 kg ayuda</td><td class="manu-col hidden s3-m">18 kg ayuda</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex04-s3-ok" onclick="rateSerieOk('e2-ex04-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex04-s3-ko" onclick="rateSerieKo('e2-ex04-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
-        </table>er-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
+        <div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Core</span></div>
+        
+        <a class="ex-link" href="https://fitwill.app/es/exercise/0015/assisted-parallel-close-grip-pull-up/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+    
+<a class="ex-link" href="https://fitwill.app/es/exercise/0015/assisted-parallel-close-grip-pull-up/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+</div>
+  </div>
+
+      
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
@@ -811,37 +806,30 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 05</div>
-<div class="ex-name">Curl bíceps en máquina</div>
-<div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">50 kg</td><td class="manu-col hidden s3-m">34 kg</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
-<div class="ex-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">8 kg c/u</td><td class="manu-col hidden s1-m">5 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex07-s1-ok" onclick="rateSerieOk('e2-ex07-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex07-s1-ko" onclick="rateSerieKo('e2-ex07-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">12 kg c/u</td><td class="manu-col hidden s2-m">7 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex07-s2-ok" onclick="rateSerieOk('e2-ex07-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex07-s2-ko" onclick="rateSerieKo('e2-ex07-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">14 kg c/u</td><td class="manu-col hidden s3-m">9 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex07-s3-ok" onclick="rateSerieOk('e2-ex07-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex07-s3-ko" onclick="rateSerieKo('e2-ex07-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>completo, usar impulso del torso.
+    
+        <div class="ex-num">Ejercicio 05</div>
+        <div class="ex-name">Curl bíceps en máquina</div>
+        
+        <div class="postura-box">
+          <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que el codo quede sobre el borde del apoyo — no por detrás. Espalda apoyada.</div>
+          <div class="postura-section"><strong>Agarre:</strong> palmas hacia arriba. Agarre firme sin crispación en el antebrazo.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> sube hasta que los antebrazos queden verticales, aprieta 1 segundo. Baja lento en 3 segundos. Rango completo.</div>
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> llevar los codos hacia adelante al subir, no completar el rango completo, usar impulso del torso.
   </div>
 </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">41 kg</td><td class="manu-col hidden s1-m">27 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex05-s1-ok" onclick="rateSerieOk('e2-ex05-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex05-s1-ko" onclick="rateSerieKo('e2-ex05-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">32 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex05-s2-ok" onclick="rateSerieOk('e2-ex05-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex05-s2-ko" onclick="rateSerieKo('e2-ex05-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">50 kg</td><td class="manu-col hidden s3-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex05-s3-ok" onclick="rateSerieOk('e2-ex05-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex05-s3-ko" onclick="rateSerieKo('e2-ex05-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
+        
+        <a class="ex-link" href="https://fitwill.app/es/exercise/1872/lever-preacher-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+    
 <a class="ex-link" href="https://fitwill.app/es/exercise/1872/lever-preacher-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e2-ex05">
-          <button class="rate-btn like" onclick="rate('e2-ex05','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e2-ex05','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
 </div>
   </div>
 
@@ -859,37 +847,30 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 06</div>
-<div class="ex-name">Curl en polea baja de pie</div>
-<div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">20 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">25 kg</td><td class="manu-col hidden s3-m">16 kg</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-
-<div class="postura-box">
+    
+        <div class="ex-num">Ejercicio 06</div>
+        <div class="ex-name">Curl en polea baja de pie</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> de pie frente a la polea baja. Espalda recta, ligerísima inclinación. Codos pegados al cuerpo durante todo el movimiento.</div>
           <div class="postura-section"><strong>Agarre:</strong> barra recta o cuerda. Palmas hacia arriba con barra, neutras con cuerda.</div>
           <div class="postura-section"><strong>Movimiento:</strong> sube hasta que los antebrazos queden horizontales, aprieta 1 segundo. Baja lento. No subas más de horizontal — pierde tensión.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos hacia adelante, balancear el cuerpo, no controlar la bajada.
   </div>
 </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">13.5 kg</td><td class="manu-col hidden s1-m">11.3 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex06-s1-ok" onclick="rateSerieOk('e2-ex06-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex06-s1-ko" onclick="rateSerieKo('e2-ex06-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">15.8 kg</td><td class="manu-col hidden s2-m">13.5 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex06-s2-ok" onclick="rateSerieOk('e2-ex06-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex06-s2-ko" onclick="rateSerieKo('e2-ex06-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">18 kg</td><td class="manu-col hidden s3-m">15.8 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex06-s3-ok" onclick="rateSerieOk('e2-ex06-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex06-s3-ko" onclick="rateSerieKo('e2-ex06-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
+        <a class="ex-link" href="https://fitwill.app/es/exercise/1630/cable-close-grip-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+        
+    
 <a class="ex-link" href="https://fitwill.app/es/exercise/1630/cable-close-grip-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e2-ex06">
-          <button class="rate-btn like" onclick="rate('e2-ex06','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e2-ex06','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
 </div>
   </div>
 
@@ -907,37 +888,30 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 07</div>
-<div class="ex-name">Curl martillo con mancuernas</div>
-<div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquiorradial</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">8 kg c/u</td><td class="manu-col hidden s1-m">5 kg c/u</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">12 kg c/u</td><td class="manu-col hidden s2-m">7 kg c/u</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">14 kg c/u</td><td class="manu-col hidden s3-m">9 kg c/u</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-
-<div class="postura-box">
+    
+        <div class="ex-num">Ejercicio 07</div>
+        <div class="ex-name">Curl martillo con mancuernas</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> de pie o sentado. Espalda recta. Codos pegados al cuerpo.</div>
           <div class="postura-section"><strong>Agarre:</strong> palmas enfrentadas entre sí (como sujetando un martillo). No gires las muñecas durante el movimiento.</div>
           <div class="postura-section"><strong>Movimiento:</strong> sube alternando brazos hasta que el antebrazo quede horizontal. Baja lento. No subas más allá de horizontal.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> balancear el torso para ayudar, girar las muñecas durante el movimiento, subir demasiado rápido.
   </div>
 </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">8 kg c/u</td><td class="manu-col hidden s1-m">6 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex07-s1-ok" onclick="rateSerieOk('e2-ex07-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex07-s1-ko" onclick="rateSerieKo('e2-ex07-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">10 kg c/u</td><td class="manu-col hidden s2-m">8 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex07-s2-ok" onclick="rateSerieOk('e2-ex07-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex07-s2-ko" onclick="rateSerieKo('e2-ex07-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">12 kg c/u</td><td class="manu-col hidden s3-m">10 kg c/u</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e2-ex07-s3-ok" onclick="rateSerieOk('e2-ex07-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e2-ex07-s3-ko" onclick="rateSerieKo('e2-ex07-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquiorradial</span></div>
+        
+        <a class="ex-link" href="https://fitwill.app/es/exercise/2239/dumbbell-hammer-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+    
 <a class="ex-link" href="https://fitwill.app/es/exercise/2239/dumbbell-hammer-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e2-ex07">
-          <button class="rate-btn like" onclick="rate('e2-ex07','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e2-ex07','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
 </div>
   </div>
 
@@ -986,66 +960,69 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 01</div>
-<div class="ex-name">Prensa de piernas (leg press)</div>
-<div class="muscles"><span class="pill p-muscle">Cuádriceps</span><span class="pill p-muscle">Glúteo mayor</span><span class="pill p-muscle">Isquiotibiales</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">60 kg</td><td class="manu-col hidden s1-m">40 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex01-s1-ok" onclick="rateSerieOk('e3-ex01-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex01-s1-ko" onclick="rateSerieKo('e3-ex01-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">80 kg</td><td class="manu-col hidden s2-m">50 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex01-s2-ok" onclick="rateSerieOk('e3-ex01-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex01-s2-ko" onclick="rateSerieKo('e3-ex01-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">100 kg</td><td class="manu-col hidden s3-m">70 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex01-s3-ok" onclick="rateSerieOk('e3-ex01-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex01-s3-ko" onclick="rateSerieKo('e3-ex01-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>90-120 segundos (ejercicio compuesto)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-<div class="postura-box">
+    
+        <div class="ex-num">Ejercicio 01</div>
+        <div class="ex-name">Prensa de piernas (leg press)</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> espalda y glúteos completamente apoyados. Pies a la anchura de los hombros en la mitad-alta de la plataforma.</div>
           <div class="postura-section"><strong>Agarre:</strong> manos en las asas laterales para estabilizar. No usar las manos para empujar las rodillas.</div>
           <div class="postura-section"><strong>Movimiento:</strong> baja hasta 90° de flexión de rodilla — no más. Empuja desde los talones. Nunca bloquees las rodillas al extender.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> bajar más de 90° (sobrecarga rodilla), poner los pies demasiado bajos en la plataforma, bloquear rodillas al extender.
   </div>
 </div>
-<div class="rating" data-exid="e3-ex01">
-          <button class="rate-btn like" onclick="rate('e3-ex01','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i><table class="series-table">
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">60 kg</td><td class="manu-col hidden s1-m">40 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex01-s1-ok" onclick="rateSerieOk('e3-ex01-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex01-s1-ko" onclick="rateSerieKo('e3-ex01-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">80 kg</td><td class="manu-col hidden s2-m">50 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex01-s2-ok" onclick="rateSerieOk('e3-ex01-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex01-s2-ko" onclick="rateSerieKo('e3-ex01-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>8-10</td><td class="angel-col s3">100 kg</td><td class="manu-col hidden s3-m">70 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex01-s3-ok" onclick="rateSerieOk('e3-ex01-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex01-s3-ko" onclick="rateSerieKo('e3-ex01-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
+        <div class="muscles"><span class="pill p-muscle">Cuádriceps</span><span class="pill p-muscle">Glúteo mayor</span><span class="pill p-muscle">Isquiotibiales</span></div>
+        
+    
+<a class="ex-link" href="https://fitwill.app/es/exercise/0739/sled-45-leg-press/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+</div>
+  </div>
+
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+
+      <div class="ex-block">
+  <div class="ex-toggle" onclick="toggleEx(this)">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 02</span>
+      <span class="ex-toggle-name">Extensión de piernas (máquina)</span>
+    </div>
+    <div class="ex-toggle-right">
+      <span class="ex-status pending">•</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
+    </div>
+  </div>
+  <div class="ex-body">
+    
+        <div class="ex-num">Ejercicio 02</div>
+        <div class="ex-name">Extensión de piernas (máquina)</div>
+        
+        <div class="postura-box">
+          <div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que el hueco de la rodilla quede justo en el borde. El rodillo apoya en el tobillo, no en el empeine.</div>
+          <div class="postura-section"><strong>Agarre:</strong> manos en las asas laterales. No apretar con fuerza — solo para estabilizar.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> sube hasta extensión completa, aprieta el cuádriceps 1 segundo, baja lento en 3 segundos.</div>
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> usar impulso para subir, no llegar a la extensión completa, bajar demasiado rápido. Si hay dolor en rótula, reduce el rango.
+  </div>
+</div>
+        <table class="series-table">
           <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex02-s1-ok" onclick="rateSerieOk('e3-ex02-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex02-s1-ko" onclick="rateSerieKo('e3-ex02-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex02-s2-ok" onclick="rateSerieOk('e3-ex02-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex02-s2-ko" onclick="rateSerieKo('e3-ex02-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
             <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex02-s3-ok" onclick="rateSerieOk('e3-ex02-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex02-s3-ko" onclick="rateSerieKo('e3-ex02-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
-        </table> class="ex-body">
-<div class="ex-num">Ejercicio 02</div>
-<div class="ex-name">Extensión de piernas (máquina)</div>
-<div class="muscles"><span class="pill p-muscle">Cuádriceps</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-<div class="postura-box">
-          <div class="postura-section"><strong>Posición:</strong> ajusta e<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex03-s1-ok" onclick="rateSerieOk('e3-ex03-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex03-s1-ko" onclick="rateSerieKo('e3-ex03-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex03-s2-ok" onclick="rateSerieOk('e3-ex03-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex03-s2-ko" onclick="rateSerieKo('e3-ex03-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex03-s3-ok" onclick="rateSerieOk('e3-ex03-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex03-s3-ko" onclick="rateSerieKo('e3-ex03-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>ass="rate-btn like" onclick="rate('e3-ex02','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e3-ex02','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Cuádriceps</span></div>
+        
+    
+<a class="ex-link" href="https://fitwill.app/es/exercise/0585/lever-leg-extension/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div>
   </div>
 
@@ -1063,66 +1040,69 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 03</div>
-<div class="ex-name">Flexión de pierna acostado (máquina)</div>
-<div class="muscles"><span class="pill p-muscle">Isquiotibiales</span><span class="pill p-muscle">Glúteo (sec.)</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th c<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">30 kg</td><td class="manu-col hidden s1-m">18 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex04-s1-ok" onclick="rateSerieOk('e3-ex04-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex04-s1-ko" onclick="rateSerieKo('e3-ex04-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex04-s2-ok" onclick="rateSerieOk('e3-ex04-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex04-s2-ko" onclick="rateSerieKo('e3-ex04-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex04-s3-ok" onclick="rateSerieOk('e3-ex04-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex04-s3-ko" onclick="rateSerieKo('e3-ex04-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>io de aislamiento)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-<div class="postura-box">
+    
+        <div class="ex-num">Ejercicio 03</div>
+        <div class="ex-name">Flexión de pierna acostado (máquina)</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> tumbado boca abajo. El rodillo apoya justo por encima del talón, no en el tendón de Aquiles. Caderas pegadas al acolchado en todo momento.</div>
           <div class="postura-section"><strong>Agarre:</strong> manos en las asas. No usar los brazos para empujar o tirar.</div>
           <div class="postura-section"><strong>Movimiento:</strong> dobla las rodillas llevando los talones hacia los glúteos. Aprieta 1 segundo arriba. Baja lento.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> levantar las caderas del acolchado, forzar el rango si hay dolor en el tendón, bajar demasiado rápido.
   </div>
 </div>
-<div class="rating" data-exid="e3-ex03">
-          <button class="rate-btn like" onclick="rate('e3-ex03','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-bt<table class="series-table">
+        <table class="series-table">
           <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">30 kg</td><td class="manu-col hidden s1-m">18 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex05-s1-ok" onclick="rateSerieOk('e3-ex05-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex05-s1-ko" onclick="rateSerieKo('e3-ex05-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex05-s2-ok" onclick="rateSerieOk('e3-ex05-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex05-s2-ko" onclick="rateSerieKo('e3-ex05-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex05-s3-ok" onclick="rateSerieOk('e3-ex05-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex05-s3-ko" onclick="rateSerieKo('e3-ex05-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex03-s1-ok" onclick="rateSerieOk('e3-ex03-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex03-s1-ko" onclick="rateSerieKo('e3-ex03-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex03-s2-ok" onclick="rateSerieOk('e3-ex03-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex03-s2-ko" onclick="rateSerieKo('e3-ex03-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>10-12</td><td class="angel-col s3">52 kg</td><td class="manu-col hidden s3-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex03-s3-ok" onclick="rateSerieOk('e3-ex03-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex03-s3-ko" onclick="rateSerieKo('e3-ex03-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
-        </table>class="ex-name">Abducción de cadera (máquina)</div>
-<div class="muscles"><span class="pill p-muscle">Glúteo medio</span><span class="pill p-muscle">Tensor fascia lata</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">30 kg</td><td class="manu-col hidden s1-m">18 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Isquiotibiales</span><span class="pill p-muscle">Glúteo (sec.)</span></div>
+        
+    
+<a class="ex-link" href="https://fitwill.app/es/exercise/3195/lever-lying-two-one-leg-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
+</div>
+  </div>
 
-<div <table class="series-table">
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+
+      <div class="ex-block">
+  <div class="ex-toggle" onclick="toggleEx(this)">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 04</span>
+      <span class="ex-toggle-name">Abducción de cadera (máquina)</span>
+    </div>
+    <div class="ex-toggle-right">
+      <span class="ex-status pending">•</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
+    </div>
+  </div>
+  <div class="ex-body">
+    
+        <div class="ex-num">Ejercicio 04</div>
+        <div class="ex-name">Abducción de cadera (máquina)</div>
+        
+        <div class="postura-box">
+          <div class="postura-section"><strong>Posición:</strong> sentado con la espalda apoyada. Rodillas sobre los apoyos acolchados.</div>
+          <div class="postura-section"><strong>Agarre:</strong> manos en las asas o en los muslos. Espalda recta durante todo el movimiento.</div>
+          <div class="postura-section"><strong>Movimiento:</strong> abre las piernas contra la resistencia. Aguanta 1 segundo en máxima apertura. Cierra lento en 3 segundos.</div>
+          <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> cerrar demasiado rápido, arquear la espalda para ayudar, abrir más allá de la posición cómoda.
+  </div>
+</div>
+        <table class="series-table">
           <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>20</td><td class="angel-col s1">54 kg</td><td class="manu-col hidden s1-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex06-s1-ok" onclick="rateSerieOk('e3-ex06-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex06-s1-ko" onclick="rateSerieKo('e3-ex06-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15-20</td><td class="angel-col s2">75 kg</td><td class="manu-col hidden s2-m">45 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex06-s2-ok" onclick="rateSerieOk('e3-ex06-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex06-s2-ko" onclick="rateSerieKo('e3-ex06-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15-20</td><td class="angel-col s3">82 kg</td><td class="manu-col hidden s3-m">55 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex06-s3-ok" onclick="rateSerieOk('e3-ex06-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex06-s3-ko" onclick="rateSerieKo('e3-ex06-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">30 kg</td><td class="manu-col hidden s1-m">18 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex04-s1-ok" onclick="rateSerieOk('e3-ex04-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex04-s1-ko" onclick="rateSerieKo('e3-ex04-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex04-s2-ok" onclick="rateSerieOk('e3-ex04-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex04-s2-ko" onclick="rateSerieKo('e3-ex04-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex04-s3-ok" onclick="rateSerieOk('e3-ex04-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex04-s3-ko" onclick="rateSerieKo('e3-ex04-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
-        </table>4">
-          <button class="rate-btn like" onclick="rate('e3-ex04','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e3-ex04','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Glúteo medio</span><span class="pill p-muscle">Tensor fascia lata</span></div>
+        
+    
+<a class="ex-link" href="https://fitwill.app/es/exercise/0597/lever-seated-hip-abduction/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div>
   </div>
 
@@ -1140,34 +1120,29 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 05</div>
-<div class="ex-name">Aducción de cadera (máquina)</div>
-<div class="muscles"><span class="pill p-muscle">Aductores</span><span class="pill p-muscle">Grácil</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class=<table class="series-table">
-          <thead><tr><th>Serie</th><th>Duración</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><td>30 seg</td><td class="angel-col s1">Peso corporal</td><td class="manu-col hidden s1-m">Peso corporal</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex07-s1-ok" onclick="rateSerieOk('e3-ex07-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex07-s1-ko" onclick="rateSerieKo('e3-ex07-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>35 seg</td><td class="angel-col s2">Peso corporal</td><td class="manu-col hidden s2-m">Peso corporal</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex07-s2-ok" onclick="rateSerieOk('e3-ex07-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex07-s2-ko" onclick="rateSerieKo('e3-ex07-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span></td><td>40 seg</td><td class="angel-col s3">Peso corporal</td><td class="manu-col hidden s3-m">Peso corporal</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex07-s3-ok" onclick="rateSerieOk('e3-ex07-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex07-s3-ko" onclick="rateSerieKo('e3-ex07-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>on-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-<div class="postura-box">
+    
+        <div class="ex-num">Ejercicio 05</div>
+        <div class="ex-name">Aducción de cadera (máquina)</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> sentado con las piernas abiertas sobre los apoyos. Espalda apoyada en el respaldo.</div>
           <div class="postura-section"><strong>Agarre:</strong> manos en las asas. Espalda recta, no te inclines hacia adelante.</div>
           <div class="postura-section"><strong>Movimiento:</strong> junta las piernas contra la resistencia. Aguanta 1 segundo al cerrar. Abre lento controlando el peso.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> cerrar con impulso, encorvar la espalda, no controlar la apertura.
   </div>
 </div>
-<div class="rating" data-exid="e3-ex05">
-          <button class="rate-btn like" onclick="rate('e3-ex05','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e3-ex05','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">30 kg</td><td class="manu-col hidden s1-m">18 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex05-s1-ok" onclick="rateSerieOk('e3-ex05-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex05-s1-ko" onclick="rateSerieKo('e3-ex05-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex05-s2-ok" onclick="rateSerieOk('e3-ex05-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex05-s2-ko" onclick="rateSerieKo('e3-ex05-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15</td><td class="angel-col s3">55 kg</td><td class="manu-col hidden s3-m">35 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex05-s3-ok" onclick="rateSerieOk('e3-ex05-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex05-s3-ko" onclick="rateSerieKo('e3-ex05-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Aductores</span><span class="pill p-muscle">Grácil</span></div>
+        
+    
+<a class="ex-link" href="https://fitwill.app/es/exercise/0598/lever-seated-hip-adduction/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div>
   </div>
 
@@ -1185,35 +1160,29 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 06</div>
-<div class="ex-name">Contracción abdominal (máquina)</div>
-<div class="muscles"><span class="pill p-muscle">Recto abdominal</span><span class="pill p-muscle">Oblicuos (sec.)</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>20</td><td class="angel-col s1">54 kg</td><td class="manu-col hidden s1-m">36 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15-20</td><td class="angel-col s2">75 kg</td><td class="manu-col hidden s2-m">45 kg</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15-20</td><td class="angel-col s3">82 kg</td><td class="manu-col hidden s3-m">55 kg</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-<div class="postura-box">
+    
+        <div class="ex-num">Ejercicio 06</div>
+        <div class="ex-name">Contracción abdominal (máquina)</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> sentado con los pies apoyados. Ajusta el apoyo del pecho a la altura correcta según la máquina.</div>
           <div class="postura-section"><strong>Agarre:</strong> brazos cruzados sobre el pecho o agarrando las asas según el modelo de la máquina.</div>
           <div class="postura-section"><strong>Movimiento:</strong> inclínate desde las costillas. Aguanta 1 segundo en máxima contracción. Vuelve lento. Exhala al contraer, inhala al volver.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar del cuello, flexionar desde las caderas en lugar de la columna, rebotar en la posición inicial.
   </div>
 </div>
-<div class="rating" data-exid="e3-ex06">
-          <button class="rate-btn like" onclick="rate('e3-ex06','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e3-ex06','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>20</td><td class="angel-col s1">54 kg</td><td class="manu-col hidden s1-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex06-s1-ok" onclick="rateSerieOk('e3-ex06-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex06-s1-ko" onclick="rateSerieKo('e3-ex06-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15-20</td><td class="angel-col s2">75 kg</td><td class="manu-col hidden s2-m">45 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex06-s2-ok" onclick="rateSerieOk('e3-ex06-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex06-s2-ko" onclick="rateSerieKo('e3-ex06-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span>Máximo</td><td>15-20</td><td class="angel-col s3">82 kg</td><td class="manu-col hidden s3-m">55 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex06-s3-ok" onclick="rateSerieOk('e3-ex06-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex06-s3-ko" onclick="rateSerieKo('e3-ex06-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Recto abdominal</span><span class="pill p-muscle">Oblicuos (sec.)</span></div>
+        
+    
+<a class="ex-link" href="https://fitwill.app/es/exercise/3647/lever-seated-leg-raise-crunch-plate-loaded/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div>
   </div>
 
@@ -1231,35 +1200,29 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     </div>
   </div>
   <div class="ex-body">
-<div class="ex-num">Ejercicio 07</div>
-<div class="ex-name">Plancha frontal (suelo)</div>
-<div class="muscles"><span class="pill p-muscle">Core profundo</span><span class="pill p-muscle">Transverso abd.</span><span class="pill p-muscle">Glúteo</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Duración</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><td>30 seg</td><td class="angel-col s1">Peso corporal</td><td class="manu-col hidden s1-m">Peso corporal</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>35 seg</td><td class="angel-col s2">Peso corporal</td><td class="manu-col hidden s2-m">Peso corporal</td></tr>
-            <tr><td><span class="series-badge b-s3">S3</span></td><td>40 seg</td><td class="angel-col s3">Peso corporal</td><td class="manu-col hidden s3-m">Peso corporal</td></tr>
-          </tbody>
-        </table>
-<div class="rest-box"><i class="ph ph-timer"></i><span>60-90 segundos (ejercicio de aislamiento)</span></div>
-<div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-
-<div class="postura-box">
+    
+        <div class="ex-num">Ejercicio 07</div>
+        <div class="ex-name">Plancha frontal (suelo)</div>
+        
+        <div class="postura-box">
           <div class="postura-section"><strong>Posición:</strong> antebrazos y punteras de los pies. Los codos directamente bajo los hombros. Cabeza en posición neutra mirando al suelo.</div>
           <div class="postura-section"><strong>Agarre:</strong> puños cerrados o palmas planas en el suelo. Antebrazos paralelos.</div>
           <div class="postura-section"><strong>Movimiento:</strong> mantén la posición con respiración continua. Activa el abdomen y los glúteos conscientemente. Línea recta de talones a nuca.</div>
           <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> dejar caer las caderas, subir el trasero, aguantar la respiración, encorvar el cuello hacia arriba o abajo.
   </div>
 </div>
-<div class="rating" data-exid="e3-ex07">
-          <button class="rate-btn like" onclick="rate('e3-ex07','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e3-ex07','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Duración</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>30 seg</td><td class="angel-col s1">Peso corporal</td><td class="manu-col hidden s1-m">Peso corporal</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex07-s1-ok" onclick="rateSerieOk('e3-ex07-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex07-s1-ko" onclick="rateSerieKo('e3-ex07-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>35 seg</td><td class="angel-col s2">Peso corporal</td><td class="manu-col hidden s2-m">Peso corporal</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex07-s2-ok" onclick="rateSerieOk('e3-ex07-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex07-s2-ko" onclick="rateSerieKo('e3-ex07-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s3">S3</span></td><td>40 seg</td><td class="angel-col s3">Peso corporal</td><td class="manu-col hidden s3-m">Peso corporal</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-e3-ex07-s3-ok" onclick="rateSerieOk('e3-ex07-s3',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-e3-ex07-s3-ko" onclick="rateSerieKo('e3-ex07-s3',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table><div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
+        <div class="muscles"><span class="pill p-muscle">Core profundo</span><span class="pill p-muscle">Transverso abd.</span><span class="pill p-muscle">Glúteo</span></div>
+        
+    
+<a class="ex-link" href="https://fitwill.app/es/exercise/0465/front-plank/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div>
   </div>
 
@@ -1313,7 +1276,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     
         <div class="ex-num">Ejercicio 01</div>
         <div class="ex-name">Press de pecho convergente (máquina)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+        
         <table class="series-table">
           <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
@@ -1326,59 +1289,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div></div>
 
 <div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">58 kg</td><td class="manu-col hidden s1-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex02-s1-ok" onclick="rateSerieOk('eopt-ex02-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex02-s1-ko" onclick="rateSerieKo('eopt-ex02-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">58 kg</td><td class="manu-col hidden s2-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex02-s2-ok" onclick="rateSerieOk('eopt-ex02-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex02-s2-ko" onclick="rateSerieKo('eopt-ex02-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-        <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-c<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">40 kg</td><td class="manu-col hidden s1-m">26 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex03-s1-ok" onclick="rateSerieOk('eopt-ex03-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex03-s1-ko" onclick="rateSerieKo('eopt-ex03-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">26 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex03-s2-ok" onclick="rateSerieOk('eopt-ex03-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex03-s2-ko" onclick="rateSerieKo('eopt-ex03-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
 
       <div class="ex-block">
   <div class="ex-toggle" onclick="toggleEx(this)">
     <div class="ex-toggle-left">
-      <span class="<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">40 kg</td><td class="manu-col hidden s1-m">26 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex04-s1-ok" onclick="rateSerieOk('eopt-ex04-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex04-s1-ko" onclick="rateSerieKo('eopt-ex04-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">26 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex04-s2-ok" onclick="rateSerieOk('eopt-ex04-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex04-s2-ko" onclick="rateSerieKo('eopt-ex04-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>   <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><t<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">18 kg</td><td class="manu-col hidden s1-m">11 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex05-s1-ok" onclick="rateSerieOk('eopt-ex05-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex05-s1-ko" onclick="rateSerieKo('eopt-ex05-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">11 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex05-s2-ok" onclick="rateSerieOk('eopt-ex05-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex05-s2-ko" onclick="rateSerieKo('eopt-ex05-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>e" onclick="toggleEx(this)">
-    <div class="ex-toggle-left">
-      <span class="ex-toggle-num">Ejercicio 04</span>
-      <span class="ex-toggle-name">Remo en polea baja</span>
-    </div>
-    <div class="ex-toggle-right">
-<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><td>15</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex06-s1-ok" onclick="rateSerieOk('eopt-ex06-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex06-s1-ko" onclick="rateSerieKo('eopt-ex06-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>15</td><td class="angel-col s2">36 kg</td><td class="manu-col hidden s2-m">22 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex06-s2-ok" onclick="rateSerieOk('eopt-ex06-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex06-s2-ko" onclick="rateSerieKo('eopt-ex06-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table> <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">40 kg</td><td class="manu-col hidden s1-m">26 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td c<table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
-          <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><td>20</td><td class="angel-col s1">60 kg</td><td class="manu-col hidden s1-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex07-s1-ok" onclick="rateSerieOk('eopt-ex07-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex07-s1-ko" onclick="rateSerieKo('eopt-ex07-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>20</td><td class="angel-col s2">60 kg</td><td class="manu-col hidden s2-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex07-s2-ok" onclick="rateSerieOk('eopt-ex07-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex07-s2-ko" onclick="rateSerieKo('eopt-ex07-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
-          </tbody>
-        </table>nte (máquina)</span>
+      <span class="ex-toggle-num">Ejercicio 02</span>
+      <span class="ex-toggle-name">Aperturas en máquina pec-deck</span>
     </div>
     <div class="ex-toggle-right">
       <span class="ex-status pending">•</span>
@@ -1387,14 +1303,101 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
   <div class="ex-body">
     
-    <table class="series-table">
-          <thead><tr><th>Serie</th><th>Duración</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+        <div class="ex-num">Ejercicio 02</div>
+        <div class="ex-name">Aperturas en máquina pec-deck</div>
+        
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><td>35 seg</td><td class="angel-col s1">Peso corporal</td><td class="manu-col hidden s1-m">Peso corporal</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex08-s1-ok" onclick="rateSerieOk('eopt-ex08-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex08-s1-ko" onclick="rateSerieKo('eopt-ex08-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>40 seg</td><td class="angel-col s2">Peso corporal</td><td class="manu-col hidden s2-m">Peso corporal</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex08-s2-ok" onclick="rateSerieOk('eopt-ex08-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex08-s2-ko" onclick="rateSerieKo('eopt-ex08-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">58 kg</td><td class="manu-col hidden s1-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex02-s1-ok" onclick="rateSerieOk('eopt-ex02-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex02-s1-ko" onclick="rateSerieKo('eopt-ex02-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">58 kg</td><td class="manu-col hidden s2-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex02-s2-ok" onclick="rateSerieOk('eopt-ex02-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex02-s2-ko" onclick="rateSerieKo('eopt-ex02-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">11 kg</td></tr>
+        <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)
+  </div>
+</div></div>
+
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+
+      <div class="ex-block">
+  <div class="ex-toggle" onclick="toggleEx(this)">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 03</span>
+      <span class="ex-toggle-name">Jalón al pecho agarre ancho (máquina)</span>
+    </div>
+    <div class="ex-toggle-right">
+      <span class="ex-status pending">•</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
+    </div>
+  </div>
+  <div class="ex-body">
+    
+        <div class="ex-num">Ejercicio 03</div>
+        <div class="ex-name">Jalón al pecho agarre ancho (máquina)</div>
+        
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">40 kg</td><td class="manu-col hidden s1-m">26 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex03-s1-ok" onclick="rateSerieOk('eopt-ex03-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex03-s1-ko" onclick="rateSerieKo('eopt-ex03-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">26 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex03-s2-ok" onclick="rateSerieOk('eopt-ex03-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex03-s2-ko" onclick="rateSerieKo('eopt-ex03-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table>
+        <div class="rest-box">⏱ <span>Descanso entre series:</span> 90 segundos (ejercicio compuesto)
+  </div>
+</div></div>
+
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+
+      <div class="ex-block">
+  <div class="ex-toggle" onclick="toggleEx(this)">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 04</span>
+      <span class="ex-toggle-name">Remo en polea baja</span>
+    </div>
+    <div class="ex-toggle-right">
+      <span class="ex-status pending">•</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
+    </div>
+  </div>
+  <div class="ex-body">
+    
+        <div class="ex-num">Ejercicio 04</div>
+        <div class="ex-name">Remo en polea baja</div>
+        
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">40 kg</td><td class="manu-col hidden s1-m">26 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex04-s1-ok" onclick="rateSerieOk('eopt-ex04-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex04-s1-ko" onclick="rateSerieKo('eopt-ex04-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">26 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex04-s2-ok" onclick="rateSerieOk('eopt-ex04-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex04-s2-ko" onclick="rateSerieKo('eopt-ex04-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
+          </tbody>
+        </table>
+        <div class="rest-box">⏱ <span>Descanso entre series:</span> 90 segundos (ejercicio compuesto)
+  </div>
+</div></div>
+
+<div class="inter-rest"><span>Descanso hasta el siguiente ejercicio: 1-2 minutos</span></div>
+
+      <div class="ex-block">
+  <div class="ex-toggle" onclick="toggleEx(this)">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 05</span>
+      <span class="ex-toggle-name">Press de hombro convergente (máquina)</span>
+    </div>
+    <div class="ex-toggle-right">
+      <span class="ex-status pending">•</span>
+      <i class="ph ph-caret-down ex-chevron"></i>
+    </div>
+  </div>
+  <div class="ex-body">
+    
+        <div class="ex-num">Ejercicio 05</div>
+        <div class="ex-name">Press de hombro convergente (máquina)</div>
+        
+        <table class="series-table">
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
+          <tbody>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">18 kg</td><td class="manu-col hidden s1-m">11 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex05-s1-ok" onclick="rateSerieOk('eopt-ex05-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex05-s1-ko" onclick="rateSerieKo('eopt-ex05-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">11 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex05-s2-ok" onclick="rateSerieOk('eopt-ex05-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex05-s2-ko" onclick="rateSerieKo('eopt-ex05-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
         <div class="rest-box">⏱ <span>Descanso entre series:</span> 90 segundos (ejercicio compuesto)
@@ -1418,12 +1421,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     
         <div class="ex-num">Ejercicio 06</div>
         <div class="ex-name">Extensión de piernas (máquina)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+        
         <table class="series-table">
           <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><td>15</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>15</td><td class="angel-col s2">36 kg</td><td class="manu-col hidden s2-m">22 kg</td></tr>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>15</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex06-s1-ok" onclick="rateSerieOk('eopt-ex06-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex06-s1-ko" onclick="rateSerieKo('eopt-ex06-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>15</td><td class="angel-col s2">36 kg</td><td class="manu-col hidden s2-m">22 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex06-s2-ok" onclick="rateSerieOk('eopt-ex06-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex06-s2-ko" onclick="rateSerieKo('eopt-ex06-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
         <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)
@@ -1447,12 +1450,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     
         <div class="ex-num">Ejercicio 07</div>
         <div class="ex-name">Contracción abdominal (máquina)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+        
         <table class="series-table">
           <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><td>20</td><td class="angel-col s1">60 kg</td><td class="manu-col hidden s1-m">36 kg</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>20</td><td class="angel-col s2">60 kg</td><td class="manu-col hidden s2-m">36 kg</td></tr>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>20</td><td class="angel-col s1">60 kg</td><td class="manu-col hidden s1-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex07-s1-ok" onclick="rateSerieOk('eopt-ex07-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex07-s1-ko" onclick="rateSerieKo('eopt-ex07-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>20</td><td class="angel-col s2">60 kg</td><td class="manu-col hidden s2-m">36 kg</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex07-s2-ok" onclick="rateSerieOk('eopt-ex07-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex07-s2-ko" onclick="rateSerieKo('eopt-ex07-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
         <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)
@@ -1476,12 +1479,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
     
         <div class="ex-num">Ejercicio 08</div>
         <div class="ex-name">Plancha frontal (suelo)</div>
-        <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div>
+        
         <table class="series-table">
           <thead><tr><th>Serie</th><th>Duración</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
           <tbody>
-            <tr><td><span class="series-badge b-s1">S1</span></td><td>35 seg</td><td class="angel-col s1">Peso corporal</td><td class="manu-col hidden s1-m">Peso corporal</td></tr>
-            <tr><td><span class="series-badge b-s2">S2</span></td><td>40 seg</td><td class="angel-col s2">Peso corporal</td><td class="manu-col hidden s2-m">Peso corporal</td></tr>
+            <tr><td><span class="series-badge b-s1">S1</span></td><td>35 seg</td><td class="angel-col s1">Peso corporal</td><td class="manu-col hidden s1-m">Peso corporal</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex08-s1-ok" onclick="rateSerieOk('eopt-ex08-s1',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex08-s1-ko" onclick="rateSerieKo('eopt-ex08-s1',this)"><i class="ph ph-x"></i></button></div></td></tr>
+            <tr><td><span class="series-badge b-s2">S2</span></td><td>40 seg</td><td class="angel-col s2">Peso corporal</td><td class="manu-col hidden s2-m">Peso corporal</td><td class="rate-col"><div class="series-rate"><button class="series-rate-btn" id="r-eopt-ex08-s2-ok" onclick="rateSerieOk('eopt-ex08-s2',this)"><i class="ph ph-check"></i></button><button class="series-rate-btn" id="r-eopt-ex08-s2-ko" onclick="rateSerieKo('eopt-ex08-s2',this)"><i class="ph ph-x"></i></button></div></td></tr>
           </tbody>
         </table>
         <div class="rest-box">⏱ <span>Descanso entre series:</span> 60 segundos
@@ -1502,6 +1505,8 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
 <button class="complete-btn" id="btn-eopt" onclick="toggleComplete('eopt','e1','Entreno Opcional Finalizado')">Finalizar Entreno Opcional</button>
+</div>
+
 
 
 <!-- PAGE: RESUMEN -->
@@ -1642,7 +1647,6 @@ function loadSeriesRatings(section) {
     }
   });
 }
-
 function rateSerieOk(serieId, btn) {
   const person = getCurrentPerson(btn.closest('.section'));
   const data = getRatings(person);
@@ -1652,7 +1656,6 @@ function rateSerieOk(serieId, btn) {
   btn.classList.add('ok');
   if (btn.nextElementSibling) btn.nextElementSibling.classList.add('hidden-btn');
 }
-
 function rateSerieKo(serieId, btn) {
   const person = getCurrentPerson(btn.closest('.section'));
   const data = getRatings(person);
@@ -1662,7 +1665,6 @@ function rateSerieKo(serieId, btn) {
   btn.classList.add('ko');
   if (btn.previousElementSibling) btn.previousElementSibling.classList.add('hidden-btn');
 }
-
 function showSection(id) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -1715,7 +1717,7 @@ function setPerson(p, section) {
   section.querySelectorAll('.angel-col').forEach(el => el.classList.toggle('hidden', p !== 'angel'));
   section.querySelectorAll('.manu-col').forEach(el => el.classList.toggle('hidden', p !== 'manu'));
   localStorage.setItem('gymplan-person', p);
-  loadRatingsUI(section);
+  
 }
 
 // ── PROGRESS RENDER ───────────────────────────────────────────────────────
