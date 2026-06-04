@@ -133,7 +133,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .hidden{display:none!important}
 
 /* FITWILL LINK */
-.ex-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#f97316;text-decoration:none;margin-top:12px;margin-bottom:0;font-weight:500}
+.ex-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#f97316;text-decoration:none;margin-top:12px;margin-bottom:16px;font-weight:500}
 .ex-link:active{opacity:0.7}
 .ex-link svg{flex-shrink:0}
 
@@ -174,6 +174,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .ptag.ok{background:#14532d;color:#4ade80}
 .ptag.ko{background:#450a0a;color:#f87171}
 .ptag.none{background:#242424;color:#555}
+.ptag.partial{background:#451a03;color:#fb923c}
 .no-data{text-align:center;padding:32px 16px;color:#555;font-size:13px}
 
 /* PHASES */
@@ -223,6 +224,15 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .inter-rest.done-rest{background:#0a1f12;border-color:#22c55e;color:#4ade80}
 .inter-rest .rest-timer{font-size:18px;font-weight:700;letter-spacing:0.05em;min-width:52px;text-align:center}
 .inter-rest .rest-label{font-size:12px;opacity:0.8}
+
+.rate-col{width:52px;text-align:center}
+.series-rate{display:flex;gap:4px;justify-content:center;align-items:center}
+.series-rate-btn{width:26px;height:26px;border-radius:6px;border:1px solid #333;background:#1f1f1f;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .15s;flex-shrink:0}
+.series-rate-btn.ok{background:#14532d;border-color:#22c55e;color:#4ade80}
+.series-rate-btn.ko{background:#450a0a;border-color:#ef4444;color:#f87171}
+.series-rate-btn.ok ~ .series-rate-btn{display:none}
+.series-rate-btn.ko ~ .series-rate-btn{display:none}
+.series-rate-btn:first-child:not(.ok):not(.ko) ~ .series-rate-btn{display:flex}
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
@@ -288,7 +298,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Press de pecho convergente (máquina)</div>
 <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">38 kg</td><td class="manu-col hidden s1-m">25 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">30 kg</td></tr>
@@ -304,14 +314,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> encorvar la espalda despegándola del respaldo, bloquear codos al extender, subir los hombros hacia las orejas.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/2277/lever-chest-press-version-4/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e1-ex01">
-          <button class="rate-btn like" onclick="rate('e1-ex01','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex01','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
     </div>
 
@@ -338,7 +341,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Press con mancuernas en banco plano</div>
 <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Tríceps</span><span class="pill p-muscle">Hombro ant.</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">14 kg c/u</td><td class="manu-col hidden s1-m">10 kg c/u</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">18 kg c/u</td><td class="manu-col hidden s2-m">12 kg c/u</td></tr>
@@ -354,14 +357,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> codos en ángulo de 90° con el torso, rebotar las mancuernas abajo, arquear la espalda para ayudar a subir.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/1624/dumbbell-reverse-bench-press/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e1-ex02">
-          <button class="rate-btn like" onclick="rate('e1-ex02','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex02','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
     </div>
 
@@ -388,7 +384,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Aperturas en máquina pec-deck</div>
 <div class="muscles"><span class="pill p-muscle">Pectoral mayor</span><span class="pill p-muscle">Pectoral menor</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">55 kg</td><td class="manu-col hidden s1-m">35 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">73 kg</td><td class="manu-col hidden s2-m">45 kg</td></tr>
@@ -404,14 +400,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> abrir demasiado al volver (dolor en hombro), rebotar al cerrar, despegar la espalda del respaldo.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/2427/lever-pec-deck-fly/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e1-ex03">
-          <button class="rate-btn like" onclick="rate('e1-ex03','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex03','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
     </div>
 
@@ -438,7 +427,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Press de hombro convergente (máquina)</div>
 <div class="muscles"><span class="pill p-muscle">Deltoides ant.</span><span class="pill p-muscle">Deltoides lat.</span><span class="pill p-muscle">Tríceps</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">16 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">23 kg</td><td class="manu-col hidden s2-m">14 kg</td></tr>
@@ -454,14 +443,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> encorvarse hacia adelante, subir los hombros hacia las orejas, usar el impulso del cuerpo para empujar.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/2962/lever-seated-hammer-grip-shoulder-press/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e1-ex04">
-          <button class="rate-btn like" onclick="rate('e1-ex04','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex04','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
     </div>
 
@@ -488,7 +470,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Press francés en polea con cuerda (tríceps)</div>
 <div class="muscles"><span class="pill p-muscle">Tríceps cab. larga</span><span class="pill p-muscle">Tríceps cab. medial</span><span class="pill p-new">★ Nuevo</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">8 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
@@ -504,14 +486,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos durante el movimiento, arquear la zona lumbar, usar impulso del torso para ayudar.
   </div>
 <a class="ex-link" href="https://fitwill.app/exercise/2248/cable-rope-overhead-triceps-extension/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e1-ex05">
-          <button class="rate-btn like" onclick="rate('e1-ex05','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex05','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
     </div>
 
@@ -538,7 +513,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Tríceps en polea con barra rígida (prono)</div>
 <div class="muscles"><span class="pill p-muscle">Tríceps cab. lateral</span><span class="pill p-muscle">Tríceps cab. larga</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">22 kg</td><td class="manu-col hidden s1-m">14 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">27 kg</td><td class="manu-col hidden s2-m">18 kg</td></tr>
@@ -554,14 +529,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos, inclinarse hacia adelante para usar el peso corporal, no llegar a la extensión completa.
   </div>
 <a class="ex-link" href="https://fitwill.app/exercise/0201/cable-pushdown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e1-ex06">
-          <button class="rate-btn like" onclick="rate('e1-ex06','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex06','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
     </div>
 
@@ -588,7 +556,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Tríceps en polea agarre inverso (supino)</div>
 <div class="muscles"><span class="pill p-muscle">Tríceps cab. medial</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">14 kg</td><td class="manu-col hidden s1-m">9 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">12 kg</td></tr>
@@ -604,14 +572,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> los mismos errores que en el prono. Con el agarre supino hay más tendencia a separar los codos.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0207/cable-reverse-grip-pushdown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e1-ex07">
-          <button class="rate-btn like" onclick="rate('e1-ex07','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex07','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
     </div>
 
@@ -638,7 +599,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Elevaciones laterales con mancuernas</div>
 <div class="muscles"><span class="pill p-muscle">Deltoides lateral</span><span class="pill p-muscle">Trapecio sup.</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">4 kg c/u</td><td class="manu-col hidden s1-m">3 kg c/u</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">6 kg c/u</td><td class="manu-col hidden s2-m">4 kg c/u</td></tr>
@@ -654,14 +615,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> subir por encima del hombro (impingement), balancear el torso, encorvar el cuello. Si duele el hombro, para.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0334/dumbbell-lateral-raise/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e1-ex08">
-          <button class="rate-btn like" onclick="rate('e1-ex08','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e1-ex08','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -715,7 +669,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Jalón al pecho agarre ancho (máquina)</div>
 <div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Romboides</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">45 kg</td><td class="manu-col hidden s1-m">39 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">39 kg</td></tr>
@@ -731,14 +685,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> inclinarse demasiado hacia atrás, tirar con los brazos en lugar de los codos, encorvar la espalda.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/2291/cable-wide-grip-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e2-ex01">
-          <button class="rate-btn like" onclick="rate('e2-ex01','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e2-ex01','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -764,7 +711,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Remo en polea baja (seated cable row)</div>
 <div class="muscles"><span class="pill p-muscle">Trapecio medio</span><span class="pill p-muscle">Romboides</span><span class="pill p-muscle">Dorsal</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>10</td><td class="angel-col s1">39 kg</td><td class="manu-col hidden s1-m">32 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">39 kg</td></tr>
@@ -780,14 +727,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> inclinar el torso hacia adelante y atrás como un balancín, encorvar la espalda baja, tirar solo con los brazos sin contraer la espalda.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/1320/cable-rope-crossover-seated-row/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e2-ex02">
-          <button class="rate-btn like" onclick="rate('e2-ex02','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e2-ex02','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -813,7 +753,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Jalón agarre estrecho / neutro</div>
 <div class="muscles"><span class="pill p-muscle">Dorsal inferior</span><span class="pill p-muscle">Bíceps</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">45 kg</td><td class="manu-col hidden s1-m">39 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">39 kg</td></tr>
@@ -829,14 +769,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar hacia el cuello en lugar del pecho, usar demasiado el bíceps sin involucrar la espalda.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/3754/cable-close-grip-front-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e2-ex03">
-          <button class="rate-btn like" onclick="rate('e2-ex03','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e2-ex03','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -862,7 +795,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Dominadas asistidas (máquina)</div>
 <div class="muscles"><span class="pill p-muscle">Dorsal ancho</span><span class="pill p-muscle">Bíceps</span><span class="pill p-muscle">Core</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>8</td><td class="angel-col s1">45 kg ayuda</td><td class="manu-col hidden s1-m">27 kg ayuda</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>8-10</td><td class="angel-col s2">41 kg ayuda</td><td class="manu-col hidden s2-m">23 kg ayuda</td></tr>
@@ -878,14 +811,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar solo con los brazos, llegar solo con la barbilla a la barra, bajar demasiado rápido.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0015/assisted-parallel-close-grip-pull-up/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e2-ex04">
-          <button class="rate-btn like" onclick="rate('e2-ex04','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e2-ex04','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -911,7 +837,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Curl bíceps en máquina</div>
 <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">41 kg</td><td class="manu-col hidden s1-m">27 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">32 kg</td></tr>
@@ -927,14 +853,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> llevar los codos hacia adelante al subir, no completar el rango completo, usar impulso del torso.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/1872/lever-preacher-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e2-ex05">
-          <button class="rate-btn like" onclick="rate('e2-ex05','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e2-ex05','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -960,7 +879,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Curl en polea baja de pie</div>
 <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquial ant.</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">13.5 kg</td><td class="manu-col hidden s1-m">11.3 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">15.8 kg</td><td class="manu-col hidden s2-m">13.5 kg</td></tr>
@@ -976,14 +895,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos hacia adelante, balancear el cuerpo, no controlar la bajada.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/1630/cable-close-grip-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e2-ex06">
-          <button class="rate-btn like" onclick="rate('e2-ex06','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e2-ex06','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -1009,7 +921,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Curl martillo con mancuernas</div>
 <div class="muscles"><span class="pill p-muscle">Bíceps braquial</span><span class="pill p-muscle">Braquiorradial</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">8 kg c/u</td><td class="manu-col hidden s1-m">6 kg c/u</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">10 kg c/u</td><td class="manu-col hidden s2-m">8 kg c/u</td></tr>
@@ -1025,14 +937,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> balancear el torso para ayudar, girar las muñecas durante el movimiento, subir demasiado rápido.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/2239/dumbbell-hammer-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e2-ex07">
-          <button class="rate-btn like" onclick="rate('e2-ex07','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e2-ex07','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -1085,7 +990,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Prensa de piernas (leg press)</div>
 <div class="muscles"><span class="pill p-muscle">Cuádriceps</span><span class="pill p-muscle">Glúteo mayor</span><span class="pill p-muscle">Isquiotibiales</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">60 kg</td><td class="manu-col hidden s1-m">40 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>10</td><td class="angel-col s2">80 kg</td><td class="manu-col hidden s2-m">50 kg</td></tr>
@@ -1101,14 +1006,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> bajar más de 90° (sobrecarga rodilla), poner los pies demasiado bajos en la plataforma, bloquear rodillas al extender.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0739/sled-45-leg-press/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e3-ex01">
-          <button class="rate-btn like" onclick="rate('e3-ex01','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e3-ex01','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -1134,7 +1032,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Extensión de piernas (máquina)</div>
 <div class="muscles"><span class="pill p-muscle">Cuádriceps</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
@@ -1150,14 +1048,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> usar impulso para subir, no llegar a la extensión completa, bajar demasiado rápido. Si hay dolor en rótula, reduce el rango.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0585/lever-leg-extension/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e3-ex02">
-          <button class="rate-btn like" onclick="rate('e3-ex02','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e3-ex02','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -1183,7 +1074,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Flexión de pierna acostado (máquina)</div>
 <div class="muscles"><span class="pill p-muscle">Isquiotibiales</span><span class="pill p-muscle">Glúteo (sec.)</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>12</td><td class="angel-col s1">32 kg</td><td class="manu-col hidden s1-m">20 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>12</td><td class="angel-col s2">45 kg</td><td class="manu-col hidden s2-m">28 kg</td></tr>
@@ -1199,14 +1090,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> levantar las caderas del acolchado, forzar el rango si hay dolor en el tendón, bajar demasiado rápido.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/3195/lever-lying-two-one-leg-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e3-ex03">
-          <button class="rate-btn like" onclick="rate('e3-ex03','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e3-ex03','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -1232,7 +1116,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Abducción de cadera (máquina)</div>
 <div class="muscles"><span class="pill p-muscle">Glúteo medio</span><span class="pill p-muscle">Tensor fascia lata</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">30 kg</td><td class="manu-col hidden s1-m">18 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td></tr>
@@ -1248,14 +1132,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> cerrar demasiado rápido, arquear la espalda para ayudar, abrir más allá de la posición cómoda.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0597/lever-seated-hip-abduction/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e3-ex04">
-          <button class="rate-btn like" onclick="rate('e3-ex04','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e3-ex04','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -1281,7 +1158,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Aducción de cadera (máquina)</div>
 <div class="muscles"><span class="pill p-muscle">Aductores</span><span class="pill p-muscle">Grácil</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>15</td><td class="angel-col s1">30 kg</td><td class="manu-col hidden s1-m">18 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">25 kg</td></tr>
@@ -1297,14 +1174,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> cerrar con impulso, encorvar la espalda, no controlar la apertura.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0598/lever-seated-hip-adduction/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e3-ex05">
-          <button class="rate-btn like" onclick="rate('e3-ex05','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e3-ex05','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -1330,7 +1200,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="ex-name">Contracción abdominal (máquina)</div>
 <div class="muscles"><span class="pill p-muscle">Recto abdominal</span><span class="pill p-muscle">Oblicuos (sec.)</span></div>
 <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span>Calentamiento</td><td>20</td><td class="angel-col s1">54 kg</td><td class="manu-col hidden s1-m">36 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span>Trabajo</td><td>15-20</td><td class="angel-col s2">75 kg</td><td class="manu-col hidden s2-m">45 kg</td></tr>
@@ -1346,14 +1216,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar del cuello, flexionar desde las caderas en lugar de la columna, rebotar en la posición inicial.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/3647/lever-seated-leg-raise-crunch-plate-loaded/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e3-ex06">
-          <button class="rate-btn like" onclick="rate('e3-ex06','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e3-ex06','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -1395,14 +1258,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> dejar caer las caderas, subir el trasero, aguantar la respiración, encorvar el cuello hacia arriba o abajo.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0465/front-plank/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
-<div class="rating" data-exid="e3-ex07">
-          <button class="rate-btn like" onclick="rate('e3-ex07','like',this)" title="Completado">
-            <i class="ph ph-check-circle"></i> Completado
-          </button>
-          <button class="rate-btn dislike" onclick="rate('e3-ex07','dislike',this)" title="No completado">
-            <i class="ph ph-x-circle"></i> No completado
-          </button>
-        </div>
+
 </div>
   </div>
 
@@ -1458,7 +1314,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Press de pecho convergente (máquina)</div>
         <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Mismo movimiento que el día 1 pero más ligero. Aprovecha para afinar la técnica sin presión de peso.</div>
         <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">24 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">36 kg</td><td class="manu-col hidden s2-m">24 kg</td></tr>
@@ -1491,7 +1347,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Aperturas en máquina pec-deck</div>
         <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Buen ejercicio para el día ligero — sin carga articular. Enfócate en la contracción al cerrar.</div>
         <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">58 kg</td><td class="manu-col hidden s1-m">36 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">58 kg</td><td class="manu-col hidden s2-m">36 kg</td></tr>
@@ -1524,7 +1380,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Jalón al pecho agarre ancho (máquina)</div>
         <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Mantén el foco en llevar los codos hacia abajo y atrás. Día perfecto para trabajar la conexión mente-músculo en la espalda.</div>
         <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">40 kg</td><td class="manu-col hidden s1-m">26 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">26 kg</td></tr>
@@ -1557,7 +1413,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Remo en polea baja</div>
         <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Prioriza el "pellizco" de omóplatos al final. Con menos peso es más fácil sentir el trabajo real de la espalda media.</div>
         <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">40 kg</td><td class="manu-col hidden s1-m">26 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">40 kg</td><td class="manu-col hidden s2-m">26 kg</td></tr>
@@ -1590,7 +1446,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Press de hombro convergente (máquina)</div>
         <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Día ligero — ideal para trabajar el hombro sin sobrecargar el manguito rotador. Movimiento controlado en ambas fases.</div>
         <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span></td><td>12</td><td class="angel-col s1">18 kg</td><td class="manu-col hidden s1-m">11 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span></td><td>12</td><td class="angel-col s2">18 kg</td><td class="manu-col hidden s2-m">11 kg</td></tr>
@@ -1623,7 +1479,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Extensión de piernas (máquina)</div>
         <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">Aislamiento de cuádriceps sin impacto. Buen ejercicio de mantenimiento para el día ligero.</div>
         <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span></td><td>15</td><td class="angel-col s1">36 kg</td><td class="manu-col hidden s1-m">22 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span></td><td>15</td><td class="angel-col s2">36 kg</td><td class="manu-col hidden s2-m">22 kg</td></tr>
@@ -1656,7 +1512,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
         <div class="ex-name">Contracción abdominal (máquina)</div>
         <div class="ex-desc-title"><i class="ph ph-text-align-left"></i> Descripción</div><div class="ex-desc">El core se recupera rápido — puedes hacer este ejercicio con normalidad incluso en día ligero. Enfócate en la contracción desde las costillas.</div>
         <table class="series-table">
-          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th></tr></thead>
+          <thead><tr><th>Serie</th><th>Reps</th><th class="angel-col">Ángel</th><th class="manu-col hidden">Manu</th><th class="rate-col"></th></tr></thead>
           <tbody>
             <tr><td><span class="series-badge b-s1">S1</span></td><td>20</td><td class="angel-col s1">60 kg</td><td class="manu-col hidden s1-m">36 kg</td></tr>
             <tr><td><span class="series-badge b-s2">S2</span></td><td>20</td><td class="angel-col s2">60 kg</td><td class="manu-col hidden s2-m">36 kg</td></tr>
@@ -1806,7 +1662,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
 <script>
 // ── DATA ──────────────────────────────────────────────────────────────────
-const EXERCISE_MAP = {"e1": ["Press pecho convergente", "Press mancuernas banco", "Aperturas pec-deck", "Press hombro convergente", "Press francés polea", "Tríceps polea prono", "Tríceps polea supino", "Elevaciones laterales"], "e2": ["Jalón ancho", "Remo polea baja", "Jalón estrecho/neutro", "Dominadas asistidas", "Curl bíceps máquina", "Curl polea baja", "Curl martillo"], "e3": ["Prensa piernas", "Extensión piernas", "Flexión pierna acostado", "Abducción cadera", "Aducción cadera", "Contracción abdominal", "Plancha"], "eopt": ["Press pecho", "Aperturas pec-deck", "Jalón al pecho", "Remo polea", "Press hombro", "Extensión piernas", "Contracción abdominal", "Plancha"]};
+const EXERCISE_MAP = {"e1": [{"name": "Press pecho convergente", "series": 3}, {"name": "Press mancuernas banco", "series": 3}, {"name": "Aperturas pec-deck", "series": 3}, {"name": "Press hombro convergente", "series": 3}, {"name": "Press francés polea", "series": 3}, {"name": "Tríceps polea prono", "series": 3}, {"name": "Tríceps polea supino", "series": 3}, {"name": "Elevaciones laterales", "series": 3}], "e2": [{"name": "Jalón al pecho ancho", "series": 3}, {"name": "Remo en polea baja", "series": 3}, {"name": "Jalón agarre estrecho", "series": 3}, {"name": "Dominadas asistidas", "series": 3}, {"name": "Curl bíceps máquina", "series": 3}, {"name": "Curl en polea baja", "series": 3}, {"name": "Curl martillo", "series": 3}], "e3": [{"name": "Prensa piernas", "series": 3}, {"name": "Extensión piernas", "series": 3}, {"name": "Flexión pierna acostado", "series": 3}, {"name": "Abducción cadera", "series": 3}, {"name": "Aducción cadera", "series": 3}, {"name": "Contracción abdominal", "series": 3}, {"name": "Plancha frontal", "series": 3}], "eopt": [{"name": "Press pecho", "series": 2}, {"name": "Aperturas pec-deck", "series": 2}, {"name": "Jalón al pecho", "series": 2}, {"name": "Remo en polea", "series": 2}, {"name": "Press hombro", "series": 2}, {"name": "Extensión piernas", "series": 2}, {"name": "Contracción abdominal", "series": 2}, {"name": "Plancha", "series": 2}]};
 const ENTRENO_NAMES = {"e1": "Entreno 1 — Pecho/Hombro/Tríceps", "e2": "Entreno 2 — Espalda/Bíceps", "e3": "Entreno 3 — Piernas/Abs", "eopt": "Opcional — Full Body"};
 const SIX_MONTHS = 6 * 30 * 24 * 60 * 60 * 1000;
 
@@ -1832,68 +1688,52 @@ function saveRatings(person, data) {
 }
 
 // ── RATING ────────────────────────────────────────────────────────────────
-function rate(exId, value, btn) {
-  const person = getCurrentPerson(btn.closest('.section'));
-  const data = getRatings(person);
-  if (!data[exId]) data[exId] = { last: null, history: [] };
-  if (data[exId].last === value) {
-    data[exId].last = null;
-  } else {
-    data[exId].last = value;
-    data[exId].history.push({ v: value, ts: Date.now(), date: new Date().toISOString().split('T')[0] });
-  }
-  saveRatings(person, data);
-  updateRatingUI(exId, data[exId].last, btn.closest('.rating'));
-  // Update status icon in toggle header
-  const exBody = btn.closest('.ex-body');
-  if (exBody) {
-    const statusEl = exBody.closest('.ex-block')?.querySelector('.ex-status');
-    if (statusEl) {
-      statusEl.className = 'ex-status';
-      if (data[exId].last === 'like') { statusEl.classList.add('done'); statusEl.textContent = '✅'; }
-      else if (data[exId].last === 'dislike') { statusEl.classList.add('skip'); statusEl.textContent = '❌'; }
-      else { statusEl.classList.add('pending'); statusEl.textContent = '•'; }
-    }
-    // Auto-close after rating and start rest timer
-    if (data[exId].last) {
-      setTimeout(() => {
-        exBody.classList.remove('open');
-        exBody.closest('.ex-block')?.querySelector('.ex-chevron')?.classList.remove('open');
-        // Find and trigger next inter-rest
-        const exBlock = exBody.closest('.ex-block');
-        const nextRest = exBlock?.nextElementSibling;
-        if (nextRest && nextRest.classList.contains('inter-rest') && !nextRest._timer) {
-          setTimeout(() => startRest(nextRest), 400);
-        }
-      }, 600);
-    }
-  }
-}
 
-function updateRatingUI(exId, value, ratingDiv) {
-  if (!ratingDiv) return;
-  ratingDiv.querySelectorAll('.rate-btn').forEach(b => b.classList.remove('selected'));
-  if (value === 'like') ratingDiv.querySelector('.like').classList.add('selected');
-  if (value === 'dislike') ratingDiv.querySelector('.dislike').classList.add('selected');
-}
-
-function loadRatingsUI(section) {
+function loadSeriesRatings(section) {
   const person = getCurrentPerson(section);
   const data = getRatings(person);
-  section.querySelectorAll('.rating').forEach(div => {
-    const exId = div.dataset.exid;
-    const val = data[exId]?.last || null;
-    updateRatingUI(exId, val, div);
-    // Restore status icon
-    const statusEl = div.closest('.ex-block')?.querySelector('.ex-status');
-    if (statusEl) {
-      statusEl.className = 'ex-status';
-      if (val === 'like') { statusEl.classList.add('done'); statusEl.textContent = '✅'; }
-      else if (val === 'dislike') { statusEl.classList.add('skip'); statusEl.textContent = '❌'; }
-      else { statusEl.classList.add('pending'); statusEl.textContent = '•'; }
+  section.querySelectorAll('.series-rate-btn').forEach(btn => {
+    const onclick = btn.getAttribute('onclick') || '';
+    const m = onclick.match(/'([^']+)'/);
+    if (!m) return;
+    const serieId = m[1];
+    const entry = data[serieId];
+    if (!entry) return;
+    if (entry.v === 'ok' && onclick.includes('Ok')) {
+      btn.classList.add('ok');
+      btn.nextElementSibling && (btn.nextElementSibling.style.display = 'none');
+    } else if (entry.v === 'ko' && onclick.includes('Ko')) {
+      btn.classList.add('ko');
+      btn.previousElementSibling && (btn.previousElementSibling.style.display = 'none');
     }
   });
 }
+
+function rateSerieOk(serieId, btn) {
+  const person = getCurrentPerson(btn.closest('.section'));
+  const data = getRatings(person);
+  if (data[serieId]) return; // already rated - fixed
+  data[serieId] = { v: 'ok', ts: Date.now(), date: new Date().toISOString().split('T')[0] };
+  saveRatings(person, data);
+  // UI: mark ok, hide x
+  btn.classList.add('ok');
+  btn.nextElementSibling.style.display = 'none';
+}
+
+function rateSerieKo(serieId, btn) {
+  const person = getCurrentPerson(btn.closest('.section'));
+  const data = getRatings(person);
+  if (data[serieId]) return; // already rated - fixed
+  data[serieId] = { v: 'ko', ts: Date.now(), date: new Date().toISOString().split('T')[0] };
+  saveRatings(person, data);
+  // UI: mark ko, hide check
+  btn.classList.add('ko');
+  btn.previousElementSibling.style.display = 'none';
+}
+
+
+
+
 
 // ── NAVIGATION ────────────────────────────────────────────────────────────
 let currentSection = 'e1';
@@ -1902,7 +1742,7 @@ function showSection(id) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   const sec = document.getElementById(id);
-  if (sec) { sec.classList.add('active'); loadRatingsUI(sec); }
+  if (sec) { sec.classList.add('active');  }
   const tab = document.getElementById('tab-' + id);
   if (tab) tab.classList.add('active');
   currentSection = id;
@@ -1950,7 +1790,7 @@ function setPerson(p, section) {
   section.querySelectorAll('.angel-col').forEach(el => el.classList.toggle('hidden', p !== 'angel'));
   section.querySelectorAll('.manu-col').forEach(el => el.classList.toggle('hidden', p !== 'manu'));
   localStorage.setItem('gymplan-person', p);
-  loadRatingsUI(section);
+  
 }
 
 // ── PROGRESS RENDER ───────────────────────────────────────────────────────
@@ -1966,70 +1806,65 @@ function switchProgressPerson(p) {
 function renderProgress(person) {
   const data = getRatings(person);
   const container = document.getElementById('progress-content');
-  
-  // Check if any data
   const hasData = Object.keys(data).length > 0;
   if (!hasData) {
-    container.innerHTML = '<div class="no-data"><i class="ph ph-chart-bar" style="font-size:32px;display:block;margin-bottom:8px"></i>Aún no hay datos de ' + (person === 'angel' ? 'Ángel' : 'Manu') + '.<br>Completa o descarta ejercicios para ver el progreso.</div>';
+    container.innerHTML = '<div class="no-data"><i class="ph ph-chart-bar" style="font-size:32px;display:block;margin-bottom:8px"></i>Aún no hay datos de ' + (person === 'angel' ? 'Ángel' : 'Manu') + '.<br>Completa series para ver el progreso.</div>';
     return;
   }
-  
+
+  // Gather all unique dates
+  const allDates = new Set();
+  Object.values(data).forEach(d => allDates.add(d.date));
+  const sortedDates = [...allDates].sort().slice(-5);
+
   let html = '';
-  
-  // ── GLOBAL CHART ──
-  html += '<div class="chart-wrap"><div class="chart-title">Porcentaje de éxito por entreno</div>';
-  for (const [eid, exNames] of Object.entries(EXERCISE_MAP)) {
-    let total = 0, ok = 0;
-    exNames.forEach((_, i) => {
-      const key = eid + '-ex' + String(i+1).padStart(2,'0');
-      const history = data[key]?.history || [];
-      if (history.length) { total++; if (history[history.length-1].v === 'like') ok++; }
-    });
-    if (total === 0) continue;
-    const pct = Math.round((ok/total)*100);
-    const label = ENTRENO_NAMES[eid].split('—')[0].trim();
-    html += '<div class="chart-bar-row">';
-    html += '<div class="chart-label">' + label + '</div>';
-    html += '<div class="chart-bar-bg"><div class="chart-bar-fill ' + (pct >= 70 ? 'good' : '') + '" style="width:' + pct + '%"></div></div>';
-    html += '<div class="chart-bar-pct">' + pct + '%</div>';
-    html += '</div>';
-  }
-  html += '</div>';
-  
-  // ── TABLE PER ENTRENO ──
-  for (const [eid, exNames] of Object.entries(EXERCISE_MAP)) {
-    // Gather unique dates
-    const dates = new Set();
-    exNames.forEach((_, i) => {
-      const key = eid + '-ex' + String(i+1).padStart(2,'0');
-      (data[key]?.history || []).forEach(h => dates.add(h.date));
-    });
-    if (dates.size === 0) continue;
-    
-    const sortedDates = [...dates].sort().slice(-5); // last 5 sessions
-    
-    html += '<div class="progress-section">';
-    html += '<div class="progress-entreno-title">' + ENTRENO_NAMES[eid] + '</div>';
-    html += '<div style="overflow-x:auto"><table class="progress-table"><thead><tr><th>Ejercicio</th>';
-    sortedDates.forEach(d => { html += '<th>' + d.slice(5) + '</th>'; }); // MM-DD
-    html += '</tr></thead><tbody>';
-    
-    exNames.forEach((name, i) => {
-      const key = eid + '-ex' + String(i+1).padStart(2,'0');
-      const history = data[key]?.history || [];
-      html += '<tr><td>' + name + '</td>';
-      sortedDates.forEach(d => {
-        const entry = history.filter(h => h.date === d).pop();
-        if (!entry) html += '<td><span class="ptag none">—</span></td>';
-        else if (entry.v === 'like') html += '<td><span class="ptag ok">✅</span></td>';
-        else html += '<td><span class="ptag ko">❌</span></td>';
+
+  for (const [eid, exercises] of Object.entries(EXERCISE_MAP)) {
+    // Check if any data for this entreno
+    let hasEntrenoData = false;
+    for (let ei = 0; ei < exercises.length; ei++) {
+      for (let si = 1; si <= exercises[ei].series; si++) {
+        const key = `${eid}-ex${String(ei+1).padStart(2,'0')}-s${si}`;
+        if (data[key]) { hasEntrenoData = true; break; }
+      }
+      if (hasEntrenoData) break;
+    }
+    if (!hasEntrenoData) continue;
+
+    html += `<div class="progress-section">`;
+    html += `<div class="progress-entreno-title">${ENTRENO_NAMES[eid]}</div>`;
+    html += `<div style="overflow-x:auto"><table class="progress-table"><thead><tr>`;
+    html += `<th>Ejercicio</th>`;
+    sortedDates.forEach(d => { html += `<th>${d.slice(5)}</th>`; });
+    html += `</tr></thead><tbody>`;
+
+    exercises.forEach((ex, ei) => {
+      html += `<tr><td style="font-size:11px">${ex.name}</td>`;
+      sortedDates.forEach(date => {
+        // Get series results for this date
+        const results = [];
+        for (let si = 1; si <= ex.series; si++) {
+          const key = `${eid}-ex${String(ei+1).padStart(2,'0')}-s${si}`;
+          const entry = data[key];
+          if (entry && entry.date === date) {
+            results.push(entry.v);
+          }
+        }
+        if (results.length === 0) {
+          html += `<td><span class="ptag none">—</span></td>`;
+        } else {
+          const ok = results.filter(r => r === 'ok').length;
+          const total = results.length;
+          const color = ok === total ? 'ok' : ok > 0 ? 'partial' : 'ko';
+          html += `<td><span class="ptag ${color}">${ok}/${total}</span></td>`;
+        }
       });
-      html += '</tr>';
+      html += `</tr>`;
     });
-    
-    html += '</tbody></table></div></div>';
+
+    html += `</tbody></table></div></div>`;
   }
-  
+
   container.innerHTML = html;
 }
 
@@ -2195,12 +2030,12 @@ function getStartSection() {
 const sp = localStorage.getItem('gymplan-person') || 'angel';
 document.querySelectorAll('.section').forEach(s => setPerson(sp, s));
 // One-time reset: clear test data
-if (!localStorage.getItem('gymplan-reset-v2')) {
+if (!localStorage.getItem('gymplan-reset-v3')) {
   localStorage.removeItem('gymplan-ratings-angel');
   localStorage.removeItem('gymplan-ratings-manu');
   localStorage.removeItem('gymplan-completed');
   localStorage.removeItem('gymplan-next-section');
-  localStorage.setItem('gymplan-reset-v2', '1');
+  localStorage.setItem('gymplan-reset-v3', '1');
 }
 
 // Seed e1 as completed (ya lo hicisteis el lunes pasado)
