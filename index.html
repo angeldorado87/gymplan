@@ -242,6 +242,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .prog-serie-ko{color:#f87171;font-size:14px}
 .prog-serie-none{color:#444;font-size:14px}
 
+.ex-section-title{display:none}
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
@@ -1605,6 +1606,50 @@ function loadSeriesRatings(section) {
   });
 }
 
+
+function startRest(el) {
+  if (el._timer) {
+    clearInterval(el._timer);
+    el._timer = null;
+    el.classList.remove('counting','done-rest');
+    const label = el.querySelector('.rest-label');
+    const timer = el.querySelector('.rest-timer');
+    const icon = el.querySelector('i');
+    if (label) { label.style.display = ''; label.textContent = '1-2 min descanso'; }
+    if (timer) timer.style.display = 'none';
+    if (icon) icon.className = 'ph ph-hourglass';
+    return;
+  }
+  const label = el.querySelector('.rest-label');
+  const timer = el.querySelector('.rest-timer');
+  const icon = el.querySelector('i');
+  if (!label || !timer) return;
+  let seconds = 90;
+  el.classList.add('counting');
+  el.classList.remove('done-rest');
+  label.style.display = 'none';
+  timer.style.display = '';
+  if (icon) icon.className = 'ph ph-hourglass-medium';
+  function fmt(s) { return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+  timer.textContent = fmt(seconds);
+  el._timer = setInterval(() => {
+    seconds--;
+    timer.textContent = fmt(seconds);
+    if (seconds <= 0) {
+      clearInterval(el._timer); el._timer = null;
+      el.classList.remove('counting'); el.classList.add('done-rest');
+      timer.style.display = 'none';
+      if (label) { label.style.display = ''; label.textContent = '¡Listo!'; }
+      if (icon) icon.className = 'ph ph-check-circle';
+      setTimeout(() => {
+        el.classList.remove('done-rest');
+        if (label) label.textContent = '1-2 min descanso';
+        if (icon) icon.className = 'ph ph-hourglass';
+      }, 3000);
+    }
+  }, 1000);
+}
+
 function triggerRestAfterS3(serieId, btn) {
   // Only trigger on last series (s3 or s2 for optional)
   if (!serieId.endsWith('-s3') && !serieId.endsWith('-s2')) return;
@@ -1692,7 +1737,8 @@ function setPerson(p, section) {
   section.querySelectorAll('.angel-col').forEach(el => el.classList.toggle('hidden', p !== 'angel'));
   section.querySelectorAll('.manu-col').forEach(el => el.classList.toggle('hidden', p !== 'manu'));
   localStorage.setItem('gymplan-person', p);
-  
+  section.querySelectorAll('.series-rate-btn').forEach(b => b.classList.remove('ok','ko','hidden-btn'));
+  loadSeriesRatings(section);
 }
 
 // ── PROGRESS RENDER ───────────────────────────────────────────────────────
