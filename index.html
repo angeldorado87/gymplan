@@ -199,7 +199,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .ex-status.pending{display:none}
 .ex-chevron{font-size:16px;color:#666;transition:transform .2s;flex-shrink:0}
 .ex-chevron.open{transform:rotate(180deg)}
-.ex-body{display:none;padding:0 8px 8px}
+.ex-body{display:none;padding:8px}
 .ex-body.open{display:block}
 /* override old ex rules inside ex-body */
 .ex-body .ex-num{display:none}
@@ -225,6 +225,23 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .series-rate-btn.hidden-btn{display:none}
 .ptag.partial{background:#451a03;color:#fb923c}
 .ex-toggle-num{display:none}
+
+.prog-session{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;margin-bottom:8px;overflow:hidden}
+.prog-session-header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;cursor:pointer;user-select:none}
+.prog-session-date{font-size:15px;font-weight:600;color:#f5f5f5}
+.prog-session-summary{font-size:12px;color:#888}
+.prog-session-body{display:none;border-top:1px solid #2a2a2a}
+.prog-session-body.open{display:block}
+.prog-ex{padding:10px 14px;border-bottom:1px solid #1f1f1f}
+.prog-ex:last-child{border-bottom:none}
+.prog-ex-name{font-size:13px;font-weight:600;color:#e5e5e5;margin-bottom:6px}
+.prog-serie-row{display:flex;align-items:center;gap:8px;font-size:12px;color:#aaa;padding:2px 0}
+.prog-serie-label{color:#666;min-width:40px}
+.prog-serie-weight{color:#ccc;flex:1}
+.prog-serie-ok{color:#4ade80;font-size:14px}
+.prog-serie-ko{color:#f87171;font-size:14px}
+.prog-serie-none{color:#444;font-size:14px}
+
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
@@ -300,9 +317,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> espalda completamente apoyada en el respaldo, pies planos en el suelo. Ajusta el asiento para que las asas queden a la altura del pecho.</div>
-<div class="postura-section"><strong>Agarre:</strong> palmas hacia abajo o neutras según el modelo de la máquina. Agarre firme sin apretar en exceso.</div>
-<div class="postura-section"><strong>Movimiento:</strong> empuja hasta casi extender los codos — no los bloquees. Vuelve lento en 3 segundos.</div>
+<div class="postura-section"><strong>Posición:</strong> Espalda apoyada, pies en el suelo. Asiento a altura de pecho.</div>
+<div class="postura-section"><strong>Agarre:</strong> Palmas neutras o hacia abajo. Agarre firme, muñecas rectas.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Empuja hasta casi extender los codos. Baja lento en 3 seg.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> encorvar la espalda despegándola del respaldo, bloquear codos al extender, subir los hombros hacia las orejas.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/2277/lever-chest-press-version-4/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -338,9 +355,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> tumbado en el banco con los pies apoyados en el suelo. Espalda neutra — no arquear de forma exagerada. Cabeza apoyada en el banco.</div>
-<div class="postura-section"><strong>Agarre:</strong> palmas hacia adelante. Los codos a 45° del torso — no perpendiculares al cuerpo, eso sobrecarga el hombro.</div>
-<div class="postura-section"><strong>Movimiento:</strong> baja hasta que los codos queden ligeramente por debajo del banco. Sube empujando y juntando ligeramente las mancuernas al final.</div>
+<div class="postura-section"><strong>Posición:</strong> Tumbado en el banco, pies en el suelo. Espalda neutra.</div>
+<div class="postura-section"><strong>Agarre:</strong> Palmas hacia adelante, codos a 45° del torso.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Baja hasta que los codos queden al nivel del banco. Sube empujando.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> codos en ángulo de 90° con el torso, rebotar las mancuernas abajo, arquear la espalda para ayudar a subir.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/1624/dumbbell-reverse-bench-press/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -376,9 +393,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> espalda pegada al respaldo, pies apoyados en el suelo. Ajusta el asiento para que los codos queden a la altura del pecho.</div>
-<div class="postura-section"><strong>Agarre:</strong> codos apoyados en los apoyos acolchados o manos en las asas según el modelo. Los codos forman un ángulo fijo de ~90°.</div>
-<div class="postura-section"><strong>Movimiento:</strong> cierra los brazos como si abrazaras a alguien. Aguanta 1 segundo al cerrar. Abre lento en 3 segundos.</div>
+<div class="postura-section"><strong>Posición:</strong> Espalda pegada al respaldo. Codos a la altura del pecho.</div>
+<div class="postura-section"><strong>Agarre:</strong> Codos apoyados en los almohadillados. Ángulo de 90° fijo.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Cierra como si abrazaras. Aguanta 1 seg. Abre lento en 3 seg.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> abrir demasiado al volver (dolor en hombro), rebotar al cerrar, despegar la espalda del respaldo.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/2427/lever-pec-deck-fly/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -414,9 +431,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que las asas queden justo a la altura de los hombros cuando los brazos están doblados. Espalda apoyada.</div>
-<div class="postura-section"><strong>Agarre:</strong> palmas hacia adelante o neutras. Agarre firme pero sin tensión en el cuello.</div>
-<div class="postura-section"><strong>Movimiento:</strong> empuja hacia arriba sin bloquear los codos. Baja hasta que los brazos formen 90°. Sube y baja en 2-3 segundos cada fase.</div>
+<div class="postura-section"><strong>Posición:</strong> Asiento ajustado para que las asas queden a la altura de los hombros.</div>
+<div class="postura-section"><strong>Agarre:</strong> Palmas hacia adelante o neutras. Muñecas en línea con los antebrazos.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Empuja hacia arriba sin bloquear los codos. Baja hasta 90°.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> encorvarse hacia adelante, subir los hombros hacia las orejas, usar el impulso del cuerpo para empujar.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/2962/lever-seated-hammer-grip-shoulder-press/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -452,9 +469,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> de pie de espaldas a la polea alta, da un paso adelante para crear tensión. Inclínate ligeramente hacia adelante. Pies separados a la anchura de los hombros.</div>
-<div class="postura-section"><strong>Agarre:</strong> agarra los extremos de la cuerda con ambas manos, palmas enfrentadas. Los brazos sobre la cabeza con los codos apuntando al techo.</div>
-<div class="postura-section"><strong>Movimiento:</strong> extiende los antebrazos hacia adelante y arriba manteniendo los codos fijos y cerca de la cabeza. Vuelve lento controlando el peso.</div>
+<div class="postura-section"><strong>Posición:</strong> De pie, de espaldas a la polea. Un paso adelante para crear tensión.</div>
+<div class="postura-section"><strong>Agarre:</strong> Agarra los extremos de la cuerda. Codos apuntando al techo, fijos.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Extiende los antebrazos hacia adelante. Vuelve lento controlando.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos durante el movimiento, arquear la zona lumbar, usar impulso del torso para ayudar.
   </div>
 <a class="ex-link" href="https://fitwill.app/exercise/2248/cable-rope-overhead-triceps-extension/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -490,9 +507,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> de pie frente a la polea alta. Pies ligeramente separados, ligera inclinación hacia adelante. Codos pegados al cuerpo a lo largo de toda la serie.</div>
-<div class="postura-section"><strong>Agarre:</strong> palmas hacia abajo (pronadas). Agarre a la anchura de los hombros en la barra.</div>
-<div class="postura-section"><strong>Movimiento:</strong> extiende los brazos hacia abajo hasta estirarlos completamente, aprieta 1 segundo, sube lento en 3 segundos.</div>
+<div class="postura-section"><strong>Posición:</strong> De pie frente a la polea. Ligera inclinación hacia adelante.</div>
+<div class="postura-section"><strong>Agarre:</strong> Palmas hacia abajo (pronadas). Agarre a la anchura de los hombros.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Extiende hacia abajo hasta estirar completamente. Sube lento 3 seg.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos, inclinarse hacia adelante para usar el peso corporal, no llegar a la extensión completa.
   </div>
 <a class="ex-link" href="https://fitwill.app/exercise/0201/cable-pushdown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -528,9 +545,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> igual que el ejercicio anterior. De pie frente a la polea, codos pegados al cuerpo.</div>
-<div class="postura-section"><strong>Agarre:</strong> palmas hacia arriba (supinas). Usa la barra corta o la cuerda según disponibilidad.</div>
-<div class="postura-section"><strong>Movimiento:</strong> idéntico al anterior — extiende hacia abajo, aprieta 1 segundo, sube lento. No intentes igualar el peso del agarre prono.</div>
+<div class="postura-section"><strong>Posición:</strong> Igual que el agarre prono. De pie, codos pegados al cuerpo.</div>
+<div class="postura-section"><strong>Agarre:</strong> Palmas hacia arriba (supinas). Agarre firme.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Misma mecánica que el prono. No fuerces el peso a igualar el prono.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> los mismos errores que en el prono. Con el agarre supino hay más tendencia a separar los codos.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0207/cable-reverse-grip-pushdown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -566,9 +583,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> de pie o sentado. Espalda recta, ligerísima inclinación hacia adelante del torso (10°). Codos ligeramente doblados durante todo el movimiento.</div>
-<div class="postura-section"><strong>Agarre:</strong> palmas hacia el suelo. El meñique ligeramente más alto que el pulgar al llegar arriba — como si vaciases un vaso.</div>
-<div class="postura-section"><strong>Movimiento:</strong> sube lateralmente hasta la altura del hombro — no más. Baja lento en 3-4 segundos. No uses el impulso del cuerpo.</div>
+<div class="postura-section"><strong>Posición:</strong> De pie o sentado. Espalda recta, ligera inclinación de 10° adelante.</div>
+<div class="postura-section"><strong>Agarre:</strong> Palmas al suelo, meñique ligeramente más alto que el pulgar.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Sube hasta la altura del hombro, no más. Baja lento en 3-4 seg.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> subir por encima del hombro (impingement), balancear el torso, encorvar el cuello. Si duele el hombro, para.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0334/dumbbell-lateral-raise/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -635,9 +652,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> muslos bien sujetos bajo el apoyo. Ligera inclinación hacia atrás del torso (15°). Pecho hacia arriba.</div>
-<div class="postura-section"><strong>Agarre:</strong> ancho, un poco más que los hombros. Palmas hacia adelante. Agarre firme pero sin crispación.</div>
-<div class="postura-section"><strong>Movimiento:</strong> tira llevando los codos hacia abajo y atrás como si quisieras tocar las caderas con ellos. Lleva la barra hasta el pecho alto. Sube lento.</div>
+<div class="postura-section"><strong>Posición:</strong> Muslos bien sujetos bajo el apoyo. Ligera inclinación del torso (15°).</div>
+<div class="postura-section"><strong>Agarre:</strong> Agarre ancho, palmas hacia adelante.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Tira llevando los codos hacia abajo y atrás. Lleva la barra al pecho alto.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> inclinarse demasiado hacia atrás, tirar con los brazos en lugar de los codos, encorvar la espalda.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/2291/cable-wide-grip-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -672,9 +689,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> sentado con los pies en los apoyos, rodillas ligeramente dobladas. Espalda recta vertical — no te inclines hacia adelante con el torso.</div>
-<div class="postura-section"><strong>Agarre:</strong> mango en V (agarre neutro) o barra. Codos pegados al cuerpo al tirar.</div>
-<div class="postura-section"><strong>Movimiento:</strong> tira hacia el abdomen y aprieta los omóplatos juntos al final 1 segundo. Vuelve lento controlando.</div>
+<div class="postura-section"><strong>Posición:</strong> Sentado, pies en los apoyos, espalda recta y vertical.</div>
+<div class="postura-section"><strong>Agarre:</strong> Mango en V o barra. Codos pegados al cuerpo al tirar.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Tira hacia el abdomen y aprieta los omóplatos al final 1 seg.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> inclinar el torso hacia adelante y atrás como un balancín, encorvar la espalda baja, tirar solo con los brazos sin contraer la espalda.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/1320/cable-rope-crossover-seated-row/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -709,9 +726,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> igual que el jalón ancho. Misma inclinación y posición de muslos.</div>
-<div class="postura-section"><strong>Agarre:</strong> mango en V o triangular, palmas enfrentadas (agarre neutro). Manos juntas.</div>
-<div class="postura-section"><strong>Movimiento:</strong> tira hacia el pecho alto — no al cuello ni al esternón. Los codos van hacia abajo pegados al torso.</div>
+<div class="postura-section"><strong>Posición:</strong> Igual que el jalón ancho. Misma posición de muslos e inclinación.</div>
+<div class="postura-section"><strong>Agarre:</strong> Mango en V, palmas enfrentadas (agarre neutro).</div>
+<div class="postura-section"><strong>Movimiento:</strong> Tira hacia el pecho alto, no al cuello. Codos hacia abajo pegados al torso.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar hacia el cuello en lugar del pecho, usar demasiado el bíceps sin involucrar la espalda.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/3754/cable-close-grip-front-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -746,9 +763,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> rodillas sobre el apoyo acolchado. Brazos extendidos al inicio. Cuerpo ligeramente hacia atrás.</div>
-<div class="postura-section"><strong>Agarre:</strong> un poco más ancho que los hombros. Palmas hacia adelante para trabajar más el dorsal.</div>
-<div class="postura-section"><strong>Movimiento:</strong> lleva el pecho hacia la barra — no la barbilla. Los codos van hacia abajo y atrás. Baja lento controlando.</div>
+<div class="postura-section"><strong>Posición:</strong> Rodillas sobre el apoyo acolchado. Cuerpo ligeramente hacia atrás.</div>
+<div class="postura-section"><strong>Agarre:</strong> Agarre ancho, palmas hacia adelante.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Lleva el pecho hacia la barra. Los codos van hacia abajo y atrás.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar solo con los brazos, llegar solo con la barbilla a la barra, bajar demasiado rápido.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0015/assisted-parallel-close-grip-pull-up/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -783,9 +800,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que el codo quede sobre el borde del apoyo — no por detrás. Espalda apoyada.</div>
-<div class="postura-section"><strong>Agarre:</strong> palmas hacia arriba. Agarre firme sin crispación en el antebrazo.</div>
-<div class="postura-section"><strong>Movimiento:</strong> sube hasta que los antebrazos queden verticales, aprieta 1 segundo. Baja lento en 3 segundos. Rango completo.</div>
+<div class="postura-section"><strong>Posición:</strong> Codo apoyado sobre el borde del soporte, no por detrás.</div>
+<div class="postura-section"><strong>Agarre:</strong> Palmas hacia arriba. Agarre firme sin crispación.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Sube hasta vertical, aprieta 1 seg. Baja lento en 3 seg. Rango completo.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> llevar los codos hacia adelante al subir, no completar el rango completo, usar impulso del torso.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/1872/lever-preacher-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -820,9 +837,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> de pie frente a la polea baja. Espalda recta, ligerísima inclinación. Codos pegados al cuerpo durante todo el movimiento.</div>
-<div class="postura-section"><strong>Agarre:</strong> barra recta o cuerda. Palmas hacia arriba con barra, neutras con cuerda.</div>
-<div class="postura-section"><strong>Movimiento:</strong> sube hasta que los antebrazos queden horizontales, aprieta 1 segundo. Baja lento. No subas más de horizontal — pierde tensión.</div>
+<div class="postura-section"><strong>Posición:</strong> De pie frente a la polea baja. Espalda recta.</div>
+<div class="postura-section"><strong>Agarre:</strong> Barra o cuerda. Palmas hacia arriba. Codos pegados al cuerpo.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Sube hasta que los antebrazos queden horizontales. Aprieta 1 seg. Baja lento.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> mover los codos hacia adelante, balancear el cuerpo, no controlar la bajada.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/1630/cable-close-grip-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -857,9 +874,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> de pie o sentado. Espalda recta. Codos pegados al cuerpo.</div>
-<div class="postura-section"><strong>Agarre:</strong> palmas enfrentadas entre sí (como sujetando un martillo). No gires las muñecas durante el movimiento.</div>
-<div class="postura-section"><strong>Movimiento:</strong> sube alternando brazos hasta que el antebrazo quede horizontal. Baja lento. No subas más allá de horizontal.</div>
+<div class="postura-section"><strong>Posición:</strong> De pie o sentado. Espalda recta. Codos pegados al cuerpo.</div>
+<div class="postura-section"><strong>Agarre:</strong> Palmas enfrentadas (agarre neutro). No gires las muñecas.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Sube alternando hasta horizontal. Baja lento.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> balancear el torso para ayudar, girar las muñecas durante el movimiento, subir demasiado rápido.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/2239/dumbbell-hammer-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -925,9 +942,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 90-120 segundos (ejercicio compuesto)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> espalda y glúteos completamente apoyados. Pies a la anchura de los hombros en la mitad-alta de la plataforma.</div>
-<div class="postura-section"><strong>Agarre:</strong> manos en las asas laterales para estabilizar. No usar las manos para empujar las rodillas.</div>
-<div class="postura-section"><strong>Movimiento:</strong> baja hasta 90° de flexión de rodilla — no más. Empuja desde los talones. Nunca bloquees las rodillas al extender.</div>
+<div class="postura-section"><strong>Posición:</strong> Espalda y glúteos completamente apoyados. Pies a la anchura de los hombros.</div>
+<div class="postura-section"><strong>Agarre:</strong> Manos en las asas laterales para estabilizar.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Baja hasta 90° de flexión. Empuja desde los talones.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> bajar más de 90° (sobrecarga rodilla), poner los pies demasiado bajos en la plataforma, bloquear rodillas al extender.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0739/sled-45-leg-press/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -962,9 +979,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> ajusta el asiento para que el hueco de la rodilla quede justo en el borde. El rodillo apoya en el tobillo, no en el empeine.</div>
-<div class="postura-section"><strong>Agarre:</strong> manos en las asas laterales. No apretar con fuerza — solo para estabilizar.</div>
-<div class="postura-section"><strong>Movimiento:</strong> sube hasta extensión completa, aprieta el cuádriceps 1 segundo, baja lento en 3 segundos.</div>
+<div class="postura-section"><strong>Posición:</strong> Ajusta el asiento: hueco de la rodilla en el borde. Rodillo en el tobillo.</div>
+<div class="postura-section"><strong>Agarre:</strong> Manos en las asas, solo para estabilizar.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Sube hasta extensión completa, aprieta 1 seg. Baja lento en 3 seg.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> usar impulso para subir, no llegar a la extensión completa, bajar demasiado rápido. Si hay dolor en rótula, reduce el rango.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0585/lever-leg-extension/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -999,9 +1016,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> tumbado boca abajo. El rodillo apoya justo por encima del talón, no en el tendón de Aquiles. Caderas pegadas al acolchado en todo momento.</div>
-<div class="postura-section"><strong>Agarre:</strong> manos en las asas. No usar los brazos para empujar o tirar.</div>
-<div class="postura-section"><strong>Movimiento:</strong> dobla las rodillas llevando los talones hacia los glúteos. Aprieta 1 segundo arriba. Baja lento.</div>
+<div class="postura-section"><strong>Posición:</strong> Boca abajo. Rodillo por encima del talón. Caderas pegadas al acolchado.</div>
+<div class="postura-section"><strong>Agarre:</strong> Manos en las asas. No uses los brazos para tirar.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Dobla llevando los talones hacia los glúteos. Aprieta 1 seg. Baja lento.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> levantar las caderas del acolchado, forzar el rango si hay dolor en el tendón, bajar demasiado rápido.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/3195/lever-lying-two-one-leg-curl/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -1036,9 +1053,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> sentado con la espalda apoyada. Rodillas sobre los apoyos acolchados.</div>
-<div class="postura-section"><strong>Agarre:</strong> manos en las asas o en los muslos. Espalda recta durante todo el movimiento.</div>
-<div class="postura-section"><strong>Movimiento:</strong> abre las piernas contra la resistencia. Aguanta 1 segundo en máxima apertura. Cierra lento en 3 segundos.</div>
+<div class="postura-section"><strong>Posición:</strong> Sentado, espalda apoyada. Rodillas sobre los apoyos acolchados.</div>
+<div class="postura-section"><strong>Agarre:</strong> Manos en las asas o en los muslos. Espalda recta.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Abre contra la resistencia. Aguanta 1 seg. Cierra lento en 3 seg.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> cerrar demasiado rápido, arquear la espalda para ayudar, abrir más allá de la posición cómoda.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0597/lever-seated-hip-abduction/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -1073,9 +1090,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> sentado con las piernas abiertas sobre los apoyos. Espalda apoyada en el respaldo.</div>
-<div class="postura-section"><strong>Agarre:</strong> manos en las asas. Espalda recta, no te inclines hacia adelante.</div>
-<div class="postura-section"><strong>Movimiento:</strong> junta las piernas contra la resistencia. Aguanta 1 segundo al cerrar. Abre lento controlando el peso.</div>
+<div class="postura-section"><strong>Posición:</strong> Sentado con las piernas abiertas sobre los apoyos. Espalda apoyada.</div>
+<div class="postura-section"><strong>Agarre:</strong> Manos en las asas. Espalda recta durante todo el movimiento.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Junta las piernas contra la resistencia. Aguanta 1 seg. Abre lento.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> cerrar con impulso, encorvar la espalda, no controlar la apertura.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0598/lever-seated-hip-adduction/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -1110,9 +1127,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> sentado con los pies apoyados. Ajusta el apoyo del pecho a la altura correcta según la máquina.</div>
-<div class="postura-section"><strong>Agarre:</strong> brazos cruzados sobre el pecho o agarrando las asas según el modelo de la máquina.</div>
-<div class="postura-section"><strong>Movimiento:</strong> inclínate desde las costillas. Aguanta 1 segundo en máxima contracción. Vuelve lento. Exhala al contraer, inhala al volver.</div>
+<div class="postura-section"><strong>Posición:</strong> Sentado con pies apoyados. Apoyo del pecho a la altura correcta.</div>
+<div class="postura-section"><strong>Agarre:</strong> Brazos cruzados sobre el pecho o agarrando las asas.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Inclínate desde las costillas, no desde las caderas. Aguanta 1 seg.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> tirar del cuello, flexionar desde las caderas en lugar de la columna, rebotar en la posición inicial.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/3647/lever-seated-leg-raise-crunch-plate-loaded/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -1147,9 +1164,9 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <div class="table-divider"></div>
 <div class="rest-box">⏱ <span>Descanso entre series:</span> 60-90 segundos (ejercicio de aislamiento)</div>
 <div class="ex-section-title"><i class="ph ph-text-align-left"></i> Descripción</div>
-<div class="postura-section"><strong>Posición:</strong> antebrazos y punteras de los pies. Los codos directamente bajo los hombros. Cabeza en posición neutra mirando al suelo.</div>
-<div class="postura-section"><strong>Agarre:</strong> puños cerrados o palmas planas en el suelo. Antebrazos paralelos.</div>
-<div class="postura-section"><strong>Movimiento:</strong> mantén la posición con respiración continua. Activa el abdomen y los glúteos conscientemente. Línea recta de talones a nuca.</div>
+<div class="postura-section"><strong>Posición:</strong> Antebrazos y puntas de los pies. Codos bajo los hombros.</div>
+<div class="postura-section"><strong>Agarre:</strong> Puños cerrados o palmas planas. Antebrazos paralelos.</div>
+<div class="postura-section"><strong>Movimiento:</strong> Mantén la posición con respiración continua. Activa abdomen y glúteos.</div>
 <div class="postura-section"><strong><i class="ph ph-warning" style="color:#f97316"></i> Evitar:</strong> dejar caer las caderas, subir el trasero, aguantar la respiración, encorvar el cuello hacia arriba o abajo.
   </div>
 <a class="ex-link" href="https://fitwill.app/es/exercise/0465/front-plank/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
@@ -1538,6 +1555,8 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 // ── DATA ──────────────────────────────────────────────────────────────────
 const EXERCISE_MAP = {"e1": [{"name": "Press pecho convergente", "series": 3}, {"name": "Press mancuernas banco", "series": 3}, {"name": "Aperturas pec-deck", "series": 3}, {"name": "Press hombro convergente", "series": 3}, {"name": "Press francés polea", "series": 3}, {"name": "Tríceps polea prono", "series": 3}, {"name": "Tríceps polea supino", "series": 3}, {"name": "Elevaciones laterales", "series": 3}], "e2": [{"name": "Jalón al pecho ancho", "series": 3}, {"name": "Remo en polea baja", "series": 3}, {"name": "Jalón agarre estrecho", "series": 3}, {"name": "Dominadas asistidas", "series": 3}, {"name": "Curl bíceps máquina", "series": 3}, {"name": "Curl en polea baja", "series": 3}, {"name": "Curl martillo", "series": 3}], "e3": [{"name": "Prensa piernas", "series": 3}, {"name": "Extensión piernas", "series": 3}, {"name": "Flexión pierna acostado", "series": 3}, {"name": "Abducción cadera", "series": 3}, {"name": "Aducción cadera", "series": 3}, {"name": "Contracción abdominal", "series": 3}, {"name": "Plancha frontal", "series": 3}], "eopt": [{"name": "Press pecho", "series": 2}, {"name": "Aperturas pec-deck", "series": 2}, {"name": "Jalón al pecho", "series": 2}, {"name": "Remo en polea", "series": 2}, {"name": "Press hombro", "series": 2}, {"name": "Extensión piernas", "series": 2}, {"name": "Contracción abdominal", "series": 2}, {"name": "Plancha", "series": 2}]};
 const ENTRENO_NAMES = {"e1": "Entreno 1 — Pecho/Hombro/Tríceps", "e2": "Entreno 2 — Espalda/Bíceps", "e3": "Entreno 3 — Piernas/Abs", "eopt": "Opcional — Full Body"};
+const WEIGHT_MAP = {"e1-ex01-s1-angel": "38 kg", "e1-ex01-s1-manu": "25 kg", "e1-ex01-s2-angel": "45 kg", "e1-ex01-s2-manu": "30 kg", "e1-ex01-s3-angel": "52 kg", "e1-ex01-s3-manu": "36 kg", "e1-ex02-s1-angel": "14 kg c/u", "e1-ex02-s1-manu": "10 kg c/u", "e1-ex02-s2-angel": "18 kg c/u", "e1-ex02-s2-manu": "12 kg c/u", "e1-ex02-s3-angel": "18 kg c/u", "e1-ex02-s3-manu": "14 kg c/u", "e1-ex03-s1-angel": "55 kg", "e1-ex03-s1-manu": "35 kg", "e1-ex03-s2-angel": "73 kg", "e1-ex03-s2-manu": "45 kg", "e1-ex03-s3-angel": "83 kg", "e1-ex03-s3-manu": "55 kg", "e1-ex04-s1-angel": "16 kg", "e1-ex04-s1-manu": "9 kg", "e1-ex04-s2-angel": "23 kg", "e1-ex04-s2-manu": "14 kg", "e1-ex04-s3-angel": "27 kg", "e1-ex04-s3-manu": "18 kg", "e1-ex05-s1-angel": "14 kg", "e1-ex05-s1-manu": "8 kg", "e1-ex05-s2-angel": "18 kg", "e1-ex05-s2-manu": "12 kg", "e1-ex05-s3-angel": "22 kg", "e1-ex05-s3-manu": "14 kg", "e1-ex06-s1-angel": "22 kg", "e1-ex06-s1-manu": "14 kg", "e1-ex06-s2-angel": "27 kg", "e1-ex06-s2-manu": "18 kg", "e1-ex06-s3-angel": "31 kg", "e1-ex06-s3-manu": "20 kg", "e1-ex07-s1-angel": "14 kg", "e1-ex07-s1-manu": "9 kg", "e1-ex07-s2-angel": "18 kg", "e1-ex07-s2-manu": "12 kg", "e1-ex07-s3-angel": "18 kg", "e1-ex07-s3-manu": "14 kg", "e1-ex08-s1-angel": "4 kg c/u", "e1-ex08-s1-manu": "3 kg c/u", "e1-ex08-s2-angel": "6 kg c/u", "e1-ex08-s2-manu": "4 kg c/u", "e1-ex08-s3-angel": "6 kg c/u", "e1-ex08-s3-manu": "5 kg c/u", "e2-ex01-s1-angel": "45 kg", "e2-ex01-s1-manu": "39 kg", "e2-ex01-s2-angel": "45 kg", "e2-ex01-s2-manu": "39 kg", "e2-ex01-s3-angel": "52 kg", "e2-ex01-s3-manu": "45 kg", "e2-ex02-s1-angel": "39 kg", "e2-ex02-s1-manu": "32 kg", "e2-ex02-s2-angel": "45 kg", "e2-ex02-s2-manu": "39 kg", "e2-ex02-s3-angel": "52 kg", "e2-ex02-s3-manu": "45 kg", "e2-ex03-s1-angel": "45 kg", "e2-ex03-s1-manu": "39 kg", "e2-ex03-s2-angel": "45 kg", "e2-ex03-s2-manu": "39 kg", "e2-ex03-s3-angel": "52 kg", "e2-ex03-s3-manu": "45 kg", "e2-ex04-s1-angel": "45 kg ayuda", "e2-ex04-s1-manu": "27 kg ayuda", "e2-ex04-s2-angel": "41 kg ayuda", "e2-ex04-s2-manu": "23 kg ayuda", "e2-ex04-s3-angel": "36 kg ayuda", "e2-ex04-s3-manu": "18 kg ayuda", "e2-ex05-s1-angel": "41 kg", "e2-ex05-s1-manu": "27 kg", "e2-ex05-s2-angel": "45 kg", "e2-ex05-s2-manu": "32 kg", "e2-ex05-s3-angel": "50 kg", "e2-ex05-s3-manu": "36 kg", "e2-ex06-s1-angel": "13.5 kg", "e2-ex06-s1-manu": "11.3 kg", "e2-ex06-s2-angel": "15.8 kg", "e2-ex06-s2-manu": "13.5 kg", "e2-ex06-s3-angel": "18 kg", "e2-ex06-s3-manu": "15.8 kg", "e2-ex07-s1-angel": "8 kg c/u", "e2-ex07-s1-manu": "6 kg c/u", "e2-ex07-s2-angel": "10 kg c/u", "e2-ex07-s2-manu": "8 kg c/u", "e2-ex07-s3-angel": "12 kg c/u", "e2-ex07-s3-manu": "10 kg c/u", "e3-ex01-s1-angel": "60 kg", "e3-ex01-s1-manu": "40 kg", "e3-ex01-s2-angel": "80 kg", "e3-ex01-s2-manu": "50 kg", "e3-ex01-s3-angel": "100 kg", "e3-ex01-s3-manu": "70 kg", "e3-ex02-s1-angel": "32 kg", "e3-ex02-s1-manu": "20 kg", "e3-ex02-s2-angel": "45 kg", "e3-ex02-s2-manu": "28 kg", "e3-ex02-s3-angel": "52 kg", "e3-ex02-s3-manu": "35 kg", "e3-ex03-s1-angel": "32 kg", "e3-ex03-s1-manu": "20 kg", "e3-ex03-s2-angel": "45 kg", "e3-ex03-s2-manu": "28 kg", "e3-ex03-s3-angel": "52 kg", "e3-ex03-s3-manu": "35 kg", "e3-ex04-s1-angel": "30 kg", "e3-ex04-s1-manu": "18 kg", "e3-ex04-s2-angel": "40 kg", "e3-ex04-s2-manu": "25 kg", "e3-ex04-s3-angel": "55 kg", "e3-ex04-s3-manu": "35 kg", "e3-ex05-s1-angel": "30 kg", "e3-ex05-s1-manu": "18 kg", "e3-ex05-s2-angel": "40 kg", "e3-ex05-s2-manu": "25 kg", "e3-ex05-s3-angel": "55 kg", "e3-ex05-s3-manu": "35 kg", "e3-ex06-s1-angel": "54 kg", "e3-ex06-s1-manu": "36 kg", "e3-ex06-s2-angel": "75 kg", "e3-ex06-s2-manu": "45 kg", "e3-ex06-s3-angel": "82 kg", "e3-ex06-s3-manu": "55 kg", "e3-ex07-s1-angel": "Peso corporal", "e3-ex07-s1-manu": "Peso corporal", "e3-ex07-s2-angel": "Peso corporal", "e3-ex07-s2-manu": "Peso corporal", "e3-ex07-s3-angel": "Peso corporal", "e3-ex07-s3-manu": "Peso corporal", "eopt-ex01-s1-angel": "36 kg", "eopt-ex01-s1-manu": "24 kg", "eopt-ex01-s2-angel": "36 kg", "eopt-ex01-s2-manu": "24 kg", "eopt-ex02-s1-angel": "58 kg", "eopt-ex02-s1-manu": "36 kg", "eopt-ex02-s2-angel": "58 kg", "eopt-ex02-s2-manu": "36 kg", "eopt-ex03-s1-angel": "40 kg", "eopt-ex03-s1-manu": "26 kg", "eopt-ex03-s2-angel": "40 kg", "eopt-ex03-s2-manu": "26 kg", "eopt-ex04-s1-angel": "40 kg", "eopt-ex04-s1-manu": "26 kg", "eopt-ex04-s2-angel": "40 kg", "eopt-ex04-s2-manu": "26 kg", "eopt-ex05-s1-angel": "18 kg", "eopt-ex05-s1-manu": "11 kg", "eopt-ex05-s2-angel": "18 kg", "eopt-ex05-s2-manu": "11 kg", "eopt-ex06-s1-angel": "36 kg", "eopt-ex06-s1-manu": "22 kg", "eopt-ex06-s2-angel": "36 kg", "eopt-ex06-s2-manu": "22 kg", "eopt-ex07-s1-angel": "60 kg", "eopt-ex07-s1-manu": "36 kg", "eopt-ex07-s2-angel": "60 kg", "eopt-ex07-s2-manu": "36 kg", "eopt-ex08-s1-angel": "Peso corporal", "eopt-ex08-s1-manu": "Peso corporal", "eopt-ex08-s2-angel": "Peso corporal", "eopt-ex08-s2-manu": "Peso corporal"};
+const EXERCISE_NAMES = {"e1-ex01": "Press de pecho convergente (máquina)", "e1-ex02": "Press con mancuernas en banco plano", "e1-ex03": "Aperturas en máquina pec-deck", "e1-ex04": "Press de hombro convergente (máquina)", "e1-ex05": "Press francés en polea con cuerda (tríceps)", "e1-ex06": "Tríceps en polea con barra rígida (prono)", "e1-ex07": "Tríceps en polea agarre inverso (supino)", "e1-ex08": "Elevaciones laterales con mancuernas", "e2-ex01": "Jalón al pecho agarre ancho (máquina)", "e2-ex02": "Remo en polea baja (seated cable row)", "e2-ex03": "Jalón agarre estrecho / neutro", "e2-ex04": "Dominadas asistidas (máquina)", "e2-ex05": "Curl bíceps en máquina", "e2-ex06": "Curl en polea baja de pie", "e2-ex07": "Curl martillo con mancuernas", "e3-ex01": "Prensa de piernas (leg press)", "e3-ex02": "Extensión de piernas (máquina)", "e3-ex03": "Flexión de pierna acostado (máquina)", "e3-ex04": "Abducción de cadera (máquina)", "e3-ex05": "Aducción de cadera (máquina)", "e3-ex06": "Contracción abdominal (máquina)", "e3-ex07": "Plancha frontal (suelo)", "eopt-ex01": "Press de pecho convergente (máquina)", "eopt-ex02": "Aperturas en máquina pec-deck", "eopt-ex03": "Jalón al pecho agarre ancho (máquina)", "eopt-ex04": "Remo en polea baja", "eopt-ex05": "Press de hombro convergente (máquina)", "eopt-ex06": "Extensión de piernas (máquina)", "eopt-ex07": "Contracción abdominal (máquina)", "eopt-ex08": "Plancha frontal (suelo)"};
 const SIX_MONTHS = 6 * 30 * 24 * 60 * 60 * 1000;
 
 function getRatings(person) {
@@ -1690,36 +1709,87 @@ function renderProgress(person) {
   const data = getRatings(person);
   const container = document.getElementById('progress-content');
   if (!Object.keys(data).length) {
-    container.innerHTML = '<div class="no-data"><i class="ph ph-chart-bar" style="font-size:32px;display:block;margin-bottom:8px"></i>Completa series para ver tu progreso aquí.</div>';
+    container.innerHTML = '<div class="no-data"><i class="ph ph-chart-bar" style="font-size:32px;display:block;margin-bottom:8px"></i>Completa series para ver el progreso.</div>';
     return;
   }
-  const allDates = new Set();
-  Object.values(data).forEach(d => allDates.add(d.date));
-  const sortedDates = [...allDates].sort().slice(-5);
+
+  // Group data by date
+  const byDate = {};
+  Object.entries(data).forEach(([key, entry]) => {
+    const date = entry.date;
+    if (!byDate[date]) byDate[date] = {};
+    byDate[date][key] = entry;
+  });
+
+  // Sort dates descending (most recent first)
+  const sortedDates = Object.keys(byDate).sort().reverse();
+
   let html = '';
-  for (const [eid, exercises] of Object.entries(EXERCISE_MAP)) {
-    let hasData = false;
-    for (let ei=0;ei<exercises.length;ei++) for (let si=1;si<=exercises[ei].series;si++) if (data[`${eid}-ex${String(ei+1).padStart(2,'0')}-s${si}`]) { hasData=true; break; }
-    if (!hasData) continue;
-    html += `<div class="progress-section"><div class="progress-entreno-title">${ENTRENO_NAMES[eid]}</div>`;
-    html += `<div style="overflow-x:auto"><table class="progress-table"><thead><tr><th>Ejercicio</th>`;
-    sortedDates.forEach(d => { html += `<th>${d.slice(5)}</th>`; });
-    html += `</tr></thead><tbody>`;
-    exercises.forEach((ex,ei) => {
-      html += `<tr><td style="font-size:11px">${ex.name}</td>`;
-      sortedDates.forEach(date => {
-        let ok=0,total=0;
-        for (let si=1;si<=ex.series;si++) { const e=data[`${eid}-ex${String(ei+1).padStart(2,'0')}-s${si}`]; if(e&&e.date===date){total++;if(e.v==='ok')ok++;} }
-        if(!total) html+=`<td><span class="ptag none">—</span></td>`;
-        else { const cls=ok===total?'ok':ok>0?'partial':'ko'; html+=`<td><span class="ptag ${cls}">${ok}/${total}</span></td>`; }
-      });
-      html += `</tr>`;
+  sortedDates.forEach((date, idx) => {
+    const dateObj = new Date(date + 'T12:00:00');
+    const dateLabel = dateObj.toLocaleDateString('es-ES', { day: '2-digit', month: 'long', year: 'numeric' });
+    const entries = byDate[date];
+
+    // Count series rated this day
+    const total = Object.keys(entries).length;
+    const ok = Object.values(entries).filter(e => e.v === 'ok').length;
+
+    html += `<div class="prog-session">`;
+    html += `<div class="prog-session-header" onclick="toggleProgSession(this)">`;
+    html += `<span class="prog-session-date">${dateLabel}</span>`;
+    html += `<span class="prog-session-summary">${ok}/${total} series <i class="ph ph-caret-down" style="font-size:12px;transition:transform .2s"></i></span>`;
+    html += `</div>`;
+    html += `<div class="prog-session-body${idx === 0 ? ' open' : ''}">`;
+
+    // Group entries by exercise (e.g. e1-ex01)
+    const byEx = {};
+    Object.entries(entries).forEach(([key, entry]) => {
+      // key = e1-ex01-s1 → exKey = e1-ex01
+      const parts = key.split('-'); // ['e1','ex01','s1']
+      const exKey = parts[0] + '-' + parts[1];
+      const sNum = parts[2]; // s1, s2, s3
+      if (!byEx[exKey]) byEx[exKey] = {};
+      byEx[exKey][sNum] = entry;
     });
-    html += `</tbody></table></div></div>`;
-  }
+
+    // Sort exercises by their key
+    const sortedExKeys = Object.keys(byEx).sort();
+    sortedExKeys.forEach((exKey, ei) => {
+      const exName = EXERCISE_NAMES[exKey] || exKey;
+      html += `<div class="prog-ex">`;
+      html += `<div class="prog-ex-name">${exName}</div>`;
+
+      const serieEntries = byEx[exKey];
+      ['s1','s2','s3'].forEach((sKey, si) => {
+        const entry = serieEntries[sKey];
+        if (!entry) return;
+        const serieId = exKey + '-' + sKey;
+        const weight = WEIGHT_MAP[serieId + '-' + person] || '—';
+        const icon = entry.v === 'ok'
+          ? '<i class="ph ph-check-circle prog-serie-ok"></i>'
+          : '<i class="ph ph-x-circle prog-serie-ko"></i>';
+        html += `<div class="prog-serie-row">`;
+        html += `<span class="prog-serie-label">S${si+1}</span>`;
+        html += `<span class="prog-serie-weight">${weight}</span>`;
+        html += icon;
+        html += `</div>`;
+      });
+
+      html += `</div>`;
+    });
+
+    html += `</div></div>`;
+  });
+
   container.innerHTML = html;
 }
-function toggleEx(toggleEl) {
+
+function toggleProgSession(header) {
+  const body = header.nextElementSibling;
+  const icon = header.querySelector('.ph-caret-down');
+  body.classList.toggle('open');
+  if (icon) icon.style.transform = body.classList.contains('open') ? 'rotate(180deg)' : '';
+}function toggleEx(toggleEl) {
   const body = toggleEl.nextElementSibling;
   const chev = toggleEl.querySelector('.ex-chevron');
   body.classList.toggle('open');
