@@ -1942,12 +1942,9 @@ function getStartSection() {
   return order.find(s => !completed[s]) || 'e1';
 }
 
-// Clear any old incorrectly-formatted ratings data
-if (!localStorage.getItem('gymplan-ratings-reset')) {
-  localStorage.removeItem('gymplan-ratings-angel');
-  localStorage.removeItem('gymplan-ratings-manu');
-  localStorage.setItem('gymplan-ratings-reset', '1');
-}
+// DEV MODE: always clear ratings on load
+localStorage.removeItem('gymplan-ratings-angel');
+localStorage.removeItem('gymplan-ratings-manu');
 // ── INIT ──────────────────────────────────────────────────────────────────
 const sp = localStorage.getItem('gymplan-person') || 'angel';
 document.querySelectorAll('.section').forEach(s => setPerson(sp, s));
