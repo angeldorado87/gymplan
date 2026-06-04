@@ -1968,9 +1968,7 @@ function getStartSection() {
   return order.find(s => !completed[s]) || 'e1';
 }
 
-// DEV MODE: always clear ratings on load
-localStorage.removeItem('gymplan-ratings-angel');
-localStorage.removeItem('gymplan-ratings-manu');
+// Ratings persist for 6 months (pruned in getRatings)
 // ── INIT ──────────────────────────────────────────────────────────────────
 const sp = localStorage.getItem('gymplan-person') || 'angel';
 document.querySelectorAll('.section').forEach(s => setPerson(sp, s));
