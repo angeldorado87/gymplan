@@ -210,7 +210,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .complete-btn{display:flex;align-items:center;justify-content:center;width:100%;padding:16px;margin-top:16px;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:0.02em;border:1.5px solid #f97316;background:transparent;color:#f97316}
 .complete-btn:active{opacity:0.8;transform:scale(0.98)}
 .complete-btn.done{background:#14532d;border-color:#22c55e;color:#4ade80}
-.complete-toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#1a1a1a;border:1px solid #f97316;color:#f97316;padding:12px 24px;border-radius:30px;font-size:14px;font-weight:600;z-index:500;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
+.complete-toast{display:none}
 .complete-toast.show{opacity:1}
 
 
@@ -262,7 +262,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </head>
 <body>
 
-<div class="complete-toast" id="complete-toast">✅ ¡Entreno guardado!</div>
+
 <div class="header">
   <div class="header-logo"><img src="icon-192.png" alt="GymPlan"></div>
   <div class="header-title">Plan de Entrenamiento</div>
@@ -296,7 +296,6 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <!-- DÍA 1: PECHO + HOMBRO + TRÍCEPS -->
   <div class="day-card">
     <div class="day-header">
-      <span class="day-badge push-b">Día 1 — Lunes</span>
       <span class="day-title-t">Pecho · Hombro · Tríceps</span>
       <span class="day-count">8 ejercicios</span>
       <span class="day-sub-t">~85 min</span>
@@ -549,7 +548,6 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <!-- DÍA 2: ESPALDA + BÍCEPS -->
   <div class="day-card">
     <div class="day-header">
-      <span class="day-badge pull-b">Día 2 — Martes</span>
       <span class="day-title-t">Espalda · Bíceps</span>
       <span class="day-count">7 ejercicios</span>
       <span class="day-sub-t">~80 min</span>
@@ -767,7 +765,6 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <!-- DÍA 3: PIERNAS + ABDOMINALES -->
   <div class="day-card">
     <div class="day-header">
-      <span class="day-badge legs-b">Día 3 — Jueves</span>
       <span class="day-title-t">Piernas · Abdominales</span>
       <span class="day-count">7 ejercicios</span>
       <span class="day-sub-t">~85 min</span>
@@ -986,7 +983,6 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <!-- OPCIONAL -->
   <div class="day-card">
     <div class="day-header">
-      <span class="day-badge opt-b">Opcional — Sábado</span>
       <span class="day-title-t">Full body ligero</span>
       <span class="day-count">8 ejercicios</span>
       <span class="day-sub-t">~75 min</span>
@@ -1375,11 +1371,9 @@ function setPerson(p, section) {
   section.querySelectorAll('.pt-btn').forEach(b => b.classList.remove('active'));
   const target = section.querySelector(p === 'angel' ? '.pt-angel' : '.pt-manu');
   if (target) target.classList.add('active');
-  section.querySelectorAll('.angel-col').forEach(el => el.classList.toggle('hidden', p !== 'angel'));
-  section.querySelectorAll('.manu-col').forEach(el => el.classList.toggle('hidden', p !== 'manu'));
   localStorage.setItem('gymplan-person', p);
-  section.querySelectorAll('.series-rate-btn').forEach(b => b.classList.remove('ok','ko','hidden-btn'));
-  loadSeriesRatings(section);
+  section.querySelectorAll('.sangel').forEach(el => el.style.display = p==='angel' ? '' : 'none');
+  section.querySelectorAll('.smanu').forEach(el => el.style.display = p==='manu' ? '' : 'none');
 }
 
 // ── PROGRESS RENDER ───────────────────────────────────────────────────────
