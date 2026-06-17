@@ -91,7 +91,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .collapsible{display:block}
 
 /* EXERCISE */
-.ex-block{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;margin-bottom:8px;overflow:hidden;padding:8px}
+.ex-block{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;margin-bottom:8px;overflow:hidden}
 .ex-block:last-child{margin-bottom:8px}
 .ex-num{font-size:10px;font-weight:700;color:#666;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
 .ex-name{font-size:14px;font-weight:600;color:#f97316;margin-bottom:8px}
@@ -186,7 +186,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .phase-sub{font-size:11px;color:#999;margin-top:2px}
 
 /* COLLAPSIBLE EXERCISES */
-.ex-block{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;margin-bottom:8px;overflow:hidden;padding:8px}
+.ex-block{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;margin-bottom:8px;overflow:hidden}
 .ex-block:last-child{margin-bottom:8px}
 .ex-toggle{display:flex;align-items:center;justify-content:space-between;padding:8px;cursor:pointer;user-select:none;gap:8px}
 .ex-toggle-left{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
@@ -199,7 +199,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .ex-status.pending{display:none}
 .ex-chevron{font-size:16px;color:#666;transition:transform .2s;flex-shrink:0}
 .ex-chevron.open{transform:rotate(180deg)}
-.ex-body{display:block;padding:0 0 8px}
+.ex-body{display:block;padding:0 12px 10px}
 .ex-body.open{display:block}
 /* override old ex rules inside ex-body */
 .ex-body .ex-num{display:none}
@@ -243,16 +243,25 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .prog-serie-none{color:#444;font-size:14px}
 
 .ex-section-title{display:none}
-.ex-header{font-size:14px;font-weight:600;color:#f97316;padding:10px 0 8px}
-.ex-block{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;margin-bottom:8px;padding:8px;overflow:hidden}
+.ex-header{font-size:14px;font-weight:600;color:#f97316;padding:10px 12px 8px}
+.ex-block{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:10px;margin-bottom:8px;overflow:hidden}
 .ex-divider{border:none;border-top:1px solid #2a2a2a;margin:0 0 8px}
-.serie-list{margin-bottom:12px}
-.serie-row{display:flex;align-items:center;gap:0;padding:5px 0;border-bottom:1px solid #222;font-size:13px}
+
+
 .serie-row:last-child{border-bottom:none}
-.sx{font-size:11px;font-weight:700;color:#888;min-width:28px}
-.sreps{color:#aaa;min-width:60px}
-.sangel{color:#f5f5f5;font-weight:500;flex:1}
-.smanu{color:#f5f5f5;font-weight:500;flex:1}
+
+
+
+
+
+.serie-list{display:flex;gap:8px;margin-bottom:14px}
+.serie-box{flex:1;background:#222;border-radius:8px;padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center}
+.sb-label{font-size:10px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:0.05em}
+.sb-weight{font-size:16px;font-weight:700;color:#f5f5f5}
+.sb-reps{font-size:11px;color:#888}
+.serie-box.s1-box .sb-label{color:#60a5fa}
+.serie-box.s2-box .sb-label{color:#818cf8}
+.serie-box.s3-box .sb-label{color:#f97316}
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
@@ -293,7 +302,6 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <!-- DÍA 1: PECHO + HOMBRO + TRÍCEPS -->
   <div class="day-card">
     <div class="day-header">
-      <span class="day-badge push-b">Día 1 — Lunes</span>
       <span class="day-title-t">Pecho · Hombro · Tríceps</span>
       <span class="day-count">8 ejercicios</span>
       <span class="day-sub-t">~85 min</span>
@@ -306,7 +314,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <div class="ex-header">Press de pecho convergente (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">10 rep.</span><span class="sangel">39 kg</span><span class="smanu" style="display:none">25 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">30 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">8-10 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">36 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">39 kg</span><span class="sb-weight smanu" style="display:none">25 kg</span><span class="sb-reps">10 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">30 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">8-10 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">36 kg</span></div></div>
 
 
 
@@ -321,12 +329,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 2. PRESS MANCUERNAS BANCO -->
       
-<hr class="ex-divider">
+
 <div class="ex-block">
   <div class="ex-header">Press con mancuernas en banco plano</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">10 rep.</span><span class="sangel">16 kg</span><span class="smanu" style="display:none">10 kg c/u</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">18 kg</span><span class="smanu" style="display:none">12 kg c/u</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">8-10 rep.</span><span class="sangel">20 kg</span><span class="smanu" style="display:none">14 kg c/u</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">16 kg</span><span class="sb-weight smanu" style="display:none">10 kg c/u</span><span class="sb-reps">10 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">18 kg</span><span class="smanu" style="display:none">12 kg c/u</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">8-10 rep.</span><span class="sangel">20 kg</span><span class="smanu" style="display:none">14 kg c/u</span></div></div>
 
 
 
@@ -341,12 +349,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 3. APERTURAS PEC-DECK -->
       
-<hr class="ex-divider">
+
 <div class="ex-block">
   <div class="ex-header">Aperturas en máquina pec-deck</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">73 kg</span><span class="smanu" style="display:none">35 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">79 kg</span><span class="smanu" style="display:none">45 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">86 kg</span><span class="smanu" style="display:none">55 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">73 kg</span><span class="sb-weight smanu" style="display:none">35 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">79 kg</span><span class="smanu" style="display:none">45 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">86 kg</span><span class="smanu" style="display:none">55 kg</span></div></div>
 
 
 
@@ -361,12 +369,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 4. PRESS HOMBRO CONVERGENTE -->
       
-<hr class="ex-divider">
+
 <div class="ex-block">
   <div class="ex-header">Press de hombro convergente (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">10 rep.</span><span class="sangel">18 kg</span><span class="smanu" style="display:none">9 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">21 kg</span><span class="smanu" style="display:none">14 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">8-10 rep.</span><span class="sangel">24 kg</span><span class="smanu" style="display:none">18 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">18 kg</span><span class="sb-weight smanu" style="display:none">9 kg</span><span class="sb-reps">10 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">21 kg</span><span class="smanu" style="display:none">14 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">8-10 rep.</span><span class="sangel">24 kg</span><span class="smanu" style="display:none">18 kg</span></div></div>
 
 
 
@@ -381,12 +389,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 5. PRESS FRANCÉS POLEA CUERDA -->
       
-<hr class="ex-divider">
+
 <div class="ex-block">
   <div class="ex-header">Press francés en polea con cuerda (tríceps)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">11.3 kg</span><span class="smanu" style="display:none">8 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">13.5 kg</span><span class="smanu" style="display:none">12 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">15.8 kg</span><span class="smanu" style="display:none">14 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">11.3 kg</span><span class="sb-weight smanu" style="display:none">8 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">13.5 kg</span><span class="smanu" style="display:none">12 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">15.8 kg</span><span class="smanu" style="display:none">14 kg</span></div></div>
 
 
 
@@ -401,12 +409,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 6. TRÍCEPS POLEA BARRA -->
       
-<hr class="ex-divider">
+
 <div class="ex-block">
   <div class="ex-header">Tríceps en polea con barra rígida (prono)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">22 kg</span><span class="smanu" style="display:none">14 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">24 kg</span><span class="smanu" style="display:none">18 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">27 kg</span><span class="smanu" style="display:none">20 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">22 kg</span><span class="sb-weight smanu" style="display:none">14 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">24 kg</span><span class="smanu" style="display:none">18 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">27 kg</span><span class="smanu" style="display:none">20 kg</span></div></div>
 
 
 
@@ -421,12 +429,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 7. TRÍCEPS POLEA INVERSO -->
       
-<hr class="ex-divider">
+
 <div class="ex-block">
   <div class="ex-header">Tríceps en polea agarre inverso (supino)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">13.5 kg</span><span class="smanu" style="display:none">9 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">15.8 kg</span><span class="smanu" style="display:none">12 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">18 kg</span><span class="smanu" style="display:none">14 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">13.5 kg</span><span class="sb-weight smanu" style="display:none">9 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">15.8 kg</span><span class="smanu" style="display:none">12 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">18 kg</span><span class="smanu" style="display:none">14 kg</span></div></div>
 
 
 
@@ -441,12 +449,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
       <!-- 8. ELEVACIONES LATERALES -->
       
-<hr class="ex-divider">
+
 <div class="ex-block">
   <div class="ex-header">Elevaciones laterales con mancuernas</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">10 rep.</span><span class="sangel">6 kg c/u</span><span class="smanu" style="display:none">3 kg c/u</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">8 kg c/u</span><span class="smanu" style="display:none">4 kg c/u</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10 rep.</span><span class="sangel">10 kg c/u</span><span class="smanu" style="display:none">5 kg c/u</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">6 kg c/u</span><span class="sb-weight smanu" style="display:none">3 kg c/u</span><span class="sb-reps">10 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">8 kg c/u</span><span class="smanu" style="display:none">4 kg c/u</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10 rep.</span><span class="sangel">10 kg c/u</span><span class="smanu" style="display:none">5 kg c/u</span></div></div>
 
 
 
@@ -482,7 +490,6 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <!-- DÍA 2: ESPALDA + BÍCEPS -->
   <div class="day-card">
     <div class="day-header">
-      <span class="day-badge pull-b">Día 2 — Martes</span>
       <span class="day-title-t">Espalda · Bíceps</span>
       <span class="day-count">7 ejercicios</span>
       <span class="day-sub-t">~80 min</span>
@@ -494,7 +501,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <div class="ex-header">Jalón al pecho agarre ancho (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">10 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">8-10 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">45 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">45 kg</span><span class="sb-weight smanu" style="display:none">39 kg</span><span class="sb-reps">10 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">8-10 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">45 kg</span></div></div>
 
 
 
@@ -508,12 +515,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<hr class="ex-divider">
+
 <div class="ex-block">
   <div class="ex-header">Remo en polea baja (seated cable row)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">10 rep.</span><span class="sangel">39 kg</span><span class="smanu" style="display:none">32 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">8-10 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">45 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">39 kg</span><span class="sb-weight smanu" style="display:none">32 kg</span><span class="sb-reps">10 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">8-10 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">45 kg</span></div></div>
 
 
 
@@ -527,12 +534,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<hr class="ex-divider">
+
 <div class="ex-block">
   <div class="ex-header">Jalón agarre estrecho / neutro</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">45 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">45 kg</span><span class="sb-weight smanu" style="display:none">39 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">45 kg</span></div></div>
 
 
 
@@ -546,12 +553,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<hr class="ex-divider">
+
 <div class="ex-block">
   <div class="ex-header">Dominadas asistidas (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">8 rep.</span><span class="sangel">45 kg ayuda</span><span class="smanu" style="display:none">27 kg ayuda</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">8-10 rep.</span><span class="sangel">41 kg ayuda</span><span class="smanu" style="display:none">23 kg ayuda</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">8-10 rep.</span><span class="sangel">36 kg ayuda</span><span class="smanu" style="display:none">18 kg ayuda</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">45 kg ayuda</span><span class="sb-weight smanu" style="display:none">27 kg ayuda</span><span class="sb-reps">8 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">8-10 rep.</span><span class="sangel">41 kg ayuda</span><span class="smanu" style="display:none">23 kg ayuda</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">8-10 rep.</span><span class="sangel">36 kg ayuda</span><span class="smanu" style="display:none">18 kg ayuda</span></div></div>
 
 
 
@@ -565,12 +572,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<hr class="ex-divider">
+
 <div class="ex-block">
   <div class="ex-header">Curl bíceps en máquina</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">41 kg</span><span class="smanu" style="display:none">27 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">32 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">50 kg</span><span class="smanu" style="display:none">36 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">41 kg</span><span class="sb-weight smanu" style="display:none">27 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">32 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">50 kg</span><span class="smanu" style="display:none">36 kg</span></div></div>
 
 
 
@@ -584,12 +591,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<hr class="ex-divider">
+
 <div class="ex-block">
   <div class="ex-header">Curl en polea baja de pie</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">13.5 kg</span><span class="smanu" style="display:none">11.3 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">15.8 kg</span><span class="smanu" style="display:none">13.5 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">18 kg</span><span class="smanu" style="display:none">15.8 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">13.5 kg</span><span class="sb-weight smanu" style="display:none">11.3 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">15.8 kg</span><span class="smanu" style="display:none">13.5 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">18 kg</span><span class="smanu" style="display:none">15.8 kg</span></div></div>
 
 
 
@@ -603,12 +610,12 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   </div>
 
       
-<hr class="ex-divider">
+
 <div class="ex-block">
   <div class="ex-header">Curl martillo con mancuernas</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">8 kg c/u</span><span class="smanu" style="display:none">6 kg c/u</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">10 kg c/u</span><span class="smanu" style="display:none">8 kg c/u</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">12 kg c/u</span><span class="smanu" style="display:none">10 kg c/u</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">8 kg c/u</span><span class="sb-weight smanu" style="display:none">6 kg c/u</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">10 kg c/u</span><span class="smanu" style="display:none">8 kg c/u</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10-12 rep.</span><span class="sangel">12 kg c/u</span><span class="smanu" style="display:none">10 kg c/u</span></div></div>
 
 
 
@@ -644,7 +651,6 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <!-- DÍA 3: PIERNAS + ABDOMINALES -->
   <div class="day-card">
     <div class="day-header">
-      <span class="day-badge legs-b">Día 3 — Jueves</span>
       <span class="day-title-t">Piernas · Abdominales</span>
       <span class="day-count">7 ejercicios</span>
       <span class="day-sub-t">~85 min</span>
@@ -656,7 +662,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <div class="ex-header">Prensa de piernas (leg press)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">10 rep.</span><span class="sangel">66 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">79 kg</span><span class="smanu" style="display:none">52 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10 rep.</span><span class="sangel">86 kg</span><span class="smanu" style="display:none">66 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">66 kg</span><span class="sb-weight smanu" style="display:none">39 kg</span><span class="sb-reps">10 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">79 kg</span><span class="smanu" style="display:none">52 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10 rep.</span><span class="sangel">86 kg</span><span class="smanu" style="display:none">66 kg</span></div></div>
 
 
 
@@ -669,13 +675,13 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
   </div>
 
-<hr class="ex-divider">
+
 
       <div class="ex-block">
   <div class="ex-header">Extensión de piernas (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">10 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">32 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10 rep.</span><span class="sangel">59 kg</span><span class="smanu" style="display:none">45 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">45 kg</span><span class="sb-weight smanu" style="display:none">32 kg</span><span class="sb-reps">10 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10 rep.</span><span class="sangel">59 kg</span><span class="smanu" style="display:none">45 kg</span></div></div>
 
 
 
@@ -688,13 +694,13 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
   </div>
 
-<hr class="ex-divider">
+
 
       <div class="ex-block">
   <div class="ex-header">Flexión de pierna acostado (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">10 rep.</span><span class="sangel">36 kg</span><span class="smanu" style="display:none">14 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">41 kg</span><span class="smanu" style="display:none">18 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">23 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">36 kg</span><span class="sb-weight smanu" style="display:none">14 kg</span><span class="sb-reps">10 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">41 kg</span><span class="smanu" style="display:none">18 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">23 kg</span></div></div>
 
 
 
@@ -707,13 +713,13 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
   </div>
 
-<hr class="ex-divider">
+
 
       <div class="ex-block">
   <div class="ex-header">Abducción de cadera (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">15 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">32 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">15 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">15 rep.</span><span class="sangel">59 kg</span><span class="smanu" style="display:none">45 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">45 kg</span><span class="sb-weight smanu" style="display:none">32 kg</span><span class="sb-reps">15 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">15 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">15 rep.</span><span class="sangel">59 kg</span><span class="smanu" style="display:none">45 kg</span></div></div>
 
 
 
@@ -726,13 +732,13 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
   </div>
 
-<hr class="ex-divider">
+
 
       <div class="ex-block">
   <div class="ex-header">Aducción de cadera (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">10 rep.</span><span class="sangel">39 kg</span><span class="smanu" style="display:none">32 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">45 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">39 kg</span><span class="sb-weight smanu" style="display:none">32 kg</span><span class="sb-reps">10 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">10 rep.</span><span class="sangel">45 kg</span><span class="smanu" style="display:none">39 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">10 rep.</span><span class="sangel">52 kg</span><span class="smanu" style="display:none">45 kg</span></div></div>
 
 
 
@@ -745,13 +751,13 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
   </div>
 
-<hr class="ex-divider">
+
 
       <div class="ex-block">
   <div class="ex-header">Contracción abdominal (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">20 rep.</span><span class="sangel">64 kg</span><span class="smanu" style="display:none">45 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">20 rep.</span><span class="sangel">68 kg</span><span class="smanu" style="display:none">50 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">20 rep.</span><span class="sangel">73 kg</span><span class="smanu" style="display:none">54 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">64 kg</span><span class="sb-weight smanu" style="display:none">45 kg</span><span class="sb-reps">20 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">20 rep.</span><span class="sangel">68 kg</span><span class="smanu" style="display:none">50 kg</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">20 rep.</span><span class="sangel">73 kg</span><span class="smanu" style="display:none">54 kg</span></div></div>
 
 
 
@@ -764,13 +770,13 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 </div>
   </div>
 
-<hr class="ex-divider">
+
 
       <div class="ex-block">
   <div class="ex-header">Plancha frontal (suelo)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">30 seg rep.</span><span class="sangel">Peso corporal</span><span class="smanu" style="display:none">Peso corporal</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">45 seg rep.</span><span class="sangel">Peso corporal</span><span class="smanu" style="display:none">Peso corporal</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">60 seg rep.</span><span class="sangel">Peso corporal</span><span class="smanu" style="display:none">Peso corporal</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">Peso corporal</span><span class="sb-weight smanu" style="display:none">Peso corporal</span><span class="sb-reps">30 seg rep. rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">45 seg rep.</span><span class="sangel">Peso corporal</span><span class="smanu" style="display:none">Peso corporal</span></div><div class="serie-row"><span class="sx">S3</span><span class="sreps">60 seg rep.</span><span class="sangel">Peso corporal</span><span class="smanu" style="display:none">Peso corporal</span></div></div>
 
 
 
@@ -807,7 +813,6 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <!-- OPCIONAL -->
   <div class="day-card">
     <div class="day-header">
-      <span class="day-badge opt-b">Opcional — Sábado</span>
       <span class="day-title-t">Full body ligero</span>
       <span class="day-count">8 ejercicios</span>
       <span class="day-sub-t">~75 min</span>
@@ -820,7 +825,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <div class="ex-header">Press de pecho convergente (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">36 kg</span><span class="smanu" style="display:none">24 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">36 kg</span><span class="smanu" style="display:none">24 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">36 kg</span><span class="sb-weight smanu" style="display:none">24 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">36 kg</span><span class="smanu" style="display:none">24 kg</span></div></div>
 
 <div class="postura-section"><strong>Posición:</strong> Espalda apoyada, pies en el suelo. Asiento a altura de pecho.</div>
 <div class="postura-section"><strong>Agarre:</strong> Palmas neutras o hacia abajo. Agarre firme, muñecas rectas.</div>
@@ -830,13 +835,13 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <a class="ex-link" href="https://fitwill.app/es/exercise/2277/lever-chest-press-version-4/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div></div>
 
-<hr class="ex-divider">
+
 
       <div class="ex-block">
   <div class="ex-header">Aperturas en máquina pec-deck</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">58 kg</span><span class="smanu" style="display:none">36 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">58 kg</span><span class="smanu" style="display:none">36 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">58 kg</span><span class="sb-weight smanu" style="display:none">36 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">58 kg</span><span class="smanu" style="display:none">36 kg</span></div></div>
 
 <div class="postura-section"><strong>Posición:</strong> Espalda pegada al respaldo. Codos a la altura del pecho.</div>
 <div class="postura-section"><strong>Agarre:</strong> Codos apoyados en los almohadillados. Ángulo de 90° fijo.</div>
@@ -846,13 +851,13 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <a class="ex-link" href="https://fitwill.app/es/exercise/2427/lever-pec-deck-fly/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div></div>
 
-<hr class="ex-divider">
+
 
       <div class="ex-block">
   <div class="ex-header">Jalón al pecho agarre ancho (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">40 kg</span><span class="smanu" style="display:none">26 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">40 kg</span><span class="smanu" style="display:none">26 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">40 kg</span><span class="sb-weight smanu" style="display:none">26 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">40 kg</span><span class="smanu" style="display:none">26 kg</span></div></div>
 
 <div class="postura-section"><strong>Posición:</strong> Muslos bien sujetos bajo el apoyo. Ligera inclinación del torso (15°).</div>
 <div class="postura-section"><strong>Agarre:</strong> Agarre ancho, palmas hacia adelante.</div>
@@ -862,13 +867,13 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <a class="ex-link" href="https://fitwill.app/es/exercise/2291/cable-wide-grip-lat-pulldown/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div></div>
 
-<hr class="ex-divider">
+
 
       <div class="ex-block">
   <div class="ex-header">Remo en polea baja</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">40 kg</span><span class="smanu" style="display:none">26 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">40 kg</span><span class="smanu" style="display:none">26 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">40 kg</span><span class="sb-weight smanu" style="display:none">26 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">40 kg</span><span class="smanu" style="display:none">26 kg</span></div></div>
 
 <div class="postura-section"><strong>Posición:</strong> Sentado, pies en los apoyos, espalda recta y vertical.</div>
 <div class="postura-section"><strong>Agarre:</strong> Mango en V o barra. Codos pegados al cuerpo al tirar.</div>
@@ -878,13 +883,13 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <a class="ex-link" href="https://fitwill.app/es/exercise/1320/cable-rope-crossover-seated-row/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div></div>
 
-<hr class="ex-divider">
+
 
       <div class="ex-block">
   <div class="ex-header">Press de hombro convergente (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">18 kg</span><span class="smanu" style="display:none">11 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">18 kg</span><span class="smanu" style="display:none">11 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">18 kg</span><span class="sb-weight smanu" style="display:none">11 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">18 kg</span><span class="smanu" style="display:none">11 kg</span></div></div>
 
 <div class="postura-section"><strong>Posición:</strong> Asiento ajustado para que las asas queden a la altura de los hombros.</div>
 <div class="postura-section"><strong>Agarre:</strong> Palmas hacia adelante o neutras. Muñecas en línea con los antebrazos.</div>
@@ -894,13 +899,13 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <a class="ex-link" href="https://fitwill.app/es/exercise/2962/lever-seated-hammer-grip-shoulder-press/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div></div>
 
-<hr class="ex-divider">
+
 
       <div class="ex-block">
   <div class="ex-header">Extensión de piernas (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">36 kg</span><span class="smanu" style="display:none">22 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">36 kg</span><span class="smanu" style="display:none">22 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">36 kg</span><span class="sb-weight smanu" style="display:none">22 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">36 kg</span><span class="smanu" style="display:none">22 kg</span></div></div>
 
 <div class="postura-section"><strong>Posición:</strong> Ajusta el asiento: hueco de la rodilla en el borde. Rodillo en el tobillo.</div>
 <div class="postura-section"><strong>Agarre:</strong> Manos en las asas, solo para estabilizar.</div>
@@ -910,13 +915,13 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <a class="ex-link" href="https://fitwill.app/es/exercise/0585/lever-leg-extension/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div></div>
 
-<hr class="ex-divider">
+
 
       <div class="ex-block">
   <div class="ex-header">Contracción abdominal (máquina)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">12 rep.</span><span class="sangel">60 kg</span><span class="smanu" style="display:none">36 kg</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">60 kg</span><span class="smanu" style="display:none">36 kg</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">60 kg</span><span class="sb-weight smanu" style="display:none">36 kg</span><span class="sb-reps">12 rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">12 rep.</span><span class="sangel">60 kg</span><span class="smanu" style="display:none">36 kg</span></div></div>
 
 <div class="postura-section"><strong>Posición:</strong> Sentado con pies apoyados. Apoyo del pecho a la altura correcta.</div>
 <div class="postura-section"><strong>Agarre:</strong> Brazos cruzados sobre el pecho o agarrando las asas.</div>
@@ -926,13 +931,13 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 <a class="ex-link" href="https://fitwill.app/es/exercise/3647/lever-seated-leg-raise-crunch-plate-loaded/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Ver ejercicio en Fitwill</a>
 </div></div>
 
-<hr class="ex-divider">
+
 
       <div class="ex-block">
   <div class="ex-header">Plancha frontal (suelo)</div>
   <div class="ex-body">
 
-<div class="serie-list"><div class="serie-row"><span class="sx">S1</span><span class="sreps">35 seg rep.</span><span class="sangel">Peso corporal</span><span class="smanu" style="display:none">Peso corporal</span></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">40 seg rep.</span><span class="sangel">Peso corporal</span><span class="smanu" style="display:none">Peso corporal</span></div></div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">Peso corporal</span><span class="sb-weight smanu" style="display:none">Peso corporal</span><span class="sb-reps">35 seg rep. rep.</span></div></div><div class="serie-row"><span class="sx">S2</span><span class="sreps">40 seg rep.</span><span class="sangel">Peso corporal</span><span class="smanu" style="display:none">Peso corporal</span></div></div>
 
 <div class="postura-section"><strong>Posición:</strong> Antebrazos y puntas de los pies. Codos bajo los hombros.</div>
 <div class="postura-section"><strong>Agarre:</strong> Puños cerrados o palmas planas. Antebrazos paralelos.</div>
@@ -1090,7 +1095,7 @@ function showSection(id) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   const sec = document.getElementById(id);
-  if (sec) { sec.classList.add('active'); loadSeriesRatings(sec); }
+  if (sec) { sec.classList.add('active'); }
   const tab = document.getElementById('tab-' + id);
   if (tab) tab.classList.add('active');
   currentSection = id;
