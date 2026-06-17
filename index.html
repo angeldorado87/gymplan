@@ -263,6 +263,8 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .serie-box.s1-box .sb-label{color:#60a5fa}
 .serie-box.s2-box .sb-label{color:#818cf8}
 .serie-box.s3-box .sb-label{color:#f97316}
+
+#debug-panel{position:fixed;bottom:0;left:0;right:0;background:#000;color:#0f0;font-size:11px;padding:4px 8px;z-index:9999;max-height:80px;overflow-y:auto;font-family:monospace}
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 </head>
@@ -285,6 +287,7 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
   <div class="menu-item" onclick="showPage('progreso');closeMenu()"><i class="ph ph-chart-bar menu-icon"></i>Progreso</div>
 </div>
 
+<div id="debug-panel">Loading...</div>
 <div class="tabs" id="main-tabs">
   <button class="tab active" id="tab-e1" onclick="showSection('e1')">Entreno 1</button>
   <button class="tab" id="tab-e2" onclick="showSection('e2')">Entreno 2</button>
@@ -992,12 +995,27 @@ function getStartSection() {
 
 // Ratings persist for 6 months (pruned in getRatings)
 // ── INIT ──────────────────────────────────────────────────────────────────
+function dbg(msg) {
+  const p = document.getElementById('debug-panel');
+  if (p) p.innerHTML += '<br>' + msg;
+  console.log(msg);
+}
 try {
+  dbg('Init start');
   const sp = localStorage.getItem('gymplan-person') || 'angel';
+  dbg('Person: ' + sp);
+  dbg('Sections: ' + document.querySelectorAll('.section').length);
   document.querySelectorAll('.section').forEach(s => setPerson(sp, s));
-  loadCompletedButtons();
+  dbg('setPerson done');
   showSection('e1');
-} catch(e) { console.error('Init error:', e); showSection('e1'); }
+  dbg('showSection done');
+  dbg('e1 active: ' + document.getElementById('e1').classList.contains('active'));
+  dbg('e2 display: ' + window.getComputedStyle(document.getElementById('e2')).display);
+} catch(e) { 
+  const p = document.getElementById('debug-panel');
+  if(p) p.innerHTML += '<br>ERROR: ' + e.message + ' at ' + e.stack;
+  console.error('Init error:', e); 
+}
 
 // Service Worker
 if ('serviceWorker' in navigator) {
