@@ -1436,6 +1436,7 @@ function getStartSection() {
 // ── INIT ──────────────────────────────────────────────────────────────────
 // Always start on e1 + Angel
 document.querySelectorAll('.section').forEach(s => setPerson('angel', s));
+showSection('e1');
 // Seed e1 as completed (ya lo hicisteis el lunes pasado)
 if (!localStorage.getItem('gymplan-completed') && new Date().getDay() !== 1) {
   const completed = { e1: { ts: Date.now(), date: new Date().toISOString().split('T')[0] } };
