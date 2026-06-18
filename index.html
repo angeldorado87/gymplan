@@ -1447,22 +1447,7 @@ function toggleInfo(el) {
   if (body) body.classList.toggle('open');
 }
 
-function selectPerson(p) {
-  localStorage.setItem('gymplan-user', p);
-  document.getElementById('welcome-screen').classList.add('hidden');
-  document.querySelectorAll('.section').forEach(s => setPerson(p, s));
-  localStorage.setItem('gymplan-person', p);
-}
 
-function checkWelcome() {
-  const user = localStorage.getItem('gymplan-user');
-  if (user) {
-    document.getElementById('welcome-screen').classList.add('hidden');
-    document.querySelectorAll('.section').forEach(s => setPerson(user, s));
-    localStorage.setItem('gymplan-person', user);
-  }
-  // else: welcome screen stays visible
-}
 
 function initAvatar() {
   const myProfile = localStorage.getItem('gymplan-user') || 'angel';
