@@ -430,6 +430,15 @@ function checkWeeklyReset() {
   return localStorage.getItem('gymplan-current') || 'e1';
 }
 
+
+// Finish button event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.finish-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      finishEntreno(this.dataset.sid);
+    });
+  });
+});
 </script>
 </head>
 <body>
@@ -662,7 +671,7 @@ function checkWeeklyReset() {
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Tríceps sobre la cabeza:</strong> de pie, levanta un brazo y dobla el codo llevando la mano hacia la espalda. Con la otra mano presiona suavemente el codo hacia atrás. Mantén el cuello relajado.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Apertura de pecho con manos entrelazadas:</strong> entrelaza las manos detrás de la espalda, saca pecho y lleva los hombros hacia atrás y abajo. Ideal para contrarrestar la tensión acumulada en el pecho.</span></div>
 </div>
-<button class="finish-btn" id="finish-e1" onclick="finishEntreno('e1')">Finalizar entreno →</button>
+<button class="finish-btn" id="finish-e1" data-sid="e1">Finalizar entreno →</button>
 
     </div>
   </div>
@@ -866,7 +875,7 @@ function checkWeeklyReset() {
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Estiramiento de bíceps en pared:</strong> apoya la palma en la pared con el pulgar hacia abajo y el brazo extendido. Gira suavemente el cuerpo hacia adelante hasta notar el estiramiento en el bíceps y el antebrazo.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Rotación de columna sentado:</strong> siéntate en el banco con la espalda recta. Gira el torso hacia un lado sujetándote al respaldo o a la máquina. Mantén las caderas fijas y nota el estiramiento en la columna dorsal.</span></div>
 </div>
-<button class="finish-btn" id="finish-e2" onclick="finishEntreno('e2')">Finalizar entreno →</button>
+<button class="finish-btn" id="finish-e2" data-sid="e2">Finalizar entreno →</button>
 
     </div>
   </div>
@@ -1077,7 +1086,7 @@ function checkWeeklyReset() {
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Aductor sentado:</strong> sentado en el banco con la espalda recta, separa las piernas y deja que la gravedad estire suavemente la cara interna de los muslos. Puedes presionar levemente las rodillas hacia abajo con las manos.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Rotación de columna sentado:</strong> sentado en el banco con la espalda recta, gira el torso hacia un lado sujetándote a la máquina. Mantén las caderas fijas y nota el estiramiento en la columna dorsal. Repite hacia el otro lado.</span></div>
 </div>
-<button class="finish-btn" id="finish-e3" onclick="finishEntreno('e3')">Finalizar entreno →</button>
+<button class="finish-btn" id="finish-e3" data-sid="e3">Finalizar entreno →</button>
 
     </div>
   </div>
@@ -1269,7 +1278,7 @@ function checkWeeklyReset() {
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Cuádriceps de pie:</strong> de pie, dobla una rodilla llevando el talón hacia el glúteo y sujétalo con la mano. Mantén las rodillas juntas y el torso erguido. Apóyate en la máquina si necesitas equilibrio.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Tríceps sobre la cabeza:</strong> de pie, levanta un brazo y dobla el codo llevando la mano hacia la espalda. Con la otra mano presiona suavemente el codo hacia atrás.</span></div>
 </div>
-<button class="finish-btn" id="finish-eopt" onclick="finishEntreno('eopt')">Finalizar entreno →</button>
+<button class="finish-btn" id="finish-eopt" data-sid="eopt">Finalizar entreno →</button>
 
 
     </div>
@@ -1550,6 +1559,15 @@ function checkWeeklyReset() {
   return localStorage.getItem('gymplan-current') || 'e1';
 }
 
+
+// Finish button event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.finish-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      finishEntreno(this.dataset.sid);
+    });
+  });
+});
 </script>
 
 </body>
