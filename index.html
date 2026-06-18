@@ -304,9 +304,15 @@ body.theme-manu body.theme-manu .stretch-title{color:#f97316}
 .finish-btn.done{background:#0a2a0a!important;border-color:#22c55e!important;color:#22c55e!important;cursor:default;pointer-events:none}
 body.theme-manu .finish-btn{border-color:#f97316;background:#2a1500;color:#f97316}
 
-@media (min-width: 621px) {
-  body{background:#111}
+
   #app{max-width:620px;margin:0 auto;background:#0f0f0f;min-height:100vh;position:relative}
+}
+
+@media (min-width: 621px) {
+  body{background:#111;display:flex;justify-content:center}
+  #app{width:100%;max-width:620px;background:#0f0f0f;min-height:100vh}
+  #app .header{position:sticky}
+  .welcome-screen,#welcome-screen{max-width:620px}
 }
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1">
@@ -454,11 +460,7 @@ function checkWelcome() {
 </script>
 </head>
 <body>
-<div id="app">
-
-
-
-<div class="header">
+<div id="app"><div class="header">
   <div class="header-logo"><img src="icon-192.png" alt="GymPlan"></div>
   <div class="header-title">Plan de Entrenamiento</div>
   <div class="header-avatar" id="header-avatar" onclick="toggleViewPerson()">
