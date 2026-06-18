@@ -430,6 +430,14 @@ function checkWelcome() {
     });
   }
 
+  // Cache version - bump to reset all state
+  var CACHE_VERSION = 'v1.4';
+  if (localStorage.getItem('gp_version') !== CACHE_VERSION) {
+    localStorage.removeItem('gp_done');
+    localStorage.removeItem('gp_current');
+    localStorage.setItem('gp_version', CACHE_VERSION);
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     initFinishButtons();
     applyDoneUI();
