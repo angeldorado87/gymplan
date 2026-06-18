@@ -305,11 +305,10 @@ body.theme-manu body.theme-manu .stretch-title{color:#f97316}
 body.theme-manu .finish-btn{border-color:#f97316;background:#2a1500;color:#f97316}
 
 @media (min-width: 621px) {
-  html { background: #111; }
-  body { background: #111; }
-  .header { max-width: 620px; margin: 0 auto; left: 50%; transform: translateX(-50%); width: 620px; }
-  .tabs { max-width: 620px; margin: 0 auto; }
-  .section.active { max-width: 620px; margin: 0 auto; }
+  html, body { background: #111; }
+  .header { max-width: 620px; margin: 0 auto; left: 50%; transform: translateX(-50%); width: 620px; border-left: 1px solid #2a2a2a; border-right: 1px solid #2a2a2a; }
+  .tabs { max-width: 620px; margin: 0 auto; border-left: 1px solid #2a2a2a; border-right: 1px solid #2a2a2a; }
+  .section.active { max-width: 620px; margin: 0 auto; border-left: 1px solid #2a2a2a; border-right: 1px solid #2a2a2a; min-height: 100vh; }
   #welcome-screen { max-width: 620px; left: 50%; transform: translateX(-50%); width: 620px; }
 }
 </style>
