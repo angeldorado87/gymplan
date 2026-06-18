@@ -301,6 +301,7 @@ body.theme-manu body.theme-manu .stretch-title{color:#f97316}
 
 .finish-btn{width:100%;padding:15px;margin:20px 0 4px;border-radius:14px;border:2px solid #3b82f6;background:#1e3a5f;color:#60a5fa;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s}
 .finish-btn:active{opacity:0.8;transform:scale(0.98)}
+.finish-btn.done{background:#0a2a0a!important;border-color:#22c55e!important;color:#22c55e!important;cursor:default;pointer-events:none}
 body.theme-manu .finish-btn{border-color:#f97316;background:#2a1500;color:#f97316}
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1">
@@ -378,34 +379,61 @@ function checkWelcome() {
   var ORDER = ['e1','e2','e3','eopt'];
 
   function getCurrentSid() {
-    // Sunday 23:30 reset
     var now = new Date();
     var key = 'gp_reset_' + now.toISOString().split('T')[0];
     if (now.getDay() === 0 && (now.getHours() > 23 || (now.getHours() === 23 && now.getMinutes() >= 30))) {
       if (!localStorage.getItem(key)) {
         localStorage.setItem('gp_current', 'e1');
+        localStorage.removeItem('gp_done');
         localStorage.setItem(key, '1');
       }
     }
     return localStorage.getItem('gp_current') || 'e1';
   }
 
+  function getDone() {
+    return JSON.parse(localStorage.getItem('gp_done') || '{}');
+  }
+
+  function applyDoneUI() {
+    var done = getDone();
+    ORDER.forEach(function(sid) {
+      var btn = document.querySelector('[data-sid="' + sid + '"]');
+      if (!btn) return;
+      if (done[sid]) {
+        btn.classList.add('done');
+        btn.textContent = '✓ Entreno finalizado';
+      } else {
+        btn.classList.remove('done');
+        btn.textContent = 'Finalizar entreno';
+      }
+    });
+  }
+
   function initFinishButtons() {
     document.querySelectorAll('.finish-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
         var sid = this.dataset.sid;
+        var done = getDone();
+        if (done[sid]) return;
+        done[sid] = true;
+        localStorage.setItem('gp_done', JSON.stringify(done));
+        applyDoneUI();
         var idx = ORDER.indexOf(sid);
         var next = ORDER[(idx + 1) % ORDER.length];
         localStorage.setItem('gp_current', next);
-        showSection(next);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setTimeout(function() {
+          showSection(next);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 400);
       });
     });
   }
 
-  // Override showSection init to use stored section
+  localStorage.setItem('gp_current', 'e1');
   document.addEventListener('DOMContentLoaded', function() {
     initFinishButtons();
+    applyDoneUI();
     var sid = getCurrentSid();
     if (sid !== 'e1') showSection(sid);
   });
@@ -1495,34 +1523,61 @@ function checkWelcome() {
   var ORDER = ['e1','e2','e3','eopt'];
 
   function getCurrentSid() {
-    // Sunday 23:30 reset
     var now = new Date();
     var key = 'gp_reset_' + now.toISOString().split('T')[0];
     if (now.getDay() === 0 && (now.getHours() > 23 || (now.getHours() === 23 && now.getMinutes() >= 30))) {
       if (!localStorage.getItem(key)) {
         localStorage.setItem('gp_current', 'e1');
+        localStorage.removeItem('gp_done');
         localStorage.setItem(key, '1');
       }
     }
     return localStorage.getItem('gp_current') || 'e1';
   }
 
+  function getDone() {
+    return JSON.parse(localStorage.getItem('gp_done') || '{}');
+  }
+
+  function applyDoneUI() {
+    var done = getDone();
+    ORDER.forEach(function(sid) {
+      var btn = document.querySelector('[data-sid="' + sid + '"]');
+      if (!btn) return;
+      if (done[sid]) {
+        btn.classList.add('done');
+        btn.textContent = '✓ Entreno finalizado';
+      } else {
+        btn.classList.remove('done');
+        btn.textContent = 'Finalizar entreno';
+      }
+    });
+  }
+
   function initFinishButtons() {
     document.querySelectorAll('.finish-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
         var sid = this.dataset.sid;
+        var done = getDone();
+        if (done[sid]) return;
+        done[sid] = true;
+        localStorage.setItem('gp_done', JSON.stringify(done));
+        applyDoneUI();
         var idx = ORDER.indexOf(sid);
         var next = ORDER[(idx + 1) % ORDER.length];
         localStorage.setItem('gp_current', next);
-        showSection(next);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setTimeout(function() {
+          showSection(next);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 400);
       });
     });
   }
 
-  // Override showSection init to use stored section
+  localStorage.setItem('gp_current', 'e1');
   document.addEventListener('DOMContentLoaded', function() {
     initFinishButtons();
+    applyDoneUI();
     var sid = getCurrentSid();
     if (sid !== 'e1') showSection(sid);
   });
