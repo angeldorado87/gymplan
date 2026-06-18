@@ -298,12 +298,6 @@ body.theme-manu .serie-box.s3-box .sb-label{color:#f97316}
 body.theme-manu .header-avatar{border-color:#f97316}
 body.theme-manu body.theme-manu .stretch-title{color:#f97316}
 
-
-.finish-btn{display:flex;align-items:center;justify-content:center;width:100%;padding:16px;margin:24px 0 8px;background:#1e3a5f;border:1px solid #3b82f6;border-radius:14px;color:#60a5fa;font-size:15px;font-weight:700;cursor:pointer;gap:8px;transition:all .2s;-webkit-appearance:none}
-.finish-btn:active{background:#2a4a7f;transform:scale(0.98)}
-.finish-btn.done{background:#0a2a0a!important;border-color:#22c55e!important;color:#22c55e!important;cursor:default}
-.finish-btn.done:active{transform:none}
-body.theme-manu .finish-btn{background:#2a1500;border-color:#f97316;color:#f97316}
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1">
 function toggleInfo(el) {
@@ -374,71 +368,6 @@ function checkWelcome() {
     initAvatar();
   }
 }
-
-// ── FINISH ENTRENO ───────────────────────────────────────────────────────
-const SECTION_ORDER = ['e1','e2','e3','eopt'];
-
-function getDone() {
-  return JSON.parse(localStorage.getItem('gymplan-done') || '{}');
-}
-
-function setDone(obj) {
-  localStorage.setItem('gymplan-done', JSON.stringify(obj));
-}
-
-function applyDoneUI() {
-  const done = getDone();
-  SECTION_ORDER.forEach(sid => {
-    const btn = document.getElementById('finish-' + sid);
-    if (!btn) return;
-    if (done[sid]) {
-      btn.classList.add('done');
-      btn.innerHTML = '&#10003; Entreno finalizado';
-      btn.disabled = true;
-    } else {
-      btn.classList.remove('done');
-      btn.innerHTML = 'Finalizar entreno &rarr;';
-      btn.disabled = false;
-    }
-  });
-}
-
-function finishEntreno(sid) {
-  const done = getDone();
-  if (done[sid]) return;
-  done[sid] = true;
-  setDone(done);
-  applyDoneUI();
-  const idx = SECTION_ORDER.indexOf(sid);
-  const next = SECTION_ORDER[(idx + 1) % SECTION_ORDER.length];
-  localStorage.setItem('gymplan-current', next);
-  setTimeout(() => {
-    showSection(next);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 350);
-}
-
-function checkWeeklyReset() {
-  const now = new Date();
-  const todayStr = now.toISOString().split('T')[0];
-  const lastReset = localStorage.getItem('gymplan-weekly-reset');
-  if (now.getDay() === 0 && (now.getHours() > 23 || (now.getHours() === 23 && now.getMinutes() >= 30)) && lastReset !== todayStr) {
-    localStorage.setItem('gymplan-weekly-reset', todayStr);
-    localStorage.setItem('gymplan-current', 'e1');
-    setDone({});
-  }
-  return localStorage.getItem('gymplan-current') || 'e1';
-}
-
-
-// Finish button event listeners
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.finish-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      finishEntreno(this.dataset.sid);
-    });
-  });
-});
 </script>
 </head>
 <body>
@@ -671,8 +600,6 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Tríceps sobre la cabeza:</strong> de pie, levanta un brazo y dobla el codo llevando la mano hacia la espalda. Con la otra mano presiona suavemente el codo hacia atrás. Mantén el cuello relajado.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Apertura de pecho con manos entrelazadas:</strong> entrelaza las manos detrás de la espalda, saca pecho y lleva los hombros hacia atrás y abajo. Ideal para contrarrestar la tensión acumulada en el pecho.</span></div>
 </div>
-<button class="finish-btn" id="finish-e1" data-sid="e1">Finalizar entreno →</button>
-
     </div>
   </div>
 </div>
@@ -875,8 +802,6 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Estiramiento de bíceps en pared:</strong> apoya la palma en la pared con el pulgar hacia abajo y el brazo extendido. Gira suavemente el cuerpo hacia adelante hasta notar el estiramiento en el bíceps y el antebrazo.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Rotación de columna sentado:</strong> siéntate en el banco con la espalda recta. Gira el torso hacia un lado sujetándote al respaldo o a la máquina. Mantén las caderas fijas y nota el estiramiento en la columna dorsal.</span></div>
 </div>
-<button class="finish-btn" id="finish-e2" data-sid="e2">Finalizar entreno →</button>
-
     </div>
   </div>
 </div>
@@ -1086,8 +1011,6 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Aductor sentado:</strong> sentado en el banco con la espalda recta, separa las piernas y deja que la gravedad estire suavemente la cara interna de los muslos. Puedes presionar levemente las rodillas hacia abajo con las manos.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Rotación de columna sentado:</strong> sentado en el banco con la espalda recta, gira el torso hacia un lado sujetándote a la máquina. Mantén las caderas fijas y nota el estiramiento en la columna dorsal. Repite hacia el otro lado.</span></div>
 </div>
-<button class="finish-btn" id="finish-e3" data-sid="e3">Finalizar entreno →</button>
-
     </div>
   </div>
 </div>
@@ -1278,8 +1201,6 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Cuádriceps de pie:</strong> de pie, dobla una rodilla llevando el talón hacia el glúteo y sujétalo con la mano. Mantén las rodillas juntas y el torso erguido. Apóyate en la máquina si necesitas equilibrio.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Tríceps sobre la cabeza:</strong> de pie, levanta un brazo y dobla el codo llevando la mano hacia la espalda. Con la otra mano presiona suavemente el codo hacia atrás.</span></div>
 </div>
-<button class="finish-btn" id="finish-eopt" data-sid="eopt">Finalizar entreno →</button>
-
 
     </div>
   </div>
@@ -1436,8 +1357,7 @@ function getStartSection() {
 // Ratings persist for 6 months (pruned in getRatings)
 // ── INIT ──────────────────────────────────────────────────────────────────
 checkWelcome();
-showSection(checkWeeklyReset());
-applyDoneUI();
+showSection('e1');
 // Seed e1 as completed (ya lo hicisteis el lunes pasado)
 if (!localStorage.getItem('gymplan-completed') && new Date().getDay() !== 1) {
   const completed = { e1: { ts: Date.now(), date: new Date().toISOString().split('T')[0] } };
@@ -1456,7 +1376,22 @@ function toggleInfo(el) {
   if (body) body.classList.toggle('open');
 }
 
+function selectPerson(p) {
+  localStorage.setItem('gymplan-user', p);
+  document.getElementById('welcome-screen').classList.add('hidden');
+  document.querySelectorAll('.section').forEach(s => setPerson(p, s));
+  localStorage.setItem('gymplan-person', p);
+}
 
+function checkWelcome() {
+  const user = localStorage.getItem('gymplan-user');
+  if (user) {
+    document.getElementById('welcome-screen').classList.add('hidden');
+    document.querySelectorAll('.section').forEach(s => setPerson(user, s));
+    localStorage.setItem('gymplan-person', user);
+  }
+  // else: welcome screen stays visible
+}
 
 function initAvatar() {
   const myProfile = localStorage.getItem('gymplan-user') || 'angel';
@@ -1503,71 +1438,6 @@ function checkWelcome() {
     initAvatar();
   }
 }
-
-// ── FINISH ENTRENO ───────────────────────────────────────────────────────
-const SECTION_ORDER = ['e1','e2','e3','eopt'];
-
-function getDone() {
-  return JSON.parse(localStorage.getItem('gymplan-done') || '{}');
-}
-
-function setDone(obj) {
-  localStorage.setItem('gymplan-done', JSON.stringify(obj));
-}
-
-function applyDoneUI() {
-  const done = getDone();
-  SECTION_ORDER.forEach(sid => {
-    const btn = document.getElementById('finish-' + sid);
-    if (!btn) return;
-    if (done[sid]) {
-      btn.classList.add('done');
-      btn.innerHTML = '&#10003; Entreno finalizado';
-      btn.disabled = true;
-    } else {
-      btn.classList.remove('done');
-      btn.innerHTML = 'Finalizar entreno &rarr;';
-      btn.disabled = false;
-    }
-  });
-}
-
-function finishEntreno(sid) {
-  const done = getDone();
-  if (done[sid]) return;
-  done[sid] = true;
-  setDone(done);
-  applyDoneUI();
-  const idx = SECTION_ORDER.indexOf(sid);
-  const next = SECTION_ORDER[(idx + 1) % SECTION_ORDER.length];
-  localStorage.setItem('gymplan-current', next);
-  setTimeout(() => {
-    showSection(next);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 350);
-}
-
-function checkWeeklyReset() {
-  const now = new Date();
-  const todayStr = now.toISOString().split('T')[0];
-  const lastReset = localStorage.getItem('gymplan-weekly-reset');
-  if (now.getDay() === 0 && (now.getHours() > 23 || (now.getHours() === 23 && now.getMinutes() >= 30)) && lastReset !== todayStr) {
-    localStorage.setItem('gymplan-weekly-reset', todayStr);
-    localStorage.setItem('gymplan-current', 'e1');
-    setDone({});
-  }
-  return localStorage.getItem('gymplan-current') || 'e1';
-}
-
-
-// Finish button event listeners
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.finish-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      finishEntreno(this.dataset.sid);
-    });
-  });
-});
 </script>
 
 </body>
