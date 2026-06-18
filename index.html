@@ -305,9 +305,12 @@ body.theme-manu body.theme-manu .stretch-title{color:#f97316}
 body.theme-manu .finish-btn{border-color:#f97316;background:#2a1500;color:#f97316}
 
 @media (min-width: 621px) {
-  html, body { background: #111; }
-  body { display: flex; justify-content: center; }
-  #app { width: 620px; flex-shrink: 0; background: #0f0f0f; position: relative; }
+  html { background: #111; }
+  body { background: #111; }
+  .header { max-width: 620px; margin: 0 auto; left: 50%; transform: translateX(-50%); width: 620px; }
+  .tabs { max-width: 620px; margin: 0 auto; }
+  .section.active { max-width: 620px; margin: 0 auto; }
+  #welcome-screen { max-width: 620px; left: 50%; transform: translateX(-50%); width: 620px; }
 }
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1">
@@ -454,7 +457,7 @@ function checkWelcome() {
 
 </script>
 </head>
-<body><div id="app">
+<body>
 
 
 <div class="header">
@@ -1597,5 +1600,5 @@ function checkWelcome() {
 
 </script>
 
-</div></body>
+</body>
 </html>
