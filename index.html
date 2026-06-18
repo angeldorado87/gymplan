@@ -20,21 +20,21 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .header-logo{width:34px;height:34px;border-radius:8px;flex-shrink:0;overflow:hidden}
 .header-logo img{width:100%;height:100%;object-fit:cover;display:block}
 .header-title{font-size:17px;font-weight:600;color:#f5f5f5;text-align:center;flex:1}
-.hamburger{width:34px;height:34px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer;flex-shrink:0;border-radius:8px;background:transparent;border:none;padding:6px}
-.hamburger span{display:block;width:20px;height:2px;background:#e5e5e5;border-radius:2px;transition:all .25s}
+
+
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0;width:0}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* SLIDE MENU */
-.slide-menu{position:fixed;top:0;right:-100%;width:75%;max-width:280px;height:100vh;background:#1c1c1c;border-left:1px solid #2a2a2a;z-index:300;transition:right .3s ease;padding-top:0;box-shadow:-8px 0 32px rgba(0,0,0,0.7)}
-.slide-menu.open{right:0}
-.slide-menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:299}
-.slide-menu-overlay.open{display:block}
-.menu-header{padding:20px 20px 16px;border-bottom:1px solid #2a2a2a;font-size:13px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:0.1em}
-.menu-item{display:flex;align-items:center;gap:14px;padding:17px 20px;font-size:15px;font-weight:500;color:#e5e5e5;cursor:pointer;border-bottom:1px solid #242424;transition:background .15s}
-.menu-item:active{background:#242424}
-.menu-icon{font-size:20px;width:28px;text-align:center;flex-shrink:0;color:#e5e5e5}
+
+
+
+
+
+
+
+
 
 /* TABS */
 .tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:10px 12px;background:#1a1a1a;border-bottom:1px solid #2a2a2a}
@@ -282,14 +282,11 @@ function toggleInfo(el) {
 <div class="header">
   <div class="header-logo"><img src="icon-192.png" alt="GymPlan"></div>
   <div class="header-title">Plan de Entrenamiento</div>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú">
-    <span></span><span></span><span></span>
-  </button>
+  
 </div>
 
-<div class="slide-menu-overlay" id="overlay" onclick="closeMenu()"></div>
-<div class="slide-menu" id="slideMenu">
-  <div class="menu-header">Menú</div>
+
+
   <div class="menu-item" onclick="showPage('resumen');closeMenu()"><i class="ph ph-calendar-blank menu-icon"></i>Resumen semanal</div>
   <div class="menu-item" onclick="showPage('recomendaciones');closeMenu()"><i class="ph ph-trend-up menu-icon"></i>Recomendaciones</div>
 </div>
@@ -1111,11 +1108,7 @@ function toggleInfo(el) {
 
 
 <!-- PAGE: RESUMEN -->
-<div class="page" id="page-resumen"><button class="back-btn" onclick="backToTraining()"><i class="ph ph-arrow-left"></i> Volver a entrenos</button>
 
-
-
-  <div class="note-blue"><strong>Cómo leer los pesos:</strong> cada ejercicio tiene 3 series con peso progresivo. Serie 1 (azul) = calentamiento · Serie 2 (azul oscuro) = trabajo · Serie 3 (rojo) = máximo del día. Si en la serie 3 no llegas a 10 reps, mínimo 8 está bien.</div>
 
   <div class="week-label">Ángel — todas las semanas</div>
   <div class="week-grid">
@@ -1162,8 +1155,7 @@ function toggleInfo(el) {
 </div>
 
 <!-- PAGE: RECOMENDACIONES -->
-<div class="page" id="page-recomendaciones"><button class="back-btn" onclick="backToTraining()"><i class="ph ph-arrow-left"></i> Volver a entrenos</button>
-  <div class="section-title">Recomendaciones</div>
+
 
 
   <div class="phases">
@@ -1246,28 +1238,7 @@ function showSection(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function showPage(id) {
-  // Hide sections and tabs
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('main-tabs').style.display = 'none';
-  // Show page
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  const page = document.getElementById('page-' + id);
-  if (page) page.classList.add('active');
-  if (id === 'progreso') { const p = localStorage.getItem('gymplan-person') || 'angel'; progressPerson = p; document.getElementById('prog-angel').classList.toggle('active', p==='angel'); document.getElementById('prog-manu').classList.toggle('active', p==='manu'); renderProgress(p); }
-}
 
-function toggleMenu() {
-  document.getElementById('hamburger').classList.toggle('open');
-  document.getElementById('slideMenu').classList.toggle('open');
-  document.getElementById('overlay').classList.toggle('open');
-}
-function closeMenu() {
-  document.getElementById('hamburger').classList.remove('open');
-  document.getElementById('slideMenu').classList.remove('open');
-  document.getElementById('overlay').classList.remove('open');
-}
 
 // ── PERSON ────────────────────────────────────────────────────────────────
 function getCurrentPerson(section) {
@@ -1299,11 +1270,6 @@ function toggleEx(toggleEl) {
   chev.classList.toggle('open');
 }
 
-function backToTraining() {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('main-tabs').style.display = 'grid';
-  showSection(currentSection || 'e1');
-}
 
 // ── COMPLETE ENTRENO ─────────────────────────────────────────────────────
 function toggleComplete(sid, nextId, doneLabel) {
