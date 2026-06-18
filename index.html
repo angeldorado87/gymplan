@@ -325,6 +325,12 @@ function toggleViewPerson() {
   // Update all sections
   document.querySelectorAll('.section').forEach(s => setPerson(newView, s));
   
+  // Update avatar to show who you're viewing
+  const avatarImg = document.getElementById('header-avatar-img');
+  if (avatarImg) {
+    avatarImg.src = newView === 'angel' ? window._angelSrc : window._manuSrc;
+  }
+  
   // Show/hide viewing badge
   const badge = document.getElementById('viewing-badge');
   if (newView !== myProfile) {
@@ -338,8 +344,10 @@ function toggleViewPerson() {
 function initAvatar() {
   const myProfile = localStorage.getItem('gymplan-user') || 'angel';
   window._currentView = myProfile;
-  const angelSrc = document.querySelector('.pt-angel img')?.src || '';
-  const manuSrc = document.querySelector('.pt-manu img')?.src || '';
+  const angelSrc = 'icon-192.png';
+  const manuSrc = 'icon-192.png';
+  window._angelSrc = angelSrc;
+  window._manuSrc = manuSrc;
   const avatarImg = document.getElementById('header-avatar-img');
   if (avatarImg) {
     avatarImg.src = myProfile === 'angel' ? angelSrc : manuSrc;
@@ -1159,6 +1167,12 @@ function toggleViewPerson() {
   // Update all sections
   document.querySelectorAll('.section').forEach(s => setPerson(newView, s));
   
+  // Update avatar to show who you're viewing
+  const avatarImg = document.getElementById('header-avatar-img');
+  if (avatarImg) {
+    avatarImg.src = newView === 'angel' ? window._angelSrc : window._manuSrc;
+  }
+  
   // Show/hide viewing badge
   const badge = document.getElementById('viewing-badge');
   if (newView !== myProfile) {
@@ -1172,8 +1186,10 @@ function toggleViewPerson() {
 function initAvatar() {
   const myProfile = localStorage.getItem('gymplan-user') || 'angel';
   window._currentView = myProfile;
-  const angelSrc = document.querySelector('.pt-angel img')?.src || '';
-  const manuSrc = document.querySelector('.pt-manu img')?.src || '';
+  const angelSrc = 'icon-192.png';
+  const manuSrc = 'icon-192.png';
+  window._angelSrc = angelSrc;
+  window._manuSrc = manuSrc;
   const avatarImg = document.getElementById('header-avatar-img');
   if (avatarImg) {
     avatarImg.src = myProfile === 'angel' ? angelSrc : manuSrc;
