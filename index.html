@@ -47,10 +47,10 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .pt-btn.active{background:#3b82f6;color:#fff}
 .pt-btn:first-child{border-right:1px solid rgba(249,115,22,0.4)}
 
-/* PAGES (resumen, recomendaciones, progreso) */
-.page{display:none}
-.page.active{display:block;padding:16px}
-.back-btn{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#242424;border:1px solid #333;border-radius:10px;color:#e5e5e5;font-size:14px;font-weight:500;cursor:pointer;margin-bottom:16px;width:fit-content;transition:background .15s}
+
+
+
+
 .back-btn:active{background:#333}
 
 /* CONTENT */
@@ -1260,15 +1260,6 @@ function setPerson(p, section) {
 // ── PROGRESS RENDER ───────────────────────────────────────────────────────
 let progressPerson = 'angel';
 
-function switchProgressPerson(p) { /* removed */ }
-
-
-function toggleEx(toggleEl) {
-  const body = toggleEl.nextElementSibling;
-  const chev = toggleEl.querySelector('.ex-chevron');
-  body.classList.toggle('open');
-  chev.classList.toggle('open');
-}
 
 
 // ── COMPLETE ENTRENO ─────────────────────────────────────────────────────
