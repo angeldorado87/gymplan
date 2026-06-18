@@ -303,7 +303,7 @@ body.theme-manu body.theme-manu .stretch-title{color:#f97316}
 .finish-btn:active{background:#2a4a7f;transform:scale(0.98)}
 body.theme-manu .finish-btn{background:#2a1500;border-color:#f97316;color:#f97316}
 
-.finish-btn.completed{background:#0a2a0a;border-color:#22c55e;color:#22c55e;cursor:default;opacity:0.85}
+.finish-btn.completed,.finish-btn:disabled{background:#0a2a0a;border-color:#22c55e;color:#22c55e;cursor:default;opacity:0.85}
 .finish-btn.completed:active{transform:none}
 body.theme-manu .finish-btn.completed{background:#0a2a0a;border-color:#22c55e;color:#22c55e}
 </style>
@@ -382,6 +382,7 @@ const SECTION_ORDER = ['e1','e2','e3','eopt'];
 function finishEntreno(current) {
   // Mark as completed
   const completed = JSON.parse(localStorage.getItem('gymplan-completed-v2') || '{}');
+  if (completed[current]) return; // already done
   completed[current] = true;
   localStorage.setItem('gymplan-completed-v2', JSON.stringify(completed));
   
@@ -389,16 +390,18 @@ function finishEntreno(current) {
   const btn = document.querySelector('#' + current + ' .finish-btn');
   if (btn) {
     btn.classList.add('completed');
-    btn.textContent = '✓ Entreno finalizado';
-    btn.onclick = null;
+    btn.innerHTML = '✓ Entreno finalizado';
+    btn.disabled = true;
   }
   
-  // Navigate to next section
+  // Navigate to next section after brief delay
   const idx = SECTION_ORDER.indexOf(current);
   const next = SECTION_ORDER[(idx + 1) % SECTION_ORDER.length];
   localStorage.setItem('gymplan-current', next);
-  showSection(next);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(() => {
+    showSection(next);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 400);
 }
 
 function loadCompletedButtons() {
@@ -408,8 +411,8 @@ function loadCompletedButtons() {
       const btn = document.querySelector('#' + sid + ' .finish-btn');
       if (btn) {
         btn.classList.add('completed');
-        btn.textContent = '✓ Entreno finalizado';
-        btn.onclick = null;
+        btn.innerHTML = '✓ Entreno finalizado';
+        btn.disabled = true;
       }
     }
   });
@@ -1514,6 +1517,7 @@ const SECTION_ORDER = ['e1','e2','e3','eopt'];
 function finishEntreno(current) {
   // Mark as completed
   const completed = JSON.parse(localStorage.getItem('gymplan-completed-v2') || '{}');
+  if (completed[current]) return; // already done
   completed[current] = true;
   localStorage.setItem('gymplan-completed-v2', JSON.stringify(completed));
   
@@ -1521,16 +1525,18 @@ function finishEntreno(current) {
   const btn = document.querySelector('#' + current + ' .finish-btn');
   if (btn) {
     btn.classList.add('completed');
-    btn.textContent = '✓ Entreno finalizado';
-    btn.onclick = null;
+    btn.innerHTML = '✓ Entreno finalizado';
+    btn.disabled = true;
   }
   
-  // Navigate to next section
+  // Navigate to next section after brief delay
   const idx = SECTION_ORDER.indexOf(current);
   const next = SECTION_ORDER[(idx + 1) % SECTION_ORDER.length];
   localStorage.setItem('gymplan-current', next);
-  showSection(next);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(() => {
+    showSection(next);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 400);
 }
 
 function loadCompletedButtons() {
@@ -1540,8 +1546,8 @@ function loadCompletedButtons() {
       const btn = document.querySelector('#' + sid + ' .finish-btn');
       if (btn) {
         btn.classList.add('completed');
-        btn.textContent = '✓ Entreno finalizado';
-        btn.onclick = null;
+        btn.innerHTML = '✓ Entreno finalizado';
+        btn.disabled = true;
       }
     }
   });
