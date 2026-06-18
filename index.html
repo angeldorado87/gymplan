@@ -1334,8 +1334,8 @@ function showSection(id) {
 
 // ── PERSON ────────────────────────────────────────────────────────────────
 function getCurrentPerson(section) {
-  if (!section) return localStorage.getItem('gymplan-person') || 'angel';
-  const btn = section.querySelector('
+  return localStorage.getItem('gymplan-person') || 'angel';
+}
 
 // ── PROGRESS RENDER ───────────────────────────────────────────────────────
 let progressPerson = 'angel';
