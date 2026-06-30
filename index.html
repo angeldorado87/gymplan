@@ -386,15 +386,27 @@ function checkWelcome() {
 (function() {
   var ORDER = ['e1','e2','e3','eopt'];
 
+  // Returns the timestamp (ms) of the most recent Sunday 23:30 local time
+  function getLastSundayReset(now) {
+    var d = new Date(now);
+    var day = d.getDay(); // 0 = Sunday
+    var daysSinceSunday = day; // if today is Sunday, 0
+    var sunday = new Date(d.getFullYear(), d.getMonth(), d.getDate() - daysSinceSunday, 23, 30, 0, 0);
+    if (sunday.getTime() > now.getTime()) {
+      // This Sunday 23:30 hasn't happened yet -> use previous Sunday
+      sunday.setDate(sunday.getDate() - 7);
+    }
+    return sunday.getTime();
+  }
+
   function getCurrentSid() {
     var now = new Date();
-    var key = 'gp_reset_' + now.toISOString().split('T')[0];
-    if (now.getDay() === 0 && (now.getHours() > 23 || (now.getHours() === 23 && now.getMinutes() >= 30))) {
-      if (!localStorage.getItem(key)) {
-        localStorage.setItem('gp_current', 'e1');
-        localStorage.removeItem('gp_done');
-        localStorage.setItem(key, '1');
-      }
+    var lastResetDue = getLastSundayReset(now);
+    var lastResetApplied = parseInt(localStorage.getItem('gp_last_reset_ts') || '0', 10);
+    if (lastResetDue > lastResetApplied) {
+      localStorage.setItem('gp_current', 'e1');
+      localStorage.removeItem('gp_done');
+      localStorage.setItem('gp_last_reset_ts', String(lastResetDue));
     }
     return localStorage.getItem('gp_current') || 'e1';
   }
@@ -438,18 +450,10 @@ function checkWelcome() {
     });
   }
 
-  // Cache version - bump to reset all state
-  var CACHE_VERSION = 'v1.4';
-  if (localStorage.getItem('gp_version') !== CACHE_VERSION) {
-    localStorage.removeItem('gp_done');
-    localStorage.removeItem('gp_current');
-    localStorage.setItem('gp_version', CACHE_VERSION);
-  }
-
   document.addEventListener('DOMContentLoaded', function() {
     initFinishButtons();
-    applyDoneUI();
     var sid = getCurrentSid();
+    applyDoneUI();
     if (sid !== 'e1') showSection(sid);
   });
 })();
