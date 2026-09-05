@@ -84,8 +84,8 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 .day-header{display:flex;align-items:center;gap:8px;padding:10px 0 10px;flex-wrap:wrap}
 .day-badge{padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;white-space:nowrap}
 .push-b{background:#2a1500;color:#f97316}.pull-b{background:#14532d;color:#a78bfa}.legs-b{background:#451a03;color:#60a5fa}.opt-b{background:#3b0764;color:#c084fc}
-.day-title-t{font-size:14px;font-weight:600;color:#f5f5f5;flex:1}
-.day-count{font-size:11px;color:#999!important;background:#242424!important;padding:2px 8px;border-radius:20px}
+.day-title-t{font-size:20px;font-weight:700;font-size:14px;font-weight:600;color:#f5f5f5;flex:1}
+.day-count{display:none}.day-count{display:none}
 .day-sub-t{font-size:12px;color:#888}
 .chev{display:none}
 .collapsible{display:block}
@@ -311,6 +311,7 @@ body.theme-manu .finish-btn{border-color:#f97316;background:#2a1500;color:#f9731
   .section.active { max-width: 620px; margin: 0 auto; }
   #welcome-screen { max-width: 620px; left: 50%; transform: translateX(-50%); width: 620px; }
 }
+.day-count{display:none!important}.day-sub-t{display:none!important}
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1">
 function toggleInfo(el) {
@@ -517,7 +518,14 @@ function checkWelcome() {
     <div class="collapsible open" id="body-push">
 
       <!-- 1. PRESS PECHO CONVERGENTE -->
-      <div class="ex-block">
+      <div class="stretch-section" style="margin-bottom:16px">
+  <div class="stretch-title">Calentamiento</div>
+  <div class="stretch-item"><span class="s-time">5 min</span><span><strong>Cinta andando:</strong> camina a velocidad 5 durante 5 minutos para activar el sistema cardiovascular antes de empezar.</span></div>
+  <div class="stretch-item"><span class="s-time">2 min</span><span><strong>Rotaciones de hombro:</strong> de pie, realiza 10 círculos lentos hacia adelante y 10 hacia atrás con cada hombro. Mantén los brazos relajados y el movimiento amplio.</span></div>
+  <div class="stretch-item"><span class="s-time">1 min</span><span><strong>Apertura y cierre de brazos:</strong> abre los brazos a los lados a la altura del pecho y ciérralos delante como un abrazo lento, 15 veces. Activa el pecho y los hombros.</span></div>
+  <div class="stretch-item"><span class="s-time">1 min</span><span><strong>Rotaciones de muñeca:</strong> 10 círculos en cada sentido con cada mano. Protege las muñecas antes de los ejercicios de press.</span></div>
+</div>
+<div class="ex-block">
   <div class="ex-toggle">
     <div class="ex-toggle-left">
       <span class="ex-toggle-num">Ejercicio 01</span>
@@ -639,7 +647,11 @@ function checkWelcome() {
 
 
 <div class="stretch-section">
-  <div class="stretch-title"><i class="ph ph-person-simple"></i> Estiramientos finales — Pecho · Tríceps</div>
+  <div class="stretch-title">Estiramientos finales — Pecho · Tríceps</div>
+  <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Cruce de brazo por delante:</strong> de pie, lleva un brazo extendido cruzado por delante del pecho. Con el otro brazo presiona suavemente el codo hacia el cuerpo hasta notar el estiramiento en el deltoides anterior y el pecho.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Tríceps sobre la cabeza:</strong> de pie, levanta un brazo y dobla el codo llevando la mano hacia la espalda. Con la otra mano presiona suavemente el codo hacia atrás. Mantén el cuello relajado.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Apertura de pecho con manos entrelazadas:</strong> entrelaza las manos detrás de la espalda, saca pecho y lleva los hombros hacia atrás y abajo. Ideal para contrarrestar la tensión acumulada en el pecho.</span></div>
+</div>
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Pectoral en pared:</strong> apoya una mano en la pared con el brazo extendido a la altura del hombro. Gira el cuerpo hacia el lado contrario hasta notar el estiramiento en el pecho. Mantén la espalda recta.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Cruce de brazo por delante:</strong> de pie, lleva un brazo extendido cruzado por delante del pecho. Con el otro brazo presiona suavemente el codo hacia el cuerpo hasta notar el estiramiento en el deltoides anterior y el pecho.</span></div>
   <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Tríceps sobre la cabeza:</strong> de pie, levanta un brazo y dobla el codo llevando la mano hacia la espalda. Con la otra mano presiona suavemente el codo hacia atrás. Mantén el cuello relajado.</span></div>
