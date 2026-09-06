@@ -318,6 +318,9 @@ body.theme-manu .finish-btn{border-color:#f97316;background:#2a1500;color:#f9731
 .stretch-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;padding-bottom:4px}
 .stretch-chevron{font-size:12px;color:#a78bfa;transition:transform 0.2s}
 .stretch-section.collapsible.open .stretch-chevron{transform:rotate(180deg)}
+
+.s-time-stack{display:flex;flex-direction:column;gap:3px;flex-shrink:0;align-items:flex-start}
+.s-side{font-size:10px;font-weight:600;color:#a78bfa;background:#2e1065;padding:2px 6px;border-radius:20px;white-space:nowrap}
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1">
 function toggleInfo(el) {
@@ -668,19 +671,9 @@ function toggleStretch(el) {
     <span class="stretch-chevron">▾</span>
   </div>
   <div class="stretch-body">
-  <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Cruce de brazo por delante:</strong> de pie, lleva un brazo extendido cruzado por delante del pecho. Con el otro brazo presiona suavemente el codo hacia el cuerpo hasta notar el estiramiento en el deltoides anterior y el pecho.</span></div>
-  <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Tríceps sobre la cabeza:</strong> de pie, levanta un brazo y dobla el codo llevando la mano hacia la espalda. Con la otra mano presiona suavemente el codo hacia atrás. Mantén el cuello relajado.</span></div>
-  <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Apertura de pecho con manos entrelazadas:</strong> entrelaza las manos detrás de la espalda, saca pecho y lleva los hombros hacia atrás y abajo. Ideal para contrarrestar la tensión acumulada en el pecho.</span></div>
-  </div>
-</div>
-</div>
-    </div>
-  </div>
-</div>
-
-
-
-<div id="e2" class="section">
+  <div class="stretch-item"><div class="s-time-stack"><span class="s-time">30 seg</span><span class="s-side">c/lado</span></div><span><strong>Cruce de brazo por delante:</strong> de pie, lleva un brazo extendido cruzado por delante del pecho. Con el otro brazo presiona suavemente el codo hacia el cuerpo hasta notar el estiramiento en el deltoides anterior y el pecho.</span></div>
+  <div class="stretch-item"><div class="s-time-stack"><span class="s-time">30 seg</span><span class="s-side">c/lado</span></div><span><strong>Tríceps sobre la cabeza:</strong> de pie, levanta un brazo y dobla el codo llevando la mano hacia la espalda. Con la otra mano presiona suavemente el codo hacia atrás. Mantén el cuello relajado.</span></div>
+  <div class="stretch-item"><div class="s-time-stack"><span class="s-time">30 seg</span></div><span><strong>Apertura de pecho con manos entrelazadas:</strong> entrelaza las manos detrás de la espalda, saca pecho y lleva los homb<div id="e2" class="section">
 
 
   <!-- DÍA 2: ESPALDA + BÍCEPS -->
@@ -832,9 +825,18 @@ function toggleStretch(el) {
     <span class="stretch-chevron">▾</span>
   </div>
   <div class="stretch-body">
-  <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Espalda alta:</strong> extiende ambos brazos al frente a la altura del hombro, entrelaza los dedos y empuja hacia adelante mientras redondeas ligeramente la espalda alta. Notarás el estiramiento entre los omóplatos.</span></div>
-  <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Bíceps y pecho:</strong> lleva ambos brazos hacia atrás, saca pecho y junta los omóplatos. Notarás el estiramiento en la parte delantera del hombro y el bíceps.</span></div>
-  <div class="stretch-item"><span class="s-time">30 seg c/lado</span><span><strong>Antebrazo (flexores):</strong> extiende el brazo al frente con la palma hacia arriba. Con la otra mano agarra los dedos y dobla la muñeca hacia abajo suavemente. Notarás el estiramiento en el antebrazo interior.</span></div>
+  <div class="stretch-item"><div class="s-time-stack"><span class="s-time">30 seg</span></div><span><strong>Espalda alta:</strong> extiende ambos brazos al frente a la altura del hombro, entrelaza los dedos y empuja hacia adelante mientras redondeas ligeramente la espalda alta. Notarás el estiramiento entre los omóplatos.</span></div>
+  <div class="stretch-item"><div class="s-time-stack"><span class="s-time">30 seg</span></div><span><strong>Bíceps y pecho:</strong> lleva ambos brazos hacia atrás, saca pecho y junta los omóplatos. Notarás el estiramiento en la parte delantera del hombro y el bíceps.</span></div>
+  <div class="stretch-item"><div class="s-time-stack"><span class="s-time">30 seg</span><span class="s-side">c/lado</span></div><span><strong>Antebrazo (flexores):</strong> extiende el brazo al frente con la palma hacia arriba. Con la otra mano agarra los dedos y dobla la muñeca hacia abajo suavemente. Notarás el estiramiento en el antebrazo interior.</span></div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+
+iento en el antebrazo interior.</span></div>
   </div>
 </div>
     </div>
