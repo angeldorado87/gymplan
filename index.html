@@ -298,6 +298,13 @@ body.theme-manu .finish-btn{border-color:#f97316;background:#2a1500;color:#f9731
 
 .s-time-stack{display:flex;flex-direction:column;gap:3px;flex-shrink:0;align-items:flex-start}
 .s-side{font-size:10px;font-weight:600;color:#a78bfa;background:#2e1065;padding:2px 6px;border-radius:20px;white-space:nowrap}
+
+#rest-btn{position:fixed;bottom:24px;right:20px;z-index:200;background:#1e3a5f;border:2px solid #3b82f6;color:#60a5fa;font-size:14px;font-weight:700;padding:12px 20px;border-radius:50px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.4);transition:all .2s;min-width:140px;text-align:center}
+#rest-btn.counting{background:#0a2a0a;border-color:#22c55e;color:#22c55e}
+#rest-btn.done{background:#1a0b2e;border-color:#a78bfa;color:#a78bfa}
+body.theme-manu #rest-btn{background:#2a1500;border-color:#f97316;color:#f97316}
+body.theme-manu #rest-btn.counting{background:#0a2a0a;border-color:#22c55e;color:#22c55e}
+@media (min-width:621px){#rest-btn{right:calc(50% - 290px)}}
 </style>
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1">
 function toggleInfo(el) {
@@ -449,6 +456,46 @@ function checkWelcome() {
 function toggleStretch(el) {
   el.closest('.stretch-section').classList.toggle('open');
 }
+
+
+// ── REST TIMER ────────────────────────────────────────────────────────────
+(function() {
+  var _timer = null;
+  var _secs = 0;
+
+  function startRest() {
+    var btn = document.getElementById('rest-btn');
+    if (_timer) {
+      clearInterval(_timer);
+      _timer = null;
+      btn.textContent = 'Iniciar descanso';
+      btn.className = btn.className.replace(' counting','').replace(' done','');
+      return;
+    }
+    _secs = 60;
+    btn.classList.add('counting');
+    btn.classList.remove('done');
+    btn.textContent = '0:60';
+    _timer = setInterval(function() {
+      _secs--;
+      if (_secs > 0) {
+        btn.textContent = '0:' + (_secs < 10 ? '0' + _secs : _secs);
+      } else {
+        clearInterval(_timer);
+        _timer = null;
+        btn.classList.remove('counting');
+        btn.classList.add('done');
+        btn.textContent = '✓ Listo';
+        setTimeout(function() {
+          btn.classList.remove('done');
+          btn.textContent = 'Iniciar descanso';
+        }, 3000);
+      }
+    }, 1000);
+  }
+
+  window.startRest = startRest;
+})();
 
 </script>
 </head>
@@ -1425,7 +1472,49 @@ function toggleStretch(el) {
   el.closest('.stretch-section').classList.toggle('open');
 }
 
+
+// ── REST TIMER ────────────────────────────────────────────────────────────
+(function() {
+  var _timer = null;
+  var _secs = 0;
+
+  function startRest() {
+    var btn = document.getElementById('rest-btn');
+    if (_timer) {
+      clearInterval(_timer);
+      _timer = null;
+      btn.textContent = 'Iniciar descanso';
+      btn.className = btn.className.replace(' counting','').replace(' done','');
+      return;
+    }
+    _secs = 60;
+    btn.classList.add('counting');
+    btn.classList.remove('done');
+    btn.textContent = '0:60';
+    _timer = setInterval(function() {
+      _secs--;
+      if (_secs > 0) {
+        btn.textContent = '0:' + (_secs < 10 ? '0' + _secs : _secs);
+      } else {
+        clearInterval(_timer);
+        _timer = null;
+        btn.classList.remove('counting');
+        btn.classList.add('done');
+        btn.textContent = '✓ Listo';
+        setTimeout(function() {
+          btn.classList.remove('done');
+          btn.textContent = 'Iniciar descanso';
+        }, 3000);
+      }
+    }, 1000);
+  }
+
+  window.startRest = startRest;
+})();
+
 </script>
 
+
+<button id="rest-btn" onclick="startRest()">Iniciar descanso</button>
 </body>
 </html>
