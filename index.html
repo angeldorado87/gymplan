@@ -26,8 +26,8 @@ body{font-family:system-ui,sans-serif;background:#0f0f0f;color:#e5e5e5;font-size
 
 
 /* TABS */
-.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:10px 12px;background:#1a1a1a;border-bottom:1px solid #2a2a2a}
-.tab{padding:9px 4px;border-radius:10px;border:1px solid #333;background:#242424;font-size:13px;cursor:pointer;color:#888;text-align:center;font-weight:500;transition:all .2s}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:10px 12px;background:#1a1a1a;border-bottom:1px solid #2a2a2a}
+.tab{padding:8px 4px;border-radius:10px;border:1px solid #333;background:#242424;font-size:12px;cursor:pointer;color:#888;text-align:center;font-weight:500;transition:all .2s}
 .tab.active{background:#1e3a5f;color:#60a5fa;border-color:#3b82f6;font-weight:700}
 
 /* PERSON SELECTOR */
@@ -533,10 +533,12 @@ function toggleStretch(el) {
   </div>
 </div>
 <div class="tabs" id="main-tabs">
-  <button class="tab active" id="tab-e1" onclick="showSection('e1')">Entreno 1</button>
-  <button class="tab" id="tab-e2" onclick="showSection('e2')">Entreno 2</button>
-  <button class="tab" id="tab-e3" onclick="showSection('e3')">Entreno 3</button>
-  <button class="tab" id="tab-eopt" onclick="showSection('eopt')">Entreno 4</button>
+  <button class="tab active" id="tab-e1" onclick="showSection('e1')">E1</button>
+  <button class="tab" id="tab-e2" onclick="showSection('e2')">E2</button>
+  <button class="tab" id="tab-e3" onclick="showSection('e3')">E3</button>
+  <button class="tab" id="tab-eopt" onclick="showSection('eopt')">E4</button>
+  <button class="tab" id="tab-e5" onclick="showSection('e5')">E5</button>
+  <button class="tab" id="tab-fb" onclick="showSection('fb')">FB</button>
 </div>
 
 <div class="content">
@@ -1195,12 +1197,316 @@ function toggleStretch(el) {
 </div>
 
 
+<!-- ═══════════════════════════════════════════════════════════════════════
+     E5 — HOMBROS / BRAZOS
+     ═══════════════════════════════════════════════════════════════════════ -->
+<div id="e5" class="section">
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-title-t">Hombros · Bíceps · Tríceps</span>
+      <span class="day-count">6 ejercicios</span>
+      <span class="day-sub-t">~50 min</span>
+      <span class="chev" id="chev-e5">▾</span>
+    </div>
+    <div class="collapsible" id="body-e5">
+
+      <div class="stretch-section collapsible">
+  <div class="stretch-header" onclick="toggleStretch(this)">
+    <span class="stretch-title" style="padding-bottom:0;margin-bottom:0">Calentamiento</span>
+    <span class="stretch-chevron">▾</span>
+  </div>
+  <div class="stretch-body">
+  <div class="stretch-item"><span class="s-time">3 min</span><span><strong>Cardio suave:</strong> camina a velocidad 5 en cinta o bicicleta estática durante 3 minutos para elevar la temperatura corporal.</span></div>
+  <div class="stretch-item"><span class="s-time">1 min</span><span><strong>Rotaciones de hombro:</strong> de pie, realiza 10 círculos lentos hacia adelante y 10 hacia atrás con cada brazo. Activa el manguito rotador y la articulación glenohumeral.</span></div>
+  <div class="stretch-item"><span class="s-time">1 min</span><span><strong>Círculos con codo:</strong> codos doblados a 90°, realiza pequeños círculos con los codos elevando los hombros. Calienta los deltoides antes de cargar.</span></div>
+  </div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 01</span>
+      <span class="ex-toggle-name">Press de hombros con mancuernas (sentado)</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 01</div>
+<div class="ex-name">Press de hombros con mancuernas (sentado)</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">14 kg c/u</span><span class="sb-weight smanu" style="display:none">8 kg c/u</span><span class="sb-reps">10-12</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">16 kg c/u</span><span class="sb-weight smanu" style="display:none">10 kg c/u</span><span class="sb-reps">10-12</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">16 kg c/u</span><span class="sb-weight smanu" style="display:none">10 kg c/u</span><span class="sb-reps">8-10</span></div></div>
+<div style="text-align:center;margin:10px 12px 14px"><video autoplay loop muted playsinline style="width:100%;max-width:280px;border-radius:10px"><source src="https://api.smartworkout.app/asset/video/4b524c2d-0000-0000-0000-000000000000.mp4" type="video/mp4"></video></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. Siéntate en un banco con respaldo a 90°, mancuernas a la altura de los hombros con codos en L.</p><p>2. Empuja las mancuernas hacia arriba y ligeramente hacia el centro sin chocarlas.</p><p>3. Controla el descenso hasta que los codos queden ligeramente por debajo de los hombros.</p><p>4. Mantén el core apretado y la espalda baja pegada al banco.</p></div>
+<div class="info-toggle" onclick="toggleInfo(this)" style="margin-top:4px"><span class="info-toggle-label">Consejos</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>· No bloquees los codos arriba; mantén tensión constante en los deltoides.</p><p>· Exhala al subir, inhala al bajar.</p><p>· Si notas dolor en el hombro, reduce el rango de movimiento.</p></div>
+</div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 02</span>
+      <span class="ex-toggle-name">Elevaciones laterales con mancuernas</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 02</div>
+<div class="ex-name">Elevaciones laterales con mancuernas</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">8 kg c/u</span><span class="sb-weight smanu" style="display:none">5 kg c/u</span><span class="sb-reps">12-15</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">8 kg c/u</span><span class="sb-weight smanu" style="display:none">5 kg c/u</span><span class="sb-reps">12-15</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">10 kg c/u</span><span class="sb-weight smanu" style="display:none">6 kg c/u</span><span class="sb-reps">10-12</span></div></div>
+<div style="text-align:center;margin:10px 12px 14px"><video autoplay loop muted playsinline style="width:100%;max-width:280px;border-radius:10px"><source src="https://api.smartworkout.app/asset/video/62ca1060-0000-0000-0000-000000000000.mp4" type="video/mp4"></video></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. De pie, mancuernas a los lados con ligera flexión de codo.</p><p>2. Eleva los brazos lateralmente hasta la altura de los hombros manteniendo las muñecas neutras o con el pulgar ligeramente hacia abajo.</p><p>3. Baja lentamente y controlado.</p></div>
+<div class="info-toggle" onclick="toggleInfo(this)" style="margin-top:4px"><span class="info-toggle-label">Consejos</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>· Evita el impulso con el torso; el movimiento debe ser puro del hombro.</p><p>· Inclina el pulgar ligeramente hacia abajo para mayor activación del deltoides medio.</p></div>
+</div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 03</span>
+      <span class="ex-toggle-name">Face pull de pie (polea con cuerda)</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 03</div>
+<div class="ex-name">Face pull de pie (polea con cuerda)</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">20 kg</span><span class="sb-weight smanu" style="display:none">12 kg</span><span class="sb-reps">12-15</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">22 kg</span><span class="sb-weight smanu" style="display:none">14 kg</span><span class="sb-reps">12-15</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">22 kg</span><span class="sb-weight smanu" style="display:none">14 kg</span><span class="sb-reps">12-15</span></div></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. Ajusta la polea a la altura de los ojos y coloca la cuerda.</p><p>2. Agarra la cuerda con ambas manos a la altura de la cara.</p><p>3. Tira hacia tu cara separando los extremos de la cuerda a los lados de la cabeza.</p><p>4. Los codos deben quedar a la altura de los hombros o ligeramente por encima.</p></div>
+<div class="info-toggle" onclick="toggleInfo(this)" style="margin-top:4px"><span class="info-toggle-label">Consejos</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>· Excelente para el deltoides posterior y salud del manguito rotador.</p><p>· Mantén el torso estable; no te inclines hacia atrás.</p></div>
+</div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 04</span>
+      <span class="ex-toggle-name">Curl de bíceps con barra EZ</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 04</div>
+<div class="ex-name">Curl de bíceps con barra EZ</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">20 kg</span><span class="sb-weight smanu" style="display:none">12 kg</span><span class="sb-reps">10-12</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">25 kg</span><span class="sb-weight smanu" style="display:none">15 kg</span><span class="sb-reps">10-12</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">25 kg</span><span class="sb-weight smanu" style="display:none">15 kg</span><span class="sb-reps">8-10</span></div></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. De pie, agarra la barra EZ en los agarres inclinados con supinación parcial.</p><p>2. Mantén los codos pegados al torso y curla la barra hasta la contracción máxima.</p><p>3. Baja de forma controlada hasta extensión completa.</p></div>
+<div class="info-toggle" onclick="toggleInfo(this)" style="margin-top:4px"><span class="info-toggle-label">Consejos</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>· No balancees el torso; el movimiento debe ser puro del bíceps.</p><p>· El agarre EZ reduce la tensión en la muñeca respecto a la barra recta.</p></div>
+</div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 05</span>
+      <span class="ex-toggle-name">Extensión de tríceps en polea con cuerda</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 05</div>
+<div class="ex-name">Extensión de tríceps en polea con cuerda</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">24 kg</span><span class="sb-weight smanu" style="display:none">15 kg</span><span class="sb-reps">12-15</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">29 kg</span><span class="sb-weight smanu" style="display:none">18 kg</span><span class="sb-reps">12-15</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">29 kg</span><span class="sb-weight smanu" style="display:none">18 kg</span><span class="sb-reps">10-12</span></div></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. De pie frente a la polea alta, agarra la cuerda con ambas manos.</p><p>2. Mantén los codos fijos junto al torso y extiende los antebrazos hacia abajo.</p><p>3. Al llegar abajo, separa ligeramente los extremos de la cuerda para maximizar la contracción.</p><p>4. Vuelve lentamente a la posición inicial.</p></div>
+<div class="info-toggle" onclick="toggleInfo(this)" style="margin-top:4px"><span class="info-toggle-label">Consejos</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>· Mantén los codos quietos; solo debe moverse el antebrazo.</p><p>· Inclínate ligeramente hacia adelante para mayor estabilidad.</p></div>
+</div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 06</span>
+      <span class="ex-toggle-name">Curl martillo con mancuernas</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 06</div>
+<div class="ex-name">Curl martillo con mancuernas</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">14 kg c/u</span><span class="sb-weight smanu" style="display:none">8 kg c/u</span><span class="sb-reps">10-12</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">16 kg c/u</span><span class="sb-weight smanu" style="display:none">10 kg c/u</span><span class="sb-reps">10-12</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">16 kg c/u</span><span class="sb-weight smanu" style="display:none">10 kg c/u</span><span class="sb-reps">10-12</span></div></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. De pie, mancuernas a los lados con agarre neutro (pulgar hacia arriba).</p><p>2. Curla alternando o simultáneamente sin girar la muñeca.</p><p>3. Mantén los codos pegados al torso durante todo el movimiento.</p></div>
+<div class="info-toggle" onclick="toggleInfo(this)" style="margin-top:4px"><span class="info-toggle-label">Consejos</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>· El agarre neutro trabaja el braquial y braquiorradial además del bíceps.</p><p>· Perfecto complemento al curl con barra EZ para un trabajo completo de brazos.</p></div>
+</div>
+</div>
+
+      <div class="stretch-section collapsible">
+  <div class="stretch-header" onclick="toggleStretch(this)">
+    <span class="stretch-title" style="padding-bottom:0;margin-bottom:0">Estiramientos</span>
+    <span class="stretch-chevron">▾</span>
+  </div>
+  <div class="stretch-body">
+  <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Cruce de brazo:</strong> lleva un brazo extendido a través del pecho y con el otro brazo empuja suavemente hacia ti. Estira el deltoides posterior.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Tríceps sobre la cabeza:</strong> levanta un brazo y dobla el codo llevando la mano hacia la espalda. Con la otra mano empuja suavemente el codo hacia abajo. Estira la cabeza larga del tríceps.</span></div>
+  <div class="stretch-item"><div class="s-time-stack"><span class="s-time">20 seg</span><span class="s-side">c/lado</span></div><span><strong>Bíceps en pared:</strong> apoya la palma de la mano en la pared con el pulgar hacia arriba y gira el torso hacia el lado contrario. Estira el bíceps y el pectoral.</span></div>
+  </div>
+</div>
+
+      <button class="finish-btn" data-sid="e5">Finalizar entreno</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     FB — FULL BODY (circuito completo semanas cortas)
+     ═══════════════════════════════════════════════════════════════════════ -->
+<div id="fb" class="section">
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-title-t">Full Body · Circuito completo</span>
+      <span class="day-count">8 ejercicios</span>
+      <span class="day-sub-t">~60 min</span>
+      <span class="chev" id="chev-fb">▾</span>
+    </div>
+    <div class="collapsible" id="body-fb">
+
+      <div class="stretch-section collapsible">
+  <div class="stretch-header" onclick="toggleStretch(this)">
+    <span class="stretch-title" style="padding-bottom:0;margin-bottom:0">Calentamiento</span>
+    <span class="stretch-chevron">▾</span>
+  </div>
+  <div class="stretch-body">
+  <div class="stretch-item"><span class="s-time">5 min</span><span><strong>Cardio suave:</strong> cinta o bicicleta estática a intensidad moderada para activar el sistema cardiovascular y calentar todo el cuerpo.</span></div>
+  <div class="stretch-item"><span class="s-time">1 min</span><span><strong>Rotaciones de cadera y hombro:</strong> círculos amplios alternando cadera y hombros para movilizar las principales articulaciones que se trabajarán.</span></div>
+  </div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 01</span>
+      <span class="ex-toggle-name">Press de pecho convergente (máquina) — Pecho</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 01</div>
+<div class="ex-name">Press de pecho convergente (máquina) — Pecho</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">45 kg</span><span class="sb-weight smanu" style="display:none">28 kg</span><span class="sb-reps">12</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">52 kg</span><span class="sb-weight smanu" style="display:none">32 kg</span><span class="sb-reps">10</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">52 kg</span><span class="sb-weight smanu" style="display:none">32 kg</span><span class="sb-reps">10</span></div></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. Ajusta el asiento para que las asas queden a la altura del pecho.</p><p>2. Empuja hacia adelante extendiendo los brazos sin bloquear los codos.</p><p>3. Vuelve controlado manteniendo tensión en el pectoral.</p></div>
+</div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 02</span>
+      <span class="ex-toggle-name">Jalón al pecho agarre ancho (máquina) — Espalda</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 02</div>
+<div class="ex-name">Jalón al pecho agarre ancho (máquina) — Espalda</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">52 kg</span><span class="sb-weight smanu" style="display:none">39 kg</span><span class="sb-reps">12</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">59 kg</span><span class="sb-weight smanu" style="display:none">45 kg</span><span class="sb-reps">10</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">59 kg</span><span class="sb-weight smanu" style="display:none">45 kg</span><span class="sb-reps">10</span></div></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. Agarra la barra con agarre pronado más ancho que los hombros.</p><p>2. Tira hacia el pecho manteniendo el torso ligeramente inclinado hacia atrás.</p><p>3. Aprieta los omóplatos abajo al llegar al pecho. Sube lentamente.</p></div>
+</div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 03</span>
+      <span class="ex-toggle-name">Prensa de piernas (leg press) — Piernas</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 03</div>
+<div class="ex-name">Prensa de piernas (leg press) — Piernas</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">80 kg</span><span class="sb-weight smanu" style="display:none">50 kg</span><span class="sb-reps">12</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">100 kg</span><span class="sb-weight smanu" style="display:none">60 kg</span><span class="sb-reps">10</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">100 kg</span><span class="sb-weight smanu" style="display:none">60 kg</span><span class="sb-reps">10</span></div></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. Pies al ancho de hombros en la plataforma, rodillas en 90° al inicio.</p><p>2. Empuja desde los talones extendiendo las piernas sin bloquear las rodillas.</p><p>3. Baja lento y controlado. Mantén la espalda baja pegada al asiento.</p></div>
+</div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 04</span>
+      <span class="ex-toggle-name">Press de hombros convergente (máquina) — Hombros</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 04</div>
+<div class="ex-name">Press de hombros convergente (máquina) — Hombros</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">27 kg</span><span class="sb-weight smanu" style="display:none">18 kg</span><span class="sb-reps">12</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">32 kg</span><span class="sb-weight smanu" style="display:none">22 kg</span><span class="sb-reps">10</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">32 kg</span><span class="sb-weight smanu" style="display:none">22 kg</span><span class="sb-reps">10</span></div></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. Ajusta el asiento para que las asas estén a la altura de los hombros.</p><p>2. Empuja hacia arriba sin encogerte de hombros ni inclinar el torso.</p><p>3. Baja controlado hasta que los codos queden ligeramente por debajo de los hombros.</p></div>
+</div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 05</span>
+      <span class="ex-toggle-name">Curl de bíceps en máquina — Bíceps</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 05</div>
+<div class="ex-name">Curl de bíceps en máquina — Bíceps</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">36 kg</span><span class="sb-weight smanu" style="display:none">22 kg</span><span class="sb-reps">12</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">41 kg</span><span class="sb-weight smanu" style="display:none">27 kg</span><span class="sb-reps">10</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">45 kg</span><span class="sb-weight smanu" style="display:none">32 kg</span><span class="sb-reps">10</span></div></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. Siéntate en la máquina y ajusta el soporte para los codos a la altura adecuada.</p><p>2. Curla el peso hasta la contracción máxima. Baja de forma controlada a extensión completa.</p></div>
+</div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 06</span>
+      <span class="ex-toggle-name">Extensión de tríceps en polea con cuerda — Tríceps</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 06</div>
+<div class="ex-name">Extensión de tríceps en polea con cuerda — Tríceps</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">24 kg</span><span class="sb-weight smanu" style="display:none">15 kg</span><span class="sb-reps">12</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">29 kg</span><span class="sb-weight smanu" style="display:none">18 kg</span><span class="sb-reps">12</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">29 kg</span><span class="sb-weight smanu" style="display:none">18 kg</span><span class="sb-reps">10</span></div></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. De pie frente a la polea, codos pegados al torso.</p><p>2. Extiende los antebrazos hacia abajo separando los extremos de la cuerda al llegar abajo.</p><p>3. Vuelve lentamente hasta la posición inicial.</p></div>
+</div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 07</span>
+      <span class="ex-toggle-name">Extensión de piernas (máquina) — Cuádriceps</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 07</div>
+<div class="ex-name">Extensión de piernas (máquina) — Cuádriceps</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">45 kg</span><span class="sb-weight smanu" style="display:none">28 kg</span><span class="sb-reps">12</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">52 kg</span><span class="sb-weight smanu" style="display:none">35 kg</span><span class="sb-reps">12</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">52 kg</span><span class="sb-weight smanu" style="display:none">35 kg</span><span class="sb-reps">12</span></div></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. Ajusta el rodillo para que quede sobre el tobillo.</p><p>2. Extiende las piernas hasta arriba contrayendo el cuádriceps. Mantén 1 segundo arriba.</p><p>3. Baja lentamente controlando el peso.</p></div>
+</div>
+</div>
+
+<div class="ex-block">
+  <div class="ex-toggle">
+    <div class="ex-toggle-left">
+      <span class="ex-toggle-num">Ejercicio 08</span>
+      <span class="ex-toggle-name">Contracción abdominal en máquina — Core</span>
+    </div>
+  </div>
+  <div class="ex-body">
+<div class="ex-num">Ejercicio 08</div>
+<div class="ex-name">Contracción abdominal en máquina — Core</div>
+<div class="serie-list"><div class="serie-box s1-box"><span class="sb-label">S1</span><span class="sb-weight sangel">54 kg</span><span class="sb-weight smanu" style="display:none">36 kg</span><span class="sb-reps">15</span></div><div class="serie-box s2-box"><span class="sb-label">S2</span><span class="sb-weight sangel">66 kg</span><span class="sb-weight smanu" style="display:none">45 kg</span><span class="sb-reps">15</span></div><div class="serie-box s3-box"><span class="sb-label">S3</span><span class="sb-weight sangel">75 kg</span><span class="sb-weight smanu" style="display:none">54 kg</span><span class="sb-reps">12</span></div></div>
+<div class="info-toggle" onclick="toggleInfo(this)"><span class="info-toggle-label">Cómo realizarlo</span><span class="info-toggle-chevron">▾</span></div><div class="info-body"><p>1. Siéntate con la espalda apoyada y agarra las asas a los lados.</p><p>2. Contrae el abdomen llevando el torso hacia adelante. Mantén 1 segundo en la contracción máxima.</p><p>3. Vuelve lentamente a la posición inicial sin perder el control.</p></div>
+</div>
+</div>
+
+      <div class="stretch-section collapsible">
+  <div class="stretch-header" onclick="toggleStretch(this)">
+    <span class="stretch-title" style="padding-bottom:0;margin-bottom:0">Estiramientos</span>
+    <span class="stretch-chevron">▾</span>
+  </div>
+  <div class="stretch-body">
+  <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Pectoral en pared:</strong> apoya el antebrazo en una pared y gira el torso hacia el lado contrario. Estira el pectoral y el bíceps.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Cruce de brazo (deltoides posterior):</strong> lleva el brazo extendido cruzando el pecho. Ideal para soltar los hombros tras el press.</span></div>
+  <div class="stretch-item"><div class="s-time-stack"><span class="s-time">30 seg</span><span class="s-side">c/lado</span></div><span><strong>Cuádriceps de pie:</strong> lleva el talón al glúteo y sujétalo. Fundamental tras la prensa y la extensión.</span></div>
+  <div class="stretch-item"><span class="s-time">30 seg</span><span><strong>Gato-vaca en suelo:</strong> a cuatro patas, alterna arquear y redondear la espalda para soltar la columna y el core tras el full body.</span></div>
+  </div>
+</div>
+
+      <button class="finish-btn" data-sid="fb">Finalizar entreno</button>
+    </div>
+  </div>
+</div>
+
+
 <script>
 // ── DATA ──────────────────────────────────────────────────────────────────
-const EXERCISE_MAP = {"e1": [{"name": "Press pecho convergente", "series": 3}, {"name": "Press mancuernas banco", "series": 3}, {"name": "Aperturas pec-deck", "series": 3}, {"name": "Press hombro convergente", "series": 3}, {"name": "Press francés polea", "series": 3}, {"name": "Tríceps polea prono", "series": 3}, {"name": "Tríceps polea supino", "series": 3}, {"name": "Elevaciones laterales", "series": 3}], "e2": [{"name": "Jalón al pecho ancho", "series": 3}, {"name": "Remo en polea baja", "series": 3}, {"name": "Jalón agarre estrecho", "series": 3}, {"name": "Dominadas asistidas", "series": 3}, {"name": "Curl bíceps máquina", "series": 3}, {"name": "Curl en polea baja", "series": 3}, {"name": "Curl martillo", "series": 3}], "e3": [{"name": "Prensa piernas", "series": 3}, {"name": "Extensión piernas", "series": 3}, {"name": "Flexión pierna acostado", "series": 3}, {"name": "Abducción cadera", "series": 3}, {"name": "Aducción cadera", "series": 3}, {"name": "Contracción abdominal", "series": 3}, {"name": "Plancha frontal", "series": 3}], "eopt": [{"name": "Press pecho", "series": 2}, {"name": "Aperturas pec-deck", "series": 2}, {"name": "Jalón al pecho", "series": 2}, {"name": "Remo en polea", "series": 2}, {"name": "Press hombro", "series": 2}, {"name": "Extensión piernas", "series": 2}, {"name": "Contracción abdominal", "series": 2}, {"name": "Plancha", "series": 2}]};
-const ENTRENO_NAMES = {"e1": "Entreno 1 — Pecho/Hombro/Tríceps", "e2": "Entreno 2 — Espalda/Bíceps", "e3": "Entreno 3 — Piernas/Abs", "eopt": "Opcional — Full Body"};
-const WEIGHT_MAP = {"e1-ex01-s1-angel": "38 kg", "e1-ex01-s1-manu": "25 kg", "e1-ex01-s2-angel": "45 kg", "e1-ex01-s2-manu": "30 kg", "e1-ex01-s3-angel": "52 kg", "e1-ex01-s3-manu": "36 kg", "e1-ex02-s1-angel": "14 kg c/u", "e1-ex02-s1-manu": "10 kg c/u", "e1-ex02-s2-angel": "18 kg c/u", "e1-ex02-s2-manu": "12 kg c/u", "e1-ex02-s3-angel": "18 kg c/u", "e1-ex02-s3-manu": "14 kg c/u", "e1-ex03-s1-angel": "55 kg", "e1-ex03-s1-manu": "35 kg", "e1-ex03-s2-angel": "73 kg", "e1-ex03-s2-manu": "45 kg", "e1-ex03-s3-angel": "83 kg", "e1-ex03-s3-manu": "55 kg", "e1-ex04-s1-angel": "16 kg", "e1-ex04-s1-manu": "9 kg", "e1-ex04-s2-angel": "23 kg", "e1-ex04-s2-manu": "14 kg", "e1-ex04-s3-angel": "27 kg", "e1-ex04-s3-manu": "18 kg", "e1-ex05-s1-angel": "14 kg", "e1-ex05-s1-manu": "8 kg", "e1-ex05-s2-angel": "18 kg", "e1-ex05-s2-manu": "12 kg", "e1-ex05-s3-angel": "22 kg", "e1-ex05-s3-manu": "14 kg", "e1-ex06-s1-angel": "22 kg", "e1-ex06-s1-manu": "14 kg", "e1-ex06-s2-angel": "27 kg", "e1-ex06-s2-manu": "18 kg", "e1-ex06-s3-angel": "31 kg", "e1-ex06-s3-manu": "20 kg", "e1-ex07-s1-angel": "14 kg", "e1-ex07-s1-manu": "9 kg", "e1-ex07-s2-angel": "18 kg", "e1-ex07-s2-manu": "12 kg", "e1-ex07-s3-angel": "18 kg", "e1-ex07-s3-manu": "14 kg", "e1-ex08-s1-angel": "4 kg c/u", "e1-ex08-s1-manu": "3 kg c/u", "e1-ex08-s2-angel": "6 kg c/u", "e1-ex08-s2-manu": "4 kg c/u", "e1-ex08-s3-angel": "6 kg c/u", "e1-ex08-s3-manu": "5 kg c/u", "e2-ex01-s1-angel": "45 kg", "e2-ex01-s1-manu": "39 kg", "e2-ex01-s2-angel": "45 kg", "e2-ex01-s2-manu": "39 kg", "e2-ex01-s3-angel": "52 kg", "e2-ex01-s3-manu": "45 kg", "e2-ex02-s1-angel": "39 kg", "e2-ex02-s1-manu": "32 kg", "e2-ex02-s2-angel": "45 kg", "e2-ex02-s2-manu": "39 kg", "e2-ex02-s3-angel": "52 kg", "e2-ex02-s3-manu": "45 kg", "e2-ex03-s1-angel": "45 kg", "e2-ex03-s1-manu": "39 kg", "e2-ex03-s2-angel": "45 kg", "e2-ex03-s2-manu": "39 kg", "e2-ex03-s3-angel": "52 kg", "e2-ex03-s3-manu": "45 kg", "e2-ex04-s1-angel": "45 kg ayuda", "e2-ex04-s1-manu": "27 kg ayuda", "e2-ex04-s2-angel": "41 kg ayuda", "e2-ex04-s2-manu": "23 kg ayuda", "e2-ex04-s3-angel": "36 kg ayuda", "e2-ex04-s3-manu": "18 kg ayuda", "e2-ex05-s1-angel": "41 kg", "e2-ex05-s1-manu": "27 kg", "e2-ex05-s2-angel": "45 kg", "e2-ex05-s2-manu": "32 kg", "e2-ex05-s3-angel": "50 kg", "e2-ex05-s3-manu": "36 kg", "e2-ex06-s1-angel": "13.5 kg", "e2-ex06-s1-manu": "11.3 kg", "e2-ex06-s2-angel": "15.8 kg", "e2-ex06-s2-manu": "13.5 kg", "e2-ex06-s3-angel": "18 kg", "e2-ex06-s3-manu": "15.8 kg", "e2-ex07-s1-angel": "8 kg c/u", "e2-ex07-s1-manu": "6 kg c/u", "e2-ex07-s2-angel": "10 kg c/u", "e2-ex07-s2-manu": "8 kg c/u", "e2-ex07-s3-angel": "12 kg c/u", "e2-ex07-s3-manu": "10 kg c/u", "e3-ex01-s1-angel": "60 kg", "e3-ex01-s1-manu": "40 kg", "e3-ex01-s2-angel": "80 kg", "e3-ex01-s2-manu": "50 kg", "e3-ex01-s3-angel": "100 kg", "e3-ex01-s3-manu": "70 kg", "e3-ex02-s1-angel": "32 kg", "e3-ex02-s1-manu": "20 kg", "e3-ex02-s2-angel": "45 kg", "e3-ex02-s2-manu": "28 kg", "e3-ex02-s3-angel": "52 kg", "e3-ex02-s3-manu": "35 kg", "e3-ex03-s1-angel": "32 kg", "e3-ex03-s1-manu": "20 kg", "e3-ex03-s2-angel": "45 kg", "e3-ex03-s2-manu": "28 kg", "e3-ex03-s3-angel": "52 kg", "e3-ex03-s3-manu": "35 kg", "e3-ex04-s1-angel": "30 kg", "e3-ex04-s1-manu": "18 kg", "e3-ex04-s2-angel": "40 kg", "e3-ex04-s2-manu": "25 kg", "e3-ex04-s3-angel": "55 kg", "e3-ex04-s3-manu": "35 kg", "e3-ex05-s1-angel": "30 kg", "e3-ex05-s1-manu": "18 kg", "e3-ex05-s2-angel": "40 kg", "e3-ex05-s2-manu": "25 kg", "e3-ex05-s3-angel": "55 kg", "e3-ex05-s3-manu": "35 kg", "e3-ex06-s1-angel": "54 kg", "e3-ex06-s1-manu": "36 kg", "e3-ex06-s2-angel": "75 kg", "e3-ex06-s2-manu": "45 kg", "e3-ex06-s3-angel": "82 kg", "e3-ex06-s3-manu": "55 kg", "e3-ex07-s1-angel": "Peso corporal", "e3-ex07-s1-manu": "Peso corporal", "e3-ex07-s2-angel": "Peso corporal", "e3-ex07-s2-manu": "Peso corporal", "e3-ex07-s3-angel": "Peso corporal", "e3-ex07-s3-manu": "Peso corporal", "eopt-ex01-s1-angel": "36 kg", "eopt-ex01-s1-manu": "24 kg", "eopt-ex01-s2-angel": "36 kg", "eopt-ex01-s2-manu": "24 kg", "eopt-ex02-s1-angel": "58 kg", "eopt-ex02-s1-manu": "36 kg", "eopt-ex02-s2-angel": "58 kg", "eopt-ex02-s2-manu": "36 kg", "eopt-ex03-s1-angel": "40 kg", "eopt-ex03-s1-manu": "26 kg", "eopt-ex03-s2-angel": "40 kg", "eopt-ex03-s2-manu": "26 kg", "eopt-ex04-s1-angel": "40 kg", "eopt-ex04-s1-manu": "26 kg", "eopt-ex04-s2-angel": "40 kg", "eopt-ex04-s2-manu": "26 kg", "eopt-ex05-s1-angel": "18 kg", "eopt-ex05-s1-manu": "11 kg", "eopt-ex05-s2-angel": "18 kg", "eopt-ex05-s2-manu": "11 kg", "eopt-ex06-s1-angel": "36 kg", "eopt-ex06-s1-manu": "22 kg", "eopt-ex06-s2-angel": "36 kg", "eopt-ex06-s2-manu": "22 kg", "eopt-ex07-s1-angel": "60 kg", "eopt-ex07-s1-manu": "36 kg", "eopt-ex07-s2-angel": "60 kg", "eopt-ex07-s2-manu": "36 kg", "eopt-ex08-s1-angel": "Peso corporal", "eopt-ex08-s1-manu": "Peso corporal", "eopt-ex08-s2-angel": "Peso corporal", "eopt-ex08-s2-manu": "Peso corporal"};
-const EXERCISE_NAMES = {"e1-ex01": "Press de pecho convergente (máquina)", "e1-ex02": "Press con mancuernas en banco plano", "e1-ex03": "Aperturas en máquina pec-deck", "e1-ex04": "Press de hombro convergente (máquina)", "e1-ex05": "Press francés en polea con cuerda (tríceps)", "e1-ex06": "Tríceps en polea con barra rígida (prono)", "e1-ex07": "Tríceps en polea agarre inverso (supino)", "e1-ex08": "Elevaciones laterales con mancuernas", "e2-ex01": "Jalón al pecho agarre ancho (máquina)", "e2-ex02": "Remo en polea baja (seated cable row)", "e2-ex03": "Jalón agarre estrecho / neutro", "e2-ex04": "Dominadas asistidas (máquina)", "e2-ex05": "Curl bíceps en máquina", "e2-ex06": "Curl en polea baja de pie", "e2-ex07": "Curl martillo con mancuernas", "e3-ex01": "Prensa de piernas (leg press)", "e3-ex02": "Extensión de piernas (máquina)", "e3-ex03": "Flexión de pierna acostado (máquina)", "e3-ex04": "Abducción de cadera (máquina)", "e3-ex05": "Aducción de cadera (máquina)", "e3-ex06": "Contracción abdominal (máquina)", "e3-ex07": "Plancha frontal (suelo)", "eopt-ex01": "Press de pecho convergente (máquina)", "eopt-ex02": "Aperturas en máquina pec-deck", "eopt-ex03": "Jalón al pecho agarre ancho (máquina)", "eopt-ex04": "Remo en polea baja", "eopt-ex05": "Press de hombro convergente (máquina)", "eopt-ex06": "Extensión de piernas (máquina)", "eopt-ex07": "Contracción abdominal (máquina)", "eopt-ex08": "Plancha frontal (suelo)"};
+const EXERCISE_MAP = {"e1": [{"name": "Press pecho convergente", "series": 3}, {"name": "Press mancuernas banco", "series": 3}, {"name": "Aperturas pec-deck", "series": 3}, {"name": "Press hombro convergente", "series": 3}, {"name": "Press francés polea", "series": 3}, {"name": "Tríceps polea prono", "series": 3}, {"name": "Tríceps polea supino", "series": 3}, {"name": "Elevaciones laterales", "series": 3}], "e2": [{"name": "Jalón al pecho ancho", "series": 3}, {"name": "Remo en polea baja", "series": 3}, {"name": "Jalón agarre estrecho", "series": 3}, {"name": "Dominadas asistidas", "series": 3}, {"name": "Curl bíceps máquina", "series": 3}, {"name": "Curl en polea baja", "series": 3}, {"name": "Curl martillo", "series": 3}], "e3": [{"name": "Prensa piernas", "series": 3}, {"name": "Extensión piernas", "series": 3}, {"name": "Flexión pierna acostado", "series": 3}, {"name": "Abducción cadera", "series": 3}, {"name": "Aducción cadera", "series": 3}, {"name": "Contracción abdominal", "series": 3}, {"name": "Plancha frontal", "series": 3}], "eopt": [{"name": "Press pecho", "series": 2}, {"name": "Aperturas pec-deck", "series": 2}, {"name": "Jalón al pecho", "series": 2}, {"name": "Remo en polea", "series": 2}, {"name": "Press hombro", "series": 2}, {"name": "Extensión piernas", "series": 2}, {"name": "Contracción abdominal", "series": 2}, {"name": "Plancha", "series": 2}], "e5": [{"name": "Press hombros mancuernas", "series": 3}, {"name": "Elevaciones laterales", "series": 3}, {"name": "Face pull polea cuerda", "series": 3}, {"name": "Curl bíceps barra EZ", "series": 3}, {"name": "Extensión tríceps polea cuerda", "series": 3}, {"name": "Curl martillo mancuernas", "series": 3}], "fb": [{"name": "Press pecho convergente", "series": 3}, {"name": "Jalón al pecho ancho", "series": 3}, {"name": "Prensa piernas", "series": 3}, {"name": "Press hombros máquina", "series": 3}, {"name": "Curl bíceps máquina", "series": 3}, {"name": "Extensión tríceps polea cuerda", "series": 3}, {"name": "Extensión piernas", "series": 3}, {"name": "Contracción abdominal", "series": 3}]};
+const ENTRENO_NAMES = {"e1": "E1 — Pecho/Hombro/Tríceps", "e2": "E2 — Espalda/Bíceps", "e3": "E3 — Piernas/Abs", "eopt": "E4 — Piernas/Glúteos", "e5": "E5 — Hombros/Brazos", "fb": "FB — Full Body"};
+const WEIGHT_MAP = {"e1-ex01-s1-angel": "38 kg", "e1-ex01-s1-manu": "25 kg", "e1-ex01-s2-angel": "45 kg", "e1-ex01-s2-manu": "30 kg", "e1-ex01-s3-angel": "52 kg", "e1-ex01-s3-manu": "36 kg", "e1-ex02-s1-angel": "14 kg c/u", "e1-ex02-s1-manu": "10 kg c/u", "e1-ex02-s2-angel": "18 kg c/u", "e1-ex02-s2-manu": "12 kg c/u", "e1-ex02-s3-angel": "18 kg c/u", "e1-ex02-s3-manu": "14 kg c/u", "e1-ex03-s1-angel": "55 kg", "e1-ex03-s1-manu": "35 kg", "e1-ex03-s2-angel": "73 kg", "e1-ex03-s2-manu": "45 kg", "e1-ex03-s3-angel": "83 kg", "e1-ex03-s3-manu": "55 kg", "e1-ex04-s1-angel": "16 kg", "e1-ex04-s1-manu": "9 kg", "e1-ex04-s2-angel": "23 kg", "e1-ex04-s2-manu": "14 kg", "e1-ex04-s3-angel": "27 kg", "e1-ex04-s3-manu": "18 kg", "e1-ex05-s1-angel": "14 kg", "e1-ex05-s1-manu": "8 kg", "e1-ex05-s2-angel": "18 kg", "e1-ex05-s2-manu": "12 kg", "e1-ex05-s3-angel": "22 kg", "e1-ex05-s3-manu": "14 kg", "e1-ex06-s1-angel": "22 kg", "e1-ex06-s1-manu": "14 kg", "e1-ex06-s2-angel": "27 kg", "e1-ex06-s2-manu": "18 kg", "e1-ex06-s3-angel": "31 kg", "e1-ex06-s3-manu": "20 kg", "e1-ex07-s1-angel": "14 kg", "e1-ex07-s1-manu": "9 kg", "e1-ex07-s2-angel": "18 kg", "e1-ex07-s2-manu": "12 kg", "e1-ex07-s3-angel": "18 kg", "e1-ex07-s3-manu": "14 kg", "e1-ex08-s1-angel": "4 kg c/u", "e1-ex08-s1-manu": "3 kg c/u", "e1-ex08-s2-angel": "6 kg c/u", "e1-ex08-s2-manu": "4 kg c/u", "e1-ex08-s3-angel": "6 kg c/u", "e1-ex08-s3-manu": "5 kg c/u", "e2-ex01-s1-angel": "45 kg", "e2-ex01-s1-manu": "39 kg", "e2-ex01-s2-angel": "45 kg", "e2-ex01-s2-manu": "39 kg", "e2-ex01-s3-angel": "52 kg", "e2-ex01-s3-manu": "45 kg", "e2-ex02-s1-angel": "39 kg", "e2-ex02-s1-manu": "32 kg", "e2-ex02-s2-angel": "45 kg", "e2-ex02-s2-manu": "39 kg", "e2-ex02-s3-angel": "52 kg", "e2-ex02-s3-manu": "45 kg", "e2-ex03-s1-angel": "45 kg", "e2-ex03-s1-manu": "39 kg", "e2-ex03-s2-angel": "45 kg", "e2-ex03-s2-manu": "39 kg", "e2-ex03-s3-angel": "52 kg", "e2-ex03-s3-manu": "45 kg", "e2-ex04-s1-angel": "45 kg ayuda", "e2-ex04-s1-manu": "27 kg ayuda", "e2-ex04-s2-angel": "41 kg ayuda", "e2-ex04-s2-manu": "23 kg ayuda", "e2-ex04-s3-angel": "36 kg ayuda", "e2-ex04-s3-manu": "18 kg ayuda", "e2-ex05-s1-angel": "41 kg", "e2-ex05-s1-manu": "27 kg", "e2-ex05-s2-angel": "45 kg", "e2-ex05-s2-manu": "32 kg", "e2-ex05-s3-angel": "50 kg", "e2-ex05-s3-manu": "36 kg", "e2-ex06-s1-angel": "13.5 kg", "e2-ex06-s1-manu": "11.3 kg", "e2-ex06-s2-angel": "15.8 kg", "e2-ex06-s2-manu": "13.5 kg", "e2-ex06-s3-angel": "18 kg", "e2-ex06-s3-manu": "15.8 kg", "e2-ex07-s1-angel": "8 kg c/u", "e2-ex07-s1-manu": "6 kg c/u", "e2-ex07-s2-angel": "10 kg c/u", "e2-ex07-s2-manu": "8 kg c/u", "e2-ex07-s3-angel": "12 kg c/u", "e2-ex07-s3-manu": "10 kg c/u", "e3-ex01-s1-angel": "60 kg", "e3-ex01-s1-manu": "40 kg", "e3-ex01-s2-angel": "80 kg", "e3-ex01-s2-manu": "50 kg", "e3-ex01-s3-angel": "100 kg", "e3-ex01-s3-manu": "70 kg", "e3-ex02-s1-angel": "32 kg", "e3-ex02-s1-manu": "20 kg", "e3-ex02-s2-angel": "45 kg", "e3-ex02-s2-manu": "28 kg", "e3-ex02-s3-angel": "52 kg", "e3-ex02-s3-manu": "35 kg", "e3-ex03-s1-angel": "32 kg", "e3-ex03-s1-manu": "20 kg", "e3-ex03-s2-angel": "45 kg", "e3-ex03-s2-manu": "28 kg", "e3-ex03-s3-angel": "52 kg", "e3-ex03-s3-manu": "35 kg", "e3-ex04-s1-angel": "30 kg", "e3-ex04-s1-manu": "18 kg", "e3-ex04-s2-angel": "40 kg", "e3-ex04-s2-manu": "25 kg", "e3-ex04-s3-angel": "55 kg", "e3-ex04-s3-manu": "35 kg", "e3-ex05-s1-angel": "30 kg", "e3-ex05-s1-manu": "18 kg", "e3-ex05-s2-angel": "40 kg", "e3-ex05-s2-manu": "25 kg", "e3-ex05-s3-angel": "55 kg", "e3-ex05-s3-manu": "35 kg", "e3-ex06-s1-angel": "54 kg", "e3-ex06-s1-manu": "36 kg", "e3-ex06-s2-angel": "75 kg", "e3-ex06-s2-manu": "45 kg", "e3-ex06-s3-angel": "82 kg", "e3-ex06-s3-manu": "55 kg", "e3-ex07-s1-angel": "Peso corporal", "e3-ex07-s1-manu": "Peso corporal", "e3-ex07-s2-angel": "Peso corporal", "e3-ex07-s2-manu": "Peso corporal", "e3-ex07-s3-angel": "Peso corporal", "e3-ex07-s3-manu": "Peso corporal", "eopt-ex01-s1-angel": "36 kg", "eopt-ex01-s1-manu": "24 kg", "eopt-ex01-s2-angel": "36 kg", "eopt-ex01-s2-manu": "24 kg", "eopt-ex02-s1-angel": "58 kg", "eopt-ex02-s1-manu": "36 kg", "eopt-ex02-s2-angel": "58 kg", "eopt-ex02-s2-manu": "36 kg", "eopt-ex03-s1-angel": "40 kg", "eopt-ex03-s1-manu": "26 kg", "eopt-ex03-s2-angel": "40 kg", "eopt-ex03-s2-manu": "26 kg", "eopt-ex04-s1-angel": "40 kg", "eopt-ex04-s1-manu": "26 kg", "eopt-ex04-s2-angel": "40 kg", "eopt-ex04-s2-manu": "26 kg", "eopt-ex05-s1-angel": "18 kg", "eopt-ex05-s1-manu": "11 kg", "eopt-ex05-s2-angel": "18 kg", "eopt-ex05-s2-manu": "11 kg", "eopt-ex06-s1-angel": "36 kg", "eopt-ex06-s1-manu": "22 kg", "eopt-ex06-s2-angel": "36 kg", "eopt-ex06-s2-manu": "22 kg", "eopt-ex07-s1-angel": "60 kg", "eopt-ex07-s1-manu": "36 kg", "eopt-ex07-s2-angel": "60 kg", "eopt-ex07-s2-manu": "36 kg", "eopt-ex08-s1-angel": "Peso corporal", "eopt-ex08-s1-manu": "Peso corporal", "eopt-ex08-s2-angel": "Peso corporal", "eopt-ex08-s2-manu": "Peso corporal", "e5-ex01-s1-angel": "14 kg c/u", "e5-ex01-s1-manu": "8 kg c/u", "e5-ex01-s2-angel": "16 kg c/u", "e5-ex01-s2-manu": "10 kg c/u", "e5-ex01-s3-angel": "16 kg c/u", "e5-ex01-s3-manu": "10 kg c/u", "e5-ex02-s1-angel": "8 kg c/u", "e5-ex02-s1-manu": "5 kg c/u", "e5-ex02-s2-angel": "8 kg c/u", "e5-ex02-s2-manu": "5 kg c/u", "e5-ex02-s3-angel": "10 kg c/u", "e5-ex02-s3-manu": "6 kg c/u", "e5-ex03-s1-angel": "20 kg", "e5-ex03-s1-manu": "12 kg", "e5-ex03-s2-angel": "22 kg", "e5-ex03-s2-manu": "14 kg", "e5-ex03-s3-angel": "22 kg", "e5-ex03-s3-manu": "14 kg", "e5-ex04-s1-angel": "20 kg", "e5-ex04-s1-manu": "12 kg", "e5-ex04-s2-angel": "25 kg", "e5-ex04-s2-manu": "15 kg", "e5-ex04-s3-angel": "25 kg", "e5-ex04-s3-manu": "15 kg", "e5-ex05-s1-angel": "24 kg", "e5-ex05-s1-manu": "15 kg", "e5-ex05-s2-angel": "29 kg", "e5-ex05-s2-manu": "18 kg", "e5-ex05-s3-angel": "29 kg", "e5-ex05-s3-manu": "18 kg", "e5-ex06-s1-angel": "14 kg c/u", "e5-ex06-s1-manu": "8 kg c/u", "e5-ex06-s2-angel": "16 kg c/u", "e5-ex06-s2-manu": "10 kg c/u", "e5-ex06-s3-angel": "16 kg c/u", "e5-ex06-s3-manu": "10 kg c/u", "fb-ex01-s1-angel": "45 kg", "fb-ex01-s1-manu": "28 kg", "fb-ex01-s2-angel": "52 kg", "fb-ex01-s2-manu": "32 kg", "fb-ex01-s3-angel": "52 kg", "fb-ex01-s3-manu": "32 kg", "fb-ex02-s1-angel": "52 kg", "fb-ex02-s1-manu": "39 kg", "fb-ex02-s2-angel": "59 kg", "fb-ex02-s2-manu": "45 kg", "fb-ex02-s3-angel": "59 kg", "fb-ex02-s3-manu": "45 kg", "fb-ex03-s1-angel": "80 kg", "fb-ex03-s1-manu": "50 kg", "fb-ex03-s2-angel": "100 kg", "fb-ex03-s2-manu": "60 kg", "fb-ex03-s3-angel": "100 kg", "fb-ex03-s3-manu": "60 kg", "fb-ex04-s1-angel": "27 kg", "fb-ex04-s1-manu": "18 kg", "fb-ex04-s2-angel": "32 kg", "fb-ex04-s2-manu": "22 kg", "fb-ex04-s3-angel": "32 kg", "fb-ex04-s3-manu": "22 kg", "fb-ex05-s1-angel": "36 kg", "fb-ex05-s1-manu": "22 kg", "fb-ex05-s2-angel": "41 kg", "fb-ex05-s2-manu": "27 kg", "fb-ex05-s3-angel": "45 kg", "fb-ex05-s3-manu": "32 kg", "fb-ex06-s1-angel": "24 kg", "fb-ex06-s1-manu": "15 kg", "fb-ex06-s2-angel": "29 kg", "fb-ex06-s2-manu": "18 kg", "fb-ex06-s3-angel": "29 kg", "fb-ex06-s3-manu": "18 kg", "fb-ex07-s1-angel": "45 kg", "fb-ex07-s1-manu": "28 kg", "fb-ex07-s2-angel": "52 kg", "fb-ex07-s2-manu": "35 kg", "fb-ex07-s3-angel": "52 kg", "fb-ex07-s3-manu": "35 kg", "fb-ex08-s1-angel": "54 kg", "fb-ex08-s1-manu": "36 kg", "fb-ex08-s2-angel": "66 kg", "fb-ex08-s2-manu": "45 kg", "fb-ex08-s3-angel": "75 kg", "fb-ex08-s3-manu": "54 kg"};
+const EXERCISE_NAMES = {"e1-ex01": "Press de pecho convergente (máquina)", "e1-ex02": "Press con mancuernas en banco plano", "e1-ex03": "Aperturas en máquina pec-deck", "e1-ex04": "Press de hombro convergente (máquina)", "e1-ex05": "Press francés en polea con cuerda (tríceps)", "e1-ex06": "Tríceps en polea con barra rígida (prono)", "e1-ex07": "Tríceps en polea agarre inverso (supino)", "e1-ex08": "Elevaciones laterales con mancuernas", "e2-ex01": "Jalón al pecho agarre ancho (máquina)", "e2-ex02": "Remo en polea baja (seated cable row)", "e2-ex03": "Jalón agarre estrecho / neutro", "e2-ex04": "Dominadas asistidas (máquina)", "e2-ex05": "Curl bíceps en máquina", "e2-ex06": "Curl en polea baja de pie", "e2-ex07": "Curl martillo con mancuernas", "e3-ex01": "Prensa de piernas (leg press)", "e3-ex02": "Extensión de piernas (máquina)", "e3-ex03": "Flexión de pierna acostado (máquina)", "e3-ex04": "Abducción de cadera (máquina)", "e3-ex05": "Aducción de cadera (máquina)", "e3-ex06": "Contracción abdominal (máquina)", "e3-ex07": "Plancha frontal (suelo)", "eopt-ex01": "Press de pecho convergente (máquina)", "eopt-ex02": "Aperturas en máquina pec-deck", "eopt-ex03": "Jalón al pecho agarre ancho (máquina)", "eopt-ex04": "Remo en polea baja", "eopt-ex05": "Press de hombro convergente (máquina)", "eopt-ex06": "Extensión de piernas (máquina)", "eopt-ex07": "Contracción abdominal (máquina)", "eopt-ex08": "Plancha frontal (suelo)", "e5-ex01": "Press de hombros con mancuernas (sentado)", "e5-ex02": "Elevaciones laterales con mancuernas", "e5-ex03": "Face pull de pie (polea con cuerda)", "e5-ex04": "Curl de bíceps con barra EZ", "e5-ex05": "Extensión de tríceps en polea con cuerda", "e5-ex06": "Curl martillo con mancuernas", "fb-ex01": "Press de pecho convergente (máquina)", "fb-ex02": "Jalón al pecho agarre ancho (máquina)", "fb-ex03": "Prensa de piernas (leg press)", "fb-ex04": "Press de hombros convergente (máquina)", "fb-ex05": "Curl de bíceps en máquina", "fb-ex06": "Extensión de tríceps en polea con cuerda", "fb-ex07": "Extensión de piernas (máquina)", "fb-ex08": "Contracción abdominal en máquina"};
 const SIX_MONTHS = 6 * 30 * 24 * 60 * 60 * 1000;
 
 function getRatings(person) {
@@ -1305,7 +1611,7 @@ function saveCompleted(data) {
 
 function updateNextSection(completed) {
   // Determine which section to show next: first uncompleted in order
-  const order = ['e1','e2','e3','eopt'];
+  const order = ['e1','e2','e3','eopt','e5','fb'];
   const next = order.find(s => !completed[s]) || 'e1';
   localStorage.setItem('gymplan-next-section', JSON.stringify({
     nextSection: next,
@@ -1330,7 +1636,7 @@ function getStartSection() {
   }
   // Other days: first uncompleted section
   const completed = getCompleted();
-  const order = ['e1','e2','e3','eopt'];
+  const order = ['e1','e2','e3','eopt','e5','fb'];
   return order.find(s => !completed[s]) || 'e1';
 }
 
@@ -1405,7 +1711,7 @@ function checkWelcome() {
 
 // ── FINISH ENTRENO ────────────────────────────────────────────────────────
 (function() {
-  var ORDER = ['e1','e2','e3','eopt'];
+  var ORDER = ['e1','e2','e3','eopt','e5','fb'];
 
   function getCurrentSid() {
     var now = new Date();
